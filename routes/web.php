@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DemografiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ Route::get('/', function () {
     return view('landing_page.index');
 });
 
+Route::get('/data/demografi', "LandingPageController@demografi")->name('data.demografi');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
@@ -32,4 +34,5 @@ Route::get('/blank', function () {
 
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
+    Route::resource('demografi', DemografiController::class);
 });

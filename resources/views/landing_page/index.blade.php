@@ -28,14 +28,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Appland
-  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -56,6 +48,7 @@
                     <li><a class="nav-link scrollto" href="#features">App Features</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+                    <li><a class="nav-link scrollto" href="{{route('data.demografi')}}">Demografi</a></li>
                     <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>

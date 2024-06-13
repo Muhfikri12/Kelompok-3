@@ -54,6 +54,20 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
+            {{ __('Data Master') }}
+        </div>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
+            <a class="nav-link" href="{{ route('demografi.index') }}">
+                <i class="fas fa-fw fa-map"></i>
+                <span>{{ __('Demografi') }}</span>
+            </a>
+        </li>
+
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
             {{ __('Settings') }}
         </div>
 
