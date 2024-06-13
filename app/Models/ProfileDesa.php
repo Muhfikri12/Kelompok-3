@@ -1,11 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class profile_desa extends Model
+class ProfileDesa extends Model
 {
     use HasFactory;
+
+    protected $table = 'profile_desas';
+
+    protected $guarded = [];
 }

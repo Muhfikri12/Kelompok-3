@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('profile_desas', function (Blueprint $table) {
             $table->id();
-            $table->string('content_visi');
-            $table->string('content_misi');
-            $table->string('about_us');
+            $table->text('content_visi')->nullable();
+            $table->text('content_misi')->nullable();
+            $table->text('about_us')->nullable();
+            $table->string('yt_link')->nullable();
+            $table->string('fb_link')->nullable();
+            $table->string('wa_link')->nullable();
+            $table->string('ig_link')->nullable();
+
             $table->timestamps();
         });
     }

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BasicController;
+use App\Http\Controllers\ProfileDesaControllera;
+use App\Models\ProfileDesa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +36,5 @@ Route::get('/blank', function () {
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
 });
+
+Route::get('/visiMisi', [ProfileDesaControllera::class, 'visiMisi'])->name('visiMisi');
