@@ -42,6 +42,10 @@ Route::get('/visi-misi', function () {
     return view('landing_page.visi-misi');
 });
 
+Route::get('/sejarah', function () {
+    return view('landing_page.sejarah');
+});
+
 Route::get('/basic/create/about-us', function () {
     return view('basic.create-about-us');
 });
