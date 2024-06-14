@@ -37,3 +37,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/about-us', function () {
     return view('landing_page.about-us');
 });
+
+Route::get('/basic/create/about-us', function () {
+    return view('basic.create-about-us');
+});
