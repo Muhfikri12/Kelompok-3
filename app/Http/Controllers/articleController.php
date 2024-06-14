@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProfileDesa;
 use Illuminate\Http\Request;
 
-class ProfileDesaControllera extends Controller
+class articleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function visiMisi()
+    public function index()
     {
-        $visiMisi = ProfileDesa::first();
-        $misi = ProfileDesa::all();
-        return view('landing_page.main.visi_misi', compact('visiMisi', 'misi'));
+        //
     }
 
     /**

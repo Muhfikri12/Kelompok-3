@@ -8,12 +8,6 @@
     <meta name="description" content="Laravel SB Admin 2">
     <meta name="author" content="Alejandro RH">
 
-    <!-- bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -59,13 +53,21 @@
                     <span>{{ __('Dashboard') }}</span></a>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                {{ __('Settings') }}
+                {{ __('Data Master') }}
             </div>
+
+            <li class="nav-item {{ Nav::isRoute('profile') }}">
+                <a class="nav-link" href="{{ route('profile') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('Profile Desa') }}</span>
+                </a>
+            </li>
 
             <!-- Nav Item -->
             <li class="nav-item {{ Nav::isRoute('basic.index') }}">
@@ -77,18 +79,6 @@
 
             <!-- Nav Item - Profile -->
 
-            <li class="nav-item dropdown {{ Nav::isRoute('profile') }}">
-                <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>{{ __('Profile Desa') }}</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="">Visi Misi</a>
-                    <a class="dropdown-item" href="">{{ __('View 2') }}</a>
-                    <a class="dropdown-item" href="">{{ __('View 3') }}</a>
-                </div>
-            </li>
 
 
             <!-- Nav Item - About -->
@@ -393,13 +383,6 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     @stack('js')
 </body>
 

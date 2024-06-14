@@ -7,3 +7,7 @@
 @section('footer')
     @include('landing_page.footer.footer')
 @endsection
+
+@section('article')
+    @include('landing_page.main.article')
+@endsection

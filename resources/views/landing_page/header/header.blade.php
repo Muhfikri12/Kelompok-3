@@ -12,7 +12,7 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#features">App Features</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('visiMisi') }}">Visi-Misi</a></li>
+                <li><a class="nav-link scrollto" href="#">Visi-Misi</a></li>
                 <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
                 <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>

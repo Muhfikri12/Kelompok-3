@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProfileDesa extends Model
+class article extends Model
 {
     use HasFactory;
 
-    protected $table = 'profile_desas';
+    protected $table = 'article';
 
     protected $guarded = [];
+
+    protected $casts = [ 
+        'tanggal' => 'date'
+    ];
 }
