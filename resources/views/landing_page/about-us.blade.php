@@ -44,11 +44,11 @@
         <div class="container">
             <div class="row content">
                 <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-                    <img src="assets/img/details-2.png" class="img-fluid" alt="">
+                    <img src="assets/img/whois.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Siapa Kami</h3>
-                    <p class="fst-italic">
+                    {{-- <p class="fst-italic">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore
                         magna aliqua.
@@ -59,23 +59,27 @@
                         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                    </p> --}}
                     <p>
-                        Inventore id enim dolor dicta qui et magni molestiae. Mollitia optio officia illum ut
-                        cupiditate eos autem. Soluta dolorum repellendus repellat amet autem rerum illum in.
-                        Quibusdam occaecati est nisi esse. Saepe aut dignissimos distinctio id enim.
+                        Desa [Nama Desa] adalah sebuah desa yang terletak di [Lokasi atau Kabupaten/Kota], yang terkenal
+                        dengan keindahan alamnya, budaya yang kaya, dan masyarakat yang ramah. Desa kami menawarkan
+                        pemandangan yang memukau dan kehidupan yang harmonis, menjadikannya tempat yang ideal untuk
+                        tinggal dan berkunjung.
                     </p>
                 </div>
             </div>
             <div class="row content">
                 <div class="col-md-4" data-aos="fade-right">
-                    <img src="assets/img/details-3.png" class="img-fluid" alt="">
+                    <img src="assets/img/location.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5" data-aos="fade-up">
                     <h3>Lokasi Kami</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe
-                        odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-                    <ul>
+                    <p>
+                        Desa [Nama Desa] terletak di wilayah [Nama Kecamatan, Kabupaten/Kota], provinsi [Nama Provinsi].
+                        Secara geografis, desa kami berada di koordinat [sebutkan koordinat atau letak geografis desa],
+                        yang memberikan kami pemandangan alam yang luar biasa dan iklim yang nyaman.
+                    </p>
+                    {{-- <ul>
                         <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </li>
                         <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
@@ -90,34 +94,50 @@
                     <p>
                         Suscipit enim et. Ut optio esse quidem quam reiciendis esse odit excepturi. Vel dolores
                         rerum soluta explicabo vel fugiat eum non.
-                    </p>
+                    </p> --}}
                 </div>
             </div>
 
             <div class="row content">
                 <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-                    <img src="assets/img/details-4.png" class="img-fluid" alt="">
+                    <img src="assets/img/profile.png" class="img-fluid" width="300" alt="">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Pimpinan Desa</h3>
-                    <p class="fst-italic">
+                    {{-- <p class="fst-italic">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore
                         magna aliqua.
+                    </p> --}}
+                    <p>
+                        Nama:
+                        Bapak/Ibu [Nama Lengkap Kepala Desa]
                     </p>
                     <p>
+                        Jabatan:
+                        [Nama Jabatan]
+                    </p>
+                    <p>
+                        NIP:
+                        [xxxxxxxxxxxxxxxx]
+                    </p>
+                    <p>
+                        Kepala Desa [Nama Desa] selalu terbuka untuk mendengarkan aspirasi dan masukan dari masyarakat.
+                        Untuk berkomunikasi langsung, silakan menghubungi:
+
+                    </p>
+                    {{-- <p>
                         Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                         reprehenderit in voluptate
                         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum
-                    </p>
+                    </p> --}}
                     <ul>
-                        <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
-                        <li><i class="bi bi-check"></i> Eius et voluptate. Enim earum tempore aliquid. Nobis et
-                            sunt consequatur. Aut repellat in numquam velit quo dignissimos et.</li>
-                        <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.
-                        </li>
+                        <li><i class="bi bi-check"></i> Email: fulan@gmail.com</li>
+                        <li><i class="bi bi-check"></i>Alamat: Jl. Raya Tagog No. 128 Padalarang</li>
+                        {{-- <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -125,16 +145,19 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h3>Jejaring Sosial Kami</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="youtube"><i class="bx bxl-youtube rounded"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram rounded"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook rounded"></i></a>
-                            <a href="#" class="whatsaap"><i class="bx bxl-whatsapp rounded"></i></a>
-                        </div>
+                    {{-- <div class="col-lg-3 col-md-6 footer-links"> --}}
+                    <h3>Jejaring Sosial Kami</h3>
+                    <p>Kami mengundang Anda untuk terhubung dengan Desa [Nama Desa] melalui jejaring sosial.
+                        Dapatkan informasi terbaru, berita terkini, dan acara menarik langsung dari desa kami. Ikuti
+                        dan bergabunglah dengan komunitas online kami di platform berikut:
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="youtube"><i class="bx bxl-youtube rounded"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram rounded"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook rounded"></i></a>
+                        <a href="#" class="whatsaap"><i class="bx bxl-whatsapp rounded"></i></a>
                     </div>
+                    {{-- </div> --}}
 
                 </div>
             </div>
