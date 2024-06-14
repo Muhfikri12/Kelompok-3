@@ -12,8 +12,9 @@ class ProfileDesaControllera extends Controller
      */
     public function visiMisi()
     {
-        $visiMisi = ProfileDesa::all();
-        return view('landing_page.main.visi_misi', compact('visiMisi'));
+        $visiMisi = ProfileDesa::first();
+        $misi = ProfileDesa::all();
+        return view('landing_page.main.visi_misi', compact('visiMisi', 'misi'));
     }
 
     /**

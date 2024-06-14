@@ -31,19 +31,42 @@
 
 </head>
 
+
 <body>
     @include('landing_page.header.header')
-    <section class="visi-misi m-5  d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 px-3"
-        style="">
-        <div>
-            @foreach ($visiMisi as $item)
-                <h4>Visi</h4>
-                <p>{{ $item->content_visi }}</p>
-                <h4>Misi</h4>
-                <p>{{ $item->content_misi }}</p>
-            @endforeach
+    <!-- ======= App Features Section ======= -->
+    <section id="features" class="features">
+        <div class="container mt-3">
+            <div class="row no-gutters">
+                <div class="section-title-visiMisi col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+                    <div>
+                        <h2>Visi</h2>
+                        <p>{{ $visiMisi->content_visi }}</p>
 
+                        <div class="misi">
+                            <h2>Misi</h2>
+                            @foreach ($misi as $item)
+                                <p>{{ $loop->iteration }} {{ $item->content_misi }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2"
+                    data-aos="fade-left" data-aos-delay="100">
+                    <img src={{ asset('assets/img/features.svg') }} class="img-fluid" alt="">
+                </div>
+            </div>
         </div>
-    </section>
+    </section><!-- End App Features Section -->
     @include('landing_page.footer.footer')
+
+    <!-- Vendor JS Files -->
+    <script src={{ asset('assets/vendor/aos/aos.js') }}></script>
+    <script src={{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
+    <script src={{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}></script>
+    <script src={{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}></script>
+    <script src={{ asset('assets/vendor/php-email-form/validate.js') }}></script>
+
+    <!-- Template Main JS Files -->
+    <script src={{ asset('assets/js/main.js') }}></script>
 </body>

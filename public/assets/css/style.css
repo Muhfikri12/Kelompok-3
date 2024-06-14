@@ -1090,16 +1090,37 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Profile Desa
+--------------------------------------------------------------*/
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+}
+/*--------------------------------------------------------------
 # Visi Misi
 --------------------------------------------------------------*/
 
-.visi-misi p {
+.section-title-visiMisi p {
     margin: 1rem 0;
 }
 
-.visi-misi h4 {
+.section-title-visiMisi h2 {
     font-weight: 800;
     color: #748ec6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title-visiMisi {
+    padding: 1rem;
 }
 
 /*--------------------------------------------------------------

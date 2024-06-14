@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\ProfileDesa;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class VisiSeeder extends Seeder
 {
@@ -19,5 +21,7 @@ class VisiSeeder extends Seeder
                 'content_misi' => 'Misi website Desa Hegarmana adalah meningkatkan transparansi dan akuntabilitas dengan menyediakan sistem informasi yang mudah diakses oleh warga, memberdayakan masyarakat melalui pelatihan teknologi, mempermudah akses layanan administrasi desa secara online, mempromosikan potensi lokal dan produk unggulan desa, serta meningkatkan komunikasi antara pemerintah desa dan warga melalui informasi terkini dan kanal komunikasi yang terintegrasi.'     
             ]
         );
+
+
     }
 }
