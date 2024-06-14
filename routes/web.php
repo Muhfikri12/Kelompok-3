@@ -38,6 +38,10 @@ Route::get('/about-us', function () {
     return view('landing_page.about-us');
 });
 
+Route::get('/visi-misi', function () {
+    return view('landing_page.visi-misi');
+});
+
 Route::get('/basic/create/about-us', function () {
     return view('basic.create-about-us');
 });
