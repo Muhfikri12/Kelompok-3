@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('demografi', function (Blueprint $table) {
             $table->id();
+            $table->string('tahun');
             $table->string('name');
             $table->string('kategori');
             $table->integer('total');
+            $table->string('satuan');
             $table->timestamps();
         });
     }

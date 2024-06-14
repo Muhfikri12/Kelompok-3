@@ -23,9 +23,11 @@ class DemografiRequest extends FormRequest
      public function rules()
      {
          return [
+            'tahun' => 'required|min:4|max:4',
              'name' => 'required',
              'kategori' => 'required',
              'total' => 'integer|required',
+             "satuan" => 'required'
          ];
      }
 }

@@ -9,8 +9,13 @@ class LandingPageController extends Controller
 {
     public function demografi()
     {
+
+        $results = Demografi::orderBy('kategori')->get();
+        $result = $results->groupBy('kategori');
+
+        // dd($result);
         return view('landing_page.demografi',[
-            "results" => Demografi::get(),
+            'results' => $result,
         ]);
     }
 }

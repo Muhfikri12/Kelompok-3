@@ -13,6 +13,14 @@
                 @method('put')
 
                 <div class="form-group">
+                    <label for="tahun">Tahun</label>
+                    <input type="text" class="form-control @error('tahun') is-invalid @enderror" name="tahun" id="tahun" placeholder="1945" autocomplete="off" value="{{ $record->tahun ?? old('tahun') }}">
+                    @error('tahun')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+
+                <div class="form-group">
                     <label for="kategori">Kategori</label>
                     <input type="text" class="form-control @error('kategori') is-invalid @enderror" name="kategori" id="kategori" placeholder="Usia" autocomplete="off" value="{{ $record->kategori ?? old('kategori') }}">
                     @error('kategori')
@@ -35,6 +43,19 @@
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
+
+                <div class="form-group">
+                    <label for="satuan">Satuan</label>
+                    <select name="satuan" id="satuab" class="form-control">
+                      <option value="" selected>-- Pilih --</option>
+                      <option value="Orang" {{$record->satuan == (old('satuan') ?? "Orang") ? 'selected' : ''}}>Orang</option>
+                      <option value="KK" {{$record->satuan == (old('satuan') ?? "KK") ? 'selected' : ''}}>KK</option>
+                      <option value="KTP" {{$record->satuan == (old('satuan') ?? "KTP") ? 'selected' : ''}}>KTP</option>
+                    </select>
+                    @error('satuan')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
 
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a href="{{ route('basic.index') }}" class="btn btn-default">Back to list</a>

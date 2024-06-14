@@ -6,7 +6,7 @@
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">New Data</a>
+    <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -18,6 +18,7 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>Tahun</th>
                 <th>Nama</th>
                 <th>Kategori</th>
                 <th>Jumlah</th>
@@ -28,9 +29,10 @@
             @foreach ($results as $record)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
+                    <td>{{ $record->tahun }}</td>
                     <td>{{ $record->name }}</td>
                     <td>{{ $record->kategori }}</td>
-                    <td>{{ $record->total}}</td>
+                    <td>{{ $record->total . " $record->satuan"}}</td>
 
                     <td>
                         <div class="d-flex">

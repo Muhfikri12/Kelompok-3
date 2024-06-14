@@ -36,9 +36,11 @@ class DemografiController extends Controller
     public function store(DemografiRequest $request)
     {
         Demografi::create([
+            "tahun"      => $request->tahun,
             "name"      => $request->name,
             "kategori"  => $request->kategori,
             "total"     => $request->total,
+            "satuan"      => $request->satuan,
         ]);
 
         return redirect()->route('demografi.index')->with('message', 'Data Berhasil ditambahkan!');
@@ -68,11 +70,13 @@ class DemografiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Demografi $demografi)
+    public function update(DemografiRequest $request, Demografi $demografi)
     {
+        $demografi->tahun = $request->tahun;
         $demografi->name = $request->name;
         $demografi->kategori = $request->kategori;
         $demografi->total = $request->total;
+        $demografi->satuan = $request->satuan;
         $demografi->save();
 
         return redirect()->route('demografi.index')->with('message', 'Data Berhasil Diubah!');

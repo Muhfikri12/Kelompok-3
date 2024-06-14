@@ -23,6 +23,11 @@
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
 
     @stack('css')
+    <style>
+        .ui-datepicker-calendar {
+            display: none;
+            }
+    </style>
 </head>
 <body id="page-top">
 
