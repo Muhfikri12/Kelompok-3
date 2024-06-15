@@ -11,7 +11,7 @@ class LandingPageController extends Controller
     public function demografi()
     {
         $results = Demografi::all()->groupBy(function ($item) {
-            return $item->kategori;
+            return $item->category->nama;
         })->map(function ($group) {
             return $group->groupBy(function ($item) {
                 return $item->tahun;

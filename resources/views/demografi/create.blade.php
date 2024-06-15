@@ -21,16 +21,21 @@
 
                 <div class="form-group">
                     <label for="kategori">Kategori</label>
-                    <input type="text" class="form-control @error('kategori') is-invalid @enderror" name="kategori" id="kategori" placeholder="Usia" autocomplete="off" value="{{ old('kategori') }}">
+                    <select name="kategori_id" id="kategori_id" class="form-control">
+                        <option value="">-- Pilih --</option>
+                        @foreach ($category as $item)
+                            <option value="{{$item->id}}" {{$item->id == old('kategori_id') ? 'selected' : ''}}>{{$item->nama}}</option>
+                        @endforeach
+                    </select>
                     @error('kategori')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
 
                 <div class="form-group">
-                  <label for="name">Nama</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Perempuan" autocomplete="off" value="{{ old('name') }}">
-                  @error('name')
+                  <label for="keterangan">Keterangan</label>
+                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ old('keterangan') }}">
+                  @error('keterangan')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
@@ -47,7 +52,9 @@
                   <label for="satuan">Satuan</label>
                   <select name="satuan" id="satuab" class="form-control">
                     <option value="" selected>-- Pilih --</option>
+                    <option value="Jiwa" {{"Jiwa" == old('satuan') ? "selected" : ''}}>Jiwa</option>
                     <option value="Orang" {{"Orang" == old('satuan') ? "selected" : ''}}>Orang</option>
+                    <option value="Kepala Keluarga" {{"Kepala Keluarga" == old('satuan') ? "selected" : ''}}>Kepala Keluarga</option>
                     <option value="KK" {{"KK" == old('satuan') ? "selected" : ''}}>KK</option>
                     <option value="KTP" {{"KTP" == old('satuan') ? "selected" : ''}}>KTP</option>
                   </select>

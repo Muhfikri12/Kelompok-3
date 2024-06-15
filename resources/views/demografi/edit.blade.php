@@ -20,18 +20,23 @@
                     @enderror
                   </div>
 
-                <div class="form-group">
+                  <div class="form-group">
                     <label for="kategori">Kategori</label>
-                    <input type="text" class="form-control @error('kategori') is-invalid @enderror" name="kategori" id="kategori" placeholder="Usia" autocomplete="off" value="{{ $record->kategori ?? old('kategori') }}">
+                    <select name="kategori_id" id="kategori_id" class="form-control">
+                        <option value="">-- Pilih --</option>
+                        @foreach ($category as $item)
+                            <option value="{{$item->id}}" {{$record->kategori_id == ($record->kategori_id || old('kategori_id')) ? 'selected' : ''}}>{{$item->nama}}</option>
+                        @endforeach
+                    </select>
                     @error('kategori')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
 
                 <div class="form-group">
-                  <label for="name">Nama</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Perempuan" autocomplete="off" value="{{ $record->name ?? old('name') }}">
-                  @error('name')
+                  <label for="keterangan">Keterangan</label>
+                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ $record->keterangan ?? old('keterangan') }}">
+                  @error('keterangan')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
@@ -47,10 +52,12 @@
                 <div class="form-group">
                     <label for="satuan">Satuan</label>
                     <select name="satuan" id="satuab" class="form-control">
-                      <option value="" selected>-- Pilih --</option>
-                      <option value="Orang" {{$record->satuan == (old('satuan') ?? "Orang") ? 'selected' : ''}}>Orang</option>
-                      <option value="KK" {{$record->satuan == (old('satuan') ?? "KK") ? 'selected' : ''}}>KK</option>
-                      <option value="KTP" {{$record->satuan == (old('satuan') ?? "KTP") ? 'selected' : ''}}>KTP</option>
+                      <option value="">-- Pilih --</option>
+                      <option value="Jiwa" {{(old('satuan') ?? $record->satuan) == "Jiwa" ? "selected" : ''}}>Jiwa</option>
+                      <option value="Orang" {{(old('satuan') ?? $record->satuan)  == "Orang" ? 'selected' : ''}}>Orang</option>
+                      <option value="Kepala Keluarga" {{ old("satuan") ?? $record->satuan  == "Kepala Keluarga" ? "selected" : ''}}>Kepala Keluarga</option>
+                      <option value="KK" {{ (old('satuan') ?? $record->satuan) == "KK"  ? 'selected' : ''}}>KK</option>
+                      <option value="KTP" {{ (old('satuan') ?? $record->satuan) == "KTP" ? 'selected' : ''}}>KTP</option>
                     </select>
                     @error('satuan')
                       <span class="text-danger">{{ $message }}</span>

@@ -11,14 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('category_demografi', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama');
+            $table->string('keterangan')->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('demografi', function (Blueprint $table) {
             $table->id();
             $table->string('tahun');
-            $table->string('name');
-            $table->string('kategori');
+            $table->string('keterangan');
+            $table->unsignedBigInteger('kategori_id');
             $table->integer('total');
-            $table->string('satuan');
+            $table->enum('satuan',['Jiwa',"Orang","Kepala Keluarga","KK","KTP"]);
             $table->timestamps();
+
+            $table->foreign('kategori_id')->references('id')->on('category_demografi');
         });
     }
 
@@ -27,6 +36,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('category_demografi');
         Schema::dropIfExists('demografi');
     }
 };

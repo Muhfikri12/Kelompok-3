@@ -156,7 +156,7 @@
                             <table class="table-bordered table-stripped display nowrap datatable table"
                                 style="width: 100%">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-secondary">
                                         <th>Tahun</th>
                                         <th>{{ strtoupper($kategori) }}</th>
                                         <th>Jumlah</th>
@@ -168,11 +168,17 @@
                                         @foreach ($items as $item)
                                             <tr>
                                                 <td>{{ $item->tahun ?? '-' }}</td>
-                                                <td>{{ $item->name ?? '-' }}</td>
+                                                <td>{{ $item->keterangan ?? '-' }}</td>
                                                 <td>{{ $item->total . ' ' . $item->satuan ?? '-' }}</td>
                                                 <td>{{ round(($item->total / $items->sum('total')) * 100, 2) . ' %' }}</td>
                                             </tr>
                                         @endforeach
+                                        <tr class="table-secondary">
+                                            <td>{{$year}}</td>
+                                            <td>Total</td>
+                                            <td>{{$items->sum('total') . " " . $items->first()->satuan ?? ''}}</td>
+                                            <td>100%</td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
