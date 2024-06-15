@@ -13,4 +13,9 @@ class Demografi extends Model
 
     protected $table = 'demografi';
 
+    public function category ()
+    {
+        return $this->belongsTo(CategoryDemografi::class, 'kategori_id');
+    }
+
 }

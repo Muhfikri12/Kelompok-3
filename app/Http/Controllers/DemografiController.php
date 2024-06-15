@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DemografiRequest;
+use App\Models\CategoryDemografi;
 use App\Models\Demografi;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class DemografiController extends Controller
         return view('demografi.index',
         [
             'title' => "Tabel Demografi",
-            'results' => Demografi::paginate(10),
+            'results' => Demografi::orderBy("updated_at","DESC")->get(),
         ]);
     }
 
@@ -26,7 +27,8 @@ class DemografiController extends Controller
     public function create()
     {
         return view('demografi.create',[
-            "title" => "Tambah Data"
+            "title" => "Tambah Data",
+            'category' => CategoryDemografi::all(),
         ]);
     }
 
@@ -37,8 +39,8 @@ class DemografiController extends Controller
     {
         Demografi::create([
             "tahun"      => $request->tahun,
-            "name"      => $request->name,
-            "kategori"  => $request->kategori,
+            "keterangan"      => $request->keterangan,
+            "kategori_id"  => $request->kategori_id,
             "total"     => $request->total,
             "satuan"      => $request->satuan,
         ]);
@@ -64,6 +66,7 @@ class DemografiController extends Controller
         [
             'title' => "Ubah Data",
             'record' => $demografi,
+            'category' => CategoryDemografi::all(),
         ]);
     }
 
@@ -73,8 +76,8 @@ class DemografiController extends Controller
     public function update(DemografiRequest $request, Demografi $demografi)
     {
         $demografi->tahun = $request->tahun;
-        $demografi->name = $request->name;
-        $demografi->kategori = $request->kategori;
+        $demografi->keterangan = $request->keterangan;
+        $demografi->kategori_id = $request->kategori_id;
         $demografi->total = $request->total;
         $demografi->satuan = $request->satuan;
         $demografi->save();

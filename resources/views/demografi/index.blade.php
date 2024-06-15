@@ -14,13 +14,13 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-stripped">
+    <table id="datatable" class="table table-bordered table-stripped display nowrap datatable" style="width: 100    %">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Tahun</th>
-                <th>Nama</th>
                 <th>Kategori</th>
+                <th>Keterangan</th>
                 <th>Jumlah</th>
                 <th>#</th>
             </tr>
@@ -30,8 +30,8 @@
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>{{ $record->tahun }}</td>
-                    <td>{{ $record->name }}</td>
-                    <td>{{ $record->kategori }}</td>
+                    <td>{{ $record->category->nama }}</td>
+                    <td>{{ $record->keterangan }}</td>
                     <td>{{ $record->total . " $record->satuan"}}</td>
 
                     <td>
@@ -48,8 +48,6 @@
             @endforeach
         </tbody>
     </table>
-
-    {{ $results->links() }}
 
     <!-- End of Main Content -->
 @endsection

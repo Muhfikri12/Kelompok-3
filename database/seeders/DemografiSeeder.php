@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CategoryDemografi;
 use App\Models\Demografi;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,42 +14,136 @@ class DemografiSeeder extends Seeder
      */
     public function run(): void
     {
+        $cat = [
+            [
+                "nama" => "Jenis Kelamin",
+                "keterangan" => null,
+            ],
+            [
+                "nama" => "Usia",
+                "keterangan" => null,
+            ],
+            [
+                "nama" => "Kesejahteraan",
+                "keterangan" => null,
+            ],
+        ];
+
+        foreach ($cat as $value) {
+            $record = CategoryDemografi::firstOrNew([
+                "nama" => $value['nama'],
+            ]);
+            $record->keterangan = $value['keterangan'];
+            $record->save();
+        }
+
         $array = [
             // Demografi Berdasarkan Jenis Kelamin
+            [
+                "tahun" => "2019",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Laki-laki",
+                "total" => 4589,
+            ],
+            [
+                "tahun" => "2019",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Perempuan",
+                "total" => 5312,
+            ],
+            [
+                "tahun" => "2020",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2020",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Perempuan",
+                "total" => 3830,
+            ],
+
             [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Jenis Kelamin",
-                "name" => "Laki-laki",
+                "keterangan" => "Laki-laki",
                 "total" => 5000,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Jenis Kelamin",
-                "name" => "Perempuan",
+                "keterangan" => "Perempuan",
                 "total" => 5000,
+            ],
+            [
+                "tahun" => "2022",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2022",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Perempuan",
+                "total" => 3830,
+            ],
+            [
+                "tahun" => "2023",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Laki-laki",
+                "total" => 3909,
+            ],
+            [
+                "tahun" => "2023",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Perempuan",
+                "total" => 5490,
+            ],
+            [
+                "tahun" => "2024",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2024",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "keterangan" => "Perempuan",
+                "total" => 3830,
             ],
             // Demografi Berdsarkan Usia
             [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Usia",
-                "name" => "0 – 17",
+                "keterangan" => "0 – 17",
                 "total" => 1123,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Usia",
-                "name" => "18 – 56",
+                "keterangan" => "18 – 56",
                 "total" => 3131,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Usia",
-                "name" => "56 Keatas",
+                "keterangan" => "56 Keatas",
                 "total" => 1290,
             ],
             // Demografi Berdsarkan Kesejahteraan
@@ -56,45 +151,46 @@ class DemografiSeeder extends Seeder
                 "tahun" => "2021",
                 "satuan" => "KK",
                 "kategori" => "Kesejahteraan",
-                "name" => "Keluarga Pra Sejahtera",
+                "keterangan" => "Keluarga Pra Sejahtera",
                 "total" => 1123,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "KK",
                 "kategori" => "Kesejahteraan",
-                "name" => "Keluarga Sejahtera I",
+                "keterangan" => "Keluarga Sejahtera I",
                 "total" => 556,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "KK",
                 "kategori" => "Kesejahteraan",
-                "name" => "Keluarga Sejahtera II",
+                "keterangan" => "Keluarga Sejahtera II",
                 "total" => 830,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "KK",
                 "kategori" => "Kesejahteraan",
-                "name" => "Keluarga Sejahtera II",
+                "keterangan" => "Keluarga Sejahtera II",
                 "total" => 830,
             ],
             [
                 "tahun" => "2021",
                 "satuan" => "KK",
                 "kategori" => "Kesejahteraan",
-                "name" => "Keluarga Sejahtera III",
+                "keterangan" => "Keluarga Sejahtera III",
                 "total" => 830,
             ],
         ];
 
         foreach ($array as $value) {
+            $cat = CategoryDemografi::where('nama',$value['kategori'])->first();
             $record =  Demografi::firstOrNew([
-                'kategori' => $value['kategori'],
-                'name' => $value['name'],
+                "tahun" => $value['tahun'],
+                'kategori_id' => $cat->id,
+                'keterangan' => $value['keterangan'],
             ]);
-            $record->tahun = $value['tahun'];
             $record->satuan = $value['satuan'];
             $record->total = $value['total'];
             $record->save();
