@@ -1,4 +1,4 @@
-<div class="row gy-4 features-item">
+<div class="row content article_items">
 
     <div class="col-lg-5 d-flex align-items-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
 
@@ -8,9 +8,9 @@
                 {{ $article->content }}
             </p>
             <ul>
-                <li><span><i data-feather="calendar"></i></span> {{ $article->tanggal->translatedFormat('l, d F Y') }}
+                <li><span><i data-feather="calendar"></i></span> {{ $article->event_date->translatedFormat('l, d F Y') }}
                 </li>
-                <li><span><i data-feather="clock"></i></span>{{ $article->jam }}</li>
+                <li><span><i data-feather="clock"></i></span>{{ $article->event_time }}</li>
                 <li><span><i data-feather="map-pin"></i></span>{{ $article->place }}</li>
             </ul>
             <p></p>

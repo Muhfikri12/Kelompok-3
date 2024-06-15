@@ -22,7 +22,8 @@ class ArticleSeeder extends Seeder
             'admin_id' => '1',
             'place' => 'Ds. Hegarmanah, Kec. Cicantayan, Kab. Sukabumi, indonesia',
             'type' => 'pengumuman',
-            'tanggal' => '2023-4-4'
+            'event_date' => '2023-4-4',
+            'event_time' => '13:00'
         ]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\articleController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileDesaControllera;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
+Route::get('/article', [articleController::class, 'article'])->name('article');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -14,6 +14,6 @@ class article extends Model
     protected $guarded = [];
 
     protected $casts = [ 
-        'tanggal' => 'date'
+        'event_date' => 'date'
     ];
 }

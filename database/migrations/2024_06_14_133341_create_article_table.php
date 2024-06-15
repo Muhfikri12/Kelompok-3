@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('photo')->nullable();
             $table->string('content');
-            $table->longText('detail_content');
+            $table->longText('detail_content')->nullable();
+            $table -> time('event_time')->nullable();
+            $table -> date('event_date')->nullable();
             $table->unsignedInteger('admin_id');
-            $table->string('place');
-            $table->date('tanggal')->nullable();
+            $table->string('place')->nullable();
             $table->enum('type', ['pengumuman', 'berita']);
 
             $table->timestamps();

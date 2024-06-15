@@ -181,10 +181,11 @@
                     </div>
                 </div>
 
+                @yield('article')
+
             </div>
         </section><!-- End Details Section -->
 
-        @yield('article')
 
 
         <!-- ======= Gallery Section ======= -->

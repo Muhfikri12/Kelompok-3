@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\article;
 use Illuminate\Http\Request;
 
 class articleController extends Controller
@@ -9,9 +10,10 @@ class articleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function article()
     {
-        //
+        $article = article::first();
+        return view('landing_page.main.article.detail-article', compact('article'));
     }
 
     /**
