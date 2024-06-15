@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-stripped">
+    <table id="datatable" class="table table-bordered table-stripped display nowrap datatable" style="width: 100    %">
         <thead>
             <tr>
                 <th>No</th>
@@ -48,8 +48,6 @@
             @endforeach
         </tbody>
     </table>
-
-    {{ $results->links() }}
 
     <!-- End of Main Content -->
 @endsection

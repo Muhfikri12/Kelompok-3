@@ -19,15 +19,19 @@
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    {{-- Asset CSS Datatable  --}}
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.css')}}">
+
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
 
+    {{-- Asset JS Datatable --}}
+    <script defer src="{{asset('js/dataTables.js')}}"></script>
+    <script defer src="{{asset('js/dataTables.bootstrap4.js')}}"></script>
+    <script defer src="{{ asset('js/script.js') }}"></script>
+
+
     @stack('css')
-    <style>
-        .ui-datepicker-calendar {
-            display: none;
-            }
-    </style>
 </head>
 <body id="page-top">
 

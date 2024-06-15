@@ -16,7 +16,7 @@ class DemografiController extends Controller
         return view('demografi.index',
         [
             'title' => "Tabel Demografi",
-            'results' => Demografi::paginate(10),
+            'results' => Demografi::all(),
         ]);
     }
 

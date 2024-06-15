@@ -16,6 +16,35 @@ class DemografiSeeder extends Seeder
         $array = [
             // Demografi Berdasarkan Jenis Kelamin
             [
+                "tahun" => "2019",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Laki-laki",
+                "total" => 4589,
+            ],
+            [
+                "tahun" => "2019",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Perempuan",
+                "total" => 5312,
+            ],
+            [
+                "tahun" => "2020",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2020",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Perempuan",
+                "total" => 3830,
+            ],
+
+            [
                 "tahun" => "2021",
                 "satuan" => "Orang",
                 "kategori" => "Jenis Kelamin",
@@ -28,6 +57,48 @@ class DemografiSeeder extends Seeder
                 "kategori" => "Jenis Kelamin",
                 "name" => "Perempuan",
                 "total" => 5000,
+            ],
+            [
+                "tahun" => "2022",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2022",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Perempuan",
+                "total" => 3830,
+            ],
+            [
+                "tahun" => "2023",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Laki-laki",
+                "total" => 3909,
+            ],
+            [
+                "tahun" => "2023",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Perempuan",
+                "total" => 5490,
+            ],
+            [
+                "tahun" => "2024",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Laki-laki",
+                "total" => 4869,
+            ],
+            [
+                "tahun" => "2024",
+                "satuan" => "Orang",
+                "kategori" => "Jenis Kelamin",
+                "name" => "Perempuan",
+                "total" => 3830,
             ],
             // Demografi Berdsarkan Usia
             [
@@ -91,10 +162,10 @@ class DemografiSeeder extends Seeder
 
         foreach ($array as $value) {
             $record =  Demografi::firstOrNew([
+                "tahun" => $value['tahun'],
                 'kategori' => $value['kategori'],
                 'name' => $value['name'],
             ]);
-            $record->tahun = $value['tahun'];
             $record->satuan = $value['satuan'];
             $record->total = $value['total'];
             $record->save();
