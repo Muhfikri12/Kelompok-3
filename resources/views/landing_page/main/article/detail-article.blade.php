@@ -47,22 +47,13 @@
                 <div class="detail-content-article">
                     <img src={{ asset('img/features-2.jpg') }} class="img-fluid responsive-image" alt="">
                     <article>
-                        <p>Acara ini terbuka untuk seluruh warga Desa Hegarmana. Pemerintah Desa sangat berharap
-                            partisipasi aktif dari seluruh warga untuk menyukseskan acara ini. "Kebersamaan dan
-                            kekompakan adalah kunci utama dalam membangun desa yang maju dan sejahtera. Kami mengajak
-                            seluruh warga untuk hadir dan berpartisipasi aktif dalam acara ini," tambah Kepala Desa
-                            Hegarmana.
-
-                            Untuk memudahkan warga yang membutuhkan transportasi, panitia menyediakan fasilitas
-                            antar-jemput dari beberapa titik yang telah ditentukan. Warga yang membutuhkan informasi
-                            lebih lanjut mengenai transportasi atau acara secara keseluruhan dapat menghubungi panitia
-                            melalui kontak yang telah disediakan.</p>
+                        <p>{{ $article->detail_content }}</p>
                     </article>
                 </div>
             </div>
             <div class="col-lg-5 order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
                 <div class="list-info-article">
-                    <h4>Acara Terbaru</h4>
+                    <h4>Event Terbaru</h4>
                     <div class="info-content-article">
                         <img src={{ asset('img/features-2.jpg') }} class="img-fluid" alt="">
                         <div class="info-detail-article">
