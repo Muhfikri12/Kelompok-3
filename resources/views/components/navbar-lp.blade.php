@@ -9,9 +9,12 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="{{ route('about-us') }}">Tentang Kami</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('visi-misi') }}">Visi & Misi</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('sejarah') }}">Sejarah</a></li>
+                <li><a class="{{ request()->is('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}">Tentang
+                        Kami</a></li>
+                <li><a class="{{ request()->is('visi-misi') ? 'active' : '' }}" href="{{ route('visi-misi') }}">Visi &
+                        Misi</a></li>
+                <li><a class="{{ request()->is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a>
+                </li>
                 <li><a class="nav-link scrollto" href="#pricing">Demografi</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
