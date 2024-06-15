@@ -36,15 +36,15 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/about-us', function () {
     return view('landing_page.about-us');
-});
+})->name('about-us');
 
 Route::get('/visi-misi', function () {
     return view('landing_page.visi-misi');
-});
+})->name('visi-misi');
 
 Route::get('/sejarah', function () {
     return view('landing_page.sejarah');
-});
+})->name('sejarah');
 
 Route::get('/basic/create/about-us', function () {
     return view('basic.create-about-us');
