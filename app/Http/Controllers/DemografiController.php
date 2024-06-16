@@ -6,6 +6,7 @@ use App\Http\Requests\DemografiRequest;
 use App\Models\CategoryDemografi;
 use App\Models\Demografi;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DemografiController extends Controller
 {
@@ -45,7 +46,8 @@ class DemografiController extends Controller
             "satuan"      => $request->satuan,
         ]);
 
-        return redirect()->route('demografi.index')->with('message', 'Data Berhasil ditambahkan!');
+        Alert::success('Success','Data Berhasil dibuat');
+        return redirect()->route('demografi.index');
 
     }
 
@@ -82,7 +84,8 @@ class DemografiController extends Controller
         $demografi->satuan = $request->satuan;
         $demografi->save();
 
-        return redirect()->route('demografi.index')->with('message', 'Data Berhasil Diubah!');
+        Alert::success('Success','Data Berhasil diubah');
+        return redirect()->route('demografi.index');
     }
 
     /**
@@ -91,7 +94,7 @@ class DemografiController extends Controller
     public function destroy(Demografi $demografi)
     {
         $demografi->delete();
-
-        return redirect()->route('demografi.index')->with('message', 'Data Berhasil Dihapus!');
+        Alert::success('Success','Data Berhasil dihapus');
+        return redirect()->route('demografi.index');
     }
 }
