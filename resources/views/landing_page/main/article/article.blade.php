@@ -1,5 +1,9 @@
 <div class="row content article_items">
 
+    <div class="header-article-event" data-aos="fade-up">
+        <h4>Event Terbaru</h4>
+    </div>
+
     <div class="col-lg-5 d-flex align-items-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
 
         <div class="article-content">

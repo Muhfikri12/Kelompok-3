@@ -9,5 +9,9 @@
 @endsection
 
 @section('article')
-    @include('landing_page.main.article')
+    @include('landing_page.main.article.article')
+@endsection
+
+@section('news_article')
+    @include('landing_page.main.news-article')
 @endsection
