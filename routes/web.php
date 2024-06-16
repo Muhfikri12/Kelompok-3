@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BasicController;
+use App\Http\Controllers\CategoryDemografi;
+use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +38,5 @@ Route::get('/blank', function () {
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
     Route::resource('demografi', DemografiController::class);
+    Route::resource('category-demografi', CategoryDemografiController::class);
 });

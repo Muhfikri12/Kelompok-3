@@ -157,9 +157,9 @@
                                 style="width: 100%">
                                 <thead>
                                     <tr class="table-secondary">
-                                        <th>Tahun</th>
+                                        <th>{{__('Tahun')}}</th>
                                         <th>{{ strtoupper($kategori) }}</th>
-                                        <th>Jumlah</th>
+                                        <th>{{__('Jumlah')}}</th>
                                         <th>Prosentase</th>
                                     </tr>
                                 </thead>

@@ -13,7 +13,7 @@
                 @method('put')
 
                 <div class="form-group">
-                    <label for="tahun">Tahun</label>
+                    <label for="tahun">{{__('Tahun')}}</label>
                     <input type="text" class="form-control @error('tahun') is-invalid @enderror" name="tahun" id="tahun" placeholder="1945" autocomplete="off" value="{{ $record->tahun ?? old('tahun') }}">
                     @error('tahun')
                       <span class="text-danger">{{ $message }}</span>
@@ -21,7 +21,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="kategori">Kategori</label>
+                    <label for="kategori">{{__('Kategori')}}</label>
                     <select name="kategori_id" id="kategori_id" class="form-control">
                         <option value="">-- Pilih --</option>
                         @foreach ($category as $item)
@@ -34,7 +34,7 @@
                   </div>
 
                 <div class="form-group">
-                  <label for="keterangan">Keterangan</label>
+                  <label for="keterangan">{{__('Keterangan')}}</label>
                   <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ $record->keterangan ?? old('keterangan') }}">
                   @error('keterangan')
                     <span class="text-danger">{{ $message }}</span>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="satuan">Satuan</label>
+                    <label for="satuan">{{__('Satuan')}}</label>
                     <select name="satuan" id="satuab" class="form-control">
                       <option value="">-- Pilih --</option>
                       <option value="Jiwa" {{(old('satuan') ?? $record->satuan) == "Jiwa" ? "selected" : ''}}>Jiwa</option>
@@ -64,8 +64,8 @@
                     @enderror
                   </div>
 
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">Back to list</a>
+                <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
+                <a href="{{ route('demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
             </form>
         </div>
