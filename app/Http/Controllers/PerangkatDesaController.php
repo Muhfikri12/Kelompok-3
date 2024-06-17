@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PerangkatDesaRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +15,7 @@ class PerangkatDesaController extends Controller
      */
     public function index()
     {
-        return view('perangkat.index',[
+        return view('perangkat.index', [
             "title" => "Data Perangkat Desa",
             "results" => User::all(),
         ]);
@@ -25,7 +26,7 @@ class PerangkatDesaController extends Controller
      */
     public function create()
     {
-        return view('perangkat.create',[
+        return view('perangkat.create', [
             "title" => "Buat Data Baru"
         ]);
     }
@@ -33,28 +34,28 @@ class PerangkatDesaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PerangkatDesaRequest $request)
     {
-             // Ambil extensi file
-             $extfile = $request->photo->getClientOriginalExtension();
-             // Genereate nama file bersarakan request namam waktu dan $extension file
-             $namaFile = $request->name . "-" . time() . "." . $extfile;
-             // Simpan Photo su Storage/app/uploads
-             $path = $request->photo->storeAs('public',$namaFile);
+        // Ambil extensi file
+        $extfile = $request->photo->getClientOriginalExtension();
+        // Genereate nama file bersarakan request namam waktu dan $extension file
+        $namaFile = $request->name . "-" . time() . "." . $extfile;
+        // Simpan Photo su Storage/app/uploads
+        $path = $request->photo->storeAs('public', $namaFile);
 
-             User::create([
-                "name" => $request->name,
-                "gender" => $request->gender,
-                "email" => $request->gender,
-                "nip" => $request->nip,
-                "jabatan" => $request->jabatan,
-                "status" => $request->status,
-                "address" => $request->address,
-                "photo" => $namaFile
-             ]);
+        User::create([
+            "name" => $request->name,
+            "gender" => $request->gender,
+            "email" => $request->email,
+            "nip" => $request->nip,
+            "jabatan" => $request->jabatan,
+            "status" => $request->status,
+            "address" => $request->address,
+            "photo" => $namaFile
+        ]);
 
-             Alert::success('Success','Data Berhasil dibuat');
-             return redirect()->route('perangkat.index');
+        Alert::success('Success', 'Data Berhasil dibuat');
+        return redirect()->route('perangkat.index');
     }
 
     /**
@@ -70,7 +71,7 @@ class PerangkatDesaController extends Controller
      */
     public function edit(User $perangkat)
     {
-        return view('perangkat.edit',[
+        return view('perangkat.edit', [
             'title' => "Ubah Data",
             'record' => $perangkat
         ]);
@@ -79,31 +80,56 @@ class PerangkatDesaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $perangkat)
+    public function update(PerangkatDesaRequest $request, User $perangkat)
     {
 
-        $photo = $request->photo ? $request->photo : "File tidak diganti";
+        // Cek jika foto null
+        $photo = $request->photo ? $request->photo : $perangkat->photo;
 
         // dd(Storage::disk('public')->exists($photo));
         // if(public_path('/public/'.$request->photo))
-        if(Storage::disk('public')->exists($photo) == false) {
+
+
+        if (Storage::disk('public')->exists($photo) == false) {
+            // return 1;
             // Delete Jiga File diganti
-            $path = public_path('/public/'.$perangkat->photo);
-            $aa = Storage::disk('public')->delete($path);
-            dd($aa);
+            $path = public_path('/public/' . $perangkat->photo);
+            Storage::disk('public')->delete($path);
 
+            // Simpan Gambar
+            // Ambil extensi file
+            $extfile = $photo->getClientOriginalExtension();
+            // Genereate nama file bersarakan request namam waktu dan $extension file
+            $namaFile = $request->name . "-" . time() . "." . $extfile;
+            // Simpan Photo su Storage/app/uploads
+            $path = $request->photo->storeAs('public', $namaFile);
 
-            // // Simpan Gambar
-            // // Ambil extensi file
-            // $extfile = $request->photo->getClientOriginalExtension();
-            // // Genereate nama file bersarakan request namam waktu dan $extension file
-            // $namaFile = $request->name . "-" . time() . "." . $extfile;
-            // // Simpan Photo su Storage/app/uploads
-            // $path = $request->photo->storeAs('public',$namaFile);
-
+            $perangkat->update([
+                "name" => $request->name,
+                "gender" => $request->gender,
+                "email" => $request->email,
+                "nip" => $request->nip,
+                "jabatan" => $request->jabatan,
+                "status" => $request->status,
+                "address" => $request->address,
+                "photo" => $namaFile
+            ]);
+        } else {
+            // return 0;
+            $perangkat->update([
+                "name" => $request->name,
+                "gender" => $request->gender,
+                "email" => $request->email,
+                "nip" => $request->nip,
+                "jabatan" => $request->jabatan,
+                "status" => $request->status,
+                "address" => $request->address,
+                "photo" => $perangkat->photo
+            ]);
         }
 
-        dd("TEST");
+        Alert::success('Success','Data Berhasil diubah');
+        return redirect()->route('perangkat.index');
     }
 
     /**
@@ -113,7 +139,7 @@ class PerangkatDesaController extends Controller
     {
         $perangkat->delete();
 
-        Alert::succes("Data Berhasil dihapus");
+        Alert::success('Success','Data Berhasil dihapus');
         return redirect()->route('perangkat.index');
     }
 }

@@ -116,7 +116,7 @@
                 </div>
             </li>
 
-            <!-- Heading -->
+            {{-- <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Settings') }}
             </div>
@@ -151,7 +151,7 @@
                     <i class="fas fa-fw fa-book"></i>
                     <span>{{ __('Blank Page') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('perangkat.update', $record->id) }}" method="post">
+            <form action="{{ route('perangkat.update', $record->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-6 col-md-3 col-lg-2">
                             <div class="radio">
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="Perempuan"
+                                <input type="radio" name="gender" id="optionsRadios2" value="Perempuan"
                                     {{ $record->gender == 'Perempuan' ? 'checked' : '' }}>
                                 <label for="optionsRadios2">{{ __('Perempuan') }}</label>
                             </div>
@@ -94,9 +94,9 @@
                     <label for="status">{{ __('Status Kepegawaian') }}</label>
                     <select name="status" id="status" class="form-control">
                         <option value="" selected>-- Pilih --</option>
-                        <option value="Aktif" {{ 'Aktif' == (old('status') ?? $record->status) ? 'selected' : '' }}>Aktif
+                        <option value="Aktif" {{ ($record->status ?? old('status')) =='Aktif' ? 'selected' : '' }}>Aktif
                         </option>
-                        <option value="Nonaktif" {{ 'Nonaktif' == (old('status') ?? $record->satuan) ? 'selected' : '' }}>
+                        <option value="Nonaktif" {{($record->status ?? old('status')) ==  'Nonaktif' ? 'selected' : '' }}>
                             Nonaktif</option>
                     </select>
                     @error('status')
