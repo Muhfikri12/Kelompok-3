@@ -29,7 +29,6 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'Lorem ipsum',
             'about_us' => 'Lorem ipsum',
             'sejarah' => 'Lorem ipsum',
-            'icon_link' => 'Lorem ipsum',
             'yt_link' => 'Lorem ipsum',
             'fb_link' => 'Lorem ipsum',
             'wa_link' => 'Lorem ipsum',

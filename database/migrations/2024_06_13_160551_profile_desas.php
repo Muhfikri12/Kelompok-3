@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('alamat')->nullable();
             $table->text('about_us')->nullable();
             $table->text('sejarah')->nullable();
-            $table->string('icon_link')->nullable();
             $table->string('yt_link')->nullable();
             $table->string('fb_link')->nullable();
             $table->string('wa_link')->nullable();
