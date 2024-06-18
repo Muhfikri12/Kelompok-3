@@ -18,7 +18,7 @@
                 <li><span><i data-feather="map-pin"></i></span>{{ $article->place }}</li>
             </ul>
             <p></p>
-            <a href="#" class="btn more-btn">Lihat Detail</a>
+            <a href="{{ route('article') }}" class="btn more-btn">Lihat Detail</a>
         </div>
 
     </div>

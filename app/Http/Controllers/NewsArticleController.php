@@ -2,35 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\article;
 use Illuminate\Http\Request;
 
-class articleController extends Controller
+class NewsArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function article()
+    public function newsArticle()
     {
-        $article = article::first();
-        return view('landing_page.main.article.detail-article', compact('article'));
+        return view('create_article', [
+            'article' => 'dashboard-admin-news'
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function event()
+    public function create()
     {
-        return view('create_article', [
-            'article' => 'dashboard-admin-article'
-        ]);
-    }
-
-    public function formCreate()
-    {
-        return view('create_article', [
-            'article' => 'dashboard-db-admin'
-        ]);
+        //
     }
 
     /**

@@ -13,5 +13,5 @@
 @endsection
 
 @section('news_article')
-    @include('landing_page.main.news-article')
+    @include('landing_page.main.news.news-article')
 @endsection

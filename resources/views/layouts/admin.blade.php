@@ -13,6 +13,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link
@@ -93,11 +96,22 @@
                 </a>
             </li>
 
-            <!-- Nav Item -->
-            <li class="nav-item {{ Nav::isRoute('blank') }}">
-                <a class="nav-link" href="{{ route('blank') }}">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>{{ __('Blank Page') }}</span>
+            <div class="sidebar-heading">
+                {{ __('Content Master') }}
+            </div>
+
+            <!-- Article Content -->
+            <li class="nav-item {{ Nav::isRoute('article') }}">
+                <a class="nav-link" href="{{ url('/create-article') }}">
+                    <i class="fas fa-fw fa-edit"></i>
+                    <span>{{ __('Create Content') }}</span>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Nav::isRoute('article') }}">
+                <a class="nav-link" href="{{ url('/article') }}">
+                    <i class="fas fa-fw fa-edit"></i>
+                    <span>{{ __('Database Content') }}</span>
                 </a>
             </li>
 
@@ -393,6 +407,10 @@
     <script>
         CKEDITOR.replace('detail_content');
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

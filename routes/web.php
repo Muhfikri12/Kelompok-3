@@ -3,6 +3,7 @@
 use App\Http\Controllers\articleController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\ProfileDesaControllera;
 use App\Models\ProfileDesa;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 Route::get('/article', [articleController::class, 'article'])->name('article');
+Route::get('/createNews', [NewsArticleController::class, 'newsArticle'])->name('news');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -30,9 +32,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blank', function () {
-    return view('blank');
-})->name('blank');
+Route::get('/create-article', [articleController::class, 'event'])->name('event');
+Route::get('/createArticle', [articleController::class, 'formCreate'])->name('formCreate');       
+// Route::get('/article@db', [articleController::class, 'formCreate'])->name('formCreate');       
 
 Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
