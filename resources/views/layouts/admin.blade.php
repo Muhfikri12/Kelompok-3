@@ -44,57 +44,57 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-                <div class="sidebar-brand-icon rotate-n-15">
+                {{-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                </div> --}}
+                <div class="sidebar-brand-text mx-3">Desa Hegarmanah</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ Nav::isRoute('home') }}">
+            {{-- <li class="nav-item {{ Nav::isRoute('home') }}">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>{{ __('Dashboard') }}</span></a>
-            </li>
+            </li> --}}
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Data Master') }}
-            </div>
+            </div> --}}
 
-            <li class="nav-item {{ Nav::isRoute('profile') }}">
+            {{-- <li class="nav-item {{ Nav::isRoute('profile') }}">
                 <a class="nav-link" href="{{ route('profile') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>{{ __('Profile Desa') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Nav Item -->
-            <li class="nav-item {{ Nav::isRoute('basic.index') }}">
+            {{-- <li class="nav-item {{ Nav::isRoute('basic.index') }}">
                 <a class="nav-link" href="{{ route('basic.index') }}">
                     <i class="fas fa-fw fa-plus"></i>
                     <span>{{ __('Basic CRUD') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Profile -->
 
 
 
             <!-- Nav Item - About -->
-            <li class="nav-item {{ Nav::isRoute('about') }}">
+            {{-- <li class="nav-item {{ Nav::isRoute('about') }}">
                 <a class="nav-link" href="{{ route('about') }}">
                     <i class="fas fa-fw fa-hands-helping"></i>
                     <span>{{ __('About') }}</span>
                 </a>
-            </li>
+            </li> --}}
 
             <div class="sidebar-heading">
                 {{ __('Content Master') }}
@@ -102,14 +102,14 @@
 
             <!-- Article Content -->
             <li class="nav-item {{ Nav::isRoute('article') }}">
-                <a class="nav-link" href="{{ url('/create-article') }}">
+                <a class="nav-link" href="{{ url('/createArticle') }}">
                     <i class="fas fa-fw fa-edit"></i>
                     <span>{{ __('Create Content') }}</span>
                 </a>
             </li>
 
             <li class="nav-item {{ Nav::isRoute('article') }}">
-                <a class="nav-link" href="{{ url('/article') }}">
+                <a class="nav-link" href="{{ url('/db-article') }}">
                     <i class="fas fa-fw fa-edit"></i>
                     <span>{{ __('Database Content') }}</span>
                 </a>
@@ -141,7 +141,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    {{-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small"
@@ -152,13 +152,13 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
+                        {{-- <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
@@ -179,16 +179,16 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                            {{-- <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
+                            </a> --}}
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
@@ -236,12 +236,12 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                            {{-- <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
-                            </a>
+                            </a> --}}
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
@@ -250,8 +250,8 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
+                                            alt="">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -262,8 +262,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60"
+                                            alt="">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>

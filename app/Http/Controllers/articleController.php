@@ -38,7 +38,16 @@ class articleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = new Article();
+        $article -> title = $request -> event_article;
+        $article -> photo = $request -> image_content;
+        $article -> content = $request -> headline_article;
+        $article -> detail_content = $request -> detail_content;
+        $article -> event_time = $request -> event_time;
+        $article -> event_date = $request -> event_date;
+        $article -> save();
+
+
     }
 
     /**

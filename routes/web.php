@@ -21,7 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 Route::get('/article', [articleController::class, 'article'])->name('article');
+Route::get('/article', [articleController::class, 'store'])->name('article.store');
 Route::get('/createNews', [NewsArticleController::class, 'newsArticle'])->name('news');
+Route::get('/createArticle', [articleController::class, 'event'])->name('event');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -32,8 +34,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/create-article', [articleController::class, 'event'])->name('event');
-Route::get('/createArticle', [articleController::class, 'formCreate'])->name('formCreate');       
+Route::get('/db-article', [articleController::class, 'formCreate'])->name('formCreate');       
 // Route::get('/article@db', [articleController::class, 'formCreate'])->name('formCreate');       
 
 Route::middleware('auth')->group(function() {

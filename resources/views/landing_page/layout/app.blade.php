@@ -49,14 +49,14 @@
                 <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1"
                     data-aos="fade-up">
                     <div>
-                        <h1>App landing page template</h1>
-                        <h2>Lorem ipsum dolor sit amet, tota senserit percipitur ius ut, usu et fastidii forensibus
-                            voluptatibus. His ei nihil feugait</h2>
-                        <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Google Play</a>
-                        <a href="#" class="download-btn"><i class="bx bxl-apple"></i> App Store</a>
+                        <h1>Welcome to Desa Hegarmanah</h2>
+                            <h2>Discover the beauty and tranquility of our charming village. Explore our rich culture,
+                                scenic landscapes, and warm community.</h2>
+                            <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Eksplore Now</a>
+                            {{-- <a href="#" class="download-btn"><i class="bx bxl-apple"></i> App Store</a> --}}
                     </div>
                 </div>
-                <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img"
+                <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-2 order-lg-2 hero-img"
                     data-aos="fade-up">
                     <img src="assets/img/hero-img.png" class="img-fluid" alt="">
                 </div>
@@ -86,10 +86,10 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Gallery</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Perangkat Desa</h2>
+                    {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit --}}
+                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
 
             </div>
@@ -144,7 +144,7 @@
         </section><!-- End Gallery Section -->
 
         <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials section-bg">
+        {{-- <section id="testimonials" class="testimonials section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -242,10 +242,10 @@
                 </div>
 
             </div>
-        </section><!-- End Testimonials Section -->
+        </section><!-- End Testimonials Section --> --}}
 
         <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
+        {{-- <section id="pricing" class="pricing">
             <div class="container">
 
                 <div class="section-title">
@@ -301,10 +301,10 @@
                 </div>
 
             </div>
-        </section><!-- End Pricing Section -->
+        </section><!-- End Pricing Section --> --}}
 
         <!-- ======= Frequently Asked Questions Section ======= -->
-        <section id="faq" class="faq section-bg">
+        {{-- <section id="faq" class="faq section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -394,10 +394,10 @@
                 </div>
 
             </div>
-        </section><!-- End Frequently Asked Questions Section -->
+        </section><!-- End Frequently Asked Questions Section --> --}}
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        {{-- <section id="contact" class="contact">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -464,7 +464,7 @@
                 </div>
 
             </div>
-        </section><!-- End Contact Section -->
+        </section><!-- End Contact Section --> --}}
 
     </main><!-- End #main -->
 
