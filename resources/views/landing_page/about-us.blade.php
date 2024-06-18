@@ -9,10 +9,11 @@
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Siapa Kami</h3>
                     <p>
-                        Desa [Nama Desa] adalah sebuah desa yang terletak di [Lokasi atau Kabupaten/Kota], yang terkenal
+                        {{-- Desa [Nama Desa] adalah sebuah desa yang terletak di [Lokasi atau Kabupaten/Kota], yang terkenal
                         dengan keindahan alamnya, budaya yang kaya, dan masyarakat yang ramah. Desa kami menawarkan
                         pemandangan yang memukau dan kehidupan yang harmonis, menjadikannya tempat yang ideal untuk
-                        tinggal dan berkunjung.
+                        tinggal dan berkunjung. --}}
+                        {{ $data->about_us }}
                     </p>
                 </div>
             </div>
@@ -23,9 +24,11 @@
                 <div class="col-md-8 pt-5" data-aos="fade-up">
                     <h3>Lokasi Kami</h3>
                     <p>
-                        Desa [Nama Desa] terletak di wilayah [Nama Kecamatan, Kabupaten/Kota], provinsi [Nama Provinsi].
+                        {{-- Desa [Nama Desa] terletak di wilayah [Nama Kecamatan, Kabupaten/Kota], provinsi [Nama Provinsi].
                         Secara geografis, desa kami berada di koordinat [sebutkan koordinat atau letak geografis desa],
-                        yang memberikan kami pemandangan alam yang luar biasa dan iklim yang nyaman.
+                        yang memberikan kami pemandangan alam yang luar biasa dan iklim yang nyaman. --}}
+
+                        {{ $data->alamat }}
                     </p>
                 </div>
             </div>

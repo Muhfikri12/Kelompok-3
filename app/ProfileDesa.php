@@ -2,8 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ProfileDesa extends Model
 
@@ -15,10 +16,14 @@ class ProfileDesa extends Model
         'alamat',
         'about_us',
         'sejarah',
-        'icon_link',
         'yt_link',
         'fb_link',
         'wa_link',
         'ig_link'
     ];
+
+    static function getData()
+    {
+        return DB::table('profile_desas')->first();
+    }
 }

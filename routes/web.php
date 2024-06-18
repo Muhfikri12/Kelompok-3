@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileDesa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,17 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('basic', BasicController::class);
 });
 
-Route::get('/about-us', function () {
-    return view('landing_page.about-us');
-})->name('about-us');
-
-Route::get('/visi-misi', function () {
-    return view('landing_page.visi-misi');
-})->name('visi-misi');
-
-Route::get('/sejarah', function () {
-    return view('landing_page.sejarah');
-})->name('sejarah');
+Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
+Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
+Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
 
 Route::get('/basic/create/about-us', function () {
     return view('basic.create-about-us');
