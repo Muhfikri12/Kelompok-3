@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profile_desa', function (Blueprint $table) {
+        Schema::create('profile_desas', function (Blueprint $table) {
             $table->id();
             $table->text('content_misi')->nullable();
             $table->text('content_visi')->nullable();
