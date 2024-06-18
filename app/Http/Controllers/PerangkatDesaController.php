@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PerangkatDesaRequest;
-use App\User;
+use App\Models\PerangkatDesa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,8 +16,8 @@ class PerangkatDesaController extends Controller
     public function index()
     {
         return view('perangkat.index', [
-            "title" => "Data Perangkat Desa",
-            "results" => User::all(),
+            "title" => "Data Petugas Desa",
+            "results" => PerangkatDesa::all(),
         ]);
     }
 
@@ -43,12 +43,12 @@ class PerangkatDesaController extends Controller
         // Simpan Photo su Storage/app/uploads
         $path = $request->photo->storeAs('public', $namaFile);
 
-        User::create([
+        PerangkatDesa::create([
             "name" => $request->name,
             "gender" => $request->gender,
-            "email" => $request->email,
             "nip" => $request->nip,
             "jabatan" => $request->jabatan,
+            "phone" => $request->phone,
             "status" => $request->status,
             "address" => $request->address,
             "photo" => $namaFile
@@ -69,7 +69,7 @@ class PerangkatDesaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $perangkat)
+    public function edit(PerangkatDesa $perangkat)
     {
         return view('perangkat.edit', [
             'title' => "Ubah Data",
@@ -80,7 +80,7 @@ class PerangkatDesaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PerangkatDesaRequest $request, User $perangkat)
+    public function update(PerangkatDesaRequest $request, PerangkatDesa $perangkat)
     {
 
         // Cek jika foto null
@@ -107,9 +107,9 @@ class PerangkatDesaController extends Controller
             $perangkat->update([
                 "name" => $request->name,
                 "gender" => $request->gender,
-                "email" => $request->email,
                 "nip" => $request->nip,
                 "jabatan" => $request->jabatan,
+                "phone" => $request->phone,
                 "status" => $request->status,
                 "address" => $request->address,
                 "photo" => $namaFile
@@ -119,9 +119,9 @@ class PerangkatDesaController extends Controller
             $perangkat->update([
                 "name" => $request->name,
                 "gender" => $request->gender,
-                "email" => $request->email,
                 "nip" => $request->nip,
                 "jabatan" => $request->jabatan,
+                "phone" => $request->phone,
                 "status" => $request->status,
                 "address" => $request->address,
                 "photo" => $perangkat->photo
@@ -135,7 +135,7 @@ class PerangkatDesaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $perangkat)
+    public function destroy(PerangkatDesa $perangkat)
     {
         $perangkat->delete();
 

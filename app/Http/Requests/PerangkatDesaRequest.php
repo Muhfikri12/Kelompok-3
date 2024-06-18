@@ -24,10 +24,9 @@ class PerangkatDesaRequest extends FormRequest
         return [
             "name" => 'required',
             "gender" => 'required',
-            "email" => 'required',
             "nip" => 'required|max:8',
             "jabatan" => 'required',
-            "photo" => 'image|mimes:jpg.jpeg,png,gif|max:4096',
+            "photo" => 'image|mimes:jpg,jpeg,png,gif|max:4096',
             "status" => 'required',
         ];
     }

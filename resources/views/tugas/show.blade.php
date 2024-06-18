@@ -28,6 +28,13 @@
                   @enderror
                 </div>
 
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
+                  @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>

@@ -42,11 +42,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">{{ __('Email') }}</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                        id="email" placeholder="fulan@mail.id" autocomplete="off"
-                        value="{{ old('email') ?? $record->email }}">
-                    @error('email')
+                    <label for="phone">{{ __('Nomor Telepon') }}</label>
+                    <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                        id="phone" placeholder="0000-0000-0000" autocomplete="off"
+                        value="{{ old('phone') ?? $record->phone }}">
+                    @error('phone')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

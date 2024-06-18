@@ -20,31 +20,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="gender">{{ __('Jenis Kelamin') }}</label>
-                    <div class="row mt-1">
-                        <div class="col-sm-6 col-md-3 col-lg-2">
-                            <div class="radio">
-                                <input type="radio" name="gender" id="optionsRadios1" value="Laki-laki" {{old('gender') == "Laki-laki" ? 'checked' : '' }}>
-                                <label for="optionsRadios1">{{ __('Laki-laki') }}</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 col-lg-2">
-                            <div class="radio">
-                                <input type="radio" name="gender" id="optionsRadios2" value="Perempuan" {{old('gender') == "Perempuan" ? 'checked' : '' }}>
-                                <label for="optionsRadios2">{{ __('Perempuan') }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    @error('gender')
-                        <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="email">{{ __('Email') }}</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                        id="email" placeholder="fulan@mail.id" autocomplete="off" value="{{ old('email') }}">
-                    @error('email')
+                    <label for="phone">{{ __('Nomor Telepon') }}</label>
+                    <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                        id="phone" placeholder="0892-0928-2987" autocomplete="off" value="{{ old('phone') }}">
+                    @error('phone')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -52,8 +31,31 @@
                 <div class="form-group">
                     <label for="nip">{{ __('Nip') }}</label>
                     <input type="text" class="form-control @error('nip') is-invalid @enderror" name="nip"
-                        id="nip" placeholder="000111" autocomplete="off" value="{{ old('nip') }}">
+                        id="nip" placeholder="8 Angka" autocomplete="off" value="{{ old('nip') }}">
                     @error('nip')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">{{ __('Jenis Kelamin') }}</label>
+                    <div class="row mt-1">
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="radio">
+                                <input type="radio" name="gender" id="optionsRadios1" value="Laki-laki"
+                                    {{ old('gender') == 'Laki-laki' ? 'checked' : '' }}>
+                                <label for="optionsRadios1">{{ __('Laki-laki') }}</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-2">
+                            <div class="radio">
+                                <input type="radio" name="gender" id="optionsRadios2" value="Perempuan"
+                                    {{ old('gender') == 'Perempuan' ? 'checked' : '' }}>
+                                <label for="optionsRadios2">{{ __('Perempuan') }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    @error('gender')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>

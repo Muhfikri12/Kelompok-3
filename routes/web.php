@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryDemografi;
 use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('category-demografi', CategoryDemografiController::class);
     Route::resource('users', UserController::class);
     Route::resource('perangkat', PerangkatDesaController::class);
+    Route::resource('tugas', TugasController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });

@@ -6,7 +6,7 @@
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('perangkat.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+    <a href="{{ route('category-demografi.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -14,33 +14,30 @@
         </div>
     @endif
 
-    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+    <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
         <thead>
             <tr>
-                <th>{{ __('Nama') }}</th>
-                <th>{{ __('NIP') }}</th>
-                <th>{{ __('Phone') }}</th>
-                <th>{{ __('Jabatan') }}</th>
-                <th>{{ __('Status') }}</th>
-                <th>{{ __('Photo') }}</th>
+                <th>{{__('No')}}</th>
+                <th>Nama</th>
+                <th>{{__('Keterangan')}}</th>
                 <th>#</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($results as $record)
                 <tr>
-                    <td>{{$record->name ?? ''}}</td>
-                    <td>{{$record->nip ?? ''}}</td>
-                    <td>{{$record->phone ?? ''}}</td>
-                    <td>{{$record->jabatan ?? ''}}</td>
-                    <td>{{$record->status ?? ''}}</td>
-                    <td><a href="{{asset('storage/'.$record->photo)}}" target="_blank">Lihat</a></td>
+                    <td scope="row">{{ $loop->iteration }}</td>
+                    <td>{{ $record->nama }}</td>
+                    <td>{{ $record->keterangan ?? '-' }}</td>
+
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('perangkat.edit', $record->id) }}"
-                                class="btn btn-sm btn-primary mr-2">Edit</a>
-                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                data-toggle="modal" data-target="#DeleteModal">Delete</button>
+                            <a href="{{ route('category-demografi.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
+                            <form action="{{ route('category-demografi.destroy', $record->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
@@ -76,16 +73,3 @@
         </div>
     @endif
 @endpush
-
-    @push('js')
-        <script>
-            $('.btn-hapus').click(function() {
-                let idHapus = $(this).attr('data-id');
-                $("#deleteForm").attr('action', '/perangkat/' + idHapus);
-            })
-
-            $('#deleteForm [type="submit"]').click(function() {
-                $("#deleteForm").submit();
-            })
-        </script>
-    @endpush

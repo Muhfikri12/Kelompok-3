@@ -8,37 +8,29 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('basic.update', $user->id) }}" method="post">
+            <form action="{{ route('category-demografi.store') }}" method="post">
                 @csrf
-                @method('put')
 
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="First name" autocomplete="off" value="{{ old('name') ?? $user->name }}">
-                  @error('name')
+                    <label for="nama">Nama</label>
+                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Jiwa" autocomplete="off" value="{{ old('nama') }}">
+                    @error('nama')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
+
+
+                <div class="form-group">
+                  <label for="keterangan">{{__('Keterangan')}}</label>
+                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ old('keterangan') }}">
+                  @error('keterangan')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
 
-                <div class="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="last_name" placeholder="Last name" autocomplete="off" value="{{ old('last_name') ?? $user->last_name }}">
-                  @error('last_name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
-
-
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" autocomplete="off">
-                  @error('password')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
 
                 <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                <a href="{{ route('category-demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
             </form>
         </div>
@@ -71,4 +63,6 @@
             {{ session('status') }}
         </div>
     @endif
+
 @endpush
+

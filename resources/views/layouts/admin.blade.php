@@ -98,19 +98,19 @@
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>Management User</span>
+                    <span>Perangkat Desa</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('perangkat.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Perangkat Desa') }}</span>
+                            <span>{{ __('Petugas') }}</span>
                         </a>
                         {{-- <a class="collapse-item" href="{{ route('category-demografi.index') }}">
                         <i class="fas fa-fw fa-plus"></i>
                         <span>{{ __('Kategori Demografi') }}</span>
-                    </a> --}}
+                        </a> --}}
 
                     </div>
                 </div>
