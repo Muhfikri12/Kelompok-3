@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class articleController extends Controller
 {
@@ -38,14 +39,28 @@ class articleController extends Controller
      */
     public function store(Request $request)
     {
-        $article = new Article();
-        $article -> title = $request -> event_article;
-        $article -> photo = $request -> image_content;
-        $article -> content = $request -> headline_article;
-        $article -> detail_content = $request -> detail_content;
-        $article -> event_time = $request -> event_time;
-        $article -> event_date = $request -> event_date;
-        $article -> save();
+        if ($request->hasFile('image_content')) {
+            $image = $request->file('image_content');
+            $imageName = time() . '-' . $image->hashName();
+            $image->move('image/', $imageName);
+
+            $article = new Article();
+            $article->title = $request->event_article;
+            $article->photo = 'image/' . $imageName;
+            $article->admin_id = Auth::user()->id;
+            $article->content = $request->headline_article;
+            $article->detail_content = $request->detail_content;
+            $article->event_time = $request->event_time;
+            $article->event_date = $request->event_date;
+            $article->save();
+
+            return redirect('/db-article
+            ')->with('status', 'Article Pengumuman Ditambahkan');
+        }
+
+
+
+        // $article -> save();
 
 
     }

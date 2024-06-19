@@ -96,6 +96,26 @@
                 </a>
             </li> --}}
 
+            <li class="nav-item {{ Nav::isRoute('Article') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Article</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ url('/db-article') }}">
+                            <i class="fas fa-fw fa-newspaper"></i>
+                            <span>{{ __('Berita') }}</span>
+                        </a>
+                        <a class="collapse-item" href="#">
+                            <i class="fas fa-fw fa-calendar"></i>
+                            <span>{{ __('Pengumuman Event') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
             <div class="sidebar-heading">
                 {{ __('Content Master') }}
             </div>
@@ -105,13 +125,6 @@
                 <a class="nav-link" href="{{ url('/createArticle') }}">
                     <i class="fas fa-fw fa-edit"></i>
                     <span>{{ __('Create Content') }}</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ Nav::isRoute('article') }}">
-                <a class="nav-link" href="{{ url('/db-article') }}">
-                    <i class="fas fa-fw fa-edit"></i>
-                    <span>{{ __('Database Content') }}</span>
                 </a>
             </li>
 
@@ -190,7 +203,7 @@
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a> --}}
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
@@ -243,7 +256,7 @@
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a> --}}
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
@@ -274,8 +287,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle"
-                                            src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60"
+                                            alt="">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -298,7 +311,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More
                                     Messages</a>
-                            </div>
+                            </div> --}}
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -328,8 +341,7 @@
                                     {{ __('Activity Log') }}
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     {{ __('Logout') }}
                                 </a>

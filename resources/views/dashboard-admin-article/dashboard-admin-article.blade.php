@@ -6,7 +6,7 @@
 <div class="content-dashboard-article">
 
     <div class="form-content-dasboard-article">
-        <form action="{{ route('article.store') }}" method="POST">
+        <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <table>
                 <tr>
@@ -23,8 +23,13 @@
                 </tr>
                 <tr>
                     <td><label for="event_date">Tanggal Pelaksanaan</label></td>
-                    <td><input type="text" id="event_date" name="event_date" required></td>
+                    <td><input type="date" id="event_date" name="event_date" required></td>
                 </tr>
+                <tr>
+                    <td><label for="event_place">Tempat Pelaksanaan</label></td>
+                    <td><input type="type" id="event_place" name="event_place" required></td>
+                </tr>
+
                 <tr>
                     <td><label for="image_content">Masukan Gambar</label></td>
                     <td><input type="file" id="image_content" name="image_content"></td>

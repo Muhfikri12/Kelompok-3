@@ -27,8 +27,8 @@
                     <td><input type="text" id="event_article" name="event_article"></td>
                 </tr>
                 <tr>
-                    <td><label for="event_detail_content_article">Headline Berita</label></td>
-                    <td><input type="text" id="title" name="title" required> <br></td>
+                    <td><label for="headline_article">Headline Berita</label></td>
+                    <td><input type="text" id="headline_article" name="headline_article" required> </td>
                 </tr>
                 <tr>
                     <td><label for="image_content">Masukan Gambar</label></td>
@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" class="btn more-btn"></td>
+                    <td><input type="submit" class="btn more-btn">Simpan</td>
                 </tr>
             </table>
         </form>
