@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Jabatan;
+use App\Models\PerangkatDesa;
 use App\Models\Tugas;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -230,6 +231,98 @@ class PerangkatDesaSeeder extends Seeder
             ]);
             $record->description = $value['description'];
             $record->save();
+        }
+
+        $perangkat = [
+            [
+                "name" => "Markus Horison",
+                "phone" => '0895888888',
+                "nip" => 1234223,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Desa",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Angel Lelga",
+                "phone" => '0895888888',
+                "nip" => 1234322,
+                "gender" => "Perempuan",
+                "position" => "Sekertaris Desa",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Jendri Pitoy",
+                "phone" => '0895888888',
+                "nip" => 1234322,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Urusan Negara",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Nova Arianto ",
+                "phone" => '0895888888',
+                "nip" => 1234322,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Urusan Perencanaan",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Atep rizal",
+                "phone" => '0895888888',
+                "nip" => 1234232,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Tantan ",
+                "phone" => '0895888888',
+                "nip" => 1234542,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Seksi Pemerintahan",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Shahar Ginanhar",
+                "phone" => '0895888888',
+                "nip" => 1234342,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Seksi Kesejahteraan",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+            [
+                "name" => "Nova Arianto ",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kepala Seksi Pelayanan",
+                "status" => "Aktif",
+                "photo" => "Falon-1718699470.jpg"
+            ],
+        ];
+
+        foreach ($perangkat as  $value) {
+            $position = Jabatan::where('name',$value['position'])->first();
+            // $record =  PerangkatDesa::firstOrNew([
+            // ]);
+            $record = new PerangkatDesa();
+            $record->name = $value['name'];
+            $record->phone = $value['phone'];
+            $record->gender = $value['gender'];
+            $record->position_id = $position->id;
+            $record->name = $value['name'];
+            $record->status = $value['status'];
+            $record->nip = $value['nip'];
+            $record->photo = $value['photo'];
+            $record->save();
+
         }
     }
 }

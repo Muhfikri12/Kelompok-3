@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(DemografiSeeder::class);
 
+        $this->call(PerangkatDesaSeeder::class);
+
     }
 }
