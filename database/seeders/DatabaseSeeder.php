@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         ProfileDesas::create([
-            'content_misi' => 'Lorem ipsum',
-            'content_visi' => 'Lorem ipsum',
+            'content_misi' => 'Menjadikan Desa [Nama Desa] sebagai desa yang mandiri, maju, dan sejahtera dengan mengedepankan nilai-nilai kebersamaan, kearifan lokal, serta keberlanjutan lingkungan.',
+            'content_visi' => 'Misi Desa [Nama Desa] adalah untuk memberdayakan masyarakat melalui peningkatan keterampilan dan pengembangan usaha lokal, membangun infrastruktur yang berkelanjutan, serta memastikan akses yang adil terhadap pendidikan dan kesehatan. Kami berkomitmen untuk melestarikan adat dan budaya lokal, mengelola sumber daya alam dengan bijak, dan menerapkan tata kelola pemerintahan yang transparan dan partisipatif. Semua ini dilakukan dengan tujuan menciptakan desa yang mandiri, maju, dan sejahtera, yang menjunjung tinggi nilai-nilai kebersamaan dan keberlanjutan lingkungan.',
             'alamat' => 'Desa [Nama Desa] terletak di wilayah [Nama Kecamatan, Kabupaten/Kota], provinsi [Nama Provinsi].
                         Secara geografis, desa kami berada di koordinat [sebutkan koordinat atau letak geografis desa],
                         yang memberikan kami pemandangan alam yang luar biasa dan iklim yang nyaman.',
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                         pemandangan yang memukau dan kehidupan yang harmonis, menjadikannya tempat yang ideal untuk
                         tinggal dan berkunjung',
             'sejarah' => 'Desa [Nama Desa] didirikan pada tahun [tahun pendirian] oleh sekelompok keluarga yang berasal dari [asal-usul pendiri]. Mereka memilih lokasi ini karena kesuburan tanahnya dan akses air yang melimpah dari sungai [nama sungai]. Seiring berjalannya waktu, desa ini berkembang menjadi pusat pertanian dan perdagangan lokal, dengan penduduk yang bekerja sama membangun infrastruktur dasar seperti jalan dan irigasi. Tradisi dan adat istiadat yang dibawa oleh para pendiri tetap dilestarikan hingga kini, menjadikan Desa [Nama Desa] sebagai komunitas yang kaya akan budaya dan sejarah yang kuat.',
-            'yt_link' => 'https://www.youtube.com/',
+            'yt_link' => '',
             'fb_link' => 'https://web.facebook.com/',
             'wa_link' => 'wa.me/0831918',
             'ig_link' => 'https://www.instagram.com/'
