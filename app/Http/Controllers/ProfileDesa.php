@@ -17,13 +17,11 @@ class ProfileDesa extends Controller
     public function showVisiMisi()
     {
         $data = DB::table('profile_desas')->first();
-
         return view('landing_page.visi-misi');
     }
     public function showSejarah()
     {
-        $data = DB::table('profile_desas')->first();
-
-        return view('landing_page.sejarah');
+        $data = ProfileDesas::first();
+        return view('landing_page.sejarah', compact('data'));
     }
 }
