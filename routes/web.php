@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\articleController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\articleController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\ProfileDesaControllera;
-use App\Models\ProfileDesa;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryDemografiController;
+use App\Http\Controllers\DemografiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
+// Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 Route::get('/article', [articleController::class, 'article'])->name('article');
 Route::post('/article', [articleController::class, 'store'])->name('article.store');
 Route::get('/createNews', [NewsArticleController::class, 'newsArticle'])->name('news');
@@ -39,4 +40,6 @@ Route::get('/db-article', [articleController::class, 'formCreate'])->name('formC
 
 Route::middleware('auth')->group(function () {
     Route::resource('basic', BasicController::class);
+    Route::resource('demografi', DemografiController::class);
+    Route::resource('category-demografi', CategoryDemografiController::class);
 });

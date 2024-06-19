@@ -13,29 +13,32 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    {{-- CKEditor --}}
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+    {{-- Asset CSS Datatable  --}}
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.css') }}">
 
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+
+    {{-- Asset JS Datatable --}}
+    <script defer src="{{ asset('js/dataTables.js') }}"></script>
+    <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
+    <script defer src="{{ asset('js/script.js') }}"></script>
+
 
     @stack('css')
 </head>
 
 <body id="page-top">
+    @include('sweetalert::alert')
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -44,57 +47,53 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-                {{-- <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div> --}}
-                <div class="sidebar-brand-text mx-3">Desa Hegarmanah</div>
+                <div class="sidebar-brand-icon">
+                    <img class="img-fluid" width="100" height="60" src="{{ asset('img/jabar.png') }}"
+                        alt="">
+                </div>
+                <div class="sidebar-brand-text mx-3">Hegarmanah</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            {{-- <li class="nav-item {{ Nav::isRoute('home') }}">
+            <li class="nav-item {{ Nav::isRoute('home') }}">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>{{ __('Dashboard') }}</span></a>
-            </li> --}}
-
+            </li>
 
             <!-- Divider -->
-            {{-- <hr class="sidebar-divider">
+            <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Data Master') }}
-            </div> --}}
-
-            {{-- <li class="nav-item {{ Nav::isRoute('profile') }}">
-                <a class="nav-link" href="{{ route('profile') }}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>{{ __('Profile Desa') }}</span>
-                </a>
-            </li> --}}
+            </div>
 
             <!-- Nav Item -->
-            {{-- <li class="nav-item {{ Nav::isRoute('basic.index') }}">
-                <a class="nav-link" href="{{ route('basic.index') }}">
-                    <i class="fas fa-fw fa-plus"></i>
-                    <span>{{ __('Basic CRUD') }}</span>
+            <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Demografi</span>
                 </a>
-            </li> --}}
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                    style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Demografi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('category-demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kategori Demografi') }}</span>
+                        </a>
 
-            <!-- Nav Item - Profile -->
-
-
-
-            <!-- Nav Item - About -->
-            {{-- <li class="nav-item {{ Nav::isRoute('about') }}">
-                <a class="nav-link" href="{{ route('about') }}">
-                    <i class="fas fa-fw fa-hands-helping"></i>
-                    <span>{{ __('About') }}</span>
-                </a>
-            </li> --}}
+                    </div>
+                </div>
+            </li>
 
             <li class="nav-item {{ Nav::isRoute('Article') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
@@ -128,6 +127,44 @@
                 </a>
             </li>
 
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                {{ __('Settings') }}
+            </div>
+
+            <!-- Nav Item -->
+            <li class="nav-item {{ Nav::isRoute('basic.index') }}">
+                <a class="nav-link" href="{{ route('basic.index') }}">
+                    <i class="fas fa-fw fa-plus"></i>
+                    <span>{{ __('Basic CRUD') }}</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Profile -->
+            <li class="nav-item {{ Nav::isRoute('profile') }}">
+                <a class="nav-link" href="{{ route('profile') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('Profile') }}</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - About -->
+            <li class="nav-item {{ Nav::isRoute('about') }}">
+                <a class="nav-link" href="{{ route('about') }}">
+                    <i class="fas fa-fw fa-hands-helping"></i>
+                    <span>{{ __('About') }}</span>
+                </a>
+            </li>
+
+            <!-- Nav Item -->
+            <li class="nav-item {{ Nav::isRoute('blank') }}">
+                <a class="nav-link" href="{{ route('blank') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>{{ __('Blank Page') }}</span>
+                </a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -154,7 +191,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    {{-- <form
+                    <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small"
@@ -165,13 +202,13 @@
                                 </button>
                             </div>
                         </div>
-                    </form> --}}
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        {{-- <li class="nav-item dropdown no-arrow d-sm-none">
+                        <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
@@ -192,18 +229,18 @@
                                     </div>
                                 </form>
                             </div>
-                        </li> --}}
+                        </li>
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            {{-- <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
-                            </a> --}}
+                            </a>
                             <!-- Dropdown - Alerts -->
-                            {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
@@ -249,22 +286,22 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            {{-- <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
-                            </a> --}}
+                            </a>
                             <!-- Dropdown - Messages -->
-                            {{-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60"
-                                            alt="">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -275,8 +312,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60"
-                                            alt="">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -287,8 +324,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60"
-                                            alt="">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -311,7 +348,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More
                                     Messages</a>
-                            </div> --}}
+                            </div>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -341,7 +378,8 @@
                                     {{ __('Activity Log') }}
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     {{ __('Logout') }}
                                 </a>
@@ -414,15 +452,6 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @stack('js')
-
-    {{-- CKEditor --}}
-    <script>
-        CKEDITOR.replace('detail_content');
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

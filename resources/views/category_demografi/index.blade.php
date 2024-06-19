@@ -6,7 +6,7 @@
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('basic.create') }}" class="btn btn-primary mb-3">New User</a>
+    <a href="{{ route('category-demografi.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -14,25 +14,26 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-stripped">
+    <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
         <thead>
             <tr>
                 <th>{{__('No')}}</th>
-                <th>Full Name</th>
-                <th>Email</th>
+                <th>Nama</th>
+                <th>{{__('Keterangan')}}</th>
                 <th>#</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $user)
+            @foreach ($results as $record)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $user->full_name }}</td>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $record->nama }}</td>
+                    <td>{{ $record->keterangan ?? '-' }}</td>
+
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('basic.edit', $user->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
-                            <form action="{{ route('basic.destroy', $user->id) }}" method="post">
+                            <a href="{{ route('category-demografi.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
+                            <form action="{{ route('category-demografi.destroy', $record->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</button>
@@ -43,8 +44,6 @@
             @endforeach
         </tbody>
     </table>
-
-    {{ $users->links() }}
 
     <!-- End of Main Content -->
 @endsection
