@@ -32,11 +32,11 @@
 
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('category-demografi.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
+                            <a href="{{ route('category-demografi.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
                             <form action="{{ route('category-demografi.destroy', $record->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">{{__('Hapus')}}</button>
                             </form>
                         </div>
                     </td>

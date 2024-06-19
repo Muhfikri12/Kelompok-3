@@ -14,4 +14,8 @@ class Tugas extends Model
     protected $guarded = [];
 
 
+    public function jabatan() {
+        return $this->belongsTo(Jabatan::class,'position_id');
+    }
+
 }

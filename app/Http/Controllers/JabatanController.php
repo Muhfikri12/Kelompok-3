@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GlobalRequest;
 use App\Models\Jabatan;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -29,10 +30,11 @@ class JabatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(GlobalRequest $request)
     {
+        // dd($request->all());
         $record = Jabatan::firstOrNew([
-            "nama" => $request->nama
+            "name" => $request->name
         ]);
         $record->description = $request->description;
         $record->save();
@@ -63,9 +65,9 @@ class JabatanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Jabatan $jabatan)
+    public function update(GlobalRequest $request, Jabatan $jabatan)
     {
-        $jabatan->nama = $request->nama;
+        $jabatan->name = $request->name;
         $jabatan->description = $request->description;
         $jabatan->save();
 
@@ -79,7 +81,7 @@ class JabatanController extends Controller
     public function destroy(Jabatan $jabatan)
     {
         // dd($jabatan->demografis()->exists());
-        if($jabatan->perangkats()->exists()) {
+        if($jabatan->Staffs()->exists() || $jabatan->tasks()->exists()) {
             Alert::error('Gagal','Data Gagal dihapus karena sudah digunakan di tabel lain');
             return redirect()->route('jabatan.index');
         } else {

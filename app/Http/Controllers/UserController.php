@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -13,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index',[
+        return view('user.index',[
             "title" => "Data Pengguna",
             "results" => User::all(),
         ]);
@@ -24,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create',[
+        return view('user.create',[
             "title" => "Buat Data User"
         ]);
     }
@@ -32,16 +36,17 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        // Ambil extensi file
-        $extfile = $request->photo->getClientOriginalExtension();
-        // Genereate nama file bersarakan request namam waktu dan $extension file
-        $namaFile = $request->name . "-" . time() . "." . $extfile;
-        // Simpan Photo su Storage/app/uploads
-        $path = $request->photo->storeAs('public',$namaFile);
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => Hash::make($request->password),
+        ]);
 
-        dd($path);
+        Alert::success('success', "Data Berhasil dibuat");
+        return redirect()->route('users.index');
+
     }
 
     /**
@@ -55,24 +60,47 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return view('user.edit',[
+            'title' => "Ubah Data",
+            'record' => $user,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UserRequest $request, User $user)
     {
-        //
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        Alert::success('success', "Data Berhasil diubah");
+        return redirect()->route('users.index');
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $admin = User::find(1);
+        if(Auth::id() == $user->id) {
+            Alert::error('error', "User sedang digunakan tidak bisa dihapus");
+            return redirect()->route('users.index');
+        } elseif ($user->id == 1 ) {
+            Alert::error('error', "Administrator tidak bisa dihapus");
+            return redirect()->route('users.index');
+        } else {
+            $user->delete();
+            Alert::success('success', "Data Berhasil dihapus");
+            return redirect()->route('users.index');
+
+        }
     }
 }

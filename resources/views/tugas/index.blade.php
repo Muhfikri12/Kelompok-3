@@ -6,7 +6,7 @@
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('category-demografi.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
+    <a href="{{ route('tugas.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -18,7 +18,8 @@
         <thead>
             <tr>
                 <th>{{__('No')}}</th>
-                <th>Nama</th>
+                <th>{{(__('Jabatan'))}}</th>
+                <th>{{(__('Tugas'))}}</th>
                 <th>{{__('Keterangan')}}</th>
                 <th>#</th>
             </tr>
@@ -27,16 +28,17 @@
             @foreach ($results as $record)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $record->nama }}</td>
-                    <td>{{ $record->keterangan ?? '-' }}</td>
+                    <td>{{ $record->jabatan->name }}</td>
+                    <td>{{ $record->name }}</td>
+                    <td>{{ $record->description ?? '-' }}</td>
 
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('category-demografi.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>
-                            <form action="{{ route('category-demografi.destroy', $record->id) }}" method="post">
+                            <a href="{{ route('tugas.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
+                            <form action="{{ route('tugas.destroy', $record->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">{{__('Hapus')}}</button>
                             </form>
                         </div>
                     </td>

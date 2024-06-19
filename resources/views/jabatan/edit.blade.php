@@ -8,22 +8,22 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('category-demografi.update', $record->id) }}" method="post">
+            <form action="{{ route('jabatan.update', $record->id) }}" method="post">
                 @csrf
                 @method('put')
 
                 <div class="form-group">
                     <label for="nama">{{__('Nama')}}</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="1945" autocomplete="off" value="{{ $record->nama ?? old('nama') }}">
+                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="name" id="nama" placeholder="1945" autocomplete="off" value="{{ $record->name ?? old('nama') }}">
                     @error('nama')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
 
                 <div class="form-group">
-                  <label for="keterangan">{{__('Keterangan')}}</label>
-                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ $record->keterangan ?? old('keterangan') }}">
-                  @error('keterangan')
+                  <label for="description">{{__('Keterangan')}}</label>
+                  <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Keterangan jabatan" autocomplete="off" value="{{ $record->description ?? old('description') }}">
+                  @error('description')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>

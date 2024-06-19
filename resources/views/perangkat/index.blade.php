@@ -38,9 +38,9 @@
                     <td>
                         <div class="d-flex">
                             <a href="{{ route('perangkat.edit', $record->id) }}"
-                                class="btn btn-sm btn-primary mr-2">Edit</a>
+                                class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
                             <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                data-toggle="modal" data-target="#DeleteModal">Delete</button>
+                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
                         </div>
                     </td>
                 </tr>

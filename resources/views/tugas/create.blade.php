@@ -8,26 +8,24 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('category-demografi.store') }}" method="post">
+            <form action="{{ route('tugas.store') }}" method="post">
                 @csrf
 
                 <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Jiwa" autocomplete="off" value="{{ old('nama') }}">
-                    @error('nama')
+                    <label for="name">{{__('Tugas')}}</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Nama Tugas yang dilakukan" autocomplete="off" value="{{ old('name') }}">
+                    @error('name')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
 
-
                 <div class="form-group">
-                  <label for="keterangan">{{__('Keterangan')}}</label>
-                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ old('keterangan') }}">
-                  @error('keterangan')
+                  <label for="description">{{__('Deskripsi')}}</label>
+                  <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Deskripsi tugas yang dilakukan " autocomplete="off" value="{{ old('description') }}">
+                  @error('description')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
                 <a href="{{ route('category-demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>

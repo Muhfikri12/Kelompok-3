@@ -6,7 +6,7 @@
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('basic.create') }}" class="btn btn-primary mb-3">New User</a>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -14,37 +14,33 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-stripped">
+    <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
         <thead>
             <tr>
                 <th>{{__('No')}}</th>
-                <th>Full Name</th>
-                <th>Email</th>
+                <th>{{(__('Nama'))}}</th>
+                <th>{{__('Email')}}</th>
                 <th>#</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $user)
+            @foreach ($results as $record)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $user->full_name }}</td>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $record->name }}</td>
+                    <td>{{ $record->email ?? '-' }}</td>
+
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route('basic.edit', $user->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
-                            <form action="{{ route('basic.destroy', $user->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">{{__('Hapus')}}</button>
-                            </form>
+                            <a href="{{ route('users.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
+                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
+                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
                         </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-    {{ $users->links() }}
 
     <!-- End of Main Content -->
 @endsection
@@ -73,4 +69,18 @@
             {{ session('status') }}
         </div>
     @endif
+@endpush
+
+@push('js')
+    <script>
+        $('.btn-hapus').click(function() {
+            let idHapus = $(this).attr('data-id');
+            $("#deleteForm").attr('action', '/users/' + idHapus);
+        })
+
+        // Jika tombol "Ya, Hapus" di klik, submit form
+            $('#deleteForm [type="submit"]').click(function(){
+            $("#deleteForm").submit();
+            })
+    </script>
 @endpush

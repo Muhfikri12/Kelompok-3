@@ -8,12 +8,12 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('category-demografi.store') }}" method="post">
+            <form action="{{ route('jabatan.store') }}" method="post">
                 @csrf
 
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="Jiwa" autocomplete="off" value="{{ old('nama') }}">
+                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="name" id="nama" placeholder="Nama Jabatan" autocomplete="off" value="{{ old('nama') }}">
                     @error('nama')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                   <label for="keterangan">{{__('Keterangan')}}</label>
-                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ old('keterangan') }}">
+                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Keterangan" autocomplete="off" value="{{ old('keterangan') }}">
                   @error('keterangan')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror

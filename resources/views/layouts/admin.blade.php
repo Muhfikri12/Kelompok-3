@@ -71,6 +71,12 @@
                 {{ __('Data Master') }}
             </div>
 
+            <li class="nav-item {{ Nav::isRoute('users.index') }}">
+                <a class="nav-link" href="{{ route('users.index') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('User') }}</span></a>
+            </li>
+
             <!-- Nav Item -->
             <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
@@ -78,7 +84,7 @@
                     <i class="fas fa-fw fa-map"></i>
                     <span>Demografi</span>
                 </a>
-                <div id="collapseOne" class="show collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('demografi.index') }}">
@@ -95,9 +101,9 @@
             </li>
 
             <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoa"
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-user"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Perangkat Desa</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
@@ -108,10 +114,13 @@
                             <span>{{ __('Petugas') }}</span>
                         </a>
                         <a class="collapse-item" href="{{ route('tugas.index') }}">
-                        <i class="fas fa-fw fa-plus"></i>
-                        <span>{{ __('Tugas') }}</span>
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Tugas') }}</span>
                         </a>
-
+                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Jabatan') }}</span>
+                        </a>
                     </div>
                 </div>
             </li>
@@ -381,7 +390,6 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     {{-- Modal Konfirmasi Delete --}}
                     <div id="DeleteModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -409,11 +417,8 @@
                         </div>
                     </div>
                     {{-- End Modal --}}
-
-
                     @stack('notif')
                     @yield('main-content')
-
                 </div>
                 <!-- /.container-fluid -->
 

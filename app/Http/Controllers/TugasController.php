@@ -31,6 +31,7 @@ class TugasController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $record = Tugas::firstOrNew([
             "name" => $request->name
         ]);
@@ -54,6 +55,7 @@ class TugasController extends Controller
      */
     public function edit(Tugas $tugas)
     {
+        dd($tugas);
         return view('tugas.edit',[
             "title" => "Edit Jabatan",
             'record' => $tugas

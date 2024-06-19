@@ -65,12 +65,12 @@
                     <td>
                         <div class="d-flex">
                             <a href="{{ route('demografi.edit', $record->id) }}"
-                                class="btn btn-sm btn-primary mr-2">Edit</a>
+                                class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
                             {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
                                 @csrf
                                 @method('delete') --}}
                             <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                data-toggle="modal" data-target="#DeleteModal">Delete</button>
+                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
                             {{-- </form> --}}
                         </div>
                     </td>
