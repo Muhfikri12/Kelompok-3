@@ -9,9 +9,15 @@ class PerangkatDesa extends Model
 {
     use HasFactory;
 
-    protected $table = "perangkat_desa";
+    protected $table = "staff";
 
     protected $guarded = [];
+
+
+    public function position()
+    {
+        return $this->belongsTo(Jabatan::class,'position_id');
+    }
 
 
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PerangkatDesaRequest;
+use App\Models\Jabatan;
 use App\Models\PerangkatDesa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,7 +28,8 @@ class PerangkatDesaController extends Controller
     public function create()
     {
         return view('perangkat.create', [
-            "title" => "Buat Data Baru"
+            "title" => "Buat Data Baru",
+            "positions" => Jabatan::all(),
         ]);
     }
 
@@ -47,7 +49,7 @@ class PerangkatDesaController extends Controller
             "name" => $request->name,
             "gender" => $request->gender,
             "nip" => $request->nip,
-            "jabatan" => $request->jabatan,
+            "position_id" => $request->position_id,
             "phone" => $request->phone,
             "status" => $request->status,
             "address" => $request->address,
@@ -73,7 +75,8 @@ class PerangkatDesaController extends Controller
     {
         return view('perangkat.edit', [
             'title' => "Ubah Data",
-            'record' => $perangkat
+            'record' => $perangkat,
+            "positions" => Jabatan::all(),
         ]);
     }
 
@@ -108,7 +111,7 @@ class PerangkatDesaController extends Controller
                 "name" => $request->name,
                 "gender" => $request->gender,
                 "nip" => $request->nip,
-                "jabatan" => $request->jabatan,
+                "position_id" => $request->position_id,
                 "phone" => $request->phone,
                 "status" => $request->status,
                 "address" => $request->address,
@@ -120,7 +123,7 @@ class PerangkatDesaController extends Controller
                 "name" => $request->name,
                 "gender" => $request->gender,
                 "nip" => $request->nip,
-                "jabatan" => $request->jabatan,
+                "position_id" => $request->position_id,
                 "phone" => $request->phone,
                 "status" => $request->status,
                 "address" => $request->address,

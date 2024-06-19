@@ -113,13 +113,13 @@
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Petugas') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('tugas.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Tugas') }}</span>
-                        </a>
                         <a class="collapse-item" href="{{ route('jabatan.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Jabatan') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('tugas.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Tugas') }}</span>
                         </a>
                     </div>
                 </div>

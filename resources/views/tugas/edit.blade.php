@@ -8,26 +8,34 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('category-demografi.update', $record->id) }}" method="post">
+            <form action="{{ route('tugas.update', $record->id) }}" method="post">
                 @csrf
                 @method('put')
+                <div class="form-group">
+                    <label for="position_id">{{__('Nama Jabatan')}}</label>
+                    <select name="position_id" id="position_id" class="form-control" name="position_id">
+                        <option value="" selected>-- Pilih --</option>
+                        @foreach ($positions as $item)
+                            <option value="{{$item->id}}" {{$record->position_id == $item->id ??  old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="form-group">
-                    <label for="nama">{{__('Nama')}}</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" id="nama" placeholder="1945" autocomplete="off" value="{{ $record->nama ?? old('nama') }}">
-                    @error('nama')
+                    <label for="name">{{__('Tugas')}}</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Nama Tugas yang dilakukan" autocomplete="off" value="{{ $record->name ?? old('name') }}">
+                    @error('name')
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
 
                 <div class="form-group">
-                  <label for="keterangan">{{__('Keterangan')}}</label>
-                  <input type="text" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" placeholder="Perempuan" autocomplete="off" value="{{ $record->keterangan ?? old('keterangan') }}">
-                  @error('keterangan')
+                  <label for="description">{{__('Deskripsi')}}</label>
+                  <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Deskripsi tugas yang dilakukan " autocomplete="off" value="{{ $record->description ?? old('description') }}">
+                  @error('description')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
                 <a href="{{ route('demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
