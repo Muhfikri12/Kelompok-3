@@ -11,8 +11,7 @@ class ProfileDesa extends Controller
     //
     public function showAbout()
     {
-        $data = ProfileDesas::all()->toArray();
-        dd($data);
+        $data = ProfileDesas::first();
         return view('landing_page.about-us', compact('data'));
     }
     public function showVisiMisi()
