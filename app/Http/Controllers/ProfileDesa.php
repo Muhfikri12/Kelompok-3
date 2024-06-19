@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\ProfileDesas;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProfileDesa extends Controller
 {
@@ -16,8 +14,8 @@ class ProfileDesa extends Controller
     }
     public function showVisiMisi()
     {
-        $data = DB::table('profile_desas')->first();
-        return view('landing_page.visi-misi');
+        $data = ProfileDesas::first();
+        return view('landing_page.visi-misi', compact('data'));
     }
     public function showSejarah()
     {
