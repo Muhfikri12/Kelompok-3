@@ -7,12 +7,19 @@
                 dan bergabunglah dengan komunitas online kami di platform berikut:
             </p>
             <div class="social-links mt-3">
-                <a href="#" class="youtube"><i class="bx bxl-youtube rounded"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram rounded"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook rounded"></i></a>
-                <a href="#" class="whatsaap"><i class="bx bxl-whatsapp rounded"></i></a>
+                <a href="{{ $data->yt_link }}" class="{{ $data->yt_link ? 'youtube' : 'd-none' }}">
+                    <i class="bx bxl-youtube rounded"></i>
+                </a>
+                <a href="{{ $data->ig_link }}" class="{{ $data->ig_link ? 'instagram' : 'd-none' }}">
+                    <i class="bx bxl-instagram rounded"></i>
+                </a>
+                <a href="{{ $data->fb_link }}" class="{{ $data->fb_link ? 'facebook' : 'd-none' }}">
+                    <i class="bx bxl-facebook rounded"></i>
+                </a>
+                <a href="{{ $data->wa_link }}" class="{{ $data->wa_link ? 'whatsapp' : 'd-none' }}">
+                    <i class="bx bxl-whatsapp rounded"></i>
+                </a>
             </div>
-
         </div>
     </div>
 </div>

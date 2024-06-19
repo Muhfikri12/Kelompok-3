@@ -3,8 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\ProfileDesas;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class FooterLp extends Component
 {
@@ -21,6 +22,7 @@ class FooterLp extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.footer-lp');
+        $data = ProfileDesas::first();
+        return view('components.footer-lp', compact('data'));
     }
 }
