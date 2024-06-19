@@ -9,13 +9,6 @@
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Sejarah</h3>
                     <p>
-                        {{-- Desa [Nama Desa] didirikan pada tahun [tahun pendirian] oleh sekelompok keluarga yang berasal
-                        dari [asal-usul pendiri]. Mereka memilih lokasi ini karena kesuburan tanahnya dan akses air yang
-                        melimpah dari sungai [nama sungai]. Seiring berjalannya waktu, desa ini berkembang menjadi pusat
-                        pertanian dan perdagangan lokal, dengan penduduk yang bekerja sama membangun infrastruktur dasar
-                        seperti jalan dan irigasi. Tradisi dan adat istiadat yang dibawa oleh para pendiri tetap
-                        dilestarikan hingga kini, menjadikan Desa [Nama Desa] sebagai komunitas yang kaya akan budaya
-                        dan sejarah yang kuat. --}}
                         {{ $data->sejarah }}
                     </p>
                 </div>
