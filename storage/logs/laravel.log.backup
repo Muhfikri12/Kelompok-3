@@ -3630,6 +3630,7 @@
 #51 /Users/jun/Project/jda-fase-3/Kelompok-3/server.php(21): require_once('/Users/jun/Proj...')
 #52 {main}
 "} 
+<<<<<<< HEAD
 [2024-06-17 19:27:50] local.ERROR: syntax error, unexpected token "}", expecting variable {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"}\", expecting variable at /Users/jun/Project/jda-fase-3/Kelompok-3/app/ModelProfileDesa.php:12)
 [stacktrace]
 #0 {main}
@@ -11184,3 +11185,5 @@ Did you mean this?
 #53 /Users/jun/Project/jda-fase-3/Kelompok-3/server.php(21): require_once('/Users/jun/Proj...')
 #54 {main}
 "} 
+=======
+>>>>>>> features/lp-master
