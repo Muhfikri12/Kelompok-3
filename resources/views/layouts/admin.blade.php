@@ -78,7 +78,7 @@
                     <i class="fas fa-fw fa-map"></i>
                     <span>Demografi</span>
                 </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                <div id="collapseOne" class="show collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('demografi.index') }}">
@@ -95,7 +95,7 @@
             </li>
 
             <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoa"
                     aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Perangkat Desa</span>
@@ -107,10 +107,10 @@
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Petugas') }}</span>
                         </a>
-                        {{-- <a class="collapse-item" href="{{ route('category-demografi.index') }}">
+                        <a class="collapse-item" href="{{ route('tugas.index') }}">
                         <i class="fas fa-fw fa-plus"></i>
-                        <span>{{ __('Kategori Demografi') }}</span>
-                        </a> --}}
+                        <span>{{ __('Tugas') }}</span>
+                        </a>
 
                     </div>
                 </div>

@@ -10,7 +10,7 @@ class TugasController extends Controller
 {
     public function index()
     {
-        return view('jabatan.index',[
+        return view('tugas.index',[
             "title" => "Data Tugas",
             "results" => Tugas::orderBy('updated_at',"desc")->get(),
         ]);
@@ -21,7 +21,7 @@ class TugasController extends Controller
      */
     public function create()
     {
-        return view('jabatan.create',[
+        return view('tugas.create',[
             "title" => "Buat Tugas Baru",
         ]);
     }
@@ -38,7 +38,7 @@ class TugasController extends Controller
         $record->save();
 
         Alert::success('Success','Data Berhasil dibuat');
-        return redirect()->route('jabatan.index');
+        return redirect()->route('tugas.index');
     }
 
     /**
@@ -54,7 +54,7 @@ class TugasController extends Controller
      */
     public function edit(Tugas $tugas)
     {
-        return view('jabatan.edit',[
+        return view('tugas.edit',[
             "title" => "Edit Jabatan",
             'record' => $tugas
         ]);
@@ -70,7 +70,7 @@ class TugasController extends Controller
         $tugas->save();
 
         Alert::success('Success','Data Berhasil diubah');
-        return redirect()->route('jabatan.index');
+        return redirect()->route('tugas.index');
     }
 
     /**
@@ -81,11 +81,11 @@ class TugasController extends Controller
         // dd($tugas->demografis()->exists());
         if($tugas->perangkats()->exists()) {
             Alert::error('Gagal','Data Gagal dihapus karena sudah digunakan di tabel lain');
-            return redirect()->route('jabatan.index');
+            return redirect()->route('tugas.index');
         } else {
             $tugas->delete();
             Alert::success('Success','Data Berhasil dihapus');
-            return redirect()->route('jabatan.index');
+            return redirect()->route('tugas.index');
         }
     }
 }
