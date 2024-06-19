@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ProfileDesas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +11,8 @@ class ProfileDesa extends Controller
     //
     public function showAbout()
     {
-        $data = DB::table('profile_desas')->first();
+        $data = ProfileDesas::all()->toArray();
+        dd($data);
         return view('landing_page.about-us', compact('data'));
     }
     public function showVisiMisi()

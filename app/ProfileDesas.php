@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class ProfileDesa extends Model
+class ProfileDesas extends Model
 
 {
     use HasFactory;
@@ -21,9 +21,4 @@ class ProfileDesa extends Model
         'wa_link',
         'ig_link'
     ];
-
-    static function getData()
-    {
-        return DB::table('profile_desas')->first();
-    }
 }
