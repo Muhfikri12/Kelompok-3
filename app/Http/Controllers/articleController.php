@@ -14,8 +14,8 @@ class articleController extends Controller
      */
     public function article()
     {
-        $article = Article::first();
-        return view('landing_page.main.article.detail-article', compact('article'));
+        $articles = Article::first();
+        return view('landing_page.main.article.detail-article', compact('articles'));
     }
 
     /**
@@ -28,14 +28,20 @@ class articleController extends Controller
         ]);
     }
 
-    public function formCreate()
+    public function dataEvent()
     {
         $articles = Article::all();
 
-        return view('create_article', [
-            'article' => 'dashboard-db-admin',
-
+        return view('dashboard-admin-article.dashboard-db-admin', [
+            'article' => 'dashboard-admin-article'
         ], compact('articles'));
+    }
+
+    public function dataNews()
+    {
+        $news = Article::all();
+
+        return view('dashboard-admin-article.data-news', compact('news'));
     }
 
     /**

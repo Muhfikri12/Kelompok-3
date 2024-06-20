@@ -48,17 +48,17 @@
                 <div class="detail-content-article">
                     <img src={{ asset('img/features-2.jpg') }} class="img-fluid responsive-image" alt="">
                     <article>
-                        <p>{{ $article->detail_content }}</p>
+                        <p>{{ $articles->detail_content }}</p>
                     </article>
                     <strong>
                         <h6>Akan diadakan pada :</h6>
                     </strong>
                     <ul style="display: flex; gap:1rem; flex-direction:column">
                         <li><span><i data-feather="calendar"></i></span>
-                            {{ $article->event_date->translatedFormat('l, d F Y') }}
+                            {{ $articles->event_date->translatedFormat('l, d F Y') }}
                         </li>
-                        <li><span><i data-feather="clock"></i></span>{{ $article->event_time }}</li>
-                        <li><span><i data-feather="map-pin"></i></span>{{ $article->place }}</li>
+                        <li><span><i data-feather="clock"></i></span>{{ $articles->event_time }}</li>
+                        <li><span><i data-feather="map-pin"></i></span>{{ $articles->place }}</li>
                     </ul>
                 </div>
             </div>
@@ -68,12 +68,12 @@
                     <div class="info-content-article">
                         <img src={{ asset('img/features-2.jpg') }} class="img-fluid" alt="">
                         <div class="info-detail-article">
-                            <h5>{{ $article->title }}</h5>
+                            <h5>{{ $articles->title }}</h5>
                             <ul>
                                 <li><span class="ac"><i data-feather="calendar"></i></span>
-                                    {{ $article->event_date->translatedFormat('l, d F Y') }}
+                                    {{ $articles->event_date->translatedFormat('l, d F Y') }}
                                 </li>
-                                <li><span class="ac"><i data-feather="clock"></i></span>{{ $article->event_time }}
+                                <li><span class="ac"><i data-feather="clock"></i></span>{{ $articles->event_time }}
                                 </li>
                             </ul>
                             <p></p>

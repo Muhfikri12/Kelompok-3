@@ -29,6 +29,9 @@
     <!-- Favicon -->
     <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
 
+    {{-- CKEditor --}}
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+
     {{-- Asset JS Datatable --}}
     <script defer src="{{ asset('js/dataTables.js') }}"></script>
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
@@ -98,6 +101,26 @@
                             <span>{{ __('Kategori Demografi') }}</span>
                         </a>
 
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item {{ Nav::isRoute('Article') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Article</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('data.event') }}">
+                            <i class="fas fa-fw fa-calendar"></i>
+                            <span>{{ __('Acara') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('data.news') }}">
+                            <i class="fas fa-fw fa-newspaper"></i>
+                            <span>{{ __('Berita') }}</span>
+                        </a>
                     </div>
                 </div>
             </li>
@@ -445,6 +468,11 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @stack('js')
+
+    {{-- CKEditor --}}
+    <script>
+        CKEDITOR.replace('detail_content');
+    </script>
 </body>
 
 </html>
