@@ -22,7 +22,7 @@
                 <a href="{{ route('article') }}" class="btn more-btn">Lihat Detail</a>
             </div>
             <div class="col-lg-4 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-                <img src={{ asset('image/' . $item->photo) }} class="img-fluid" alt="">
+                <img src={{ asset($item->photo) }} class="img-fluid" alt="">
             </div>
         </div>
     @endforeach

@@ -26,7 +26,6 @@ class LandingPageController extends Controller
 
     public function landing_page()
     {
-        // $article = Article::all();
         $article = Article::orderBy('event_date', 'asc')->take(3)->get();
 
         return view('landing_page.index', compact('article'));
