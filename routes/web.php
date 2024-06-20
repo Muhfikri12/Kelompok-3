@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\BasicController;
-use App\Http\Controllers\CategoryDemografi;
 use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\ProfileDesaControllera;
 use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\articleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,20 +24,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing_page.index');
-});
+Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
+Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
 
-Route::get('/data/demografi', "LandingPageController@demografi")->name('data.demografi');
+Route::get('/article', [articleController::class, 'article'])->name('article');
+Route::post('/article', [articleController::class, 'store'])->name('article.store');
+Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
+Route::get('/create/acara', [articleController::class, 'event'])->name('event');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blank', function () {
-    return view('blank');
-})->name('blank');
+// Route::get('/article@db', [articleController::class, 'formCreate'])->name('formCreate');
 
 Route::middleware('auth')->group(function () {
     Route::resource('basic', BasicController::class);

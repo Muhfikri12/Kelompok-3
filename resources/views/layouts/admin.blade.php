@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     {{-- Asset CSS Datatable  --}}
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.css') }}">
@@ -32,6 +33,7 @@
     <script defer src="{{ asset('js/dataTables.js') }}"></script>
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
+
 
     @stack('css')
 </head>
@@ -79,12 +81,12 @@
 
             <!-- Nav Item -->
             <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-map"></i>
                     <span>Demografi</span>
                 </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('demografi.index') }}">
@@ -160,13 +162,13 @@
                     <i class="fas fa-fw fa-book"></i>
                     <span>{{ __('Blank Page') }}</span>
                 </a>
-            </li> --}}
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
-            <div class="d-none d-md-inline text-center">
+            <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
@@ -180,7 +182,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light topbar static-top mb-4 bg-white shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -189,9 +191,9 @@
 
                     <!-- Topbar Search -->
                     <form
-                        class="d-none d-sm-inline-block form-inline ml-md-3 my-md-0 mw-100 navbar-search my-2 mr-auto">
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light small border-0"
+                            <input type="text" class="form-control bg-light border-0 small"
                                 placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -211,11 +213,11 @@
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right animated--grow-in p-3 shadow"
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline w-100 navbar-search mr-auto">
+                                <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light small border-0"
+                                        <input type="text" class="form-control bg-light border-0 small"
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -237,7 +239,7 @@
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right animated--grow-in shadow"
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
@@ -276,7 +278,7 @@
                                         Spending Alert: We've noticed unusually high spending for your account.
                                     </div>
                                 </a>
-                                <a class="dropdown-item small text-center text-gray-500" href="#">Show All
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
                                     Alerts</a>
                             </div>
                         </li>
@@ -290,7 +292,7 @@
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right animated--grow-in shadow"
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
@@ -343,7 +345,7 @@
                                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
-                                <a class="dropdown-item small text-center text-gray-500" href="#">Read More
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
                                     Messages</a>
                             </div>
                         </li>
@@ -355,12 +357,12 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
-                                    class="d-none d-lg-inline small mr-2 text-gray-600">{{ Auth::user()->name }}</span>
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 <figure class="img-profile rounded-circle avatar font-weight-bold"
                                     data-initial="{{ Auth::user()->name[0] }}"></figure>
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right animated--grow-in shadow"
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -428,7 +430,7 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                    <div class="copyright my-auto text-center">
+                    <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Alejandro RH 2020</span>
                     </div>
                 </div>
