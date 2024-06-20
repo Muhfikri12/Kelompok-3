@@ -1,11 +1,7 @@
-<div class="header-dashboar-article">
-    <a class="mx-3" href="#">Agenda Acara</a>
-    <a href="{{ route('news') }}">Pengumuman</a>
-</div>
-
 <div class="content-dashboard-article">
 
     <div class="form-content-dasboard-article">
+        <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Create Acara') }}</h1>
         <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <table>

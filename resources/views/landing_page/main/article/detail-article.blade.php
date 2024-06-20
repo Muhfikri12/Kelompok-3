@@ -43,12 +43,23 @@
 
     <section class="container ">
         <div class="article">
-            <div class="col-lg-6 order-1 order-lg-1 detail-article" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 order-1 order-lg-1 detail-article" style="text-decoration-style:none"
+                data-aos="fade-up" data-aos-delay="200">
                 <div class="detail-content-article">
                     <img src={{ asset('img/features-2.jpg') }} class="img-fluid responsive-image" alt="">
                     <article>
                         <p>{{ $article->detail_content }}</p>
                     </article>
+                    <strong>
+                        <h6>Akan diadakan pada :</h6>
+                    </strong>
+                    <ul style="display: flex; gap:1rem; flex-direction:column">
+                        <li><span><i data-feather="calendar"></i></span>
+                            {{ $article->event_date->translatedFormat('l, d F Y') }}
+                        </li>
+                        <li><span><i data-feather="clock"></i></span>{{ $article->event_time }}</li>
+                        <li><span><i data-feather="map-pin"></i></span>{{ $article->place }}</li>
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-5 order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">

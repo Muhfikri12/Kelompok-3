@@ -1515,7 +1515,11 @@ section {
     gap: 1rem;
     width: 100%;
 }
-
+.article_items .show-article {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 .article_items h3 {
     font-weight: 700;
     font-size: 26px;
@@ -1708,13 +1712,14 @@ section {
 .form-content-dasboard-article table {
     border-collapse: separate;
     border-spacing: 1rem;
+    width: 100%;
 }
 
 .form-content-dasboard-article input {
     padding: 2px 10px;
     border-radius: 10px;
     height: 2.1rem;
-    width: 60rem;
+    width: 100%;
 }
 
 .header-dashboar-article a {

@@ -20,11 +20,13 @@ use App\Http\Controllers\DemografiController;
 |
 */
 
-// Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
+Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
+Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
+
 Route::get('/article', [articleController::class, 'article'])->name('article');
 Route::post('/article', [articleController::class, 'store'])->name('article.store');
-Route::get('/createNews', [NewsArticleController::class, 'newsArticle'])->name('news');
-Route::get('/createArticle', [articleController::class, 'event'])->name('event');
+Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
+Route::get('/create/acara', [articleController::class, 'event'])->name('event');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -35,11 +37,11 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/db-article', [articleController::class, 'formCreate'])->name('formCreate');
 // Route::get('/article@db', [articleController::class, 'formCreate'])->name('formCreate');       
 
 Route::middleware('auth')->group(function () {
     Route::resource('basic', BasicController::class);
     Route::resource('demografi', DemografiController::class);
     Route::resource('category-demografi', CategoryDemografiController::class);
+    Route::get('/data/article', [articleController::class, 'formCreate'])->name('data-article');
 });

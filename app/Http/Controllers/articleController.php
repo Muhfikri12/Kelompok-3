@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\article;
+
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,7 @@ class articleController extends Controller
      */
     public function article()
     {
-        $article = article::first();
+        $article = Article::first();
         return view('landing_page.main.article.detail-article', compact('article'));
     }
 
@@ -29,9 +30,12 @@ class articleController extends Controller
 
     public function formCreate()
     {
+        $articles = Article::all();
+
         return view('create_article', [
-            'article' => 'dashboard-db-admin'
-        ]);
+            'article' => 'dashboard-db-admin',
+
+        ], compact('articles'));
     }
 
     /**
@@ -42,7 +46,7 @@ class articleController extends Controller
         if ($request->hasFile('image_content')) {
             $image = $request->file('image_content');
             $imageName = time() . '-' . $image->hashName();
-            $image->move('image/', $imageName);
+            $image->move(public_path('images'), $imageName);
 
             $article = new Article();
             $article->title = $request->event_article;
@@ -52,9 +56,10 @@ class articleController extends Controller
             $article->detail_content = $request->detail_content;
             $article->event_time = $request->event_time;
             $article->event_date = $request->event_date;
+            $article->place = $request->event_place;
             $article->save();
 
-            return redirect('/db-article
+            return redirect('/data/article
             ')->with('status', 'Article Pengumuman Ditambahkan');
         }
 

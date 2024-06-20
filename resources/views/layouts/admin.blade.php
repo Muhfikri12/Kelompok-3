@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     {{-- Asset CSS Datatable  --}}
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.css') }}">
@@ -33,6 +34,8 @@
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
 
+    {{-- CKEditor --}}
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 
     @stack('css')
 </head>
@@ -103,13 +106,13 @@
                 </a>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ url('/db-article') }}">
+                        <a class="collapse-item" href="{{ route('data-article') }}">
+                            <i class="fas fa-fw fa-calendar"></i>
+                            <span>{{ __('Acara') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('news') }}">
                             <i class="fas fa-fw fa-newspaper"></i>
                             <span>{{ __('Berita') }}</span>
-                        </a>
-                        <a class="collapse-item" href="#">
-                            <i class="fas fa-fw fa-calendar"></i>
-                            <span>{{ __('Pengumuman Event') }}</span>
                         </a>
                     </div>
                 </div>
@@ -154,14 +157,6 @@
                 <a class="nav-link" href="{{ route('about') }}">
                     <i class="fas fa-fw fa-hands-helping"></i>
                     <span>{{ __('About') }}</span>
-                </a>
-            </li>
-
-            <!-- Nav Item -->
-            <li class="nav-item {{ Nav::isRoute('blank') }}">
-                <a class="nav-link" href="{{ route('blank') }}">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>{{ __('Blank Page') }}</span>
                 </a>
             </li>
 
@@ -393,9 +388,35 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    {{-- Modal Konfirmasi Delete --}}
+                    <div id="DeleteModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <form action="" id="deleteForm" method="post">
+                                @csrf
+                                @method('delete')
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-center">Konfirmasi</h4>
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            &times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="text-center">Apakah kamu yakin ?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">
+                                            Cancel</button>
+                                        <button type="submit" class="btn btn-danger" data-dismiss="modal">
+                                            Ya, Hapus</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {{-- End Modal --}}
                     @stack('notif')
                     @yield('main-content')
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -452,6 +473,11 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @stack('js')
+
+    {{-- CKEditor --}}
+    <script>
+        CKEDITOR.replace('detail_content');
+    </script>
 </body>
 
 </html>

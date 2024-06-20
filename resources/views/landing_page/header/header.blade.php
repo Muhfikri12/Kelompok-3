@@ -14,7 +14,7 @@
                 <li><a class="nav-link scrollto" href="#features">Tentang Kami</a></li>
                 <li><a class="nav-link scrollto" href="#">Visi-Misi</a></li>
                 <li><a class="nav-link scrollto" href="#pricing">Sejarah</a></li>
-                <li><a class="nav-link scrollto" href="#faq">Demografi</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('data-demografi') }}">Demografi</a></li>
                 {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
