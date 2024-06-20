@@ -17034,3 +17034,61 @@ Did you mean one of these?
 [stacktrace]
 #0 {main}
 "} 
+[2024-06-20 07:09:26] local.ERROR: Cannot use Illuminate\Support\Facades\Route as Route because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use Illuminate\\Support\\Facades\\Route as Route because the name is already in use at /var/www/html/Kelompok-3/routes/web.php:15)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(245): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: '...', code: '...', error: '...', traceOffset: '...', traceArgs: '...', trace: '...')
+#1 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(232): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError(error: '...', traceOffset: '...')
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure:/var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:255-257}()
+#4 {main}
+"} 
+[2024-06-20 07:09:26] local.ERROR: Cannot use Illuminate\Support\Facades\Route as Route because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use Illuminate\\Support\\Facades\\Route as Route because the name is already in use at /var/www/html/Kelompok-3/routes/web.php:15)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(245): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: '...', code: '...', error: '...', traceOffset: '...', traceArgs: '...', trace: '...')
+#1 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(232): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError(error: '...', traceOffset: '...')
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure:/var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:255-257}()
+#4 {main}
+"} 
+[2024-06-20 07:09:26] local.ERROR: Cannot use Illuminate\Support\Facades\Route as Route because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use Illuminate\\Support\\Facades\\Route as Route because the name is already in use at /var/www/html/Kelompok-3/routes/web.php:15)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(245): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: '...', code: '...', error: '...', traceOffset: '...', traceArgs: '...', trace: '...')
+#1 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(232): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError(error: '...', traceOffset: '...')
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure:/var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:255-257}()
+#4 {main}
+"} 
+[2024-06-20 07:09:26] local.ERROR: Cannot use Illuminate\Support\Facades\Route as Route because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use Illuminate\\Support\\Facades\\Route as Route because the name is already in use at /var/www/html/Kelompok-3/routes/web.php:15)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(245): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: '...', code: '...', error: '...', traceOffset: '...', traceArgs: '...', trace: '...')
+#1 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(232): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError(error: '...', traceOffset: '...')
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure:/var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php:255-257}()
+#4 {main}
+"} 
+[2024-06-20 07:09:36] local.ERROR: Command "mgirate" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"mgirate\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /var/www/html/Kelompok-3/vendor/symfony/console/Application.php:702)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/symfony/console/Application.php(258): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/Kelompok-3/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/Kelompok-3/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#4 {main}
+"} 
