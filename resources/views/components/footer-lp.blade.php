@@ -1,4 +1,4 @@
-<div class="footer-top">
+<div class="footer-top py-4">
     <div class="container">
         <div class="row">
             <h3>Jejaring Sosial Kami</h3>
