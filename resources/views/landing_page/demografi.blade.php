@@ -41,10 +41,10 @@
                                             <div class="px-2 bg-secondary overflow-x-scroll">
                                                 <thead>
                                                     <tr class="table-secondary">
-                                                        <th>{{ __('Tahun') }}</th>
+                                                        <th>{{ __('TAHUN') }}</th>
                                                         <th>{{ strtoupper($kategori) }}</th>
-                                                        <th>{{ __('Jumlah') }}</th>
-                                                        <th>Prosentase</th>
+                                                        <th>{{ __('JUMLAH') }}</th>
+                                                        <th>PRESENTASE</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
