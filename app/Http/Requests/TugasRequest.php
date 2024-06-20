@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class TugasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +21,9 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        $id = $this->user->id ?? 0;
-
         return [
-            "name" => "required|string|max:100",
-            'email' => 'required|email|unique:users,email,'.$id.',id',
-            'password' => 'required|confirmed|min:5',
+            "name" => 'required|string|max:255',
+            "position_id" => 'required',
         ];
     }
 }

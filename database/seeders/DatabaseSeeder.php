@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Demografi;
 use App\User;
-use Illuminate\Database\Seeder;
 use Database\Seeders\VisiMisiSeeder;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(DemografiSeeder::class);
+        $this->call(PerangkatDesaSeeder::class);
+
     }
 }

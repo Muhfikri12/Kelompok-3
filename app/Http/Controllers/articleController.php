@@ -56,7 +56,7 @@ class articleController extends Controller
 
             $article = new Article();
             $article->title = $request->event_article;
-            $article->photo = 'image/' . $imageName;
+            $article->photo = 'images/' . $imageName;
             $article->admin_id = Auth::user()->id;
             $article->content = $request->headline_article;
             $article->detail_content = $request->detail_content;

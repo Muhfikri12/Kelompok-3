@@ -84,12 +84,12 @@
 
             <!-- Nav Item -->
             <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
                     <i class="fas fa-fw fa-map"></i>
                     <span>Demografi</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('demografi.index') }}">
@@ -106,12 +106,12 @@
             </li>
 
             <li class="nav-item {{ Nav::isRoute('Article') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsetwo"
+                    aria-expanded="false" aria-controls="collapsetwo">
                     <i class="fas fa-fw fa-map"></i>
                     <span>Article</span>
                 </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapsetwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('data.event') }}">
                             <i class="fas fa-fw fa-calendar"></i>
@@ -125,7 +125,30 @@
                 </div>
             </li>
 
-
+            <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Perangkat Desa</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                    style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('perangkat.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Petugas') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Jabatan') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('tugas.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Tugas') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
             <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Settings') }}
@@ -156,7 +179,7 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider d-none d-md-block"> --}}
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

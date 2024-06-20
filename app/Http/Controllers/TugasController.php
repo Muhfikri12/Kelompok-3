@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TugasRequest;
+use App\Models\Jabatan;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -10,9 +12,9 @@ class TugasController extends Controller
 {
     public function index()
     {
-        return view('tugas.index',[
+        return view('tugas.index', [
             "title" => "Data Tugas",
-            "results" => Tugas::orderBy('updated_at',"desc")->get(),
+            "results" => Tugas::orderBy('updated_at', "desc")->get(),
         ]);
     }
 
@@ -21,24 +23,25 @@ class TugasController extends Controller
      */
     public function create()
     {
-        return view('tugas.create',[
+        return view('tugas.create', [
             "title" => "Buat Tugas Baru",
+            "positions" => Jabatan::all(),
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TugasRequest $request)
     {
-        // dd($request->all());
         $record = Tugas::firstOrNew([
-            "name" => $request->name
+            "name" => $request->name,
+            "position_id" => $request->position_id
         ]);
         $record->description = $request->description;
         $record->save();
 
-        Alert::success('Success','Data Berhasil dibuat');
+        Alert::success('Success', 'Data Berhasil dibuat');
         return redirect()->route('tugas.index');
     }
 
@@ -53,41 +56,40 @@ class TugasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tugas $tugas)
+    public function edit($id)
     {
-        dd($tugas);
-        return view('tugas.edit',[
+        $record = Tugas::findOrFail($id);
+        return view('tugas.edit', [
             "title" => "Edit Jabatan",
-            'record' => $tugas
+            'record' => $record,
+            "positions" => Jabatan::all(),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tugas $tugas)
+    public function update(TugasRequest $request, $id)
     {
-        $tugas->name = $request->name;
-        $tugas->description = $request->description;
-        $tugas->save();
+        $record = Tugas::findOrFail($id);
+        $record->name = $request->name;
+        $record->description = $request->description;
+        $record->position_id = $request->position_id;
+        $record->save();
 
-        Alert::success('Success','Data Berhasil diubah');
+        Alert::success('Success', 'Data Berhasil diubah');
         return redirect()->route('tugas.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tugas $tugas)
+    public function destroy($id)
     {
-        // dd($tugas->demografis()->exists());
-        if($tugas->perangkats()->exists()) {
-            Alert::error('Gagal','Data Gagal dihapus karena sudah digunakan di tabel lain');
-            return redirect()->route('tugas.index');
-        } else {
-            $tugas->delete();
-            Alert::success('Success','Data Berhasil dihapus');
-            return redirect()->route('tugas.index');
-        }
+        $record = Tugas::findOrFail($id);
+
+        $record->delete();
+        Alert::success('Success', 'Data Berhasil dihapus');
+        return redirect()->route('tugas.index');
     }
 }

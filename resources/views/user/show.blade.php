@@ -8,46 +8,41 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('basic.update', $user->id) }}" method="post">
-                @csrf
-                @method('put')
 
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="First name" autocomplete="off" value="{{ old('name') ?? $user->name }}">
-                  @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
+                    <label for="name">{{__('Nama')}}</label>
+                    <input type="text" disabled class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ $record->name ?? old('name') }}" required autofocus>
+                    @error('name')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
 
-                <div class="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="last_name" placeholder="Last name" autocomplete="off" value="{{ old('last_name') ?? $user->last_name }}">
-                  @error('last_name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
+                  <div class="form-group">
+                      <label for="email">{{__('Email')}}</label>
+                      <input type="email" disabled class="form-control form-control-user" name="email" placeholder="{{ __('Email') }}" value="{{ $record->email ?? old('email') }}" required autofocus>
+                      @error('email')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
 
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
-                  @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
+                    <div class="form-group">
+                      <label for="password">{{__('Sandi')}}</label>
+                      <input type="password" disabled class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}" required autofocus>
+                      @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
 
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" autocomplete="off">
-                  @error('password')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
+                    <div class="form-group">
+                      <label for="password">{{__('Konfirmasi Sandi')}}</label>
+                      <input type="password" disabled class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}" required autofocus>
+                      @error('password')
+                        <span class="text-danger">{{ $message }}</span>
+                      @enderror
+                    </div>
 
-                <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                    <a href="{{ route('users.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
-            </form>
         </div>
     </div>
 

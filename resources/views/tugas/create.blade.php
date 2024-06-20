@@ -12,6 +12,16 @@
                 @csrf
 
                 <div class="form-group">
+                    <label for="position_id">{{__('Nama Jabatan')}}</label>
+                    <select name="position_id" id="position_id" class="form-control" name="position_id">
+                        <option value="" selected>-- Pilih --</option>
+                        @foreach ($positions as $item)
+                            <option value="{{$item->id}}" {{$item->id == old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="name">{{__('Tugas')}}</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Nama Tugas yang dilakukan" autocomplete="off" value="{{ old('name') }}">
                     @error('name')

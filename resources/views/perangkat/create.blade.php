@@ -22,7 +22,7 @@
                 <div class="form-group">
                     <label for="phone">{{ __('Nomor Telepon') }}</label>
                     <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
-                        id="phone" placeholder="0892-0928-2987" autocomplete="off" value="{{ old('phone') }}">
+                        id="phone" placeholder="089123123123" autocomplete="off" value="{{ old('phone') }}">
                     @error('phone')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -61,10 +61,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="jabatan">{{ __('Jabatan') }}</label>
-                    <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan"
-                        id="jabatan" placeholder="Staff" autocomplete="off" value="{{ old('jabatan') }}">
-                    @error('jabatan')
+                    <label for="position_id">{{ __('Jabatan') }}</label>
+                    <select name="position_id" id="position_id" name="position_id" class="form-control">
+                        <option value="" selected>-- Pilih --</option>
+                        @foreach ($positions as $item)
+                        <option value="{{$item->id}}" {{$item->position_id == old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('position_id')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
