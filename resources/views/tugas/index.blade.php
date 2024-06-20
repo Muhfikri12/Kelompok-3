@@ -35,11 +35,8 @@
                     <td>
                         <div class="d-flex">
                             <a href="{{ route('tugas.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
-                            <form action="{{ route('tugas.destroy', $record->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete this?')">{{__('Hapus')}}</button>
-                            </form>
+                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
+                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
                         </div>
                     </td>
                 </tr>
@@ -74,4 +71,18 @@
             {{ session('status') }}
         </div>
     @endif
+@endpush
+
+@push('js')
+    <script>
+        $('.btn-hapus').click(function() {
+            let idHapus = $(this).attr('data-id');
+            $("#deleteForm").attr('action', '/tugas/' + idHapus);
+        })
+
+        // Jika tombol "Ya, Hapus" di klik, submit form
+            $('#deleteForm [type="submit"]').click(function(){
+            $("#deleteForm").submit();
+            })
+    </script>
 @endpush

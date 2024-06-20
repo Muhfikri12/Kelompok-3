@@ -61,11 +61,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="jabatan">{{ __('Jabatan') }}</label>
-                    <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan"
-                        id="jabatan" placeholder="Staff" autocomplete="off"
-                        value="{{ old('jabatan') ?? $record->jabatan }}">
-                    @error('jabatan')
+                    <label for="position_id">{{ __('Jabatan') }}</label>
+                    <select name="position_id" id="position_id" name="position_id" class="form-control">
+                        <option value="" selected>-- Pilih --</option>
+                        @foreach ($positions as $item)
+                        <option value="{{$item->id}}" {{$record->position_id == $item->id ?? old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('position_id')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
@@ -106,7 +109,7 @@
 
                 <div class="form-group">
                     <label for="address">Alamat</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control" name="address">{{ $record->address ?? old('address') }}</textarea>
+                    <textarea name="address" id="" cols="30" rows="10" class="form-control">{{ $record->address ?? old('address') }}</textarea>
                     @error('address')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

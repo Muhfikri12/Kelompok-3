@@ -32,7 +32,7 @@
                     <td>{{$record->name ?? ''}}</td>
                     <td>{{$record->nip ?? ''}}</td>
                     <td>{{$record->phone ?? ''}}</td>
-                    <td>{{$record->jabatan ?? ''}}</td>
+                    <td>{{$record->position->name ?? ''}}</td>
                     <td>{{$record->status ?? ''}}</td>
                     <td><a href="{{asset('storage/'.$record->photo)}}" target="_blank">Lihat</a></td>
                     <td>

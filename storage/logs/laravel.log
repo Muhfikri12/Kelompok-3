@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2024-06-12 08:30:08] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'laravel' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) (Connection: mysql, SQL: select table_name as `name`, (data_length + index_length) as `size`, table_comment as `comment`, engine as `engine`, table_collation as `collation` from information_schema.tables where table_schema = 'laravel' and table_type in ('BASE TABLE', 'SYSTEM VERSIONED') order by table_name) at C:\\laragon\\www\\Laravel---SB-Admin-2---Fortify\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:813)
 [stacktrace]
 #0 C:\\laragon\\www\\Laravel---SB-Admin-2---Fortify\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(767): Illuminate\\Database\\Connection->runQueryCallback('select table_na...', Array, Object(Closure))
@@ -17092,3 +17093,5 @@ Did you mean one of these?
 #3 /var/www/html/Kelompok-3/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
 #4 {main}
 "} 
+=======
+>>>>>>> features/perangkat-desa
