@@ -28,6 +28,13 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    {{-- Asset Datatable --}}
+
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+    <script defer src="js/dataTables.js"></script>
+    <script defer src="js/dataTables.bootstrap4.js"></script>
+    <script defer src="js/script.js"></script>
+    @stack('css')
 
     <!-- =======================================================
   * Template Name: Appland
@@ -49,6 +56,11 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    {{-- data-table --}}
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>

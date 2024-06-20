@@ -19,12 +19,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
+    {{-- Asset CSS Datatable  --}}
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap4.css')}}">
+
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+
+    {{-- Asset JS Datatable --}}
+    <script defer src="{{asset('js/dataTables.js')}}"></script>
+    <script defer src="{{asset('js/dataTables.bootstrap4.js')}}"></script>
+    <script defer src="{{ asset('js/script.js') }}"></script>
+
 
     @stack('css')
 </head>
 <body id="page-top">
+    @include('sweetalert::alert')
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -33,10 +43,10 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+            <div class="sidebar-brand-icon">
+                <img class="img-fluid" width="100" height="60" src="{{ asset('img/jabar.png') }}" alt="">
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Hegarmanah</div>
         </a>
 
         <!-- Divider -->
@@ -51,6 +61,35 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            {{ __('Data Master') }}
+        </div>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-map"></i>
+                <span>Demografi</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                style="">
+                <div class="collapse-inner rounded bg-white py-2">
+                    <a class="collapse-item" href="{{ route('demografi.index') }}">
+                        <i class="fas fa-fw fa-plus"></i>
+                        <span>{{ __('Demografi') }}</span>
+                    </a>
+                    <a class="collapse-item" href="{{ route('category-demografi.index') }}">
+                        <i class="fas fa-fw fa-plus"></i>
+                        <span>{{ __('Kategori Demografi') }}</span>
+                    </a>
+
+                </div>
+            </div>
+        </li>
+
 
         <!-- Heading -->
         <div class="sidebar-heading">

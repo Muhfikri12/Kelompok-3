@@ -5,6 +5,7 @@
 /public/storage
 /storage/logs/*.log
 /storage/*.key
+/storage/logs/*
 /vendor
 /storage/**/*.log
 .env
