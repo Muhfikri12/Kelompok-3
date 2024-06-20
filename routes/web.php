@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
+Route::get('/article', [articleController::class, 'article'])->name('article');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -49,7 +50,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/create/acara', [articleController::class, 'event'])->name('event');
     // article
     Route::post('/article', [articleController::class, 'store'])->name('article.store');
-    Route::get('/article', [articleController::class, 'article'])->name('article');
     Route::get('/data/article', [articleController::class, 'dataEvent'])->name('data.event');
     Route::get('/data/news', [articleController::class, 'dataNews'])->name('data.news');
     // Route::get('/data/article', [articleController::class, 'article'])->name('article');

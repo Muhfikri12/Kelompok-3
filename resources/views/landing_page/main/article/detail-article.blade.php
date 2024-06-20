@@ -48,7 +48,7 @@
                 <div class="detail-content-article">
                     <img src={{ asset('img/features-2.jpg') }} class="img-fluid responsive-image" alt="">
                     <article>
-                        <p>{{ $articles->detail_content }}</p>
+                        {!! $articles->detail_content !!}
                     </article>
                     <strong>
                         <h6>Akan diadakan pada :</h6>

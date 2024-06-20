@@ -28,7 +28,7 @@ class LandingPageController extends Controller
 
     public function landing_page()
     {
-        $article = Article::orderBy('event_date', 'asc')->take(3)->get();
+        $article = Article::orderBy('event_date', 'asc')->take(4)->get();
         $staffWithPositions = PerangkatDesa::with('position')->orderBy('created_at', 'asc')->get();
 
         return view('landing_page.index', compact('article', 'staffWithPositions'));
