@@ -31,41 +31,45 @@
                     <div class="container">
                         @foreach ($results as $kategori => $years)
                             <div class="card mt-4">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        {{ strtoupper('Tabel Jumlah Penduduk berdasarkan ' . $kategori) }}
-                                    </h5>
-                                    <table class="table-bordered table-stripped display nowrap datatable table"
-                                        style="width: 100%">
-                                        <thead>
-                                            <tr class="table-secondary">
-                                                <th>{{ __('Tahun') }}</th>
-                                                <th>{{ strtoupper($kategori) }}</th>
-                                                <th>{{ __('Jumlah') }}</th>
-                                                <th>Prosentase</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($years as $year => $items)
-                                                @foreach ($items as $item)
-                                                    <tr>
-                                                        <td>{{ $item->tahun ?? '-' }}</td>
-                                                        <td>{{ $item->keterangan ?? '-' }}</td>
-                                                        <td>{{ $item->total . ' ' . $item->satuan ?? '-' }}</td>
-                                                        <td>{{ round(($item->total / $items->sum('total')) * 100, 2) . ' %' }}
-                                                        </td>
+                                <h5 class="card-title p-4">
+                                    {{ strtoupper('Tabel Jumlah Penduduk berdasarkan ' . $kategori) }}
+                                </h5>
+                                <div class="card-body overflow-hidden p-2">
+                                    <div class="w-full overflow-x-scroll">
+                                        <table
+                                            class="table-bordered table-stripped display nowrap datatable table w-full">
+                                            <div class="px-2 bg-secondary overflow-x-scroll">
+                                                <thead>
+                                                    <tr class="table-secondary">
+                                                        <th>{{ __('Tahun') }}</th>
+                                                        <th>{{ strtoupper($kategori) }}</th>
+                                                        <th>{{ __('Jumlah') }}</th>
+                                                        <th>Prosentase</th>
                                                     </tr>
-                                                @endforeach
-                                                <tr class="table-secondary">
-                                                    <td>{{ $year }}</td>
-                                                    <td>Total</td>
-                                                    <td>{{ $items->sum('total') . ' ' . $items->first()->satuan ?? '' }}
-                                                    </td>
-                                                    <td>100%</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($years as $year => $items)
+                                                        @foreach ($items as $item)
+                                                            <tr>
+                                                                <td>{{ $item->tahun ?? '-' }}</td>
+                                                                <td>{{ $item->keterangan ?? '-' }}</td>
+                                                                <td>{{ $item->total . ' ' . $item->satuan ?? '-' }}</td>
+                                                                <td>{{ round(($item->total / $items->sum('total')) * 100, 2) . ' %' }}
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        <tr class="table-secondary">
+                                                            <td>{{ $year }}</td>
+                                                            <td>Total</td>
+                                                            <td>{{ $items->sum('total') . ' ' . $items->first()->satuan ?? '' }}
+                                                            </td>
+                                                            <td>100%</td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </div>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
