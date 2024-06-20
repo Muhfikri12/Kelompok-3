@@ -27,15 +27,13 @@
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.css') }}">
 
     <!-- Favicon -->
-    <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+    <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
 
     {{-- Asset JS Datatable --}}
     <script defer src="{{ asset('js/dataTables.js') }}"></script>
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
 
-    {{-- CKEditor --}}
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 
     @stack('css')
 </head>
@@ -75,6 +73,12 @@
                 {{ __('Data Master') }}
             </div>
 
+            <li class="nav-item {{ Nav::isRoute('users.index') }}">
+                <a class="nav-link" href="{{ route('users.index') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('User') }}</span></a>
+            </li>
+
             <!-- Nav Item -->
             <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -96,38 +100,6 @@
 
                     </div>
                 </div>
-            </li>
-
-            <li class="nav-item {{ Nav::isRoute('Article') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
-                    <i class="fas fa-fw fa-map"></i>
-                    <span>Article</span>
-                </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('data-article') }}">
-                            <i class="fas fa-fw fa-calendar"></i>
-                            <span>{{ __('Acara') }}</span>
-                        </a>
-                        <a class="collapse-item" href="{{ route('news') }}">
-                            <i class="fas fa-fw fa-newspaper"></i>
-                            <span>{{ __('Berita') }}</span>
-                        </a>
-                    </div>
-                </div>
-            </li>
-
-            <div class="sidebar-heading">
-                {{ __('Content Master') }}
-            </div>
-
-            <!-- Article Content -->
-            <li class="nav-item {{ Nav::isRoute('article') }}">
-                <a class="nav-link" href="{{ url('/createArticle') }}">
-                    <i class="fas fa-fw fa-edit"></i>
-                    <span>{{ __('Create Content') }}</span>
-                </a>
             </li>
 
 
@@ -157,6 +129,14 @@
                 <a class="nav-link" href="{{ route('about') }}">
                     <i class="fas fa-fw fa-hands-helping"></i>
                     <span>{{ __('About') }}</span>
+                </a>
+            </li>
+
+            <!-- Nav Item -->
+            <li class="nav-item {{ Nav::isRoute('blank') }}">
+                <a class="nav-link" href="{{ route('blank') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>{{ __('Blank Page') }}</span>
                 </a>
             </li>
 
@@ -473,11 +453,6 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @stack('js')
-
-    {{-- CKEditor --}}
-    <script>
-        CKEDITOR.replace('detail_content');
-    </script>
 </body>
 
 </html>
