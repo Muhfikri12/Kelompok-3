@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Demografi;
 use Illuminate\Http\Request;
 
@@ -18,8 +19,16 @@ class LandingPageController extends Controller
             });
         });
 
-        return view('landing_page.demografi',[
+        return view('landing_page.demografi', [
             'results' => $results,
         ]);
+    }
+
+    public function landing_page()
+    {
+        // $article = Article::all();
+        $article = Article::orderBy('event_date', 'asc')->take(3)->get();
+
+        return view('landing_page.index', compact('article'));
     }
 }
