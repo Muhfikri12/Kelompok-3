@@ -87,7 +87,7 @@
                 <div id="collapseTwoProfileDesa" class="collapse" aria-labelledby="headingTwo"
                     data-parent="#accordionSidebar" style="">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('profile-desa') }}">
+                        <a class="collapse-item" href="{{ route('profile-desa.index') }}">
                             {{-- <i class="fas fa-fw fa-plus"></i> --}}
                             <span>{{ __('Overview') }}</span>
                         </a>

@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
-    Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
+    Route::resource('profile-desa', ProfileDesa::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });
