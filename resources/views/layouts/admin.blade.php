@@ -103,6 +103,30 @@
             </li>
 
             <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoProfileDesa"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Profil Desa</span>
+                </a>
+                <div id="collapseTwoProfileDesa" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar" style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('perangkat.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Petugas') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Jabatan') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('tugas.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Tugas') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
