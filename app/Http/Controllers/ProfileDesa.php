@@ -22,4 +22,10 @@ class ProfileDesa extends Controller
         $data = ProfileDesas::first();
         return view('landing_page.sejarah', compact('data'));
     }
+
+    public function index()
+    {
+        $data = ProfileDesas::first();
+        return view('landing_page.dashboard-admin.index', compact('data'));
+    }
 }

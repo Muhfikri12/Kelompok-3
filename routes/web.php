@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
-Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
 
 Route::get('/article', [articleController::class, 'article'])->name('article');
 Route::post('/article', [articleController::class, 'store'])->name('article.store');
@@ -49,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
+    Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });
