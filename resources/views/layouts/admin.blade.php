@@ -37,6 +37,9 @@
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
 
+    {{-- asset JS --}}
+    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
+
 
     @stack('css')
 </head>

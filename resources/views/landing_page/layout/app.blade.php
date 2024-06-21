@@ -87,9 +87,7 @@
 
                 <div class="section-title">
                     <h2>Perangkat Desa</h2>
-                    {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit --}}
-                    sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                    ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <p>Dusun Hegarmanah, Desa Cicantayan, Kecamatan Cicantayan, Kabupaten Sumedang, 43155</p>
                 </div>
 
             </div>
@@ -98,7 +96,7 @@
                 <div class="gallery-slider swiper">
                     <div class="swiper-wrapper">
                         @foreach ($staffWithPositions as $item)
-                            <div class="swiper-slide">
+                            <div class="swiper-slide shadow bg-body-tertiary rounded">
                                 <div class="card text-center">
                                     <img class="card-img-top" src="{{ asset('img/dp.jpeg') }}" alt="Card image">
                                     <div class="card-body">

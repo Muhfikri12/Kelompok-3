@@ -12,10 +12,12 @@ class articleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function article()
+    public function article($id)
     {
-        $articles = Article::first();
-        return view('landing_page.main.article.detail-article', compact('articles'));
+        $articles = Article::findOrFail($id);
+        $slide = Article::all()->take(3);
+        $listArticle = Article::all()->take(3);
+        return view('landing_page.main.article.detail-article', compact('articles', 'slide', 'listArticle'));
     }
 
     /**

@@ -41,9 +41,6 @@
                     <td><input type="submit" class="btn more-btn"></td>
                 </tr>
             </table>
-
-
-
         </form>
     </div>
 </div>

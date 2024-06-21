@@ -6,6 +6,7 @@
     @foreach ($article as $item)
         <div class="card pt-3 shadow bg-body-tertiary rounded" data-aos="fade-up" data-aos-delay="100"
             style="width: 18rem;">
+
             <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <strong class="card-title">{{ $item->title }}</strong>
@@ -17,7 +18,7 @@
                     <li><span><i style="margin-right: 1rem" data-feather="clock"></i></span>{{ $item->event_time }}</li>
                     {{-- <li><span><i style="margin-right: 1rem" data-feather="map-pin"></i></span>{{ $item->place }}</li> --}}
                 </ul>
-                <a href="{{ route('article') }}" class="btn more-btn">Lihat Detail</a>
+                <a href="{{ route('article', $item->id) }}" class="btn more-btn">Lihat Detail</a>
             </div>
         </div>
     @endforeach

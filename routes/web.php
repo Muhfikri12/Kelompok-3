@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
-Route::get('/article', [articleController::class, 'article'])->name('article');
+Route::get('/article/{id}', [articleController::class, 'article'])->name('article');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
