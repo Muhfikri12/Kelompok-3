@@ -78,25 +78,11 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>{{ __('User') }}</span></a>
             </li>
-            <li class="nav-item {{ Nav::isRoute('profile-desa') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoProfileDesa"
-                    aria-expanded="false" aria-controls="collapseTwo">
+            <li class="nav-item {{ Nav::isRoute('profile-desa.index') }}">
+                <a class="nav-link" href="{{ route('profile-desa.index') }}">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Profil Desa</span>
                 </a>
-                <div id="collapseTwoProfileDesa" class="collapse" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar" style="">
-                    <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('profile-desa.index') }}">
-                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
-                            <span>{{ __('Overview') }}</span>
-                        </a>
-                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
-                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
-                            <span>{{ __('Update') }}</span>
-                        </a>
-                    </div>
-                </div>
             </li>
             <!-- Nav Item -->
 
