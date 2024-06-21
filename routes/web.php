@@ -8,6 +8,7 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\ProfileDesaControllera;
+use App\Http\Controllers\StrukturOrgController;
 use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\articleController;
@@ -48,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
+    Route::resource('structure', StrukturOrgController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });

@@ -127,6 +127,13 @@
                 </div>
             </li>
 
+
+            <li class="nav-item {{ Nav::isRoute('structure.index') }}">
+                <a class="nav-link" href="{{ route('structure.index') }}">
+                    <i class="fas fa-fw fa-sitemap"></i>
+                    <span>{{ __('Struktur Organisasi') }}</span></a>
+            </li>
+
             {{-- <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Settings') }}
