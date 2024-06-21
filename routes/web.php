@@ -7,6 +7,7 @@ use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\PerangkatDesaController;
+use App\Http\Controllers\ProfileDesa;
 use App\Http\Controllers\ProfileDesaControllera;
 use App\Http\Controllers\StrukturOrgController;
 use App\Http\Controllers\TugasController;
@@ -26,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
-Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
 
 Route::get('/article', [articleController::class, 'article'])->name('article');
 Route::post('/article', [articleController::class, 'store'])->name('article.store');
@@ -49,7 +49,18 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
+    Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
     Route::resource('structure', StrukturOrgController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
+});
+
+Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
+Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
+Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
+Route::get('/data-demografi', "LandingPageController@demografi")->name('demografi');
+
+
+Route::get('/basic/create/about-us', function () {
+    return view('basic.create-about-us');
 });
