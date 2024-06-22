@@ -21880,3 +21880,27 @@ Did you mean one of these?
 #26 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #27 {main}
 "} 
+[2024-06-22 06:16:53] local.ERROR: Command "route:cacge" is not defined.
+
+Did you mean one of these?
+    config:cache
+    event:cache
+    route:cache
+    route:clear
+    route:list
+    view:cache {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"route:cacge\" is not defined.
+
+Did you mean one of these?
+    config:cache
+    event:cache
+    route:cache
+    route:clear
+    route:list
+    view:cache at /var/www/html/Kelompok-3/vendor/symfony/console/Application.php:702)
+[stacktrace]
+#0 /var/www/html/Kelompok-3/vendor/symfony/console/Application.php(258): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/Kelompok-3/vendor/symfony/console/Application.php(167): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/Kelompok-3/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(196): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/Kelompok-3/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#4 {main}
+"} 

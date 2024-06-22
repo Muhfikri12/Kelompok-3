@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Jabatan;
+use App\Models\PerangkatDesa;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,5 +26,9 @@ class StructureOrg extends Model
 
     public function childs () {
         return $this->hasMany(StructureOrg::class, 'parent_id');
+    }
+
+    public function petugas() {
+        return $this->belongsTo(PerangkatDesa::class , 'staff_id');
     }
 }

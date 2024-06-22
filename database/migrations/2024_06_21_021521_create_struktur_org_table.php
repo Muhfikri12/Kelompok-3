@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('struktur_org', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('staff_id')->nullable()->default(NULL);
             $table->unsignedBigInteger('parent_id')->nullable()->default(NULL);
             $table->timestamps();
 
+            $table->foreign('staff_id')->references('id')->on('staff');
             $table->foreign('parent_id')->references('id')->on('struktur_org');
         });
     }

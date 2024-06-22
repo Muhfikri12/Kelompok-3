@@ -4,6 +4,7 @@ use App\Http\Controllers\BasicController;
 use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\KadesController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\PerangkatDesaController;
@@ -51,6 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('tugas', TugasController::class);
     Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
     Route::resource('structure', StrukturOrgController::class);
+    Route::resource('kades', KadesController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });
@@ -58,7 +60,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
 Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
 Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
-Route::get('/data-demografi', "LandingPageController@demografi")->name('demografi');
+Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
 
 
 Route::get('/basic/create/about-us', function () {

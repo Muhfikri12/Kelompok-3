@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 
 @section('main-content')
+    <!-- Page Heading -->
+    {{-- <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1> --}}
+
     <!-- Main Content goes here -->
+
     @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
@@ -9,19 +13,20 @@
     @endif
 
     <div class="row">
-        <div class="col">
-            <div class="card mb-4 shadow">
+
+        <div class="col mb-4">
+
+            <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
+                    <h3 class="m-0 font-weight-bold text-primary">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
-                    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+                    <table class="table table-bordered table-stripped display nowrap" style="width: 100%">
                         <thead>
                             <tr>
-                                <th>{{ __('No') }}</th>
-                                <th>{{ __('Nama') }}</th>
-                                <th>{{ __('Email') }}</th>
+                                <th>{{__('No')}}</th>
+                                <th>{{(__('Nama Petugas'))}}</th>
+                                <th>{{(__('Struktur'))}}</th>
                                 <th>#</th>
                             </tr>
                         </thead>
@@ -29,17 +34,18 @@
                             @foreach ($results as $record)
                                 <tr>
                                     <td scope="row">{{ $loop->iteration }}</td>
+                                    <td>{{ $record->petugas->name ?? "-" }}</td>
                                     <td>{{ $record->name }}</td>
-                                    <td>{{ $record->email ?? '-' }}</td>
 
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('users.show', $record->id) }}"
-                                                class="btn btn-sm btn-secondary mr-2">{{ __('Lihat') }}</a>
-                                            <a href="{{ route('users.edit', $record->id) }}"
-                                                class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
+                                            <a href="{{ route('kades.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
+                                            @if ($record->id == 1)
+
+                                            @else
                                             <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                                data-toggle="modal" data-target="#DeleteModal">{{ __('Hapus') }}</button>
+                                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>
@@ -48,6 +54,7 @@
                     </table>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- End of Main Content -->
@@ -83,12 +90,12 @@
     <script>
         $('.btn-hapus').click(function() {
             let idHapus = $(this).attr('data-id');
-            $("#deleteForm").attr('action', '/users/' + idHapus);
+            $("#deleteForm").attr('action', '/kades/' + idHapus);
         })
 
         // Jika tombol "Ya, Hapus" di klik, submit form
-        $('#deleteForm [type="submit"]').click(function() {
+            $('#deleteForm [type="submit"]').click(function(){
             $("#deleteForm").submit();
-        })
+            })
     </script>
 @endpush

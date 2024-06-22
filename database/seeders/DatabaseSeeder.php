@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
         StructureOrg::create([
             "name" => 'Kepala Desa',
-            "parent_id" => NULL
+            "staff_id" => NULL
         ]);
         $this->call(DemografiSeeder::class);
         $this->call(PerangkatDesaSeeder::class);

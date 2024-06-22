@@ -148,9 +148,32 @@
 
 
             <li class="nav-item {{ Nav::isRoute('structure.index') }}">
-                <a class="nav-link" href="{{ route('structure.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseEleven"
+                    aria-expanded="false" aria-controls="collapseEleven">
                     <i class="fas fa-fw fa-sitemap"></i>
-                    <span>{{ __('Struktur Organisasi') }}</span></a>
+                    <span>{{ __('Struktur Organisasi') }}</span>
+                </a>
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                    style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('kades.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Desa') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Urusan') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Seksi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Staf') }}</span>
+                        </a>
+                    </div>
+                </div>
             </li>
 
             {{-- <!-- Heading -->

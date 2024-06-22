@@ -9,14 +9,14 @@ use App\Models\StructureOrg;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class StrukturOrgController extends Controller
+class KadesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('structure.index', [
+        return view('structure.kades.index', [
             'title' => "Struktur Organisasi Desa",
             'results' => StructureOrg::all(),
 
@@ -28,7 +28,7 @@ class StrukturOrgController extends Controller
      */
     public function create()
     {
-        return view('structure.create', [
+        return view('structure.kades.create', [
             'title' => "Buat Data",
             'positions' => StructureOrg::all(),
             'staf' => PerangkatDesa::all(),
@@ -38,71 +38,70 @@ class StrukturOrgController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StructureOrgRequest $request)
+    public function store(Request $request)
     {
-        StructureOrg::create([
+
+            StructureOrg::create([
             'name' => $request->name,
-            'parent_id' => $request->parent_id,
+            'staff_id' => $request->staff_id,
         ]);
 
         Alert::success('success', "Data Berhasil Dibuat");
-        return redirect()->route('structure.index');
+        return redirect()->route('kades.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(StructureOrg $structure)
+    public function show(StructureOrg $kade)
     {
-        return view('structure.show', [
+        return view('structure.kades.show', [
             'title' => "Data",
             'positions' => Jabatan::all(),
-            'record' => $structure,
+            'record' => $kade,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(StructureOrg $structure)
+    public function edit(StructureOrg $kade)
     {
-        return view('structure.edit', [
+        return view('structure.kades.edit', [
             'title' => "Edit Data",
-            'positions' => Jabatan::all(),
-            'record' => $structure
+            'positions' => PerangkatDesa::all(),
+            'record' => $kade
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StructureOrgRequest $request, StructureOrg $structure)
+    public function update(Request $request, StructureOrg $kade)
     {
-        dd($request->all());
 
-
-        $structure->name = $request->name;
-        $structure->parent_id = $request->parent_id;
-        $structure->save();
+        $kade->name = $request->name;
+        $kade->staff_id = $request->staff_id;
+        $kade->save();
 
         Alert::success('success', "Data Berhasil Diubah");
-        return redirect()->route('structure.index');
+        return redirect()->route('kades.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(StructureOrg $structure)
+    public function destroy(StructureOrg $kade)
     {
-        // dd($structure->childs()->exists());
+        // dd($kade->childs()->exists());
 
-        if ($structure->childs()->exists() == false) {
-            $structure->delete();
+        if ($kade->childs()->exists() == false) {
+            $kade->delete();
             Alert::success('success', "Data Berhasil dihapus");
-            return redirect()->route('structure.index');
+            return redirect()->route('kades.index');
         } else {
             Alert::error('error',"Data tidak bisa dihapus karena mempunyai data turunan");
-            return redirect()->route('structure.index');
+            return redirect()->route('kades.index');
         }
     }
 }
