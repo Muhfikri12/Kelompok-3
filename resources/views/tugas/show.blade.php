@@ -1,53 +1,44 @@
 @extends('layouts.admin')
 
 @section('main-content')
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
-
     <!-- Main Content goes here -->
-
-    <div class="card">
-        <div class="card-body">
-            <form action="{{ route('basic.update', $user->id) }}" method="post">
-                @csrf
-                @method('put')
-
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="First name" autocomplete="off" value="{{ old('name') ?? $user->name }}">
-                  @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+    <div class="row">
+        <div class="col">
+            <div class="card mb-4 shadow">
+                <div class="card-header py-3">
+                    <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
+                <div class="card-body">
+                  <div class="form-group">
+                            <label for="position_id">{{__('Nama Jabatan')}}</label>
+                            <select disabled name="position_id" id="position_id" class="form-control" name="position_id">
+                                <option value="" selected>-- Pilih --</option>
+                                @foreach ($positions as $item)
+                                    <option value="{{$item->id}}" {{$record->position_id == $item->id ??  old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                <div class="form-group">
-                  <label for="last_name">Last Name</label>
-                  <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="last_name" placeholder="Last name" autocomplete="off" value="{{ old('last_name') ?? $user->last_name }}">
-                  @error('last_name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+                        <div class="form-group">
+                            <label for="name">{{__('Tugas')}}</label>
+                            <input disabled type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Nama Tugas yang dilakukan" autocomplete="off" value="{{ $record->name ?? old('name') }}">
+                            @error('name')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
+
+                        <div class="form-group">
+                          <label for="description">{{__('Deskripsi')}}</label>
+                          <input disabled type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Deskripsi tugas yang dilakukan " autocomplete="off" value="{{ $record->description ?? old('description') }}">
+                          @error('description')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
+                        </div>
+
+                       <a href="{{ route('tugas.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+
                 </div>
-
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
-                  @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
-
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password" autocomplete="off">
-                  @error('password')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-                </div>
-
-                <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
-
-            </form>
+            </div>
         </div>
     </div>
 
