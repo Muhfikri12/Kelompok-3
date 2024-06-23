@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 use App\ProfileDesas;
 
 class ProfileDesa extends Controller
@@ -27,5 +29,10 @@ class ProfileDesa extends Controller
     {
         $data = ProfileDesas::first();
         return view('landing_page.dashboard-admin.index', compact('data'));
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }

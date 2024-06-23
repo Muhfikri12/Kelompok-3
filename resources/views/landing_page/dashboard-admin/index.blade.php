@@ -19,7 +19,8 @@
         </div>
     @endif
 
-    <form>
+    <form action="{{ route('profile-desa.store') }}" method="post">
+        @csrf
         <div class="row">
 
             <!-- Content Column -->
@@ -46,7 +47,7 @@
                         <div class="form-floating">
                             <label for="floatingTextareaVisi">Deskripsi</label>
                             <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaVisi"
-                                style="min-height: 100px;text-align:left;" name="about-us">{{ $data->content_visi }}</textarea>
+                                style="min-height: 100px;text-align:left;" name="content_visi">{{ $data->content_visi }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -58,7 +59,7 @@
                         <div class="form-floating">
                             <label for="floatingTextareaMisi">Deskripsi</label>
                             <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaMisi"
-                                style="min-height: 100px;text-align:left;" name="about-us">{{ $data->content_misi }}</textarea>
+                                style="min-height: 100px;text-align:left;" name="content_misi">{{ $data->content_misi }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
                         <div class="form-floating">
                             <label for="floatingTextareaAlamat">Deskripsi</label>
                             <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAlamat"
-                                style="min-height: 100px;text-align:left;" name="about-us">{{ $data->alamat }}</textarea>
+                                style="min-height: 100px;text-align:left;" name="alamat">{{ $data->alamat }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -87,25 +88,25 @@
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="yt-link" class="m-0 font-weight-bold">Youtube</label>
                                 <input type="text" value="{{ $data->yt_link ?: '-' }}"
-                                    placeholder="https://www.youtube.com/@username" class="form-control my-2"
-                                    id="yt-link" />
+                                    placeholder="https://www.youtube.com/@username" class="form-control my-2" id="yt-link"
+                                    name="yt_link" />
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="fb-link" class="m-0 font-weight-bold">Facebook</label>
                                 <input type="text" value="{{ $data->fb_link ?: '-' }}"
-                                    placeholder="https://web.facebook.com/username" class="form-control my-2"
-                                    id="fb-link" />
+                                    placeholder="https://web.facebook.com/username" class="form-control my-2" id="fb-link"
+                                    name="fb_link" />
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>
                                 <input type="text" value="{{ $data->wa_link ?: '-' }}" placeholder="Nomor Telepon"
-                                    class="form-control my-2" id="wa-link" />
+                                    class="form-control my-2" id="wa-link" name="wa_link" />
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="ig-link" class="m-0 font-weight-bold">Instagram</label>
                                 <input type="text" value="{{ $data->ig_link ?: '-' }}"
                                     placeholder="https://www.instagram.com/username" class="form-control my-2"
-                                    id="ig-link" />
+                                    id="ig-link" name="ig_link" />
                             </p>
                         </div>
                     </div>
