@@ -53,7 +53,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center my-4" href="{{ route('home') }}">
                 <div class="sidebar-brand-icon">
                     <img class="img-fluid" width="100" height="60" src="{{ asset('img/jabar.png') }}"
                         alt="">
@@ -84,26 +84,23 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>{{ __('User') }}</span></a>
             </li>
-
-            <!-- Nav Item -->
-            <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
-                    <i class="fas fa-fw fa-map"></i>
-                    <span>Demografi</span>
+            <li class="nav-item {{ Nav::isRoute('profile-desa') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoProfileDesa"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Profil Desa</span>
                 </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
-                    style="">
+                <div id="collapseTwoProfileDesa" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar" style="">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('demografi.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Demografi') }}</span>
+                        <a class="collapse-item" href="{{ route('profile-desa') }}">
+                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
+                            <span>{{ __('Overview') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('category-demografi.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Kategori Demografi') }}</span>
+                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
+                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
+                            <span>{{ __('Update') }}</span>
                         </a>
-
                     </div>
                 </div>
             </li>
@@ -127,6 +124,7 @@
                     </div>
                 </div>
             </li>
+
 
             <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -152,7 +150,58 @@
                     </div>
                 </div>
             </li>
-            <!-- Heading -->
+            <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Demografi</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
+                    style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Demografi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('category-demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kategori Demografi') }}</span>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item {{ Nav::isRoute('structure.index') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseEleven"
+                    aria-expanded="false" aria-controls="collapseEleven">
+                    <i class="fas fa-fw fa-sitemap"></i>
+                    <span>{{ __('Struktur Organisasi') }}</span>
+                </a>
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar" style="">
+                    <div class="collapse-inner rounded bg-white py-2">
+                        <a class="collapse-item" href="{{ route('kades.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Desa') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Urusan') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Seksi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Staf') }}</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {{-- <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Settings') }}
             </div>

@@ -1,12 +1,9 @@
 @extends('layouts.admin')
 
 @section('main-content')
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -14,34 +11,49 @@
         </div>
     @endif
 
-    <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
-        <thead>
-            <tr>
-                <th>{{__('No')}}</th>
-                <th>{{__('Nama')}}</th>
-                <th>{{__('Keterangan')}}</th>
-                <th>#</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($results as $record)
-                <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $record->name }}</td>
-                    <td>{{ $record->description ?? '-' }}</td>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-4 shadow">
+                <div class="card-header py-3">
+                    <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
+                </div>
+                <div class="card-body">
+                    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
 
-                    <td>
-                        <div class="d-flex">
-                            <a href="{{ route('jabatan.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
-                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
+                    <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>{{__('No')}}</th>
+                                <th>{{__('Nama')}}</th>
+                                <th>{{__('Keterangan')}}</th>
+                                <th>#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($results as $record)
+                                <tr>
+                                    <td scope="row">{{ $loop->iteration }}</td>
+                                    <td>{{ $record->name }}</td>
+                                    <td>{{ $record->description ?? '-' }}</td>
 
-                        </div>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a href="{{ route('jabatan.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
+                                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
+                                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- End of Main Content -->
 @endsection

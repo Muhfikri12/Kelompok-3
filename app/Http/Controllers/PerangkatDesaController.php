@@ -63,9 +63,13 @@ class PerangkatDesaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(PerangkatDesa $perangkat)
     {
-        //
+        return view('perangkat.show', [
+            'title' => "Lihat Data",
+            'record' => $perangkat,
+            "positions" => Jabatan::all(),
+        ]);
     }
 
     /**

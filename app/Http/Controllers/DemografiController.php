@@ -54,9 +54,14 @@ class DemografiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Demografi $demografi)
     {
-        //
+        return view('demografi.show',
+        [
+            'title' => "Ubah Data",
+            'record' => $demografi,
+            'category' => CategoryDemografi::all(),
+        ]);
     }
 
     /**
