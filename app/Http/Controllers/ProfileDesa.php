@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 use App\ProfileDesas;
 
@@ -33,6 +34,25 @@ class ProfileDesa extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            // To validate user input to ensure that the phone number starts with a digit other than 0 or +62,
+            'wa_link' => ['required', 'regex:/^[1-9]\d{9,14}$/']
+        ], [
+            'wa_link.regex' => 'Nomor telepon harus dimulai dengan angka selain 0 atau +62'
+        ]);
+        // dd($request->all());
+        ProfileDesas::where('id', 1)->update([
+            'about_us' => $request->about_us,
+            'sejarah' => $request->sejarah,
+            'content_visi' => $request->content_visi,
+            'alamat' => $request->alamat,
+            'content_misi' => $request->content_misi,
+            'yt_link' => $request->yt_link,
+            'fb_link' => $request->fb_link,
+            'wa_link' => 'https://wa.me/+62' . $request->wa_link,
+            'ig_link' => $request->ig_link,
+        ]);
+        Alert::success('Success', 'Profil Berhasil di Update');
+        return redirect()->route('profile-desa.index');
     }
 }

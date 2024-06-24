@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('main-content')
+    @include('sweetalert::alert')
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">{{ __('Profil') }}</h1>
 
@@ -111,8 +113,23 @@
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>
-                                <input type="text" value="{{ $data->wa_link ?: '-' }}" placeholder="Nomor Telepon"
-                                    class="form-control my-2" id="wa-link" name="wa_link" />
+                            <div class="input-group d-flex align-items-center">
+                                <div>
+                                    <span class="form-control d-flex align-items-center">+62</span>
+                                </div>
+                                <div>
+
+                                </div>
+                                <input type="text"
+                                    value="{{ str_replace('https://wa.me/+62', '', $data->wa_link) ?: '-' }}"
+                                    placeholder="Nomor Telepon" class="form-control my-2" id="wa-link"
+                                    name="wa_link" />
+                            </div>
+                            @if ($errors->has('wa_link'))
+                                <p class="text-danger">
+                                    {{ $errors->first('wa_link') }}
+                                </p>
+                            @endif
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="ig-link" class="m-0 font-weight-bold">Instagram</label>
