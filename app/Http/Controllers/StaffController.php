@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StructureOrgRequest;
 use App\Models\Jabatan;
 use App\Models\PerangkatDesa;
 use App\Models\StructureOrg;
@@ -39,7 +40,7 @@ class StaffController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StructureOrgRequest $request)
     {
 
         $record = StructureOrg::firstOrNew([
@@ -84,7 +85,7 @@ class StaffController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, StructureOrg $staf)
+    public function update(StructureOrgRequest $request, StructureOrg $staf)
     {
         $staf->update([
             "name" => $request->name,

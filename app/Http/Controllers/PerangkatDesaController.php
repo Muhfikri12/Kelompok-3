@@ -43,7 +43,7 @@ class PerangkatDesaController extends Controller
         // Genereate nama file bersarakan request namam waktu dan $extension file
         $namaFile = $request->name . "-" . time() . "." . $extfile;
         // Simpan Photo su Storage/app/uploads
-        $path = $request->photo->storeAs('public', $namaFile);
+        $path = $request->photo->storeAs('public/petugas/', $namaFile);
 
         PerangkatDesa::create([
             "name" => $request->name,

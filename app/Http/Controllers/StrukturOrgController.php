@@ -78,9 +78,6 @@ class StrukturOrgController extends Controller
      */
     public function update(StructureOrgRequest $request, StructureOrg $structure)
     {
-        dd($request->all());
-
-
         $structure->name = $request->name;
         $structure->parent_id = $request->parent_id;
         $structure->save();

@@ -37,7 +37,7 @@
                                     <td>{{ $record->phone ?? '' }}</td>
                                     <td>{{ $record->position->name ?? '' }}</td>
                                     <td>{{ $record->status ?? '' }}</td>
-                                    <td><a href="{{ asset('storage/' . $record->photo) }}" target="_blank">Lihat</a></td>
+                                    <td><a href="{{ asset('storage/petugas/' . $record->photo) }}" target="_blank">Lihat</a></td>
                                     <td>
                                         <div class="d-flex">
                                             <a href="{{ route('perangkat.show', $record->id) }}"

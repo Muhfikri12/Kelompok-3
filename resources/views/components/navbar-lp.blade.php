@@ -1,5 +1,5 @@
-<header id="header" class="fixed-top  header-transparent ">
-    <div class="container d-flex align-items-center justify-content-between">
+<header id="header" class="fixed-top header-transparent">
+    <div class="d-flex align-items-center justify-content-between container">
 
         <div class="logo">
             <h1><a href="index.html">[Nama Desa]</a></h1>
@@ -15,8 +15,9 @@
                         Misi</a></li>
                 <li><a class="{{ request()->is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a>
                 </li>
-                <li><a class="{{ request()->is('data-demografi') ? 'active' : '' }}"
-                        href="{{ route('data-demografi') }}">Demografi</a></li>
+                <li><a class="{{ request()->is('data-demografi') ? 'active' : '' }}" href="{{ route('data-demografi') }}">Demografi</a></li>
+                <li><a class="{{ request()->is('data-geografi') ? 'active' : '' }}" href="{{ route('data-geografi') }}">Geografi</a></li>
+                <li><a class="{{ request()->is('petugas') ? 'active' : '' }}" href="{{ route('petugas') }}">Perangkat Desa</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

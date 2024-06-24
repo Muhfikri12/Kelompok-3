@@ -69,6 +69,8 @@ Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
 Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
 Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
 Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
+Route::get('/data-geografi', "LandingPageController@geografi")->name('data-geografi');
+Route::get('/petugas', "LandingPageController@petugas")->name('petugas');
 
 
 Route::get('/basic/create/about-us', function () {
