@@ -9,7 +9,7 @@
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Siapa Kami</h3>
                     <p>
-                        {{ $data->about_us }}
+                        {!! $data->about_us !!}
                     </p>
                 </div>
             </div>
