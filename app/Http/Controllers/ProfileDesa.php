@@ -40,7 +40,6 @@ class ProfileDesa extends Controller
         ], [
             'wa_link.regex' => 'Nomor telepon harus dimulai dengan angka selain 0 atau +62'
         ]);
-        // dd($request->all());
         ProfileDesas::where('id', 1)->update([
             'about_us' => $request->about_us,
             'sejarah' => $request->sejarah,

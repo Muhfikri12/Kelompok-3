@@ -37,7 +37,7 @@
                         <div class="form-floating">
                             <label for="floatingTextareaAboutUs">Deskripsi</label>
                             <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAboutUs"
-                                style="min-height: 100px;text-align:left;" name="about-us">{{ trim($data->about_us) }}</textarea>
+                                style="min-height: 100px;text-align:left;" name="about_us">{{ trim($data->about_us) }}</textarea>
                         </div>
                     </div>
                 </div>

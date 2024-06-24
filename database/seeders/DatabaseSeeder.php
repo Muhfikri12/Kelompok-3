@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Demografi;
+use App\Models\StructureOrg;
 use App\ProfileDesas;
 use App\User;
 use Database\Seeders\VisiMisiSeeder;
@@ -24,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
 
+
         ProfileDesas::create([
             'content_misi' => 'Menjadikan Desa [Nama Desa] sebagai desa yang mandiri, maju, dan sejahtera dengan mengedepankan nilai-nilai kebersamaan, kearifan lokal, serta keberlanjutan lingkungan.',
             'content_visi' => 'Misi Desa [Nama Desa] adalah untuk memberdayakan masyarakat melalui peningkatan keterampilan dan pengembangan usaha lokal, membangun infrastruktur yang berkelanjutan, serta memastikan akses yang adil terhadap pendidikan dan kesehatan. Kami berkomitmen untuk melestarikan adat dan budaya lokal, mengelola sumber daya alam dengan bijak, dan menerapkan tata kelola pemerintahan yang transparan dan partisipatif. Semua ini dilakukan dengan tujuan menciptakan desa yang mandiri, maju, dan sejahtera, yang menjunjung tinggi nilai-nilai kebersamaan dan keberlanjutan lingkungan.',
@@ -34,6 +37,10 @@ class DatabaseSeeder extends Seeder
             'fb_link' => 'https://web.facebook.com/',
             'wa_link' => 'wa.me/0831918',
             'ig_link' => 'https://www.instagram.com/'
+        ]);
+        StructureOrg::create([
+            "name" => 'Kepala Desa',
+            "staff_id" => NULL
         ]);
         $this->call(DemografiSeeder::class);
         $this->call(PerangkatDesaSeeder::class);

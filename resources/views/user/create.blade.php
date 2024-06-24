@@ -1,52 +1,55 @@
 @extends('layouts.admin')
 
 @section('main-content')
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Blank Page') }}</h1>
-
     <!-- Main Content goes here -->
-
-    <div class="card">
-        <div class="card-body">
-            <form action="{{ route('users.store') }}" method="post">
-                @csrf
-
-                <div class="form-group">
-                  <label for="name">{{__('Nama')}}</label>
-                  <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
-                  @error('name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+    <div class="row">
+        <div class="col">
+            <div class="card mb-4 shadow">
+                <div class="card-header py-3">
+                    <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
+                <div class="card-body">
+                    <form action="{{ route('users.store') }}" method="post">
+                        @csrf
 
-                <div class="form-group">
-                    <label for="email">{{__('Email')}}</label>
-                    <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required autofocus>
-                    @error('email')
-                      <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                  </div>
+                        <div class="form-group">
+                          <label for="name">{{__('Nama')}}</label>
+                          <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                          @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
+                        </div>
 
-                  <div class="form-group">
-                    <label for="password">{{__('Sandi')}}</label>
-                    <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}" required autofocus>
-                    @error('password')
-                      <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                  </div>
+                        <div class="form-group">
+                            <label for="email">{{__('Email')}}</label>
+                            <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required autofocus>
+                            @error('email')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
 
-                  <div class="form-group">
-                    <label for="password">{{__('Konfirmasi Sandi')}}</label>
-                    <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}" required autofocus>
-                    @error('password')
-                      <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                  </div>
+                          <div class="form-group">
+                            <label for="password">{{__('Sandi')}}</label>
+                            <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}" required autofocus>
+                            @error('password')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
 
-                <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                <a href="{{ route('users.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                          <div class="form-group">
+                            <label for="password">{{__('Konfirmasi Sandi')}}</label>
+                            <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}" required autofocus>
+                            @error('password')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
 
-            </form>
+                        <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
+                        <a href="{{ route('users.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
