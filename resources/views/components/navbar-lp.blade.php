@@ -15,8 +15,9 @@
                         Misi</a></li>
                 <li><a class="{{ request()->is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a>
                 </li>
-                <li><a class="{{ request()->is('data-demografi') ? 'active' : '' }}"
-                        href="{{ route('data-demografi') }}">Demografi</a></li>
+                <li><a class="{{ request()->is('data-demografi') ? 'active' : '' }}" <li><a
+                            class="{{ request()->is('demografi') ? 'active' : '' }}"
+                            href="{{ route('data-demografi') }}">Demografi</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

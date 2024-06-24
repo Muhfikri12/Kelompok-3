@@ -54,9 +54,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
+
     Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
     Route::resource('structure', StrukturOrgController::class);
     Route::resource('kades', KadesController::class);
+
+    Route::resource('profile-desa', ProfileDesa::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
     Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
@@ -79,6 +82,7 @@ Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
 Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
 
 
+
 Route::get('/basic/create/about-us', function () {
     return view('basic.create-about-us');
 });
@@ -87,6 +91,8 @@ Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
 Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
 Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
 Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
+
+
 
 
 Route::get('/basic/create/about-us', function () {
