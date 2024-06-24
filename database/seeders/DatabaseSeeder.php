@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             'sejarah' => 'Desa [Nama Desa] didirikan pada tahun [tahun pendirian] oleh sekelompok keluarga yang berasal dari [asal-usul pendiri]. Mereka memilih lokasi ini karena kesuburan tanahnya dan akses air yang melimpah dari sungai [nama sungai]. Seiring berjalannya waktu, desa ini berkembang menjadi pusat pertanian dan perdagangan lokal, dengan penduduk yang bekerja sama membangun infrastruktur dasar seperti jalan dan irigasi. Tradisi dan adat istiadat yang dibawa oleh para pendiri tetap dilestarikan hingga kini, menjadikan Desa [Nama Desa] sebagai komunitas yang kaya akan budaya dan sejarah yang kuat.',
             'yt_link' => '',
             'fb_link' => 'https://web.facebook.com/',
-            'wa_link' => 'wa.me/0831918',
+            'wa_link' => '838101877087',
             'ig_link' => 'https://www.instagram.com/'
         ]);
         $this->call(DemografiSeeder::class);
