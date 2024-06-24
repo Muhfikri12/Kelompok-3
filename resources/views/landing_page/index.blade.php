@@ -1,14 +1,17 @@
+@extends('landing_page.layout.app')
 
-<x-root-lp>
-    <x-navbar-lp />
-    @section('article')
-        @include('landing_page.main.article.article')
-    @endsection
+@section('header')
+    @include('landing_page.header.header')
+@endsection
 
-    @section('news_article')
-        @include('landing_page.main.news.news-article')
-    @endsection
+@section('footer')
+    @include('landing_page.footer.footer')
+@endsection
 
-    <x-footer-lp />
-    </section><!-- End Details Section -->
-</x-root-lp>
+@section('article')
+    @include('landing_page.main.article.article')
+@endsection
+
+@section('news_article')
+    @include('landing_page.main.news.news-article')
+@endsection

@@ -13,7 +13,7 @@
                 </p>
                 <ul>
                     <li><span><i style="margin-right: 1rem" data-feather="calendar"></i></span>
-                        {{ $item->event_date->translatedFormat('l, d F Y') }}
+                        {{-- {{ $item->event_date->translatedFormat('l, d F Y') }} --}}
                     </li>
                     <li><span><i style="margin-right: 1rem" data-feather="clock"></i></span>{{ $item->event_time }}</li>
                     <li><span><i style="margin-right: 1rem" data-feather="map-pin"></i></span>{{ $item->place }}</li>
