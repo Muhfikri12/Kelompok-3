@@ -63,6 +63,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <label for="floatingTextareaSejarah" class="m-0 font-weight-bold text-primary">Sejarah</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-floating">
+                            <label for="floatingTextareaSejarah">Deskripsi</label>
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaSejarah"
+                                style="min-height: 100px;text-align:left;" name="sejarah">{{ $data->sejarah }}</textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-lg-6 mb-3">
