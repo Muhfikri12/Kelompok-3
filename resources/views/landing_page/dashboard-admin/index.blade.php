@@ -31,15 +31,12 @@
                 <!-- Project Card Example -->
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaAboutUs" class="m-0 font-weight-bold text-primary">Tentang Kami</label>
+                        <label class="m-0 font-weight-bold text-primary">Tentang Kami</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaAboutUs">Deskripsi</label>
                             <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="detail_content"
                                 style="min-height: 100px;text-align:left;" name="about_us">{{ trim($data->about_us) }}</textarea>
-                            {{-- <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAboutUs"
-                                style="min-height: 100px;text-align:left;" name="about_us">{{ trim($data->about_us) }}</textarea> --}}
                         </div>
                     </div>
                 </div>
