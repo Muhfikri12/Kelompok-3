@@ -90,5 +90,9 @@
         $('#deleteForm [type="submit"]').click(function() {
             $("#deleteForm").submit();
         })
+
+        $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+  });
     </script>
 @endpush

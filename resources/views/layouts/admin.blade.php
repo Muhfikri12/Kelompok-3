@@ -30,6 +30,7 @@
     <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
 
     {{-- Asset JS Datatable --}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="{{ asset('js/dataTables.js') }}"></script>
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
@@ -123,6 +124,11 @@
                         </a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item {{ Nav::isRoute('geografis.index') }}">
+                <a class="nav-link" href="{{ route('geografis.index') }}">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>{{ __('Geografis') }}</span></a>
             </li>
             <li class="nav-item {{ Nav::isRoute('demografi.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne"

@@ -48,5 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call(DemografiSeeder::class);
         $this->call(PerangkatDesaSeeder::class);
+        $this->call(GeografisSeeder::class);
+
     }
 }

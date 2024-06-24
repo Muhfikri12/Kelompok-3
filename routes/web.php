@@ -3,6 +3,7 @@
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
+use App\Http\Controllers\GeografisController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KadesController;
 use App\Http\Controllers\KasiController;
@@ -61,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('kaur', KaurController::class);
     Route::resource('kasi', KasiController::class);
     Route::resource('staf', StaffController::class);
+    Route::resource('geografis', GeografisController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });
