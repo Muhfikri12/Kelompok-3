@@ -45,7 +45,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                <a href="{{ route('kades.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
             </form>
         </div>

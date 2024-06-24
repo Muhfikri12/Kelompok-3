@@ -160,15 +160,19 @@
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kepala Desa') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                        <a class="collapse-item" href="{{ route('sekertaris.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Sekertaris') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('kaur.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kepala Urusan') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                        <a class="collapse-item" href="{{ route('kasi.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kepala Seksi') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('structure.index') }}">
+                        <a class="collapse-item" href="{{ route('staf.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Staf') }}</span>
                         </a>

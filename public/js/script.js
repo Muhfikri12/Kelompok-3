@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $('.datatable').DataTable({
         responsive: true,
-        ordering: false,
         columnDefs: [
             { targets: '_all', className: 'text-center' }
         ],

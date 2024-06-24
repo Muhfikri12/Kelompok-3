@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('struktur_org', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->enum('type',['kades','sekertaris','kaur','kasi','staf'])->default('kades');
             $table->unsignedBigInteger('staff_id')->nullable()->default(NULL);
             $table->unsignedBigInteger('parent_id')->nullable()->default(NULL);
             $table->timestamps();

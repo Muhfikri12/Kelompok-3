@@ -20,6 +20,23 @@
                             @enderror
                           </div>
 
+                          <div class="form-group">
+                            <label for="type">{{__('Tipe')}}</label>
+                            <select name="type" id="satuab" class="form-control">
+                              <option value="" selected>-- Pilih --</option>
+                              <option value="Kades" {{"Kades" == old('type') ? "selected" : ''}}>Kades</option>
+                              <option value="Sekertaris" {{"Sekertaris" == old('type') ? "selected" : ''}}>Sekertaris</option>
+                              <option value="Kaur" {{"Kaur" == old('type') ? "selected" : ''}}>Kaur</option>
+                              <option value="Kasi" {{"Kasi" == old('type') ? "selected" : ''}}>Kasi</option>
+                              <option value="Staf" {{"Staf" == old('type') ? "selected" : ''}}>Staf</option>
+                            </select>
+                            @error('type')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
+
+
+
 
                         <div class="form-group">
                           <label for="keterangan">{{__('Keterangan')}}</label>

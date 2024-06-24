@@ -16,10 +16,10 @@ class KadesController extends Controller
      */
     public function index()
     {
+
         return view('structure.kades.index', [
             'title' => "Struktur Organisasi Desa",
-            'results' => StructureOrg::all(),
-
+            'results' => StructureOrg::where('type','kades')->get(),
         ]);
     }
 
@@ -31,7 +31,7 @@ class KadesController extends Controller
         return view('structure.kades.create', [
             'title' => "Buat Data",
             'positions' => StructureOrg::all(),
-            'staf' => PerangkatDesa::all(),
+            'staf' => PerangkatDesa::where('type','Kades')->get(),
         ]);
     }
 
@@ -56,8 +56,8 @@ class KadesController extends Controller
     public function show(StructureOrg $kade)
     {
         return view('structure.kades.show', [
-            'title' => "Data",
-            'positions' => Jabatan::all(),
+            'title' => "Lihat Data",
+            'staf' => PerangkatDesa::where('type','Kades')->get(),
             'record' => $kade,
         ]);
     }
@@ -67,9 +67,13 @@ class KadesController extends Controller
      */
     public function edit(StructureOrg $kade)
     {
+        $type = $kade->type;
+
         return view('structure.kades.edit', [
-            'title' => "Edit Data",
-            'positions' => PerangkatDesa::all(),
+            'title' => "Ubah Data",
+            'positions' => PerangkatDesa::whereHas('position', function($q) use($type) {
+                $q->where('type',$type);
+            })->get(),
             'record' => $kade
         ]);
     }

@@ -18,34 +18,58 @@ class PerangkatDesaSeeder extends Seeder
         $position = [
             [
                 "name" => "Kepala Desa",
+                "type" => "Kades",
                 "description" => null,
             ],
             [
                 "name" => "Sekertaris Desa",
+                "type" => "Sekertaris",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Negara",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Perencanaan",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Umum dan Tata Usaha",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Pemerintahan",
+                "type" => "Kasi",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Kesejahteraan",
+                "type" => "Kasi",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Pelayanan",
+                "type" => "Kasi",
+                "description" => null,
+            ],
+
+            [
+                "name" => "Staff Pemerintahan",
+                "type" => "Staf",
+                "description" => null,
+            ],
+            [
+                "name" => "Staff Pelayanan",
+                "type" => "Staf",
+                "description" => null,
+            ],
+            [
+                "name" => "Staff Tata Usaha",
+                "type" => "Staf",
                 "description" => null,
             ],
         ];
@@ -55,6 +79,7 @@ class PerangkatDesaSeeder extends Seeder
             $record = Jabatan::firstOrNew([
                 "name" => $item['name']
             ]);
+            $record->type = $item['type'];
             $record->description = $item['description'];
             $record->save();
         }
