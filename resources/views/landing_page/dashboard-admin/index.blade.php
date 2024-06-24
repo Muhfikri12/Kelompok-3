@@ -144,7 +144,7 @@
         </div>
         <div>
             <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
-            <a href="javascript:history.back()" class="btn btn-default">{{ __('Kembali') }}</a>
+            <a href="{{ route('home') }}" class="btn btn-default">{{ __('Kembali') }}</a>
         </div>
     </form>
 @endsection
