@@ -16,7 +16,7 @@
                 <li><a class="{{ request()->is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a>
                 </li>
                 <li><a class="{{ request()->is('demografi') ? 'active' : '' }}"
-                        href="{{ route('demografi') }}">Demografi</a></li>
+                        href="{{ route('data-demografi') }}">Demografi</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
