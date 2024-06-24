@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Carbon\Carbon;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,9 +14,23 @@ class articleController extends Controller
      */
     public function article($id)
     {
-        $articles = Article::findOrFail($id);
+        $articles = Article::find($id);
         $slide = Article::all()->take(3);
-        $listArticle = Article::all()->take(3);
+
+        $currentDateTime = Carbon::now();
+
+        $listArticle = Article::where('id', '!=', $id)
+            ->where(function ($query) use ($currentDateTime) {
+                $query->where('event_date', '>', $currentDateTime->toDateString())
+                    ->orWhere(function ($query) use ($currentDateTime) {
+                        $query->where('event_date', '=', $currentDateTime->toDateString())
+                            ->where('event_time', '>', $currentDateTime->toTimeString());
+                    });
+            })
+            ->orderBy('event_date', 'asc')
+            ->orderBy('event_time', 'asc')
+            ->take(3)
+            ->get();
         return view('landing_page.main.article.detail-article', compact('articles', 'slide', 'listArticle'));
     }
 
@@ -26,25 +40,20 @@ class articleController extends Controller
     public function event()
     {
         return view('create_article', [
-            'article' => 'dashboard-admin-article'
+            'article' => 'article.create_article'
         ]);
     }
 
     public function dataEvent()
     {
-        $articles = Article::all();
+        $articles = Article::where('type', 'pengumuman')->get();
 
         return view('dashboard-admin-article.dashboard-db-admin', [
             'article' => 'dashboard-admin-article'
         ], compact('articles'));
     }
 
-    public function dataNews()
-    {
-        $news = Article::all();
 
-        return view('dashboard-admin-article.data-news', compact('news'));
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -65,9 +74,10 @@ class articleController extends Controller
             $article->event_time = $request->event_time;
             $article->event_date = $request->event_date;
             $article->place = $request->event_place;
+            $article->type = $request->type;
             $article->save();
 
-            return redirect('/data/article
+            return redirect('/data/acara
             ')->with('status', 'Article Pengumuman Ditambahkan');
         }
 
@@ -89,9 +99,12 @@ class articleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $articles = Article::findOrFail($id);
+        return view('create_article', [
+            'article' => 'article.edit_article'
+        ], compact('articles'));
     }
 
     /**

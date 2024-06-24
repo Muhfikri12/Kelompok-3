@@ -1596,7 +1596,7 @@ section {
 
 .info-content-article {
     display: flex;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 .detail-content-article img {
@@ -1621,12 +1621,14 @@ section {
     gap: 1rem;
     width: 100%;
     align-items: center;
-    background-color: rgba(111, 127, 163, 0.1);
     padding: 1rem;
     border-radius: 1rem;
     color: black;
 }
 
+.list-info-article h4 {
+    margin-left: 1rem;
+}
 .list-info-article ul {
     list-style: none;
     padding: 0;
@@ -1660,7 +1662,7 @@ section {
     background-color: rgba(127, 137, 161, 0.1);
     border-radius: 1rem;
     padding: 10px;
-    height: 740px;
+    height: 600px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     width: 550px;
 }

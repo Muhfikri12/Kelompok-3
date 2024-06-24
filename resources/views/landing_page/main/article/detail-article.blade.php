@@ -46,7 +46,7 @@
         }
 
         .carousel-item {
-            height: 600px;
+            height: 650px;
 
             /* Set the desired height */
         }
@@ -108,16 +108,6 @@
                     <article>
                         {!! $articles->detail_content !!}
                     </article>
-                    <strong>
-                        <h6>Akan diadakan pada :</h6>
-                    </strong>
-                    <ul style="display: flex; gap:1rem; flex-direction:column">
-                        <li><span><i data-feather="calendar"></i></span>
-                            {{ $articles->event_date->translatedFormat('l, d F Y') }}
-                        </li>
-                        <li><span><i data-feather="clock"></i></span>{{ $articles->event_time }}</li>
-                        <li><span><i data-feather="map-pin"></i></span>{{ $articles->place }}</li>
-                    </ul>
                 </div>
             </div>
             <div class="col-lg-5 order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
@@ -127,30 +117,27 @@
                         @foreach ($listArticle as $item)
                             <div class="info-content-article">
                                 <div class="img-container">
-                                    <img src="{{ asset($articles->photo) }}" class="img-fluid" alt="">
+                                    <img src="{{ asset($item->photo) }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="info-detail-article">
-                                    <strong>{{ $articles->title }}</strong>
+                                    <strong>{{ $item->title }}</strong>
                                     <ul>
                                         <li><span class="ac"><i data-feather="calendar"></i></span>
-                                            {{ $articles->event_date->translatedFormat('l, d F Y') }}
+                                            {{ $item->event_date->translatedFormat('l, d F Y') }}
                                         </li>
                                         <li><span class="ac"><i
-                                                    data-feather="clock"></i></span>{{ $articles->event_time }}
+                                                    data-feather="clock"></i></span>{{ $item->event_time }}
                                         </li>
                                     </ul>
                                     <p></p>
-                                    <a href="#" class="btn more-btn">Lihat Detail</a>
+                                    <a href="{{ route('article', $item->id) }}" class="btn more-btn">Lihat Detail</a>
                                 </div>
                             </div>
                         @endforeach
                     </div>
-
-
                 </div>
             </div>
         </div>
-
     </section>
 
     @include('landing_page.footer.footer')

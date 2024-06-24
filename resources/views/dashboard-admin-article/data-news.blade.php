@@ -2,11 +2,11 @@
 
 @section('main-content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Tabel Article') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Tabel Berita') }}</h1>
 
     <!-- Main Content goes here -->
 
-    <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+    <a href="{{ route('news') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
 
     @if (session('message'))
         <div class="alert alert-success">
@@ -33,7 +33,7 @@
                         {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
                     </td>
                     <td>
-                        {{ \Illuminate\Support\Str::words($item->detail_content, 5, '...') }}
+                        {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
                     </td>
                     <td>
                         <div class="d-flex">
