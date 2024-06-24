@@ -24,7 +24,7 @@ class TugasController extends Controller
     public function create()
     {
         return view('tugas.create', [
-            "title" => "Buat Tugas Baru",
+            "title" => "Buat Data",
             "positions" => Jabatan::all(),
         ]);
     }
@@ -50,7 +50,12 @@ class TugasController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $record = Tugas::findOrFail($id);
+        return view('tugas.show', [
+            "title" => "Lihat Data",
+            'record' => $record,
+            "positions" => Jabatan::all(),
+        ]);
     }
 
     /**
@@ -60,7 +65,7 @@ class TugasController extends Controller
     {
         $record = Tugas::findOrFail($id);
         return view('tugas.edit', [
-            "title" => "Edit Jabatan",
+            "title" => "Ubah Data",
             'record' => $record,
             "positions" => Jabatan::all(),
         ]);

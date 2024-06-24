@@ -4,7 +4,7 @@
         <div class="col-md-4 order-1 order-md-1" data-aos="fade-left">
             <img src="assets/img/headline_news.png" class="img-fluid" alt="">
         </div>
-        <div class="col-md-7 pt-2 order-2 order-md-2" data-aos="fade-up">
+        <div class="col-md-8 pt-2 order-2 order-md-2" data-aos="fade-up">
             <a href="#">Kerja Bakti, Vaksin Gratis, Rapat Warga, Festival Budaya, dan Pengumpulan Data
                 Penduduk</a>
             <p>
