@@ -1,11 +1,11 @@
 @extends('landing_page.layout.app')
 
 @section('header')
-    @include('landing_page.header.header')
+    @include('components.navbar-lp')
 @endsection
 
 @section('footer')
-    @include('landing_page.footer.footer')
+    @include('components.footer-lp')
 @endsection
 
 @section('article')
