@@ -123,6 +123,7 @@
                     </div>
                 </div>
             </li>
+            <!-- Nav Item -->
 
             <li class="nav-item {{ Nav::isRoute('perangkat.index') }}">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -199,9 +200,7 @@
                     </div>
                 </div>
             </li>
-
-
-            {{-- <!-- Heading -->
+            <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Settings') }}
             </div>

@@ -28,11 +28,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
-Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
+
+
+Route::get('/article', [articleController::class, 'article'])->name('article');
+Route::post('/article', [articleController::class, 'store'])->name('article.store');
+Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
+Route::get('/create/acara', [articleController::class, 'event'])->name('event');
 Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
 Route::get('/acara/{id}', [articleController::class, 'article'])->name('article');
 Route::get('/berita/{id}', [NewsArticleController::class, 'detailNews'])->name('news.article');
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -64,6 +68,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/acara', [articleController::class, 'dataEvent'])->name('data.event');
     Route::get('/data/berita', [NewsArticleController::class, 'dataNews'])->name('data.news');
     // Route::get('/data/article', [articleController::class, 'article'])->name('article');
+});
+
+
+
+
+Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
+Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
+Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
+Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
+
+
+Route::get('/basic/create/about-us', function () {
+    return view('basic.create-about-us');
 });
 
 Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
