@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\PerangkatDesa;
+use App\Models\Tugas;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +21,6 @@ class Jabatan extends Model
 
     public function Staffs()
     {
-        return $this->hasMany(Tugas::class,'position_id');
+        return $this->hasMany(PerangkatDesa::class,'position_id');
     }
 }

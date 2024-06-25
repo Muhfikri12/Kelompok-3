@@ -333,21 +333,21 @@ class PerangkatDesaSeeder extends Seeder
             ],
         ];
 
-        foreach ($perangkat as  $value) {
-            $position = Jabatan::where('name',$value['position'])->first();
-            // $record =  PerangkatDesa::firstOrNew([
-            // ]);
-            $record = new PerangkatDesa();
-            $record->name = $value['name'];
-            $record->phone = $value['phone'];
-            $record->gender = $value['gender'];
-            $record->position_id = $position->id;
-            $record->name = $value['name'];
-            $record->status = $value['status'];
-            $record->nip = $value['nip'];
-            $record->photo = $value['photo'];
-            $record->save();
+        // foreach ($perangkat as  $value) {
+        //     $position = Jabatan::where('name',$value['position'])->first();
+        //     // $record =  PerangkatDesa::firstOrNew([
+        //     // ]);
+        //     $record = new PerangkatDesa();
+        //     $record->name = $value['name'];
+        //     $record->phone = $value['phone'];
+        //     $record->gender = $value['gender'];
+        //     $record->position_id = $position->id;
+        //     $record->name = $value['name'];
+        //     $record->status = $value['status'];
+        //     $record->nip = $value['nip'];
+        //     $record->photo = $value['photo'];
+        //     $record->save();
 
-        }
+        // }
     }
 }

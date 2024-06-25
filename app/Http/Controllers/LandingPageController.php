@@ -46,6 +46,12 @@ class LandingPageController extends Controller
         return view('landing_page.perangkat-desa', [
             'results' => $results,
         ]);
+
+    //     @foreach ($record->position->tasks as $item)
+    //     <li>
+    //             {{$item->name ?? ''}}
+    //     </li>
+    // @endforeach
     }
 
     public function landing_page()
