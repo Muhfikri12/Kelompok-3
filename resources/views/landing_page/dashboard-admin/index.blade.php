@@ -21,7 +21,7 @@
         </div>
     @endif
 
-    <form action="{{ route('profile-desa.store') }}" method="post">
+    <form action="{{ route('profile-desa.store') }}" method="post" id="form">
         @csrf
         <div class="row">
 
@@ -116,11 +116,8 @@
                                     placeholder="Nomor Telepon" class="form-control my-2" id="wa-link"
                                     name="wa_link" />
                             </div>
-                            @if ($errors->has('wa_link'))
-                                <span class="text-danger">
-                                    {{ $errors->first('wa_link') }}
-                                </span>
-                            @endif
+                            <span class="text-danger" id="error">
+                            </span>
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="ig-link" class="m-0 font-weight-bold">Instagram</label>
@@ -134,8 +131,25 @@
             </div>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
+            <button type="button" class="btn btn-primary" id="submit">{{ __('Simpan') }}</button>
             <a href="{{ route('home') }}" class="btn btn-default">{{ __('Kembali') }}</a>
         </div>
     </form>
 @endsection
+@push('js')
+    <script>
+        const submit = document.getElementById('submit');
+        const form = document.getElementById('form');
+        const waInput = document.getElementById('wa-link');
+        submit.addEventListener('click', function(e) {
+            e.preventDefault();
+            const regex = /^[1-9]\d{9,14}$/;
+            if (!regex.test(waInput.value)) {
+                document.getElementById('error').textContent =
+                    'Nomor telepon harus dimulai dengan angka selain 0 atau +62';
+            } else {
+                submit.setAttribute('type', 'submit').click();
+            }
+        })
+    </script>
+@endpush
