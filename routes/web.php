@@ -9,6 +9,7 @@ use App\Http\Controllers\KadesController;
 use App\Http\Controllers\KasiController;
 use App\Http\Controllers\KaurController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\LembagaController;
 use App\Http\Controllers\NewsArticleController;
 use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\ProfileDesa;
@@ -63,6 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('kasi', KasiController::class);
     Route::resource('staf', StaffController::class);
     Route::resource('geografis', GeografisController::class);
+    Route::resource('lembaga', LembagaController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
 });

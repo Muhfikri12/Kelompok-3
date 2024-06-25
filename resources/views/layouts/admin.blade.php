@@ -36,6 +36,8 @@
     <script defer src="{{ asset('js/script.js') }}"></script>
 
 
+
+
     @stack('css')
 </head>
 
@@ -184,6 +186,12 @@
                         </a>
                     </div>
                 </div>
+            </li>
+
+            <li class="nav-item {{ Nav::isRoute('lembaga.index') }}">
+                <a class="nav-link" href="{{ route('lembaga.index') }}">
+                    <i class="fas fa-fw fa-handshake"></i>
+                    <span>{{ __('Lembaga') }}</span></a>
             </li>
 
             {{-- <!-- Heading -->
