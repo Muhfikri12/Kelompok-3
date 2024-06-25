@@ -105,9 +105,9 @@
                                     placeholder="https://web.facebook.com/username" class="form-control my-2" id="fb-link"
                                     name="fb_link" />
                             </p>
-                            <p style="display: flex;">
+                            <p style="display: flex; flex-direction:column;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center" style="margin-top: -16px;">
                                 <div>
                                     <span class="form-control d-flex align-items-center ">+62</span>
                                 </div>
