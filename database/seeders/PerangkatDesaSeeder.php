@@ -266,7 +266,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Desa",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Angel Lelga",
@@ -275,7 +275,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Perempuan",
                 "position" => "Sekertaris Desa",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Jendri Pitoy",
@@ -284,7 +284,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Negara",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -293,7 +293,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Perencanaan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Atep rizal",
@@ -302,7 +302,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Umum dan Tata Usaha",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Tantan ",
@@ -311,7 +311,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pemerintahan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Shahar Ginanhar",
@@ -320,7 +320,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Kesejahteraan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -329,25 +329,25 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pelayanan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
         ];
 
-        // foreach ($perangkat as  $value) {
-        //     $position = Jabatan::where('name',$value['position'])->first();
-        //     // $record =  PerangkatDesa::firstOrNew([
-        //     // ]);
-        //     $record = new PerangkatDesa();
-        //     $record->name = $value['name'];
-        //     $record->phone = $value['phone'];
-        //     $record->gender = $value['gender'];
-        //     $record->position_id = $position->id;
-        //     $record->name = $value['name'];
-        //     $record->status = $value['status'];
-        //     $record->nip = $value['nip'];
-        //     $record->photo = $value['photo'];
-        //     $record->save();
+        foreach ($perangkat as  $value) {
+            $position = Jabatan::where('name',$value['position'])->first();
+            // $record =  PerangkatDesa::firstOrNew([
+            // ]);
+            $record = new PerangkatDesa();
+            $record->name = $value['name'];
+            $record->phone = $value['phone'];
+            $record->gender = $value['gender'];
+            $record->position_id = $position->id;
+            $record->name = $value['name'];
+            $record->status = $value['status'];
+            $record->nip = $value['nip'];
+            $record->photo = $value['photo'];
+            $record->save();
 
-        // }
+        }
     }
 }

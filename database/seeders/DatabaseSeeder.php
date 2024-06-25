@@ -37,18 +37,19 @@ class DatabaseSeeder extends Seeder
                         pemandangan yang memukau dan kehidupan yang harmonis, menjadikannya tempat yang ideal untuk
                         tinggal dan berkunjung',
             'sejarah' => 'Desa [Nama Desa] didirikan pada tahun [tahun pendirian] oleh sekelompok keluarga yang berasal dari [asal-usul pendiri]. Mereka memilih lokasi ini karena kesuburan tanahnya dan akses air yang melimpah dari sungai [nama sungai]. Seiring berjalannya waktu, desa ini berkembang menjadi pusat pertanian dan perdagangan lokal, dengan penduduk yang bekerja sama membangun infrastruktur dasar seperti jalan dan irigasi. Tradisi dan adat istiadat yang dibawa oleh para pendiri tetap dilestarikan hingga kini, menjadikan Desa [Nama Desa] sebagai komunitas yang kaya akan budaya dan sejarah yang kuat.',
-            'yt_link' => '',
+            'yt_link' => 'https://youtube.com/',
             'fb_link' => 'https://web.facebook.com/',
             'wa_link' => 'wa.me/0831918',
             'ig_link' => 'https://www.instagram.com/'
         ]);
-        StructureOrg::create([
-            "name" => 'Kepala Desa',
-            "staff_id" => NULL
-        ]);
+        // StructureOrg::create([
+        //     "name" => 'Kepala Desa',
+        //     "staff_id" => NULL
+        // ]);
         $this->call(DemografiSeeder::class);
         $this->call(PerangkatDesaSeeder::class);
         $this->call(GeografisSeeder::class);
+        $this->call(StrukturSeeder::class);
 
     }
 }

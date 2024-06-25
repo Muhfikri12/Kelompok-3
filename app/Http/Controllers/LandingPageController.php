@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Demografi;
+use App\Models\Geografis;
 use App\Models\PerangkatDesa;
+use App\Models\StructureOrg;
 use Illuminate\Http\Request;
 
 
@@ -27,16 +29,10 @@ class LandingPageController extends Controller
 
     public function geografi()
     {
-        $results = Demografi::all()->groupBy(function ($item) {
-            return $item->category->nama;
-        })->map(function ($group) {
-            return $group->groupBy(function ($item) {
-                return $item->tahun;
-            });
-        });
+        $record = Geografis::first();
 
         return view('landing_page.geografi', [
-            'results' => $results,
+            'record' => $record,
         ]);
     }
 
@@ -46,12 +42,17 @@ class LandingPageController extends Controller
         return view('landing_page.perangkat-desa', [
             'results' => $results,
         ]);
+    }
 
-    //     @foreach ($record->position->tasks as $item)
-    //     <li>
-    //             {{$item->name ?? ''}}
-    //     </li>
-    // @endforeach
+    public function struktur()
+    {
+        $results = StructureOrg::where('type','kades')->first();
+        // dd($results);
+
+        return view('landing_page.struktur', [
+            'result' => $results,
+        ]);
+
     }
 
     public function landing_page()
