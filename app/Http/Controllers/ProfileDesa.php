@@ -36,13 +36,6 @@ class ProfileDesa extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        // To validate user input to ensure that the phone number starts with a digit other than 0 or +62,
-        //     'wa_link' => ['required', 'regex:/^[1-9]\d{9,14}$/']
-        // ], [
-        //     'wa_link.regex' => 'Nomor telepon harus dimulai dengan angka selain 0 atau +62'
-        // ]);
-
         // configuration HTMLPurifier
         $config = HTMLPurifier_Config::createDefault();
         $purifier = new HTMLPurifier($config);

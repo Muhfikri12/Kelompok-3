@@ -142,7 +142,6 @@
         const form = document.getElementById('form');
         const waInput = document.getElementById('wa-link');
         submit.addEventListener('click', function(e) {
-            e.preventDefault();
             const regex = /^[1-9]\d{9,14}$/;
             if (!regex.test(waInput.value)) {
                 document.getElementById('error').textContent =
