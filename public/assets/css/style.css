@@ -76,25 +76,25 @@ h6 {
     color: #47536e;
     font-size: 14px;
     background: #eff2f8;
-  }
+}
 
-  #demografi .demografi-newsletter {
+#demografi .demografi-newsletter {
     padding: 50px 0;
     background: #eff2f8;
     text-align: center;
     font-size: 15px;
-  }
+}
 
-  #demografi .demografi-newsletter h4 {
+#demografi .demografi-newsletter h4 {
     font-size: 24px;
     margin: 0 0 20px 0;
     padding: 0;
     line-height: 1;
     font-weight: 600;
     color: #47536e;
-  }
+}
 
-  #demografi .demografi-newsletter form {
+#demografi .demografi-newsletter form {
     margin-top: 30px;
     background: #fff;
     padding: 6px 10px;
@@ -102,15 +102,15 @@ h6 {
     border-radius: 50px;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
-  }
+}
 
-  #demografi .demografi-newsletter form input[type=email] {
+#demografi .demografi-newsletter form input[type="email"] {
     border: 0;
     padding: 4px 8px;
     width: calc(100% - 100px);
-  }
+}
 
-  #demografi .demografi-newsletter form input[type=submit] {
+#demografi .demografi-newsletter form input[type="submit"] {
     position: absolute;
     top: 0;
     right: 0;
@@ -124,86 +124,86 @@ h6 {
     transition: 0.3s;
     border-radius: 50px;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
+}
 
-  #demografi .demografi-newsletter form input[type=submit]:hover {
+#demografi .demografi-newsletter form input[type="submit"]:hover {
     background: #415f9d;
-  }
+}
 
-  #demografi .demografi-top {
+#demografi .demografi-top {
     padding: 60px 0 30px 0;
     background: #fff;
-  }
+}
 
-  #demografi .demografi-top .demografi-contact {
+#demografi .demografi-top .demografi-contact {
     margin-bottom: 30px;
-  }
+}
 
-  #demografi .demografi-top .demografi-contact h4 {
+#demografi .demografi-top .demografi-contact h4 {
     font-size: 22px;
     margin: 0 0 30px 0;
     padding: 2px 0 2px 0;
     line-height: 1;
     font-weight: 700;
     color: #47536e;
-  }
+}
 
-  #demografi .demografi-top .demografi-contact p {
+#demografi .demografi-top .demografi-contact p {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Raleway", sans-serif;
     color: #8a8c95;
-  }
+}
 
-  #demografi .demografi-top h4 {
+#demografi .demografi-top h4 {
     font-size: 16px;
     font-weight: bold;
     color: #47536e;
     position: relative;
     padding-bottom: 12px;
-  }
+}
 
-  #demografi .demografi-top .demografi-links {
+#demografi .demografi-top .demografi-links {
     margin-bottom: 30px;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul {
+#demografi .demografi-top .demografi-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul i {
+#demografi .demografi-top .demografi-links ul i {
     padding-right: 2px;
     color: #9fb2d8;
     font-size: 18px;
     line-height: 1;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul li {
+#demografi .demografi-top .demografi-links ul li {
     padding: 10px 0;
     display: flex;
     align-items: center;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul li:first-child {
+#demografi .demografi-top .demografi-links ul li:first-child {
     padding-top: 0;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul a {
+#demografi .demografi-top .demografi-links ul a {
     color: #8a8c95;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
-  }
+}
 
-  #demografi .demografi-top .demografi-links ul a:hover {
+#demografi .demografi-top .demografi-links ul a:hover {
     text-decoration: none;
     color: #5777ba;
-  }
+}
 
-  #demografi .demografi-top .social-links a {
+#demografi .demografi-top .social-links a {
     font-size: 18px;
     display: inline-block;
     background: #5777ba;
@@ -216,27 +216,26 @@ h6 {
     width: 36px;
     height: 36px;
     transition: 0.3s;
-  }
+}
 
-  #demografi .demografi-top .social-links a:hover {
+#demografi .demografi-top .social-links a:hover {
     background: #27282c;
     color: #fff;
     text-decoration: none;
-  }
+}
 
-  #demografi .copyright {
+#demografi .copyright {
     text-align: center;
     float: left;
     color: #47536e;
-  }
+}
 
-  #demografi .credits {
+#demografi .credits {
     float: right;
     text-align: center;
     font-size: 13px;
     color: #47536e;
-  }
-
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -327,7 +326,6 @@ h6 {
     margin: 0;
     max-height: 40px;
 }
-
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -1520,8 +1518,8 @@ section {
 .article_items {
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
 }
 .article_items .show-article {
@@ -1596,7 +1594,6 @@ section {
 .info-article {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -1608,22 +1605,22 @@ section {
 
 .info-content-article {
     display: flex;
+    /* margin-bottom: 1rem; */
 }
 
 .detail-content-article img {
     width: 100%;
     max-width: 45rem;
     border-radius: 1em;
-    height: auto;
+    /* height: 30rem; */
 }
 
-.detail-content-article p {
+.detail-content-article h4 {
     margin-top: 1rem;
 }
 
 .info-content-article img {
     width: 100%;
-    max-width: 10rem;
     height: auto;
     border-radius: 1rem;
 }
@@ -1633,15 +1630,18 @@ section {
     gap: 1rem;
     width: 100%;
     align-items: center;
-    background-color: rgba(111, 127, 163, 0.3);
     padding: 1rem;
     border-radius: 1rem;
     color: black;
 }
 
+.list-info-article h4 {
+    margin-left: 1rem;
+}
 .list-info-article ul {
     list-style: none;
     padding: 0;
+    /* width: 500px; */
 }
 
 .list-info-article .more-btn {
@@ -1655,12 +1655,25 @@ section {
     margin-bottom: 10px;
 }
 
+.img-container {
+    /* width: 300px; */
+    height: 150px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 240px;
+    height: 100%;
+    object-fit: cover;
+}
+
 .list-info-article {
-    background-color: rgba(127, 137, 161, 0.25);
+    background-color: rgba(127, 137, 161, 0.1);
     border-radius: 1rem;
     padding: 10px;
-    height: 740px;
+    height: 600px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
 }
 
 .responsive-image {
@@ -1703,16 +1716,10 @@ section {
 
     .info-content-article {
         flex-direction: row;
-
-        /* text-align: center; */
     }
 
     .info-content-article p {
         font-size: 0.8rem;
-    }
-
-    .list-info-article {
-        padding: 0.5rem;
     }
 }
 
@@ -1805,3 +1812,4 @@ section {
 .article_database td {
     border: 1px solid black;
     padding: 5px;
+}
