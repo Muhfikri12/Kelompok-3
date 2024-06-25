@@ -7,10 +7,7 @@
                     <img src="assets/img/whois.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-                    <h3>Siapa Kami</h3>
-                    <p>
-                        {!! $data->about_us !!}
-                    </p>
+                    {!! $data->about_us !!}
                 </div>
             </div>
             <div class="row content">
@@ -18,10 +15,7 @@
                     <img src="assets/img/location.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5" data-aos="fade-up">
-                    <h3>Lokasi Kami</h3>
-                    <p>
-                        {{ $data->alamat }}
-                    </p>
+                    {!! $data->alamat !!}
                 </div>
             </div>
 

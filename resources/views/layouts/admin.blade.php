@@ -532,6 +532,11 @@
     {{-- CKEditor --}}
     <script>
         CKEDITOR.replace('detail_content');
+        CKEDITOR.replace('about_us');
+        CKEDITOR.replace('content_visi');
+        CKEDITOR.replace('content_misi');
+        CKEDITOR.replace('sejarah');
+        CKEDITOR.replace('alamat');
     </script>
 </body>
 

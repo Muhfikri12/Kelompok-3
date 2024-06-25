@@ -31,63 +31,58 @@
                 <!-- Project Card Example -->
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label class="m-0 font-weight-bold text-primary">Tentang Kami</label>
+                        <label for="about_us" class="m-0 font-weight-bold text-primary">Tentang Kami</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="detail_content"
-                                style="min-height: 100px;text-align:left;" name="about_us">{{ trim($data->about_us) }}</textarea>
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="about_us"
+                                style="min-height: 100px;text-align:left;" name="about_us">{{ $data->about_us }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaVisi" class="m-0 font-weight-bold text-primary">Visi</label>
+                        <label for="content_visi" class="m-0 font-weight-bold text-primary">Visi</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaVisi">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaVisi"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="content_visi"
                                 style="min-height: 100px;text-align:left;" name="content_visi">{{ $data->content_visi }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaMisi" class="m-0 font-weight-bold text-primary">Misi</label>
+                        <label for="content_misi" class="m-0 font-weight-bold text-primary">Misi</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaMisi">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaMisi"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="content_misi"
                                 style="min-height: 100px;text-align:left;" name="content_misi">{{ $data->content_misi }}</textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="card shadow mb-3">
-                    <div class="card-header py-3">
-                        <label for="floatingTextareaSejarah" class="m-0 font-weight-bold text-primary">Sejarah</label>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-floating">
-                            <label for="floatingTextareaSejarah">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaSejarah"
-                                style="min-height: 100px;text-align:left;" name="sejarah">{{ $data->sejarah }}</textarea>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-6 mb-3">
-
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaAlamat" class="m-0 font-weight-bold text-primary">Alamat</label>
+                        <label for="sejarah" class="m-0 font-weight-bold text-primary">Sejarah</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaAlamat">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAlamat"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="sejarah"
+                                style="min-height: 100px;text-align:left;" name="sejarah">{{ $data->sejarah }}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <label for="alamat" class="m-0 font-weight-bold text-primary">Alamat</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="alamat"
                                 style="min-height: 100px;text-align:left;" name="alamat">{{ $data->alamat }}</textarea>
                         </div>
                     </div>
@@ -110,14 +105,11 @@
                                     placeholder="https://web.facebook.com/username" class="form-control my-2" id="fb-link"
                                     name="fb_link" />
                             </p>
-                            <p style="display: flex; flex-direction: column;gap: 3;">
+                            <p style="display: flex;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>
-                            <div class="input-group d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <div>
-                                    <span class="form-control d-flex align-items-center">+62</span>
-                                </div>
-                                <div>
-
+                                    <span class="form-control d-flex align-items-center ">+62</span>
                                 </div>
                                 <input type="text"
                                     value="{{ str_replace('https://wa.me/+62', '', $data->wa_link) ?: '-' }}"
@@ -125,9 +117,9 @@
                                     name="wa_link" />
                             </div>
                             @if ($errors->has('wa_link'))
-                                <p class="text-danger">
+                                <span class="text-danger">
                                     {{ $errors->first('wa_link') }}
-                                </p>
+                                </span>
                             @endif
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">

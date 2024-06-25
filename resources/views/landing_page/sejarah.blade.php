@@ -7,10 +7,7 @@
                     <img src="assets/img/visi.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-                    <h3>Sejarah</h3>
-                    <p>
-                        {{ $data->sejarah }}
-                    </p>
+                    {!! $data->sejarah !!}
                 </div>
             </div>
         </div>
