@@ -69,9 +69,22 @@ class LandingPageController extends Controller
 
     public function landing_page()
     {
-        // $article = Article::all();
-        $article = Article::orderBy('event_date', 'asc')->take(3)->get();
+        $currentDateTime = Carbon::now();
 
-        return view('landing_page.index', compact('article'));
+        $slide = Article::all()->take(3);
+        $article = Article::where(function ($query) use ($currentDateTime) {
+            $query->where('event_date', '>', $currentDateTime->toDateString())
+                ->orWhere(function ($query) use ($currentDateTime) {
+                    $query->where('event_date', '=', $currentDateTime->toDateString())
+                        ->where('event_time', '>', $currentDateTime->toTimeString());
+                });
+        })
+            ->orderBy('event_date', 'asc')
+            ->orderBy('event_time', 'asc')
+            ->take(4)
+            ->get();
+        $staffWithPositions = PerangkatDesa::with('position')->orderBy('created_at', 'asc')->get();
+
+        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide'));
     }
 }

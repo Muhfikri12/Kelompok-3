@@ -15,8 +15,9 @@ class Jabatan extends Model
 
     protected $guarded = [];
 
-    public function tasks() {
-        return $this->hasMany(Tugas::class,'position_id');
+    public function tasks()
+    {
+        return $this->hasMany(Tugas::class, 'id');
     }
 
     public function Staffs()

@@ -35,10 +35,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 
+
 Route::get('/article', [articleController::class, 'article'])->name('article');
 Route::post('/article', [articleController::class, 'store'])->name('article.store');
 Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
 Route::get('/create/acara', [articleController::class, 'event'])->name('event');
+Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
+Route::get('/acara/{id}', [articleController::class, 'article'])->name('article');
+Route::get('/berita/{id}', [NewsArticleController::class, 'detailNews'])->name('news.article');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -56,9 +60,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('perangkat', PerangkatDesaController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('tugas', TugasController::class);
+
     Route::get('/profile-desa', [ProfileDesa::class, 'index'])->name('profile-desa');
     Route::resource('structure', StrukturOrgController::class);
     Route::resource('kades', KadesController::class);
+    Route::resource('profile-desa', ProfileDesa::class);
     Route::resource('sekertaris', SekertarisController::class);
     Route::resource('kaur', KaurController::class);
     Route::resource('kasi', KasiController::class);
@@ -67,6 +73,29 @@ Route::middleware('auth')->group(function () {
     Route::resource('lembaga', LembagaController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
+    Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
+    Route::post('/create/berita', [NewsArticleController::class, 'store'])->name('news.store');
+    Route::get('/create/acara', [articleController::class, 'event'])->name('event');
+    // article
+    Route::post('/article', [articleController::class, 'store'])->name('article.store');
+    Route::get('/acara/{$id}/edit', [articleController::class, 'edit'])->name('article.edit');
+    Route::get('/data/acara', [articleController::class, 'dataEvent'])->name('data.event');
+    Route::get('/data/berita', [NewsArticleController::class, 'dataNews'])->name('data.news');
+    // Route::get('/data/article', [articleController::class, 'article'])->name('article');
+});
+
+
+
+
+Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
+Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
+Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
+Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
+
+
+
+Route::get('/basic/create/about-us', function () {
+    return view('basic.create-about-us');
 });
 
 Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');

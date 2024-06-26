@@ -29,14 +29,17 @@
     <!-- Favicon -->
     <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
 
+    {{-- CKEditor --}}
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+
     {{-- Asset JS Datatable --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script defer src="{{ asset('js/dataTables.js') }}"></script>
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
 
-
-
+      {{-- asset JS --}}
+    <link rel="stylesheet" href="{{ asset('js/main.js') }}">
 
     @stack('css')
 </head>
@@ -81,22 +84,27 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>{{ __('User') }}</span></a>
             </li>
-            <li class="nav-item {{ Nav::isRoute('profile-desa') }}">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwoProfileDesa"
-                    aria-expanded="false" aria-controls="collapseTwo">
+            <li class="nav-item {{ Nav::isRoute('profile-desa.index') }}">
+                <a class="nav-link" href="{{ route('profile-desa.index') }}">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Profil Desa</span>
                 </a>
-                <div id="collapseTwoProfileDesa" class="collapse" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar" style="">
+            </li>
+            <li class="nav-item {{ Nav::isRoute('Article') }}">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsetwo"
+                    aria-expanded="false" aria-controls="collapsetwo">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Article</span>
+                </a>
+                <div id="collapsetwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('profile-desa') }}">
-                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
-                            <span>{{ __('Overview') }}</span>
+                        <a class="collapse-item" href="{{ route('data.event') }}">
+                            <i class="fas fa-fw fa-calendar"></i>
+                            <span>{{ __('Acara') }}</span>
                         </a>
-                        <a class="collapse-item" href="{{ route('jabatan.index') }}">
-                            {{-- <i class="fas fa-fw fa-plus"></i> --}}
-                            <span>{{ __('Update') }}</span>
+                        <a class="collapse-item" href="{{ route('data.news') }}">
+                            <i class="fas fa-fw fa-newspaper"></i>
+                            <span>{{ __('Berita') }}</span>
                         </a>
                     </div>
                 </div>
@@ -161,8 +169,8 @@
                     <i class="fas fa-fw fa-sitemap"></i>
                     <span>{{ __('Struktur Organisasi') }}</span>
                 </a>
-                <div id="collapseEleven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
-                    style="">
+                <div id="collapseEleven" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar" style="">
                     <div class="collapse-inner rounded bg-white py-2">
                         <a class="collapse-item" href="{{ route('kades.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
@@ -224,7 +232,7 @@
             </li>
 
             <!-- Divider -->
-             <hr class="sidebar-divider d-none d-md-block"> --}}
+            <hr class="sidebar-divider d-none d-md-block"> --}}
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -536,6 +544,11 @@
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @stack('js')
+
+    {{-- CKEditor --}}
+    <script>
+        CKEDITOR.replace('detail_content');
+    </script>
 </body>
 
 </html>

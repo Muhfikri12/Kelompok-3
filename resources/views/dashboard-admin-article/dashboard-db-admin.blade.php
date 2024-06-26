@@ -2,7 +2,7 @@
 
 @section('main-content')
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Tabel Article') }}</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Tabel Acara') }}</h1>
 
     <!-- Main Content goes here -->
 
@@ -33,14 +33,15 @@
                         {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
                     </td>
                     <td>
-                        {{ \Illuminate\Support\Str::words($item->detail_content, 5, '...') }}
+                        {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
                     </td>
                     <td>
                         <div class="d-flex">
-                            <a href="" class="btn btn-sm btn-primary mr-2">Edit</a>
+                            <a href="{{ route('article.edit', ['id' => $item->id]) }}"
+                                class="btn btn-sm btn-primary mr-2">Edit</a>
                             {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
-                            @csrf
-                            @method('delete') --}}
+                    @csrf
+                    @method('delete') --}}
                             <button class="btn btn-danger btn-sm btn-hapus" data-id="" data-toggle="modal"
                                 data-target="#DeleteModal">Delete</button>
                             {{-- </form> --}}
