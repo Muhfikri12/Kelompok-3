@@ -1,10 +1,10 @@
 @push('css')
     <style>
         /*Now the CSS*/
-        * {
-            margin: 0;
-            padding: 0;
-        }
+        /* * {
+                                                                                                            margin: 0;
+                                                                                                            padding: 0;
+                                                                                                        } */
 
         .tree ul {
             padding-top: 20px;
@@ -44,7 +44,7 @@
         }
 
         /*We need to remove left-right connectors from elements without
-    any siblings*/
+                                                                                                                                                                            any siblings*/
         .tree li:only-child::after,
         .tree li:only-child::before {
             display: none;
@@ -56,7 +56,7 @@
         }
 
         /*Remove left connector from first child and
-    right connector from last child*/
+                                                                                                                                                                            right connector from last child*/
         .tree li:first-child::before,
         .tree li:last-child::after {
             border: 0 none;
@@ -121,71 +121,66 @@
         }
 
         /*Thats all. I hope you enjoyed it.
-    Thanks :)*/
+                                                                                                                                                                            Thanks :)*/
     </style>
 @endpush
 <x-root-lp>
     <x-navbar-lp />
     {{-- Section Deskripsi Demografi --}}
-
-    <section id="features" class="features mt-5">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Struktur Organisasi Desa Hegarmanah Cicantayan</h2>
-            </div>
-
-            <div class="tree">
-                <ul>
-                    <li>
-                        <a href="#">{{ $result->name }}</a>
-                        <ul>
-                            @foreach ($result->childs as $a)
-                                <li>
-                                    <a href="#">
+    <section>
+        <div data-aos="fade-up" style="text-align: center; margin: 4rem 0;">
+            <h2>Struktur Organisasi Desa Hegarmanah Cicantayan</h2>
+        </div>
+        <div style="width: 100%;overflow:scroll;">
+            <div style="width: 1280px;">
+                <div class="tree">
+                    <ul>
+                        <li>
+                            <a href="#">{{ $result->name }}</a>
+                            <ul>
+                                @foreach ($result->childs as $a)
+                                    <li>
+                                        <a href="#">
                                             {{ $a->name }}
-                                    </a>
-                                   @if($a->childs->isNotEmpty())
-                                   <ul>
-                                    @foreach ($a->childs as $aa)
-                                        <li>
-                                            <a href="#">{{ $aa->name }}</a>
-                                            @if($aa->childs->isNotEmpty())
+                                        </a>
+                                        @if ($a->childs->isNotEmpty())
                                             <ul>
-                                                @foreach ($aa->childs as $aaa)
+                                                @foreach ($a->childs as $aa)
                                                     <li>
-                                                        <a href="#">{{ $aaa->name }}</a>
-                                                        @if($aaa->childs->isNotEmpty())
-                                                        <ul>
-                                                            @foreach ($aaa->childs as $aaaa)
-                                                                <li>
-                                                                    <a href="#">{{ $aaaa->name }}</a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
+                                                        <a href="#">{{ $aa->name }}</a>
+                                                        @if ($aa->childs->isNotEmpty())
+                                                            <ul>
+                                                                @foreach ($aa->childs as $aaa)
+                                                                    <li>
+                                                                        <a href="#">{{ $aaa->name }}</a>
+                                                                        @if ($aaa->childs->isNotEmpty())
+                                                                            <ul>
+                                                                                @foreach ($aaa->childs as $aaaa)
+                                                                                    <li>
+                                                                                        <a
+                                                                                            href="#">{{ $aaaa->name }}</a>
+                                                                                    </li>
+                                                                                @endforeach
+                                                                            </ul>
+                                                                        @endif
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
                                                         @endif
                                                     </li>
                                                 @endforeach
                                             </ul>
-                                            @endif
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                   @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </div>
     </section>
 
     <!-- End Details Section -->
     <x-footer-lp />
 </x-root-lp>
-
-{{-- <img src="{{ asset('storage/petugas/' . $record->photo) }}"
-class="card-img-top responsive-image img-thumbnail rounded" alt="..." height="20px"
-width="120px"> --}}
-
