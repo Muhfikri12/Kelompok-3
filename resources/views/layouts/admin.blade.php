@@ -38,7 +38,7 @@
     <script defer src="{{ asset('js/dataTables.bootstrap4.js') }}"></script>
     <script defer src="{{ asset('js/script.js') }}"></script>
 
-      {{-- asset JS --}}
+    {{-- asset JS --}}
     <link rel="stylesheet" href="{{ asset('js/main.js') }}">
 
     @stack('css')
@@ -249,7 +249,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-               <nav class="navbar navbar-expand navbar-light topbar static-top mb-4 bg-white shadow">
+                <nav class="navbar navbar-expand navbar-light topbar static-top mb-4 bg-white shadow">
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -264,7 +264,7 @@
                                     data-initial="{{ Auth::user()->name[0] }}"></figure>
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in p-4"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>

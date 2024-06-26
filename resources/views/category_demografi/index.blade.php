@@ -4,11 +4,7 @@
     <!-- Page Heading -->
 
     <!-- Main Content goes here -->
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
     <div class="row">
         <div class="col">

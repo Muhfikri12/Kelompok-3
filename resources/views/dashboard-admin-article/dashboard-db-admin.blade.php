@@ -8,11 +8,7 @@
 
     <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
     <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
         <thead>
