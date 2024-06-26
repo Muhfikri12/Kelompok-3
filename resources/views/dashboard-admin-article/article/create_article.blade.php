@@ -1,7 +1,8 @@
 <div class="content-dashboard-article">
 
     <div class="form-content-dasboard-article">
-        <h1 class="h3 mb-4 text-gray-800">{{ $title ?? __('Membuat Acara') }}</h1>
+        <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Membuat Acara') }}</h3>
+        <hr>
         <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <table>
@@ -11,7 +12,8 @@
                 </tr>
                 <tr>
                     <td><label for="headline_article">Headline Acara</label></td>
-                    <td><input type="text" id="headline_article" name="headline_article" required> <br></td>
+                    <td><input type="text" id="headline_article" name="headline_article" required
+                            value="ini indonesia"> <br></td>
                 </tr>
                 <tr>
                     <td><label for="event_time">Waktu Pelaksanaan</label></td>

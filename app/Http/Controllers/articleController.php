@@ -16,6 +16,7 @@ class articleController extends Controller
     {
         $articles = Article::find($id);
         $slide = Article::all()->take(3);
+        $maxTextLength = 70;
 
         $currentDateTime = Carbon::now();
 
@@ -31,7 +32,7 @@ class articleController extends Controller
             ->orderBy('event_time', 'asc')
             ->take(3)
             ->get();
-        return view('landing_page.main.article.detail-article', compact('articles', 'slide', 'listArticle'));
+        return view('landing_page.main.article.detail-article', compact('articles', 'slide', 'listArticle', 'maxTextLength'));
     }
 
     /**
@@ -102,6 +103,7 @@ class articleController extends Controller
     public function edit($id)
     {
         $articles = Article::findOrFail($id);
+        // $articles->event_date = \Carbon\Carbon::parse($articles->event_date)->format('m-d-Y');
         return view('create_article', [
             'article' => 'article.edit_article'
         ], compact('articles'));

@@ -1,18 +1,36 @@
-<div class="news-detail-article">
-    <div class="row content">
-        <h4 data-aos="fade-left" data-aos-delay="100">Berita Terbaru</h4>
-        <div class="col-md-4 order-1 order-md-1" data-aos="fade-left">
-            <img src="assets/img/headline_news.png" class="img-fluid" alt="">
+<div class="container-xxl py-6 news_content">
+    <div class="container">
+        <div class="header-article-event mb-3" data-aos="fade-up">
+            <h4>Berita</h4>
         </div>
-        <div class="col-md-8 pt-2 order-2 order-md-2" data-aos="fade-up">
-            <a href="#">Kerja Bakti, Vaksin Gratis, Rapat Warga, Festival Budaya, dan Pengumpulan Data
-                Penduduk</a>
-            <p>
-                Kepada seluruh warga Desa Hagarmana, berikut kami sampaikan beberapa pengumuman penting terkait kegiatan
-                dan informasi yang perlu diketahui oleh seluruh warga. Mohon perhatian dan partisipasinya dalam kegiatan
-                yang akan datang.
-            </p>
-            <a href="#" class="btn more-btn">Lihat Selengkapnya</a>
+        <div class="row g-4">
+            @foreach ($news as $item)
+                <div class="col-md-6 col-lg-6 mb-4">
+                    <div class="card text-bg-dark card_news">
+                        <a href="{{ route('news.article', ['id' => $item->id]) }}">
+                            <div class="card-img-container">
+                                <img src="{{ asset($item->photo) }}" class="card-img card-img-zoom img-fluid"
+                                    alt="...">
+                            </div>
+                        </a>
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="text-container">
+                                <a href="{{ route('news.article', ['id' => $item->id]) }}"
+                                    class="text-decoration-none text-dark">
+                                    <h5 class="card-title-lp mb-0 text-light">{{ ucwords(strtolower($item->title)) }}
+                                    </h5>
+                                </a>
+                                <a href="{{ route('news.article', ['id' => $item->id]) }}"
+                                    class="text-decoration-none text-dark">
+                                    <p class="card-text-lp text-light">{{ $item->content }}</p>
+                                </a>
+                                <p class="card-text mb-0 text-light"><small><span
+                                            id="updated-at">{{ $item->updated_at }}</span></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

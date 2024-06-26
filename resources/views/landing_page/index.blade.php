@@ -15,3 +15,7 @@
 @section('news_article')
     @include('landing_page.main.news.news-article')
 @endsection
+
+@section('hero_section')
+    @include('landing_page.hero_section.hero')
+@endsection

@@ -94,7 +94,7 @@
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsetwo"
                     aria-expanded="false" aria-controls="collapsetwo">
                     <i class="fas fa-fw fa-map"></i>
-                    <span>Article</span>
+                    <span>{{ __('Artikel') }}</span>
                 </a>
                 <div id="collapsetwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="collapse-inner rounded bg-white py-2">
@@ -186,37 +186,10 @@
                     </div>
                 </div>
             </li>
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                {{ __('Settings') }}
-            </div>
 
-            <!-- Nav Item -->
-            <li class="nav-item {{ Nav::isRoute('basic.index') }}">
-                <a class="nav-link" href="{{ route('basic.index') }}">
-                    <i class="fas fa-fw fa-plus"></i>
-                    <span>{{ __('Basic CRUD') }}</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Profile -->
-            <li class="nav-item {{ Nav::isRoute('profile') }}">
-                <a class="nav-link" href="{{ route('profile') }}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>{{ __('Profile') }}</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - About -->
-            <li class="nav-item {{ Nav::isRoute('about') }}">
-                <a class="nav-link" href="{{ route('about') }}">
-                    <i class="fas fa-fw fa-hands-helping"></i>
-                    <span>{{ __('About') }}</span>
-                </a>
-            </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block"> --}}
+            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

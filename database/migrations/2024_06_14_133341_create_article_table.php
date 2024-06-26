@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('photo')->nullable();
-            $table->string('content');
             $table->longText('detail_content')->nullable();
-            $table -> time('event_time')->nullable();
-            $table -> date('event_date')->nullable();
+            $table->time('event_time')->nullable();
+            $table->date('event_date')->nullable();
             $table->unsignedInteger('admin_id');
             $table->string('place')->nullable();
             $table->enum('type', ['pengumuman', 'berita']);

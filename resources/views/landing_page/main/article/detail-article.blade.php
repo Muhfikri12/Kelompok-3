@@ -43,11 +43,16 @@
         .carousel-caption {
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            color: white;
         }
 
         .carousel-item {
             height: 650px;
-
             /* Set the desired height */
         }
 
@@ -58,49 +63,17 @@
             background-size: cover;
             border-radius: 1rem;
         }
-
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-
-        }
     </style>
 
 </head>
 
 <body>
 
-    @include('landing_page.header.header')
+    @include('components.navbar-lp')
 
-    <section class="container " style="margin-top:1rem;">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($slide as $key => $item)
-                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }} shadow bg-body-tertiary rounded">
-                        <div class="carousel-background" style="background-image: url('{{ asset($item->photo) }}');">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-light"><strong>{{ $item->title }}</strong></h5>
-                            <p class="text-light">{{ $item->content }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
-
-    <section class="container pt-0">
+    <section class="container my-2">
         <div class="article">
-            <div class="col-lg-6 order-1 order-lg-1 detail-article" style="text-decoration-style:none"
+            <div class="col-lg-3 order-1 order-lg-1 detail-article" style="text-decoration-style:none"
                 data-aos="fade-up" data-aos-delay="200">
                 <div class="detail-content-article">
                     <img src={{ asset($articles->photo) }} class="img-fluid responsive-image" alt="">
@@ -110,23 +83,48 @@
                     </article>
                 </div>
             </div>
-            <div class="col-lg-5 order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
+        </div>
+        <div class="other_article">
+            <div class="order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
                 <div class="list-info-article">
-                    <h4><strong>Event Terbaru</strong></h4>
-                    <div>
+                    <div class="header-article-event mb-3" data-aos="fade-up">
+                        <h4>Event Terbaru</h4>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-2 px-4">
+                        @foreach ($listArticle as $item)
+                            <div class="col-sm-12 col-lg-4 col-md-6">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $item->title }}</h5>
+                                        <p><strong>{{ Str::limit($item->content, 50) }}</strong></p>
+                                        {{-- <p class="card-text">{!! Str::limit($item->detail_content) !!}</p> --}}
+                                        <p><i data-feather="calendar"></i>
+                                            <span>{{ $item->event_date->translatedFormat('l, d F Y') }}</span>
+                                        </p>
+                                        <p><i data-feather="clock"></i> <span>{{ $item->event_time }}</span></p>
+                                        <a href="{{ route('article', ['id' => $item->id]) }}"
+                                            class="btn btn-primary">Lihat
+                                            Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    {{-- <div>
                         @foreach ($listArticle as $item)
                             <div class="info-content-article">
                                 <div class="img-container">
                                     <img src="{{ asset($item->photo) }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="info-detail-article">
-                                    <strong>{{ $item->title }}</strong>
+                                    <strong><small>{{ $item->title }}</small></strong>
                                     <ul>
-                                        <li><span class="ac"><i data-feather="calendar"></i></span>
+                                        <li><small class="ac"><i data-feather="calendar"></i></small>
                                             {{ $item->event_date->translatedFormat('l, d F Y') }}
                                         </li>
-                                        <li><span class="ac"><i
-                                                    data-feather="clock"></i></span>{{ $item->event_time }}
+                                        <li><small class="ac"><i
+                                                    data-feather="clock"></i></small>{{ $item->event_time }}
                                         </li>
                                     </ul>
                                     <p></p>
@@ -134,7 +132,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

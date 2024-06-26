@@ -11,15 +11,21 @@
 
     <!-- Favicons -->
     <link href={{ asset('assets/img/jabar.png') }} rel="icon">
+    <link href="img/favicon.ico" rel="icon">
     <link href={{ asset('assets/img/apple-touch-icon.png') }} rel="apple-touch-icon">
 
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- Google Fonts -->
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet"> --}}
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -73,53 +79,9 @@
 
     @yield('header')
 
+    @yield('hero_section')
+
     <!-- ======= Hero Section ======= -->
-
-    <section class="container " style="margin-top:1rem;">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($slide as $key => $item)
-                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }} shadow bg-body-tertiary rounded">
-                        <div class="carousel-background" style="background-image: url('{{ asset($item->photo) }}');">
-                        </div>
-                        {{-- <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-light"><strong>{{ $item->title }}</strong></h5>
-                            <p class="text-light">{{ $item->content }}</p>
-                        </div> --}}
-                    </div>
-                @endforeach
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
-    {{-- <section id="hero" class="d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1"
-                    data-aos="fade-up">
-                    <div>
-                        <h1>Welcome to Desa Hegarmanah</h2>
-                            <h2>Discover the beauty and tranquility of our charming village. Explore our rich culture,
-                                scenic landscapes, and warm community.</h2>
-                            <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Eksplore Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-2 order-lg-2 hero-img"
-                    data-aos="fade-up">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- End Hero -->
 
     <main id="main">
 
@@ -127,18 +89,15 @@
         <!-- ======= Details Section ======= -->
         <section id="details" class="details pt-0">
             <div class="container">
-
-                @yield('news_article')
-
                 @yield('article')
-
+                @yield('news_article')
             </div>
         </section><!-- End Details Section -->
 
 
 
         <!-- ======= Gallery Section ======= -->
-        <section id="gallery" class="gallery pt-0">
+        {{-- <section id="gallery" class="gallery pt-0">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -149,17 +108,18 @@
             </div>
 
             <div class="container-fluid" data-aos="fade-up">
-                <div class="gallery-slider swiper">
+                <div class="gallery-slider swiper w-10">
                     <div class="swiper-wrapper">
                         @foreach ($staffWithPositions as $item)
-                            <div class="swiper-slide shadow bg-body-tertiary rounded">
+                            <div class="swiper-slide shadow bg-body-tertiary rounded ">
                                 <div class="card text-center">
                                     <img class="card-img-top" src="{{ asset('img/dp.jpeg') }}" alt="Card image">
                                     <div class="card-body">
-                                        <p class="card-title"><strong>{{ $item->name }}</strong></p>
-                                        <p class="card-text ">{{ optional($item->position)->name ?? '' }}.
+                                        <p class="card-title fs-6"><strong>{{ $item->name }}</strong></p>
+                                        <p class="card-text" style="font-size: 0.8rem">
+                                            {{ optional($item->position)->name ?? '' }}.
                                         </p>
-                                        <a href="#" class="btn btn-primary">See Profile</a>
+                                        <a href="#" class="btn btn-primary">Profile</a>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +130,7 @@
                 </div>
 
             </div>
-        </section><!-- End Gallery Section -->
+        </section><!-- End Gallery Section --> --}}
 
     </main><!-- End #main -->
 
@@ -201,6 +161,20 @@
     <!-- feather icons -->
     <script>
         feather.replace();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) { // Adjust this value as needed
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+        });
     </script>
 
 </body>

@@ -70,9 +70,9 @@
 
 <body>
 
-    @include('landing_page.header.header')
+    @include('components.navbar-lp')
 
-    <section class="container " style="margin-top:1rem;">
+    {{-- <section class="container " style="margin-top:1rem;">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach ($news as $key => $item)
@@ -95,59 +95,81 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </section>
+    </section> --}}
 
-
-    <section class="container pt-0">
-        <div class="article">
-            <div class="col-lg-6 order-1 order-lg-1 detail-article" style="text-decoration-style:none"
-                data-aos="fade-up" data-aos-delay="200">
-                <div class="detail-content-article">
-                    <img src={{ asset($articles->photo) }} class="img-fluid responsive-image" alt="">
-                    <h4><strong>{{ $articles->title }}</strong></h4>
+    <section class="container mt-3">
+        <div class="news" style="display: flex;">
+            <div class="col-lg-6 detail-news" style="text-decoration-style:none" data-aos="fade-up"
+                data-aos-delay="200">
+                <div class="detail-content-news">
+                    <img src="{{ asset($news->photo) }}" class="img-fluid responsive-image" alt="">
+                    <h4><strong>{{ $news->title }}</strong></h4>
                     <article>
-                        {!! $articles->detail_content !!}
+                        {!! $news->detail_content !!}
                     </article>
-                    <strong>
-                        <h6>Akan diadakan pada :</h6>
-                    </strong>
-                    <ul style="display: flex; gap:1rem; flex-direction:column">
-                        <li><span><i data-feather="calendar"></i></span>
-                            {{ $articles->event_date->translatedFormat('l, d F Y') }}
-                        </li>
-                        <li><span><i data-feather="clock"></i></span>{{ $articles->event_time }}</li>
-                        <li><span><i data-feather="map-pin"></i></span>{{ $articles->place }}</li>
-                    </ul>
                 </div>
             </div>
-            <div class="col-lg-5 order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
-                <div class="list-info-article">
-                    <h4><strong>Event Terbaru</strong></h4>
-                    <div>
-                        @foreach ($listArticle as $item)
-                            <div class="info-content-article">
-                                <div class="img-container">
-                                    <img src="{{ asset($item->photo) }}" class="img-fluid" alt="">
+            <div class="col-lg-3 info-news" data-aos="fade-up" data-aos-delay="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group">
+                        <div class="header-article-event" data-aos="fade-up">
+                            <h4>Berita</h4>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        @foreach ($listNews as $item)
+                            <div class="" style="max-width: 540px;">
+                                <div class="row g-2">
+                                    <div class="col-md-4 fixed-container">
+                                        <img src="{{ asset($item->photo) }}" class="img-fluid rounded-start fixed-img"
+                                            alt="...">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <a href="{{ route('news.article', ['id' => $item->id]) }}">
+                                            <div class="card-body my-auto">
+                                                <p class="card-title"><strong>{{ $item->title }}</strong></p>
+                                                <small>
+                                                    <p class="card-text">{{ $item->content }}</p>
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="info-detail-article">
-                                    <strong>{{ $item->title }}</strong>
-                                    <ul>
-                                        <li><span class="ac"><i data-feather="calendar"></i></span>
-                                            {{ $item->event_date->translatedFormat('l, d F Y') }}
-                                        </li>
-                                        <li><span class="ac"><i
-                                                    data-feather="clock"></i></span>{{ $item->event_time }}
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                    <a href="{{ route('article', $item->id) }}" class="btn more-btn">Lihat Detail</a>
+                            </div>
+                        @endforeach
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="other_article">
+            <div class="order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
+                <div class="list-info-article">
+                    <div class="header-article-event mb-3" data-aos="fade-up">
+                        <h4>Event Terbaru</h4>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-2 px-4">
+                        @foreach ($listArticle as $item)
+                            <div class="col-sm-12 col-lg-4 col-md-6">
+                                <div class="card mx-auto" style="width: 18rem;">
+                                    <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $item->title }}</h5>
+                                        <p><strong>{{ Str::limit($item->content, 50) }}</strong></p>
+                                        {{-- <p class="card-text">{!! Str::limit($item->detail_content) !!}</p> --}}
+                                        <p><i data-feather="calendar"></i>
+                                            <span>{{ $item->event_date->translatedFormat('l, d F Y') }}</span>
+                                        </p>
+                                        <p><i data-feather="clock"></i> <span>{{ $item->event_time }}</span></p>
+                                        <a href="{{ route('article', ['id' => $item->id]) }}"
+                                            class="btn btn-primary">Lihat
+                                            Detail</a>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     @include('landing_page.footer.footer')
