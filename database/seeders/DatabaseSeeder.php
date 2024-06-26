@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(DemografiSeeder::class);
-        // User::create([
-        //     'name' => 'Administrator',
-        //     'email' => 'admin@mail.com',
-        //     'email_verified_at' => now(),
-        //     'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        // ]);
+        $this->call(DemografiSeeder::class);
+        User::create([
+            'name' => 'Administrator',
+            'email' => 'admin@mail.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        ]);
 
 
         ProfileDesas::create([
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             'sejarah' => 'Desa [Nama Desa] didirikan pada tahun [tahun pendirian] oleh sekelompok keluarga yang berasal dari [asal-usul pendiri]. Mereka memilih lokasi ini karena kesuburan tanahnya dan akses air yang melimpah dari sungai [nama sungai]. Seiring berjalannya waktu, desa ini berkembang menjadi pusat pertanian dan perdagangan lokal, dengan penduduk yang bekerja sama membangun infrastruktur dasar seperti jalan dan irigasi. Tradisi dan adat istiadat yang dibawa oleh para pendiri tetap dilestarikan hingga kini, menjadikan Desa [Nama Desa] sebagai komunitas yang kaya akan budaya dan sejarah yang kuat.',
             'yt_link' => 'https://youtube.com/',
             'fb_link' => 'https://web.facebook.com/',
-            'wa_link' => 'wa.me/0831918',
+            'wa_link' => '838101877087',
             'ig_link' => 'https://www.instagram.com/'
         ]);
         // StructureOrg::create([
