@@ -18,7 +18,7 @@ class KadesController extends Controller
     {
 
         return view('structure.kades.index', [
-            'title' => "Struktur Organisasi Desa",
+            'title' => "Tabel Struktur Organisasi Tingkat Kepala Desa",
             'results' => StructureOrg::where('type','kades')->get(),
         ]);
     }

@@ -21,7 +21,7 @@
                     <h3 class="m-0 font-weight-bold text-primary">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('sekertaris.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+                    <a href="{{ route('sekertaris.create') }}" class="btn btn-primary mb-3">{{ __('Data Sekertaris Baru') }}</a>
                     <table class="table table-bordered table-stripped display nowrap" style="width: 100%">
                         <thead>
                             <tr>

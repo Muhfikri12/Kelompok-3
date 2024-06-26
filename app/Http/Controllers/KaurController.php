@@ -17,7 +17,7 @@ class KaurController extends Controller
     public function index()
     {
         return view('structure.kaur.index', [
-            'title' => "Struktur Organisasi Desa",
+            'title' => "Tabel Struktur Organisasi Tingkat Kaur",
             'results' => StructureOrg::where('type','kaur')->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Sekertaris');
@@ -31,7 +31,7 @@ class KaurController extends Controller
     public function create()
     {
         return view('structure.kaur.create', [
-            'title' => "Buat Data",
+            'title' => "Buat Data Kaur",
             'positions' => StructureOrg::WhereIn('type',["kades","sekertaris","kaur"])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Kaur');
@@ -62,7 +62,7 @@ class KaurController extends Controller
     public function show(StructureOrg $kaur)
     {
         return view('structure.kaur.show', [
-            'title' => "Lihat Data",
+            'title' => "Lihat Data Kaur",
             'positions' => Jabatan::all(),
             'record' => $kaur,
         ]);
@@ -74,7 +74,7 @@ class KaurController extends Controller
     public function edit(StructureOrg $kaur)
     {
         return view('structure.kaur.edit', [
-            'title' => "Edit Data",
+            'title' => "ubah Data Kaur",
             'positions' => StructureOrg::whereIn('type',['Kades','Sekertaris','Kaur'])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type',"Kaur");

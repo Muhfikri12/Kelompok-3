@@ -17,7 +17,7 @@ class SekertarisController extends Controller
     public function index()
     {
         return view('structure.sekertaris.index', [
-            'title' => "Struktur Organisasi Desa",
+            'title' => "Tabel Struktur Organisasi Tingkat Sekertaris",
             'results' => StructureOrg::where('type','sekertaris')->get(),
 
         ]);
@@ -29,7 +29,7 @@ class SekertarisController extends Controller
     public function create()
     {
         return view('structure.sekertaris.create', [
-            'title' => "Buat Data",
+            'title' => "Buat Data Sekertaris",
             'positions' => StructureOrg::WhereIn('type',["kades","sekertaris"])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Sekertaris');
@@ -60,7 +60,7 @@ class SekertarisController extends Controller
     public function show(StructureOrg $sekertari)
     {
         return view('structure.sekertaris.show', [
-            'title' => "Lihat Data",
+            'title' => "Lihat Data Sekertaris",
             'positions' => Jabatan::all(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Sekertaris');
@@ -75,7 +75,7 @@ class SekertarisController extends Controller
     public function edit(StructureOrg $sekertari)
     {
         return view('structure.sekertaris.edit', [
-            'title' => "Edit Data",
+            'title' => "Ubah Data Sekertaris",
             'positions' => StructureOrg::whereIn('type',['Kades','Sekertaris'])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Sekertaris');

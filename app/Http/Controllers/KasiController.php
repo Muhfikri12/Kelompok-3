@@ -17,7 +17,7 @@ class KasiController extends Controller
     public function index()
     {
         return view('structure.kasi.index', [
-            'title' => "Struktur Organisasi Desa",
+            'title' => "Tabel Struktur Organisasi Tingkat Kasi",
             'results' => StructureOrg::where('type','kasi')->get(),
 
         ]);
@@ -29,7 +29,7 @@ class KasiController extends Controller
     public function create()
     {
         return view('structure.kasi.create', [
-            'title' => "Buat Data",
+            'title' => "Buat Data Kasi",
             'positions' => StructureOrg::all(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Kasi');
@@ -61,7 +61,7 @@ class KasiController extends Controller
     public function show(StructureOrg $kasi)
     {
         return view('structure.kasi.show', [
-            'title' => "Lihat Data",
+            'title' => "Lihat Data Kasi",
             'positions' => Jabatan::all(),
             'record' => $kasi,
         ]);
@@ -73,7 +73,7 @@ class KasiController extends Controller
     public function edit(StructureOrg $kasi)
     {
         return view('structure.kasi.edit', [
-            'title' => "Edit Data",
+            'title' => "Edit Data Kasi",
             'positions' => StructureOrg::whereIn('type',['Kades','Sekertaris','Kasi'])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Kasi');

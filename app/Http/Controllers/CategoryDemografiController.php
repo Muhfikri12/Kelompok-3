@@ -16,7 +16,7 @@ class CategoryDemografiController extends Controller
     public function index()
     {
         return view('category_demografi.index',[
-            "title" => "Data Kategori",
+            "title" => "Tabel Kategori Demografi",
             "results" => CategoryDemografi::orderBy('updated_at',"desc")->get(),
         ]);
     }
@@ -60,7 +60,7 @@ class CategoryDemografiController extends Controller
     public function edit(CategoryDemografi $categoryDemografi)
     {
         return view('category_demografi.edit',[
-            "title" => "Edit Kategori",
+            "title" => "Ubah Data Kategori",
             'record' => $categoryDemografi
         ]);
     }

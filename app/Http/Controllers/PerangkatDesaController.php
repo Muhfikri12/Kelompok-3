@@ -17,7 +17,7 @@ class PerangkatDesaController extends Controller
     public function index()
     {
         return view('perangkat.index', [
-            "title" => "Data Petugas Desa",
+            "title" => "Tabel Petugas Desa",
             "results" => PerangkatDesa::all(),
         ]);
     }
@@ -28,7 +28,7 @@ class PerangkatDesaController extends Controller
     public function create()
     {
         return view('perangkat.create', [
-            "title" => "Buat Data Baru",
+            "title" => "Buat Data Petugas",
             "positions" => Jabatan::all(),
         ]);
     }
@@ -66,7 +66,7 @@ class PerangkatDesaController extends Controller
     public function show(PerangkatDesa $perangkat)
     {
         return view('perangkat.show', [
-            'title' => "Lihat Data",
+            'title' => "Lihat Data Petugas",
             'record' => $perangkat,
             "positions" => Jabatan::all(),
         ]);
@@ -78,7 +78,7 @@ class PerangkatDesaController extends Controller
     public function edit(PerangkatDesa $perangkat)
     {
         return view('perangkat.edit', [
-            'title' => "Ubah Data",
+            'title' => "Ubah Data Petugas",
             'record' => $perangkat,
             "positions" => Jabatan::all(),
         ]);
@@ -146,7 +146,7 @@ class PerangkatDesaController extends Controller
     {
         $perangkat->delete();
 
-        Alert::success('Success','Data Berhasil dihapus');
+        Alert::success('Success','Data Petugas Berhasil dihapus');
         return redirect()->route('perangkat.index');
     }
 }

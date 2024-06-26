@@ -11,7 +11,7 @@
                             <img src="{{ asset('img/jabar.png') }}" alt="Image" style="max-width: 400px; max-height: 200px">
                         </div>
                         <div class="mb-10 mb-lg-15">
-                            <h3 class="font-weight-boldest"><small><b>CMS</b> Content Management Sistem</small></h3>
+                            <h3 class="font-weight-boldest"><small><b>Dashboard</b> Desa Hegarmanah</small></h3>
                             <p class="text-muted font-weight-bold">{{ __('Masuk untuk melanjutkan') }}</p>
                         </div>
                         @if ($errors->any())

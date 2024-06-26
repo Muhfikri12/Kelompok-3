@@ -17,7 +17,7 @@ class StaffController extends Controller
     public function index()
     {
         return view('structure.staf.index', [
-            'title' => "Struktur Organisasi Desa",
+            'title' => "Struktur Organisasi Tingkat Staf",
             'results' => StructureOrg::where('type','staf')->get(),
 
         ]);
@@ -29,7 +29,7 @@ class StaffController extends Controller
     public function create()
     {
         return view('structure.staf.create', [
-            'title' => "Buat Data",
+            'title' => "Buat Data Staff",
             'positions' => StructureOrg::WhereIn('type',["kades","sekertaris","Kaur"])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Staf');
@@ -51,7 +51,7 @@ class StaffController extends Controller
         $record->parent_id = $request->parent_id;
         $record->save();
 
-        Alert::success('success', "Data Berhasil Dibuat");
+        Alert::success('success', "Data Staf Berhasil Dibuat");
         return redirect()->route('staf.index');
     }
 
@@ -61,7 +61,7 @@ class StaffController extends Controller
     public function show(StructureOrg $staf)
     {
         return view('structure.staf.show', [
-            'title' => "Lihat Data",
+            'title' => "Data Staf Desa",
             'positions' => Jabatan::all(),
             'record' => $staf,
         ]);
@@ -73,7 +73,7 @@ class StaffController extends Controller
     public function edit(StructureOrg $staf)
     {
         return view('structure.staf.edit', [
-            'title' => "Edit Data",
+            'title' => "Ubah Data Staf",
             'positions' => StructureOrg::whereIn('type',['Kades','Sekertaris',"Kaur"])->get(),
             'staf' => PerangkatDesa::whereHas('position', function($q) {
                 $q->where('type','Staf');
@@ -94,7 +94,7 @@ class StaffController extends Controller
             "parent_id" => $request->parent_id,
         ]);
 
-        Alert::success('success', "Data Berhasil Diubah");
+        Alert::success('success', "Data Staf Berhasil Diubah");
         return redirect()->route('staf.index');
     }
 
@@ -107,7 +107,7 @@ class StaffController extends Controller
 
         if ($staf->childs()->exists() == false) {
             $staf->delete();
-            Alert::success('success', "Data Berhasil dihapus");
+            Alert::success('success', "Data Staf Berhasil dihapus");
             return redirect()->route('staf.index');
         } else {
             Alert::error('error',"Data tidak bisa dihapus karena mempunyai data turunan");

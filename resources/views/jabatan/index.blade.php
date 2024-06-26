@@ -18,7 +18,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
+                    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Jabatan Baru')}}</a>
 
                     <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
                         <thead>

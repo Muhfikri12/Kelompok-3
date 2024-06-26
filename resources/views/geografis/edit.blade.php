@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="form-group">
-                              <label for="barat">{{__('Batas Barat')}}</label>
+                              <label for="barat">{{__('Deskripsi')}}</label>
                               <textarea name="description" id="" cols="30" rows="10" class="form-control">{{ $record->description ?? old('description') }}</textarea>
                               @error('barat')
                                 <span class="text-danger">{{ $message }}</span>
