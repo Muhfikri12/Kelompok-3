@@ -21,30 +21,26 @@
 
             <div class="row content">
                 <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-                    <img src="assets/img/profile.png" class="img-fluid" width="300" alt="">
+                    <img src="{{ asset('storage/petugas/' . $kades->photo) }}" class="img-fluid" width="300"
+                        alt="photo-kades">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     <h3>Pimpinan Desa</h3>
+                    <div class="d-flex flex-column g-2 my-1">
+                        <span>
+                            Nama: {{ $kades->name ?? '' }}
+                        </span>
+                        <span>
+                            NIP: {{ $kades->nip ?? '' }}
+                        </span>
+                    </div>
                     <p>
-                        Nama:
-                        Bapak/Ibu [Nama Lengkap Kepala Desa]
-                    </p>
-                    <p>
-                        Jabatan:
-                        [Nama Jabatan]
-                    </p>
-                    <p>
-                        NIP:
-                        [xxxxxxxxxxxxxxxx]
-                    </p>
-                    <p>
-                        Kepala Desa [Nama Desa] selalu terbuka untuk mendengarkan aspirasi dan masukan dari masyarakat.
+                        Kepala Desa Hegarmanah selalu terbuka untuk mendengarkan aspirasi dan masukan dari masyarakat.
                         Untuk berkomunikasi langsung, silakan menghubungi:
-
                     </p>
                     <ul>
-                        <li><i class="bi bi-check"></i> Email: fulan@gmail.com</li>
-                        <li><i class="bi bi-check"></i>Alamat: Jl. Raya Tagog No. 128 Padalarang</li>
+                        <li><i class="bi bi-check"></i>Telepon: {{ $kades->phone }}</li>
+                        <li><i class="bi bi-check"></i>Alamat: {{ $kades->address }}</li>
                     </ul>
                 </div>
             </div>
