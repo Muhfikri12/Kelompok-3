@@ -16,12 +16,13 @@ class LembagaSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        $type = ['BPD',"LPM","KARTA","PKK","DLL"];
+
+        $type = ['BPD',"LPM","KARTA","PKK"];
         for($i=0; $i<10; $i++) {
             Lembaga::create([
-                "name" => $faker->name,
-                "leader" => $faker->name,
                 "type" => $faker->randomElement($type),
+                "name" => $faker->city,
+                "leader" => $faker->name,
                 "address" => $faker->address,
                 "date" => $faker->date,
                 "email" => $faker->unique()->safeEmail,
