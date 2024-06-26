@@ -39,63 +39,11 @@
     <!-- Template Main CSS File -->
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
-    <style>
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-        }
-
-        .carousel-item {
-            height: 600px;
-
-            /* Set the desired height */
-        }
-
-        .carousel-item .carousel-background {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 1rem;
-        }
-
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-
-        }
-    </style>
-
 </head>
 
 <body>
 
     @include('components.navbar-lp')
-
-    {{-- <section class="container " style="margin-top:1rem;">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                @foreach ($news as $key => $item)
-                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }} shadow bg-body-tertiary rounded">
-                        <div class="carousel-background" style="background-image: url('{{ asset($item->photo) }}');">
-                        </div>
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-light"><strong>{{ $item->title }}</strong></h5>
-                            <p class="text-light">{{ $item->content }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section> --}}
 
     <section class="container mt-3">
         <div class="news" style="display: flex;">
@@ -118,13 +66,13 @@
                     </li>
                     <li class="list-group-item">
                         @foreach ($listNews as $item)
-                            <div class="" style="max-width: 540px;">
-                                <div class="row g-2">
-                                    <div class="col-md-4 fixed-container">
+                            <div class="news-item" style="max-width: 540px;">
+                                <div class="row g-2 my-1 hover-effect" style="padding: 0px 0.5rem 0.5rem 0.5rem">
+                                    <div class=" col-lg-4 fixed-container">
                                         <img src="{{ asset($item->photo) }}" class="img-fluid rounded-start fixed-img"
                                             alt="...">
                                     </div>
-                                    <div class="col-md-8 ">
+                                    <div class=" col-lg-8">
                                         <a href="{{ route('news.article', ['id' => $item->id]) }}">
                                             <div class="card-body my-auto">
                                                 <p class="card-title"><strong>{{ $item->title }}</strong></p>

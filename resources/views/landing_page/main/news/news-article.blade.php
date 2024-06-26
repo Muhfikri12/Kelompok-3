@@ -17,8 +17,11 @@
                             <div class="text-container">
                                 <a href="{{ route('news.article', ['id' => $item->id]) }}"
                                     class="text-decoration-none text-dark">
-                                    <h5 class="card-title-lp mb-0 text-light">{{ ucwords(strtolower($item->title)) }}
-                                    </h5>
+                                    <strong>
+                                        <h5 class="card-title-lp mb-0 text-light">
+                                            {{ ucwords(strtolower($item->title)) }}
+                                        </h5>
+                                    </strong>
                                 </a>
                                 <a href="{{ route('news.article', ['id' => $item->id]) }}"
                                     class="text-decoration-none text-dark">

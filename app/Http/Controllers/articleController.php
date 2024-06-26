@@ -32,7 +32,12 @@ class articleController extends Controller
             ->orderBy('event_time', 'asc')
             ->take(3)
             ->get();
-        return view('landing_page.main.article.detail-article', compact('articles', 'slide', 'listArticle', 'maxTextLength'));
+
+        $listNews = Article::where('id', '!=', $id)
+            ->where('type', 'Berita')
+            ->take(3)
+            ->get();
+        return view('landing_page.main.article.detail-article', compact('listNews', 'articles', 'slide', 'listArticle', 'maxTextLength'));
     }
 
     /**

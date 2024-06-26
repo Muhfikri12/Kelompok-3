@@ -39,49 +39,54 @@
     <!-- Template Main CSS File -->
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
-    <style>
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            color: white;
-        }
-
-        .carousel-item {
-            height: 650px;
-            /* Set the desired height */
-        }
-
-        .carousel-item .carousel-background {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 1rem;
-        }
-    </style>
-
 </head>
 
 <body>
 
     @include('components.navbar-lp')
 
-    <section class="container my-2">
-        <div class="article">
-            <div class="col-lg-3 order-1 order-lg-1 detail-article" style="text-decoration-style:none"
-                data-aos="fade-up" data-aos-delay="200">
-                <div class="detail-content-article">
-                    <img src={{ asset($articles->photo) }} class="img-fluid responsive-image" alt="">
+    <section class="container mt-3">
+        <div class="news" style="display: flex;">
+            <div class="col-lg-6 detail-news" style="text-decoration-style:none" data-aos="fade-up"
+                data-aos-delay="200">
+                <div class="detail-content-news">
+                    <img src="{{ asset($articles->photo) }}" class="img-fluid responsive-image" alt="">
                     <h4><strong>{{ $articles->title }}</strong></h4>
                     <article>
                         {!! $articles->detail_content !!}
                     </article>
                 </div>
+            </div>
+            <div class="col-lg-3 info-news" data-aos="fade-up" data-aos-delay="200">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group">
+                        <div class="header-article-event" data-aos="fade-up">
+                            <h4>Berita</h4>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        @foreach ($listNews as $item)
+                            <div class="news-item" style="max-width: 540px;">
+                                <div class="row g-2 my-1 hover-effect" style="padding: 0px 0.5rem 0.5rem 0.5rem">
+                                    <div class=" col-lg-4 fixed-container">
+                                        <img src="{{ asset($item->photo) }}" class="img-fluid rounded-start fixed-img"
+                                            alt="...">
+                                    </div>
+                                    <div class=" col-lg-8">
+                                        <a href="{{ route('news.article', ['id' => $item->id]) }}">
+                                            <div class="card-body my-auto">
+                                                <p class="card-title"><strong>{{ $item->title }}</strong></p>
+                                                <small>
+                                                    <p class="card-text">{{ $item->content }}</p>
+                                                </small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="other_article">
@@ -93,7 +98,7 @@
                     <div class="row row-cols-1 row-cols-md-3 g-2 px-4">
                         @foreach ($listArticle as $item)
                             <div class="col-sm-12 col-lg-4 col-md-6">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card mx-auto" style="width: 18rem;">
                                     <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $item->title }}</h5>
@@ -111,31 +116,8 @@
                             </div>
                         @endforeach
                     </div>
-                    {{-- <div>
-                        @foreach ($listArticle as $item)
-                            <div class="info-content-article">
-                                <div class="img-container">
-                                    <img src="{{ asset($item->photo) }}" class="img-fluid" alt="">
-                                </div>
-                                <div class="info-detail-article">
-                                    <strong><small>{{ $item->title }}</small></strong>
-                                    <ul>
-                                        <li><small class="ac"><i data-feather="calendar"></i></small>
-                                            {{ $item->event_date->translatedFormat('l, d F Y') }}
-                                        </li>
-                                        <li><small class="ac"><i
-                                                    data-feather="clock"></i></small>{{ $item->event_time }}
-                                        </li>
-                                    </ul>
-                                    <p></p>
-                                    <a href="{{ route('article', $item->id) }}" class="btn more-btn">Lihat Detail</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div> --}}
                 </div>
             </div>
-        </div>
     </section>
 
     @include('landing_page.footer.footer')
