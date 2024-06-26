@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Demografi;
 use App\Models\Geografis;
+use App\Models\Lembaga;
 use App\Models\PerangkatDesa;
 use App\Models\StructureOrg;
 use Illuminate\Http\Request;
@@ -51,6 +52,17 @@ class LandingPageController extends Controller
 
         return view('landing_page.struktur', [
             'result' => $results,
+        ]);
+
+    }
+
+    public function lembaga()
+    {
+        $results = Lembaga::all();
+        // dd($results);
+
+        return view('landing_page.lembaga', [
+            'results' => $results,
         ]);
 
     }
