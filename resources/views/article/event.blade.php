@@ -8,11 +8,7 @@
 
     <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
 
 

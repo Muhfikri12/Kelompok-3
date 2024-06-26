@@ -8,11 +8,7 @@
 
     <a href="{{ route('basic.create') }}" class="btn btn-primary mb-3">New User</a>
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
     <table class="table table-bordered table-stripped">
         <thead>
