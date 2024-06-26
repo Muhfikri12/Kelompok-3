@@ -11,42 +11,44 @@
                 </div>
                 <div class="card-body">
                     <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">{{ __('Data Demografi Baru') }}</a>
-
-                    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>{{ __('No') }}</th>
-                                <th>{{ __('Tahun') }}</th>
-                                <th>{{ __('Kategori') }}</th>
-                                <th>{{ __('Keterangan') }}</th>
-                                <th>{{ __('Jumlah') }}</th>
-                                <th>#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($results as $record)
+                    <div style="width:100%;overflow:scroll;">
+                        <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td scope="row">{{ $loop->iteration }}</td>
-                                    <td>{{ $record->tahun }}</td>
-                                    <td>{{ $record->category->nama }}</td>
-                                    <td>{{ $record->keterangan }}</td>
-                                    <td>{{ $record->total . " $record->satuan" }}</td>
-
-                                    <td>
-                                        <div class="d-flex">
-                                            <a href="{{ route('demografi.show', $record->id) }}"
-                                                class="btn btn-sm btn-secondary mr-2">{{ __('Lihat') }}</a>
-                                            <a href="{{ route('demografi.edit', $record->id) }}"
-                                                class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
-                                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                                data-toggle="modal" data-target="#DeleteModal">{{ __('Hapus') }}</button>
-
-                                        </div>
-                                    </td>
+                                    <th>{{ __('No') }}</th>
+                                    <th>{{ __('Tahun') }}</th>
+                                    <th>{{ __('Kategori') }}</th>
+                                    <th>{{ __('Keterangan') }}</th>
+                                    <th>{{ __('Jumlah') }}</th>
+                                    <th>#</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($results as $record)
+                                    <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
+                                        <td>{{ $record->tahun }}</td>
+                                        <td>{{ $record->category->nama }}</td>
+                                        <td>{{ $record->keterangan }}</td>
+                                        <td>{{ $record->total . " $record->satuan" }}</td>
+
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('demografi.show', $record->id) }}"
+                                                    class="btn btn-sm btn-secondary mr-2">{{ __('Lihat') }}</a>
+                                                <a href="{{ route('demografi.edit', $record->id) }}"
+                                                    class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
+                                                <button class="btn btn-danger btn-sm btn-hapus"
+                                                    data-id="{{ $record->id }}" data-toggle="modal"
+                                                    data-target="#DeleteModal">{{ __('Hapus') }}</button>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

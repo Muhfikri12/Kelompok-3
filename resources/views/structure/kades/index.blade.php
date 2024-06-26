@@ -17,37 +17,40 @@
                     <h3 class="m-0 font-weight-bold text-primary">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-stripped display nowrap" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>{{__('No')}}</th>
-                                <th>{{(__('Nama Petugas'))}}</th>
-                                <th>{{(__('Struktur'))}}</th>
-                                <th>#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($results as $record)
+                    <div style="width:100%;overflow:scroll;">
+                        <table class="table table-bordered table-stripped display nowrap" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td scope="row">{{ $loop->iteration }}</td>
-                                    <td>{{ $record->petugas->name ?? "-" }}</td>
-                                    <td>{{ $record->name }}</td>
-
-                                    <td>
-                                        <div class="d-flex">
-                                            <a href="{{ route('kades.edit', $record->id) }}" class="btn btn-sm btn-primary mr-2">{{__('Ubah')}}</a>
-                                            @if ($record->id == 1)
-
-                                            @else
-                                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $record->id }}"
-                                                data-toggle="modal" data-target="#DeleteModal">{{__('Hapus')}}</button>
-                                            @endif
-                                        </div>
-                                    </td>
+                                    <th>{{ __('No') }}</th>
+                                    <th>{{ __('Nama Petugas') }}</th>
+                                    <th>{{ __('Struktur') }}</th>
+                                    <th>#</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($results as $record)
+                                    <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
+                                        <td>{{ $record->petugas->name ?? '-' }}</td>
+                                        <td>{{ $record->name }}</td>
+
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('kades.edit', $record->id) }}"
+                                                    class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
+                                                @if ($record->id == 1)
+                                                @else
+                                                    <button class="btn btn-danger btn-sm btn-hapus"
+                                                        data-id="{{ $record->id }}" data-toggle="modal"
+                                                        data-target="#DeleteModal">{{ __('Hapus') }}</button>
+                                                @endif
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -90,8 +93,8 @@
         })
 
         // Jika tombol "Ya, Hapus" di klik, submit form
-            $('#deleteForm [type="submit"]').click(function(){
+        $('#deleteForm [type="submit"]').click(function() {
             $("#deleteForm").submit();
-            })
+        })
     </script>
 @endpush
