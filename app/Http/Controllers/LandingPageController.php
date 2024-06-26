@@ -59,7 +59,7 @@ class LandingPageController extends Controller
 
     public function lembaga()
     {
-        $results = Lembaga::all();
+        $results = Lembaga::orderBy('type','ASC')->get()->groupBy('type');
         // dd($results);
 
         return view('landing_page.lembaga', [
