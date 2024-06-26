@@ -17,7 +17,7 @@ class PerangkatDesaController extends Controller
     public function index()
     {
         return view('perangkat.index', [
-            "title" => "Data Petugas Desa",
+            "title" => "Tabel Petugas Desa",
             "results" => PerangkatDesa::all(),
         ]);
     }
@@ -28,7 +28,7 @@ class PerangkatDesaController extends Controller
     public function create()
     {
         return view('perangkat.create', [
-            "title" => "Buat Data Baru",
+            "title" => "Buat Data Petugas",
             "positions" => Jabatan::all(),
         ]);
     }
@@ -43,7 +43,7 @@ class PerangkatDesaController extends Controller
         // Genereate nama file bersarakan request namam waktu dan $extension file
         $namaFile = $request->name . "-" . time() . "." . $extfile;
         // Simpan Photo su Storage/app/uploads
-        $path = $request->photo->storeAs('public', $namaFile);
+        $path = $request->photo->storeAs('public/petugas/', $namaFile);
 
         PerangkatDesa::create([
             "name" => $request->name,
@@ -66,7 +66,7 @@ class PerangkatDesaController extends Controller
     public function show(PerangkatDesa $perangkat)
     {
         return view('perangkat.show', [
-            'title' => "Lihat Data",
+            'title' => "Lihat Data Petugas",
             'record' => $perangkat,
             "positions" => Jabatan::all(),
         ]);
@@ -78,7 +78,7 @@ class PerangkatDesaController extends Controller
     public function edit(PerangkatDesa $perangkat)
     {
         return view('perangkat.edit', [
-            'title' => "Ubah Data",
+            'title' => "Ubah Data Petugas",
             'record' => $perangkat,
             "positions" => Jabatan::all(),
         ]);
@@ -100,7 +100,7 @@ class PerangkatDesaController extends Controller
         if (Storage::disk('public')->exists($photo) == false) {
             // return 1;
             // Delete Jiga File diganti
-            $path = public_path('/public/' . $perangkat->photo);
+            $path = public_path('public/petugas/' . $perangkat->photo);
             Storage::disk('public')->delete($path);
 
             // Simpan Gambar
@@ -109,7 +109,7 @@ class PerangkatDesaController extends Controller
             // Genereate nama file bersarakan request namam waktu dan $extension file
             $namaFile = $request->name . "-" . time() . "." . $extfile;
             // Simpan Photo su Storage/app/uploads
-            $path = $request->photo->storeAs('public', $namaFile);
+            $path = $request->photo->storeAs('public/petugas/', $namaFile);
 
             $perangkat->update([
                 "name" => $request->name,
@@ -146,7 +146,7 @@ class PerangkatDesaController extends Controller
     {
         $perangkat->delete();
 
-        Alert::success('Success','Data Berhasil dihapus');
+        Alert::success('Success','Data Petugas Berhasil dihapus');
         return redirect()->route('perangkat.index');
     }
 }

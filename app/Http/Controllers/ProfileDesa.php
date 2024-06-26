@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PerangkatDesa;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+
 use HTMLPurifier;
 use HTMLPurifier_Config;
-
 use App\ProfileDesas;
 
 class ProfileDesa extends Controller
@@ -15,7 +16,12 @@ class ProfileDesa extends Controller
     public function showAbout()
     {
         $data = ProfileDesas::first();
-        return view('landing_page.about-us', compact('data'));
+        $kades = PerangkatDesa::where('position_id', 1)->first();
+        // dd($kades);
+        return view('landing_page.about-us', [
+            'data' => $data,
+            'kades' => $kades
+        ]);
     }
     public function showVisiMisi()
     {

@@ -24,6 +24,7 @@ class StructureOrgRequest extends FormRequest
         return [
             "name" => 'required',
             'parent_id' => 'required',
+            'staff_id' => 'required',
         ];
     }
 }

@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.2.0",
         "devmarketer/easynav": "^1.0",
+        "fakerphp/faker": "^1.5",
         "ezyang/htmlpurifier": "^4.17",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/fortify": "^1.6",

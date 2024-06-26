@@ -22,6 +22,21 @@
                             @enderror
                           </div>
 
+                          <div class="form-group">
+                            <label for="satypetuan">{{__('Tipe')}}</label>
+                            <select name="type" id="satuab" class="form-control">
+                              <option value="">-- Pilih --</option>
+                              <option value="Kades" {{(old('type') ?? $record->type) == "Kades" ? "selected" : ''}}>Kades</option>
+                              <option value="Sekertaris" {{(old('type') ?? $record->type)  == "Sekertaris" ? 'selected' : ''}}>Sekertaris</option>
+                              <option value="Kaur" {{ old("type") ?? $record->type  == "Kaur" ? "selected" : ''}}>Kaur</option>
+                              <option value="Kasi" {{ (old('type') ?? $record->type) == "Kasi"  ? 'selected' : ''}}>Kasi</option>
+                              <option value="Staf" {{ (old('type') ?? $record->type) == "Staf" ? 'selected' : ''}}>Staf</option>
+                            </select>
+                            @error('type')
+                              <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                          </div>
+
                         <div class="form-group">
                           <label for="description">{{__('Keterangan')}}</label>
                           <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" id="description" placeholder="Keterangan jabatan" autocomplete="off" value="{{ $record->description ?? old('description') }}">
@@ -30,9 +45,8 @@
                           @enderror
                         </div>
 
-
                         <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                        <a href="{{ route('demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                        <a href="{{ route('jabatan.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
                     </form>
                 </div>

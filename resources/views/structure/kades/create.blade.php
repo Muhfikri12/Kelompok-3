@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('kades.store') }}" method="post">
+            <form action="{{ route('kasi.store') }}" method="post">
                 @csrf
 
 
@@ -30,7 +30,7 @@
                         autocomplete="off" value="{{ old('name') }}">
                 </div>
 
-                {{-- <div class="form-group">
+                <div class="form-group">
                     <label for="parent_id">{{ __('Pimpinan') }}</label>
                     <select name="parent_id" id="parent_id" class="form-control" name="parent_id">
                         <option value="" selected>-- Pilih --</option>
@@ -40,10 +40,10 @@
                                 {{ $item->name }}</option>
                         @endforeach
                     </select>
-                </div> --}}
+                </div>
 
                 <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
-                <a href="{{ route('kades.index') }}" class="btn btn-default">{{ __('Kembali') }}</a>
+                <a href="{{ route('kasi.index') }}" class="btn btn-default">{{ __('Kembali') }}</a>
 
             </form>
         </div>
