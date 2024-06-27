@@ -28,7 +28,7 @@
                                     <option value="{{$item->id}}" {{$item->id == old('kategori_id') ? 'selected' : ''}}>{{$item->nama}}</option>
                                 @endforeach
                             </select>
-                            @error('kategori')
+                            @error('kategori_id')
                               <span class="text-danger">{{ $message }}</span>
                             @enderror
                           </div>

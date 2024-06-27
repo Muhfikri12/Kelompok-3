@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GlobalRequest;
+use App\Http\Requests\JabatanRequest;
 use App\Models\Jabatan;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -30,7 +31,7 @@ class JabatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(GlobalRequest $request)
+    public function store(JabatanRequest $request)
     {
         // dd($request->all());
         $record = Jabatan::firstOrNew([
@@ -65,7 +66,7 @@ class JabatanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(GlobalRequest $request, Jabatan $jabatan)
+    public function update(JabatanRequest $request, Jabatan $jabatan)
     {
         $jabatan->name = $request->name;
         $jabatan->description = $request->description;

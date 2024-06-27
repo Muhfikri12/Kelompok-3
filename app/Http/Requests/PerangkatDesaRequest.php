@@ -31,4 +31,18 @@ class PerangkatDesaRequest extends FormRequest
             "status" => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            'name'      => __('Nama'),
+            'gender'      => __('Jenis Kelamin'),
+            'position_id'      => __('Jabatan'),
+            'status'      => __('Status Kepagawaian'),
+
+
+        ];
+
+        return $attributes;
+    }
 }

@@ -66,7 +66,7 @@
                         <select name="position_id" id="position_id" name="position_id" class="form-control">
                             <option value="" selected>-- Pilih --</option>
                             @foreach ($positions as $item)
-                            <option value="{{$item->id}}" {{$item->position_id == old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
+                            <option value="{{$item->id}}" {{old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
                             @endforeach
                         </select>
                         @error('position_id')

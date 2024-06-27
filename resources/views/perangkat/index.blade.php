@@ -2,9 +2,6 @@
 
 @section('main-content')
     <!-- Main Content goes here -->
-
-
-
     <div class="row">
         <div class="col">
             <div class="card mb-4 shadow">

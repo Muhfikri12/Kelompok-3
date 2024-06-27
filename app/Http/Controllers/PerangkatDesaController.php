@@ -18,7 +18,7 @@ class PerangkatDesaController extends Controller
     {
         return view('perangkat.index', [
             "title" => "Tabel Petugas Desa",
-            "results" => PerangkatDesa::all(),
+            "results" => PerangkatDesa::orderBy('updated_at', 'asc')->get(),
         ]);
     }
 
@@ -38,23 +38,30 @@ class PerangkatDesaController extends Controller
      */
     public function store(PerangkatDesaRequest $request)
     {
-        // Ambil extensi file
-        $extfile = $request->photo->getClientOriginalExtension();
-        // Genereate nama file bersarakan request namam waktu dan $extension file
-        $namaFile = $request->name . "-" . time() . "." . $extfile;
-        // Simpan Photo su Storage/app/uploads
-        $path = $request->photo->storeAs('public/petugas/', $namaFile);
 
-        PerangkatDesa::create([
+        if ($request->hasFile('photo') == true) {
+            // Ambil extensi file
+            $extfile = $request->photo->getClientOriginalExtension();
+            // Genereate nama file bersarakan request namam waktu dan $extension file
+            $namaFile = $request->name . "-" . time() . "." . $extfile;
+            // Simpan Photo su Storage/app/uploads
+            $request->photo->storeAs('public/petugas/', $namaFile);
+        } else {
+            $namaFile = "Asep Rohmat-1719281373.png";
+        }
+
+        $record = PerangkatDesa::firstOrNew([
             "name" => $request->name,
-            "gender" => $request->gender,
             "nip" => $request->nip,
-            "position_id" => $request->position_id,
-            "phone" => $request->phone,
-            "status" => $request->status,
-            "address" => $request->address,
-            "photo" => $namaFile
         ]);
+        $record->position_id = $request->position_id;
+        $record->phone = $request->phone;
+        $record->status = $request->status;
+        $record->address = $request->address;
+        $record->photo = $namaFile;
+        $record->save();
+
+
 
         Alert::success('Success', 'Data Berhasil dibuat');
         return redirect()->route('perangkat.index');
@@ -90,52 +97,29 @@ class PerangkatDesaController extends Controller
     public function update(PerangkatDesaRequest $request, PerangkatDesa $perangkat)
     {
 
-        // Cek jika foto null
-        $photo = $request->photo ? $request->photo : $perangkat->photo;
-
-        // dd(Storage::disk('public')->exists($photo));
-        // if(public_path('/public/'.$request->photo))
-
-
-        if (Storage::disk('public')->exists($photo) == false) {
-            // return 1;
-            // Delete Jiga File diganti
-            $path = public_path('public/petugas/' . $perangkat->photo);
-            Storage::disk('public')->delete($path);
-
-            // Simpan Gambar
+        if ($request->hasFile('photo') == true) {
             // Ambil extensi file
-            $extfile = $photo->getClientOriginalExtension();
+            $extfile = $request->photo->getClientOriginalExtension();
             // Genereate nama file bersarakan request namam waktu dan $extension file
             $namaFile = $request->name . "-" . time() . "." . $extfile;
             // Simpan Photo su Storage/app/uploads
-            $path = $request->photo->storeAs('public/petugas/', $namaFile);
-
-            $perangkat->update([
-                "name" => $request->name,
-                "gender" => $request->gender,
-                "nip" => $request->nip,
-                "position_id" => $request->position_id,
-                "phone" => $request->phone,
-                "status" => $request->status,
-                "address" => $request->address,
-                "photo" => $namaFile
-            ]);
+            $request->photo->storeAs('public/petugas/', $namaFile);
         } else {
-            // return 0;
-            $perangkat->update([
-                "name" => $request->name,
-                "gender" => $request->gender,
-                "nip" => $request->nip,
-                "position_id" => $request->position_id,
-                "phone" => $request->phone,
-                "status" => $request->status,
-                "address" => $request->address,
-                "photo" => $perangkat->photo
-            ]);
+            $namaFile = $request->photo;
         }
 
-        Alert::success('Success','Data Berhasil diubah');
+        $perangkat->update([
+            "name" => $request->name,
+            "gender" => $request->gender,
+            "nip" => $request->nip,
+            "position_id" => $request->position_id,
+            "phone" => $request->phone,
+            "status" => $request->status,
+            "address" => $request->address,
+            "photo" => $namaFile,
+        ]);
+
+        Alert::success('Success', 'Data Berhasil diubah');
         return redirect()->route('perangkat.index');
     }
 
@@ -146,7 +130,7 @@ class PerangkatDesaController extends Controller
     {
         $perangkat->delete();
 
-        Alert::success('Success','Data Petugas Berhasil dihapus');
+        Alert::success('Success', 'Data Petugas Berhasil dihapus');
         return redirect()->route('perangkat.index');
     }
 }

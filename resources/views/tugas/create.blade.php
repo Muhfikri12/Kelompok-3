@@ -23,6 +23,9 @@
                                     <option value="{{$item->id}}" {{$item->id == old('position_id') ? 'selected' : ''}}>{{$item->name}}</option>
                                 @endforeach
                             </select>
+                            @error('position_id')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
                         <div class="form-group">
