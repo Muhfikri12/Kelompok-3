@@ -1,4 +1,4 @@
-<div class="container-xxl py-6">
+<div class="container-xxl py-6" id="article">
     <div class="container">
         <div class="header-article-event mb-3" data-aos="fade-up">
             <h4>Event Terbaru</h4>

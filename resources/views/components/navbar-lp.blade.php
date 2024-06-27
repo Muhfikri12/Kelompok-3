@@ -1,7 +1,7 @@
 <header id="header" class="fixed-top header-transparent bg-primary">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="logo">
-            <h1><a href="{{ route('landing_page') }}">Desa Hegarmanah</a></h1>
+            <h4><strong><a href="{{ route('landing_page') }}" class="text-light">Desa Hegarmanah</a></strong></h4>
         </div>
         <nav id="navbar" class="navbar">
             <ul>

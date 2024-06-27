@@ -1697,6 +1697,7 @@ section {
 }
 
 /* News Article Landing Page */
+
 .news {
     display: flex;
     flex-direction: row;

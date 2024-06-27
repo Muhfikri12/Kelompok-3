@@ -6,17 +6,21 @@ use Carbon\Carbon;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class articleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function article($id)
+    public function article(Request $request, $id)
     {
         $articles = Article::find($id);
         $slide = Article::all()->take(3);
         $maxTextLength = 70;
+        $page = $request->page ?? 1;
+        $perPage = 5; // Banyak artikel per halaman
+        $offset = ($page - 1) * $perPage;
 
         $currentDateTime = Carbon::now();
 
@@ -35,7 +39,9 @@ class articleController extends Controller
 
         $listNews = Article::where('id', '!=', $id)
             ->where('type', 'Berita')
-            ->take(3)
+            ->orderBy('created_at', 'desc')
+            ->offset($offset)
+            ->limit($perPage)
             ->get();
         return view('landing_page.main.article.detail-article', compact('listNews', 'articles', 'slide', 'listArticle', 'maxTextLength'));
     }
@@ -119,14 +125,51 @@ class articleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $articles = Article::findOrFail($id);
+
+        if (!$articles) {
+            return response()->json(['error' => 'News not found'], 404);
+        }
+
+        // Check if 'image_content' is present in the request
+        if ($request->hasFile('image_content')) {
+            // Delete the old image if it exists
+            if ($articles->photo && file_exists(public_path($articles->photo))) {
+                unlink(public_path($articles->photo));
+            }
+
+            // Handle the new image upload
+            $image = $request->file('image_content');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+
+            // Update the image path
+            $articles->photo = 'images/' . $imageName;
+        }
+
+        $articles->title = $request->event_article;
+        $articles->admin_id = Auth::user()->id;
+        $articles->content = $request->headline_article;
+        $articles->event_time = $request->event_time;
+        $articles->event_date = $request->event_date;
+        $articles->place = $request->event_place;
+        $articles->type = $request->type;
+        $articles->detail_content = $request->detail_content;
+
+        $articles->save();
+
+
+        return redirect()->route('data.event')->with('status', 'Berita Berhasil Diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Article $article, string $id)
     {
-        //
+        $article = Article::findOrFail($id);
+        $article->delete();
+        Alert::success('Success', 'Data Berhasil dihapus');
+        return redirect()->route('data.event');
     }
 }

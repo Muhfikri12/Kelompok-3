@@ -30,8 +30,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
 
 
-Route::get('/article', [articleController::class, 'article'])->name('article');
-Route::get('/data/demografi', [LandingPageController::class, 'demografi'])->name('data-demografi');
 Route::get('/acara/{id}', [articleController::class, 'article'])->name('article');
 Route::get('/berita/{id}', [NewsArticleController::class, 'detailNews'])->name('news.article');
 
@@ -60,16 +58,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
     Route::get('/membuat/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
-    Route::post('/create/berita', [NewsArticleController::class, 'store'])->name('news.store');
+
     Route::get('/create/acara', [articleController::class, 'event'])->name('event');
     // article
-    Route::get('/create/berita', [NewsArticleController::class, 'newsArticle'])->name('news');
     Route::get('/create/acara', [articleController::class, 'event'])->name('event');
     Route::post('/article', [articleController::class, 'store'])->name('article.store');
-    Route::get('/acara/{id}/edit', [articleController::class, 'edit'])->name('article.edit');
     Route::get('/data/acara', [articleController::class, 'dataEvent'])->name('data.event');
+    Route::get('/acara/{id}/edit', [articleController::class, 'edit'])->name('article.edit');
+    Route::put('/acara/{id}', [articleController::class, 'update'])->name('article.update');
+    Route::delete('/acara/{id}', [articleController::class, 'destroy'])->name('article.destroy');
     Route::get('/data/berita', [NewsArticleController::class, 'dataNews'])->name('data.news');
     Route::post('/data/berita', [NewsArticleController::class, 'store'])->name('news.store');
+    Route::get('/berita/{id}/edit', [NewsArticleController::class, 'edit'])->name('news.edit');
+    Route::put('/berita/{id}', [NewsArticleController::class, 'update'])->name('news.update');
+    Route::delete('/berita/{id}', [NewsArticleController::class, 'destroy'])->name('news.destroy');
     // Route::get('/data/article', [articleController::class, 'article'])->name('article');
 });
 
@@ -90,7 +92,6 @@ Route::get('/basic/create/about-us', function () {
 Route::get('/about-us', [ProfileDesa::class, 'showAbout'])->name('about-us');
 Route::get('/visi-misi', [ProfileDesa::class, 'showVisiMisi'])->name('visi-misi');
 Route::get('/sejarah', [ProfileDesa::class, 'showSejarah'])->name('sejarah');
-Route::get('/data-demografi', "LandingPageController@demografi")->name('data-demografi');
 
 
 

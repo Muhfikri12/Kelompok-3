@@ -151,5 +151,17 @@
         feather.replace();
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsContainer = document.querySelector('.news-container');
+            newsContainer.addEventListener('scroll', function() {
+                if (newsContainer.scrollTop + newsContainer.clientHeight >= newsContainer.scrollHeight) {
+                    // Logic to load more articles, e.g., via AJAX
+                    console.log('Load more articles');
+                }
+            });
+        });
+    </script>
+
 
 </body>

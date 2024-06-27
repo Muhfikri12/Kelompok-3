@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewsArticleController extends Controller
 {
@@ -46,7 +47,7 @@ class NewsArticleController extends Controller
 
         $listNews = Article::where('id', '!=', $id)
             ->where('type', 'Berita')
-            ->take(3)
+            // ->take(3)
             ->get();
         return view('landing_page.main.news.detail-news', compact('news', 'listArticle', 'listNews'));
     }
@@ -95,9 +96,12 @@ class NewsArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $news = Article::findOrFail($id);
+        return view('create_article', [
+            'article' => 'news.edit_news'
+        ], compact('news'));
     }
 
     /**
@@ -105,14 +109,48 @@ class NewsArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $news = Article::findOrFail($id);
+
+        if (!$news) {
+            return response()->json(['error' => 'News not found'], 404);
+        }
+
+        // Check if 'image_content' is present in the request
+        if ($request->hasFile('image_content')) {
+            // Delete the old image if it exists
+            if ($news->photo && file_exists(public_path($news->photo))) {
+                unlink(public_path($news->photo));
+            }
+
+            // Handle the new image upload
+            $image = $request->file('image_content');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+
+            // Update the image path
+            $news->photo = 'images/' . $imageName;
+        }
+
+        $news->title = $request->event_article;
+        $news->admin_id = Auth::user()->id;
+        $news->content = $request->headline_news;
+        $news->type = $request->type;
+        $news->detail_content = $request->detail_content;
+
+        $news->save();
+
+
+        return redirect()->route('data.news')->with('status', 'Berita Berhasil Diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(News $news, $id)
     {
-        //
+        $news = Article::findOrFail($id);
+        $news->delete();
+        Alert::success('Success', 'Data Berhasil dihapus');
+        return redirect()->route('data.news');
     }
 }

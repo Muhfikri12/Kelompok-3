@@ -12,8 +12,7 @@
                 </tr>
                 <tr>
                     <td><label for="headline_article">Headline Acara</label></td>
-                    <td><input type="text" id="headline_article" name="headline_article" required
-                            value="ini indonesia"> <br></td>
+                    <td><input type="text" id="headline_article" name="headline_article" required> <br></td>
                 </tr>
                 <tr>
                     <td><label for="event_time">Waktu Pelaksanaan</label></td>

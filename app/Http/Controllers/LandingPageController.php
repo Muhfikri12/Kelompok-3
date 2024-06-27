@@ -36,6 +36,7 @@ class LandingPageController extends Controller
         $slide = Article::all()->take(3);
         $news = Article::where('type', 'Berita')
             ->orderBy('created_at', 'desc')
+            ->take(2)
             ->get();
 
         $maxTextLength = 10;

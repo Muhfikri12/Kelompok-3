@@ -41,11 +41,8 @@
                                         <div class="d-flex">
                                             <a href="{{ route('article.edit', ['id' => $item->id]) }}"
                                                 class="btn btn-sm btn-primary mr-2">Edit</a>
-                                            {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
-                    @csrf
-                    @method('delete') --}}
-                                            <button class="btn btn-danger btn-sm btn-hapus" data-id=""
-                                                data-toggle="modal" data-target="#DeleteModal">Delete</button>
+                                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $item->id }}"
+                                                data-toggle="modal" data-target="#DeleteModal">{{ __('Hapus') }}</button>
                                             {{-- </form> --}}
                                         </div>
                                     </td>
@@ -90,7 +87,7 @@
     <script>
         $('.btn-hapus').click(function() {
             let idHapus = $(this).attr('data-id');
-            $("#deleteForm").attr('action', '/demografi/' + idHapus);
+            $("#deleteForm").attr('action', '/acara/' + idHapus);
         })
 
         // Jika tombol "Ya, Hapus" di klik, submit form

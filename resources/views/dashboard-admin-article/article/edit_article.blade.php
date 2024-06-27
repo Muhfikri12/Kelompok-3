@@ -3,8 +3,9 @@
     <div class="form-content-dasboard-article">
         <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Edit Acara') }}</h3>
         <hr>
-        <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('article.update', $articles->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <table>
                 <tr>
                     <td><label for="event_article">Nama Acara</label></td>
@@ -32,8 +33,20 @@
                 </tr>
 
                 <tr>
-                    <td><label for="image_content">Masukan Gambar</label></td>
-                    <td><input type="file" id="image_content" name="image_content" value="{{ $articles->photo }}">
+                    <td><label for="photo">{{ __('Gambar') }}</label></td>
+                    <td>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="text">
+                                <input type="file" class="custom-file-input @error('photo') is-invalid @enderror"
+                                    name="image_content" id="photo" aria-describedby="inputGroupFileAddon01"
+                                    value="{{ $articles->photo }}">
+                                <label class="custom-file-label" for="photo"> {{ $articles->photo }}</label>
+                            </div>
+                        </div>
                     </td>
                     <td><input type="hidden" name="type" value="pengumuman"></td>
                 </tr>
