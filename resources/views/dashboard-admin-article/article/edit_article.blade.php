@@ -24,7 +24,7 @@
                 <tr>
                     <td><label for="event_date">Tanggal Pelaksanaan</label></td>
                     <td><input type="date" id="event_date" name="event_date" required
-                            value="{{ $articles->event_date }}"></td>
+                            value="{{ \Carbon\Carbon::parse($articles->event_date)->format('Y-m-d') }}"></td>
                 </tr>
                 <tr>
                     <td><label for="event_place">Tempat Pelaksanaan</label></td>

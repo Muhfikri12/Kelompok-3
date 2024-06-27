@@ -16,7 +16,8 @@
                 </tr>
                 <tr>
                     <td><label for="event_time">Waktu Pelaksanaan</label></td>
-                    <td><input type="text" id="event_time" name="event_time" required> <br></td>
+                    <td><input type="text" id="event_time" name="event_time" required placeholder="Contoh: 12:00">
+                        <br></td>
                 </tr>
                 <tr>
                     <td><label for="event_date">Tanggal Pelaksanaan</label></td>

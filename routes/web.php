@@ -73,6 +73,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/data/acara', [articleController::class, 'dataEvent'])->name('data.event');
     Route::get('/acara/{id}/edit', [articleController::class, 'edit'])->name('article.edit');
     Route::put('/acara/{id}', [articleController::class, 'update'])->name('article.update');
+    Route::get('/lihat/acara/{id}', [articleController::class, 'show'])->name('article.show');
+    Route::get('/lihat/berita/{id}', [NewsArticleController::class, 'show'])->name('news.show');
     Route::delete('/acara/{id}', [articleController::class, 'destroy'])->name('article.destroy');
     Route::get('/data/berita', [NewsArticleController::class, 'dataNews'])->name('data.news');
     Route::post('/data/berita', [NewsArticleController::class, 'store'])->name('news.store');

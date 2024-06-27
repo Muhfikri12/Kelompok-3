@@ -105,7 +105,10 @@ class articleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Article::findOrFail($id);
+        return view('create_article', [
+            'article' => 'article.view_article'
+        ], compact('event'));
     }
 
     /**

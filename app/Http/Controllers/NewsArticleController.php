@@ -90,7 +90,10 @@ class NewsArticleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $news = Article::findOrFail($id);
+        return view('create_article', [
+            'article' => 'news.view_news'
+        ], compact('news'));
     }
 
     /**
