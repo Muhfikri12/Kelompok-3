@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\CategoriArticle;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class article extends Model
 {
@@ -13,7 +14,12 @@ class article extends Model
 
     protected $guarded = [];
 
-    protected $casts = [ 
+    protected $casts = [
         'event_date' => 'date'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(CategoriArticle::class);
+    }
 }

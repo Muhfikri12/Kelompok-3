@@ -19,9 +19,11 @@ return new class extends Migration
             $table->Text('content')->nullable();
             $table->time('event_time')->nullable();
             $table->date('event_date')->nullable();
+            $table->unsignedInteger('kategori_id')->nullable();
             $table->unsignedInteger('admin_id');
             $table->string('place')->nullable();
             $table->enum('type', ['pengumuman', 'berita']);
+            $table->unsignedInteger('view_count')->default(0);
 
             $table->timestamps();
         });

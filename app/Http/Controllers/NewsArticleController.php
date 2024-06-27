@@ -31,6 +31,9 @@ class NewsArticleController extends Controller
     public function detailNews($id)
     {
         $news = Article::findOrFail($id);
+        $news->update([
+            'view_count' => $news->view_count + 1
+        ]);
         $currentDateTime = Carbon::now();
         $listArticle = Article::where('id', '!=', $id)
             ->where(function ($query) use ($currentDateTime) {

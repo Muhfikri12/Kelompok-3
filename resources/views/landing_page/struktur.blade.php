@@ -2,9 +2,9 @@
     <style>
         /*Now the CSS*/
         /* * {
-                                                                                                            margin: 0;
-                                                                                                            padding: 0;
-                                                                                                        } */
+                                                                                                                            margin: 0;
+                                                                                                                            padding: 0;
+                                                                                                                        } */
 
         .tree ul {
             padding-top: 20px;
@@ -44,7 +44,7 @@
         }
 
         /*We need to remove left-right connectors from elements without
-                                                                                                                                                                            any siblings*/
+                                                                                                                                                                                            any siblings*/
         .tree li:only-child::after,
         .tree li:only-child::before {
             display: none;
@@ -56,7 +56,7 @@
         }
 
         /*Remove left connector from first child and
-                                                                                                                                                                            right connector from last child*/
+                                                                                                                                                                                            right connector from last child*/
         .tree li:first-child::before,
         .tree li:last-child::after {
             border: 0 none;
@@ -121,7 +121,7 @@
         }
 
         /*Thats all. I hope you enjoyed it.
-                                                                                                                                                                            Thanks :)*/
+                                                                                                                                                                                            Thanks :)*/
     </style>
 @endpush
 <x-root-lp>
@@ -132,7 +132,7 @@
             <h2>Struktur Organisasi Desa Hegarmanah Cicantayan</h2>
         </div>
         <div style="width: 100%;overflow:scroll;">
-            <div style="width: 1280px;">
+            <div style="width: 1280px; height:240px;">
                 <div class="tree">
                     <ul>
                         <li>

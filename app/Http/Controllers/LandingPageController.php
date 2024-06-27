@@ -77,6 +77,27 @@ class LandingPageController extends Controller
     {
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
+        $topPosts = Article::query()
+            ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
+            ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
+            ->where('article.view_count', '>=', 1)
+            ->orderBy('article.updated_at', 'desc')
+            ->take(1)
+            ->get() ?? Article::query()
+            ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
+            ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
+            ->take(1)->get();
+
+        $posts = Article::query()
+            ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
+            ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
+            ->where('article.view_count', '<', $topPosts[0]->view_count)
+            ->orderBy('article.created_at', 'desc')
+            ->take(3)
+            ->get();
+
+        // dd($posts);
+
 
         $slide = Article::all()->take(3);
         $news = Article::where('type', 'Berita')
@@ -100,7 +121,8 @@ class LandingPageController extends Controller
 
         // dd($article);
         $staffWithPositions = PerangkatDesa::with('position')->orderBy('created_at', 'asc')->get();
+        // dd($topPosts);
 
-        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news'));
+        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news', 'posts', 'topPosts'));
     }
 }
