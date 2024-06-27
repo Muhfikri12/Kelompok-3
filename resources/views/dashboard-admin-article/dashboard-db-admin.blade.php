@@ -8,7 +8,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Tabel Acara') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+                    <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Membuat Acara Baru') }}</a>
 
 
 

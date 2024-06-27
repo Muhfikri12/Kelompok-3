@@ -8,7 +8,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Tabel Berita') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('news') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+                    <a href="{{ route('news') }}" class="btn btn-primary mb-3">{{ __('Membuat Berita Baru') }}</a>
 
                     @if (session('message'))
                         <div class="alert alert-success">
