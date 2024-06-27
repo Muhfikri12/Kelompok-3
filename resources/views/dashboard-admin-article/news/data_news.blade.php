@@ -35,10 +35,12 @@
                                         {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
                                     </td>
                                     <td>
-                                        {!! \Illuminate\Support\Str::words($item->detail_content, 4, '...') !!}
+                                        {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
                                     </td>
                                     <td>
                                         <div class="d-flex">
+                                            <a href="{{ route('news.show', ['id' => $item->id]) }}"
+                                                class="btn btn-sm btn-primary mr-2">Lihat</a>
                                             <a href="{{ route('news.edit', ['id' => $item->id]) }}"
                                                 class="btn btn-sm btn-primary mr-2">Edit</a>
                                             <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $item->id }}"

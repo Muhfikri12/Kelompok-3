@@ -18,7 +18,7 @@
                                 <th>{{ __('No') }}</th>
                                 <th>{{ __('Judul') }}</th>
                                 <th>{{ __('Headline') }}</th>
-                                <th>{{ __('Detail Acara') }}</th>
+                                <th>{{ __('Jadwal Acara') }}</th>
                                 <th>#</th>
                             </tr>
                         </thead>
@@ -31,10 +31,13 @@
                                         {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
                                     </td>
                                     <td>
-                                        {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
+                                        {{ \Carbon\Carbon::parse($item->event_date)->format('d-m-Y') }}
+                                        {{ $item->event_time }}
                                     </td>
                                     <td>
                                         <div class="d-flex">
+                                            <a href="{{ route('article.show', ['id' => $item->id]) }}"
+                                                class="btn btn-sm btn-primary mr-2">Lihat</a>
                                             <a href="{{ route('article.edit', ['id' => $item->id]) }}"
                                                 class="btn btn-sm btn-primary mr-2">Edit</a>
                                             <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $item->id }}"

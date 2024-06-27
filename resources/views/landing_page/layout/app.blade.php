@@ -46,33 +46,6 @@
     <!-- Template Main CSS File -->
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
-    <style>
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-        }
-
-        .carousel-item {
-            height: 650px;
-
-            /* Set the desired height */
-        }
-
-        .carousel-item .carousel-background {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 0.5rem;
-        }
-
-        .carousel-caption {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-
-        }
-    </style>
-
 </head>
 
 <body>

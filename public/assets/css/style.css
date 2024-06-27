@@ -36,7 +36,6 @@
     --nav-dropdown-hover-color: #77b6ca; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-
 /* Smooth scroll */
 :root {
     scroll-behavior: smooth;
@@ -346,32 +345,6 @@ h6 {
     }
 }
 
-.header-transparent .navbar a {
-    color: white;
-    transition: color 0.3s;
-}
-
-/* Text color when scrolled */
-.header-scrolled .navbar a {
-    color: white;
-}
-
-#carouselExampleSlidesOnly {
-    height: 100vh; /* Full viewport height */
-    position: relative; /* To position SVG at the bottom */
-}
-
-.carousel-inner,
-.carousel-item {
-    height: 100%;
-}
-
-.carousel-item img {
-    object-fit: cover;
-    /* height: 50rem; */
-    width: 100%;
-}
-
 /* SVG curve */
 .svg-curve {
     position: absolute;
@@ -458,7 +431,7 @@ h6 {
     padding: 10px 0 10px 30px;
     font-family: "Raleway", sans-serif;
     font-size: 15px;
-    color: #47536e;
+    color: #fafafc;
     white-space: nowrap;
     transition: 0.3s;
 }
@@ -1823,6 +1796,11 @@ section {
     transform: scale(0.95); /* Zoom out */
     filter: blur(5px); /* Apply blur */
 }
+.card_news:hover .text-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
 
 .service-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
@@ -1967,7 +1945,7 @@ section {
 
 .header-article-event {
     border-bottom: 1px solid #3a60d0;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .header-article-event h4 {
