@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TugasRequest extends FormRequest
+class JabatanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,19 +22,8 @@ class TugasRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => 'required|string|max:255',
-            "position_id" => 'required',
+            "name" => 'required',
+            'type' => 'required'
         ];
     }
-
-    public function attributes()
-    {
-        $attributes = [
-            'name'      => __('Tugas'),
-            'position_id'      => __('Jabatan'),
-        ];
-
-        return $attributes;
-    }
-
 }

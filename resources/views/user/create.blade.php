@@ -14,7 +14,7 @@
 
                         <div class="form-group">
                           <label for="name">{{__('Nama')}}</label>
-                          <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                          <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}">
                           @error('name')
                             <span class="text-danger">{{ $message }}</span>
                           @enderror
@@ -22,7 +22,7 @@
 
                         <div class="form-group">
                             <label for="email">{{__('Email')}}</label>
-                            <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required autofocus>
+                            <input type="email" class="form-control form-control-user" name="email" placeholder="{{ __('Email') }}" value="{{ old('email') }}">
                             @error('email')
                               <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -30,7 +30,7 @@
 
                           <div class="form-group">
                             <label for="password">{{__('Sandi')}}</label>
-                            <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}" required autofocus>
+                            <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}">
                             @error('password')
                               <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -38,7 +38,7 @@
 
                           <div class="form-group">
                             <label for="password">{{__('Konfirmasi Sandi')}}</label>
-                            <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}" required autofocus>
+                            <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}">
                             @error('password')
                               <span class="text-danger">{{ $message }}</span>
                             @enderror

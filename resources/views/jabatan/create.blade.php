@@ -13,9 +13,9 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control @error('nama') is-invalid @enderror" name="name" id="nama" placeholder="Nama Jabatan" autocomplete="off" value="{{ old('nama') }}">
-                            @error('nama')
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Nama Jabatan" autocomplete="off" value="{{ old('name') }}">
+                            @error('name')
                               <span class="text-danger">{{ $message }}</span>
                             @enderror
                           </div>
