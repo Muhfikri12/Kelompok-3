@@ -24,7 +24,7 @@
                         href="{{ route('data-lembaga') }}">Lembaga Desa</a></li>
 
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+            <i class="text-light bi bi-list mobile-nav-toggle"></i>
         </nav>
     </div>
 </header>

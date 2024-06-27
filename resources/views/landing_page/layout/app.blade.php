@@ -68,43 +68,6 @@
         </section><!-- End Details Section -->
 
 
-
-        <!-- ======= Gallery Section ======= -->
-        {{-- <section id="gallery" class="gallery pt-0">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Perangkat Desa</h2>
-                    <p>Dusun Hegarmanah, Desa Cicantayan, Kecamatan Cicantayan, Kabupaten Sumedang, 43155</p>
-                </div>
-
-            </div>
-
-            <div class="container-fluid" data-aos="fade-up">
-                <div class="gallery-slider swiper w-10">
-                    <div class="swiper-wrapper">
-                        @foreach ($staffWithPositions as $item)
-                            <div class="swiper-slide shadow bg-body-tertiary rounded ">
-                                <div class="card text-center">
-                                    <img class="card-img-top" src="{{ asset('img/dp.jpeg') }}" alt="Card image">
-                                    <div class="card-body">
-                                        <p class="card-title fs-6"><strong>{{ $item->name }}</strong></p>
-                                        <p class="card-text" style="font-size: 0.8rem">
-                                            {{ optional($item->position)->name ?? '' }}.
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-        </section><!-- End Gallery Section --> --}}
-
     </main><!-- End #main -->
 
     @yield('footer')

@@ -431,7 +431,7 @@ h6 {
     padding: 10px 0 10px 30px;
     font-family: "Raleway", sans-serif;
     font-size: 15px;
-    color: #fafafc;
+    color: #d9e1f7;
     white-space: nowrap;
     transition: 0.3s;
 }
@@ -447,7 +447,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #5777ba;
+    color: #ffff;
 }
 
 .navbar .getstarted,

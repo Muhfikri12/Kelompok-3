@@ -6,13 +6,14 @@
         <div class="row">
             @foreach ($article as $item)
                 <div class="col-md-6 col-lg-4  g-2">
-                    <div class="card mx-auto" style="width: 20rem;">
+                    <div class="card mx-auto" style="width: 25rem;">
                         <div class="zoom-effect">
                             <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
                             <strong>
-                                <h5 class="card-title mb-1">{{ ucwords(strtolower($item->title)) }}</h5>
+                                <h5 class="card-title mb-1" style="font-weight: 600">
+                                    {{ ucwords(strtolower($item->title)) }}</h5>
                             </strong>
                             <p class="card-text-article text-dark">{!! $item->content !!}</p>
                             <p style="margin-bottom: 0.5rem"><i data-feather="calendar"
