@@ -9,44 +9,45 @@
     <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
 
 
-
-    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
-        <thead>
-            <tr>
-                <th>{{ __('No') }}</th>
-                <th>{{ __('Judul') }}</th>
-                <th>{{ __('Headline') }}</th>
-                <th>{{ __('Detail Acara') }}</th>
-                <th>#</th>
-            </tr>
-        </thead>
-        @foreach ($articles as $item)
-            <tbody>
+    <div style="width: 100%;overflow:scroll;">
+        <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+            <thead>
                 <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $item->title }}</td>
-                    <td>
-                        {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
-                    </td>
-                    <td>
-                        {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
-                    </td>
-                    <td>
-                        <div class="d-flex">
-                            <a href="{{ route('article.edit', ['id' => $item->id]) }}"
-                                class="btn btn-sm btn-primary mr-2">Edit</a>
-                            {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
-                    @csrf
-                    @method('delete') --}}
-                            <button class="btn btn-danger btn-sm btn-hapus" data-id="" data-toggle="modal"
-                                data-target="#DeleteModal">Delete</button>
-                            {{-- </form> --}}
-                        </div>
-                    </td>
+                    <th>{{ __('No') }}</th>
+                    <th>{{ __('Judul') }}</th>
+                    <th>{{ __('Headline') }}</th>
+                    <th>{{ __('Detail Acara') }}</th>
+                    <th>#</th>
                 </tr>
-            </tbody>
-        @endforeach
-    </table>
+            </thead>
+            @foreach ($articles as $item)
+                <tbody>
+                    <tr>
+                        <td scope="row">{{ $loop->iteration }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>
+                            {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
+                        </td>
+                        <td>
+                            {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
+                        </td>
+                        <td>
+                            <div class="d-flex">
+                                <a href="{{ route('article.edit', ['id' => $item->id]) }}"
+                                    class="btn btn-sm btn-primary mr-2">Edit</a>
+                                {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
+                        @csrf
+                        @method('delete') --}}
+                                <button class="btn btn-danger btn-sm btn-hapus" data-id="" data-toggle="modal"
+                                    data-target="#DeleteModal">Delete</button>
+                                {{-- </form> --}}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            @endforeach
+        </table>
+    </div>
 
     <!-- End of Main Content -->
 @endsection
