@@ -29,28 +29,39 @@ class DatabaseSeeder extends Seeder
 
         ProfileDesas::create([
             'content_misi' => 'Menjadikan Desa [Nama Desa] sebagai desa yang mandiri, maju, dan sejahtera dengan mengedepankan nilai-nilai kebersamaan, kearifan lokal, serta keberlanjutan lingkungan.',
-            'content_visi' => 'Misi Desa [Nama Desa] adalah untuk memberdayakan masyarakat melalui peningkatan keterampilan dan pengembangan usaha lokal, membangun infrastruktur yang berkelanjutan, serta memastikan akses yang adil terhadap pendidikan dan kesehatan. Kami berkomitmen untuk melestarikan adat dan budaya lokal, mengelola sumber daya alam dengan bijak, dan menerapkan tata kelola pemerintahan yang transparan dan partisipatif. Semua ini dilakukan dengan tujuan menciptakan desa yang mandiri, maju, dan sejahtera, yang menjunjung tinggi nilai-nilai kebersamaan dan keberlanjutan lingkungan.',
-            'alamat' => 'Lokasi
-Desa Hegarmanah terletak di sebuah lembah yang indah di wilayah pegunungan, menawarkan pemandangan alam yang spektakuler dan suasana yang tenang. Berikut adalah deskripsi lengkap tentang lokasi Desa Hegarmanah:
+            'content_visi' => '<h2><strong>Visi</strong></h2>
 
-Aksesibilitas
+<p>Visi Desa Hegarmanah adalah membangun komunitas yang sejahtera, mandiri, dan berkelanjutan dengan mengedepankan nilai-nilai kebersamaan, keberlanjutan, dan kearifan lokal.</p>
 
-Desa ini dapat dicapai melalui jalan darat dengan akses yang cukup baik. Dari kota terdekat, perjalanan menuju desa membutuhkan waktu sekitar 2 jam dengan kendaraan pribadi atau transportasi umum. Jalan menuju desa menawarkan pemandangan yang menakjubkan, dengan hamparan sawah, kebun teh, dan pegunungan yang menghiasi sepanjang perjalanan.
+<p><strong>Deskripsi Visi</strong></p>
 
-Kedekatan dengan Kota Besar
+<p>Desa Hegarmanah bercita-cita menjadi desa yang mampu memberikan kehidupan yang layak dan sejahtera bagi seluruh warganya. Kami bertekad untuk mencapai visi ini melalui beberapa aspek penting:</p>
 
-Desa Hegarmanah terletak tidak jauh dari beberapa kota besar, seperti Bandung atau Yogyakarta, yang membuatnya menjadi destinasi wisata yang ideal bagi mereka yang ingin melarikan diri dari kesibukan kota. Meskipun berada di daerah pedesaan, akses ke fasilitas dan layanan di kota besar masih relatif mudah.
+<p><strong>1. Peningkatan Kesejahteraan Ekonomi</strong></p>
 
-Fasilitas Transportasi
+<p>Kami berusaha meningkatkan kesejahteraan ekonomi warga desa dengan mengembangkan sektor pertanian, peternakan, dan industri rumahan. Melalui pelatihan, penyuluhan, dan pemberdayaan masyarakat, kami ingin menciptakan peluang kerja dan sumber penghasilan yang stabil dan berkelanjutan.</p>
 
-Transportasi menuju Desa Hegarmanah cukup beragam, mulai dari bus antar kota, angkutan desa, hingga ojek yang siap mengantar pengunjung hingga ke pintu desa. Jalan desa juga cukup memadai untuk dilalui kendaraan roda dua dan roda empat, meskipun beberapa bagian masih berupa jalan tanah yang memberikan kesan pedesaan yang autentik.
+<p><strong>2. Pendidikan dan Keterampilan</strong></p>
 
-Keindahan Alam Sekitar
+<p>Kami percaya bahwa pendidikan adalah kunci untuk masa depan yang lebih baik. Oleh karena itu, kami fokus pada peningkatan kualitas pendidikan dan menyediakan pelatihan keterampilan bagi semua warga desa, terutama bagi generasi muda. Kami ingin memastikan bahwa setiap anak di Desa Hegarmanah mendapatkan pendidikan yang layak dan kesempatan untuk berkembang.</p>
 
-Desa Hegarmanah dikelilingi oleh keindahan alam yang memukau. Dari sawah yang hijau membentang, sungai yang mengalir jernih, hingga hutan yang rimbun, desa ini menawarkan pemandangan yang menenangkan jiwa. Lokasi yang strategis ini juga memungkinkan para pengunjung untuk menikmati berbagai kegiatan alam seperti trekking, bersepeda, dan fotografi alam.
+<p><strong>3. Kelestarian Lingkungan</strong></p>
 
-Dengan lokasi yang strategis dan keindahan alam yang luar biasa, Desa Hegarmanah adalah tempat yang sempurna untuk menikmati kehidupan pedesaan yang tenang dan damai, jauh dari hiruk pikuk kota besar.',
-            'about_us' => '<h3><strong>Siapa Kami</strong></h3>
+<p>Kami berkomitmen untuk menjaga kelestarian lingkungan desa kami. Dengan menerapkan praktik-praktik pertanian berkelanjutan, pengelolaan sumber daya alam yang bijaksana, dan menjaga kebersihan desa, kami berupaya menjaga alam agar tetap asri dan dapat dinikmati oleh generasi mendatang.</p>
+
+<p><strong>4. Penguatan Kebudayaan dan Tradisi</strong></p>
+
+<p>Kami menghargai dan melestarikan kebudayaan serta tradisi lokal yang telah diwariskan oleh leluhur kami. Melalui berbagai kegiatan budaya, upacara adat, dan seni tradisional, kami ingin memastikan bahwa identitas budaya Desa Hegarmanah tetap hidup dan berkembang.</p>
+
+<p><strong>5. Kesehatan dan Kesejahteraan Sosial</strong></p>
+
+<p>Kami berusaha menyediakan akses yang lebih baik terhadap layanan kesehatan dan meningkatkan kesejahteraan sosial warga desa. Dengan membangun fasilitas kesehatan yang memadai dan mengadakan program-program kesehatan masyarakat, kami ingin menciptakan lingkungan yang sehat dan sejahtera.</p>
+
+<p>Dengan visi yang kuat dan komitmen yang tinggi, Desa Hegarmanah bergerak maju menuju masa depan yang lebih cerah, di mana setiap warganya dapat hidup dengan penuh kebahagiaan, kesejahteraan, dan harmoni.</p>',
+            'alamat' => '<h2><strong>Lokasi</strong></h2>
+
+<p>Desa Hegarmanah terletak di sebuah lembah yang indah di wilayah pegunungan, menawarkan pemandangan alam yang spektakuler dan suasana yang tenang. Berikut adalah deskripsi lengkap tentang lokasi Desa Hegarmanah: Aksesibilitas Desa ini dapat dicapai melalui jalan darat dengan akses yang cukup baik. Dari kota terdekat, perjalanan menuju desa membutuhkan waktu sekitar 2 jam dengan kendaraan pribadi atau transportasi umum. Jalan menuju desa menawarkan pemandangan yang menakjubkan, dengan hamparan sawah, kebun teh, dan pegunungan yang menghiasi sepanjang perjalanan. Kedekatan dengan Kota Besar Desa Hegarmanah terletak tidak jauh dari beberapa kota besar, seperti Bandung atau Yogyakarta, yang membuatnya menjadi destinasi wisata yang ideal bagi mereka yang ingin melarikan diri dari kesibukan kota. Meskipun berada di daerah pedesaan, akses ke fasilitas dan layanan di kota besar masih relatif mudah. Fasilitas Transportasi Transportasi menuju Desa Hegarmanah cukup beragam, mulai dari bus antar kota, angkutan desa, hingga ojek yang siap mengantar pengunjung hingga ke pintu desa. Jalan desa juga cukup memadai untuk dilalui kendaraan roda dua dan roda empat, meskipun beberapa bagian masih berupa jalan tanah yang memberikan kesan pedesaan yang autentik. Keindahan Alam Sekitar Desa Hegarmanah dikelilingi oleh keindahan alam yang memukau. Dari sawah yang hijau membentang, sungai yang mengalir jernih, hingga hutan yang rimbun, desa ini menawarkan pemandangan yang menenangkan jiwa. Lokasi yang strategis ini juga memungkinkan para pengunjung untuk menikmati berbagai kegiatan alam seperti trekking, bersepeda, dan fotografi alam. Dengan lokasi yang strategis dan keindahan alam yang luar biasa, Desa Hegarmanah adalah tempat yang sempurna untuk menikmati kehidupan pedesaan yang tenang dan damai, jauh dari hiruk pikuk kota besar.</p>',
+            'about_us' => '<h2><strong>Siapa Kami</strong></h2>
 
 <p>Desa Hegarmanah adalah komunitas yang berdiri di atas dasar kekeluargaan, kebersamaan, dan gotong royong. Kami adalah sekumpulan individu yang hidup berdampingan dalam harmoni dengan alam dan sesama. Penduduk kami terdiri dari berbagai lapisan masyarakat, mulai dari petani, pengrajin, pedagang, hingga pendidik yang semuanya memiliki satu tujuan yang sama: membangun desa yang sejahtera dan berkelanjutan.</p>
 
