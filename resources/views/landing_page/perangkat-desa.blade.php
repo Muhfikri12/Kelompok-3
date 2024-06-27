@@ -18,7 +18,7 @@
                                     <p class="card-text">
                                         {{ $record->position->name ?? '' }}
                                     </p>
-                                    <a href="" class="text-muted"><u>Tugas dan Fungsi</u></a>
+                                    <a href="{{route('data-tugas',$record->id)}}" class="text-muted"><u>Tugas dan Fungsi</u></a>
                                 </div>
                             </div>
                         </div>

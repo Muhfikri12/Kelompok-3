@@ -46,6 +46,12 @@ class LandingPageController extends Controller
         ]);
     }
 
+    public function tugas($id)
+    {
+        $record = PerangkatDesa::find($id);
+        return view('landing_page.tugas',compact('record'));
+    }
+
     public function struktur()
     {
         $results = StructureOrg::where('type','kades')->first();
@@ -60,8 +66,6 @@ class LandingPageController extends Controller
     public function lembaga()
     {
         $results = Lembaga::orderBy('type','ASC')->get()->groupBy('type');
-        // dd($results);
-
         return view('landing_page.lembaga', [
             'results' => $results,
         ]);
