@@ -37,6 +37,7 @@ class JabatanController extends Controller
         $record = Jabatan::firstOrNew([
             "name" => $request->name
         ]);
+        $record->type = $request->type;
         $record->description = $request->description;
         $record->save();
 
@@ -69,6 +70,7 @@ class JabatanController extends Controller
     public function update(JabatanRequest $request, Jabatan $jabatan)
     {
         $jabatan->name = $request->name;
+        $jabatan->type = $request->type;
         $jabatan->description = $request->description;
         $jabatan->save();
 
