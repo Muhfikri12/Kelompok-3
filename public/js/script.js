@@ -6,7 +6,7 @@ $(document).ready(function () {
         ],
         language: {
             search: "Cari : ",
-            searchPlaceholder: "Tahun",
+            searchPlaceholder: "Nilai",
             lengthMenu: " _MENU_ Data",
             ordering: false,
             info: "Data _START_ - _END_ dari _TOTAL_ data",
