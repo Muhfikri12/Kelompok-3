@@ -10,11 +10,7 @@
                 <div class="card-body">
                     <a href="{{ route('event') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
 
-                    @if (session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                    @endif
+
 
                     <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                         <thead>
@@ -35,7 +31,7 @@
                                         {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
                                     </td>
                                     <td>
-                                        {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
+                                        {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
                                     </td>
                                     <td>
                                         <div class="d-flex">

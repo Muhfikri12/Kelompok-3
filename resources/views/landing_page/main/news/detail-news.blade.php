@@ -93,7 +93,7 @@
             <div class="order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
                 <div class="list-info-article">
                     <div class="header-article-event mb-3" data-aos="fade-up">
-                        <h4>Event Terbaru</h4>
+                        <h4>Acara Terbaru</h4>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 g-2 px-4">
                         @foreach ($listArticle as $item)

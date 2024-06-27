@@ -36,6 +36,7 @@
     --nav-dropdown-hover-color: #77b6ca; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+
 /* Smooth scroll */
 :root {
     scroll-behavior: smooth;

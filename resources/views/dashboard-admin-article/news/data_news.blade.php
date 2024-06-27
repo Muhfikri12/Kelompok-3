@@ -32,10 +32,10 @@
                                     <td scope="row">{{ $loop->iteration }}</td>
                                     <td>{{ $item->title }}</td>
                                     <td>
-                                        {{ \Illuminate\Support\Str::words($item->content, 5, '...') }}
+                                        {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
                                     </td>
                                     <td>
-                                        {!! \Illuminate\Support\Str::words($item->detail_content, 5, '...') !!}
+                                        {!! \Illuminate\Support\Str::words($item->detail_content, 4, '...') !!}
                                     </td>
                                     <td>
                                         <div class="d-flex">

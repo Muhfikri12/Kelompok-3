@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\News;
+use App\Models\PerangkatDesa;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -25,9 +28,16 @@ class HomeController extends Controller
     public function index()
     {
         $users = User::count();
+        $petugas = PerangkatDesa::count();
+        $article = Article::count();
+        $news = News::count();
+
 
         $widget = [
             'users' => $users,
+            'petugas' => $petugas,
+            'article' => $article,
+            'news' => $news,
             //...
         ];
 

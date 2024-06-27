@@ -18,43 +18,68 @@ class PerangkatDesaSeeder extends Seeder
         $position = [
             [
                 "name" => "Kepala Desa",
+                "type" => "Kades",
                 "description" => null,
             ],
             [
                 "name" => "Sekertaris Desa",
+                "type" => "Sekertaris",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Negara",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Perencanaan",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Urusan Umum dan Tata Usaha",
+                "type" => "Kaur",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Pemerintahan",
+                "type" => "Kasi",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Kesejahteraan",
+                "type" => "Kasi",
                 "description" => null,
             ],
             [
                 "name" => "Kepala Seksi Pelayanan",
+                "type" => "Kasi",
+                "description" => null,
+            ],
+
+            [
+                "name" => "Staff Pemerintahan",
+                "type" => "Staf",
+                "description" => null,
+            ],
+            [
+                "name" => "Staff Pelayanan",
+                "type" => "Staf",
+                "description" => null,
+            ],
+            [
+                "name" => "Staff Tata Usaha",
+                "type" => "Staf",
                 "description" => null,
             ],
         ];
 
 
-        foreach($position as $item) {
+        foreach ($position as $item) {
             $record = Jabatan::firstOrNew([
                 "name" => $item['name']
             ]);
+            $record->type = $item['type'];
             $record->description = $item['description'];
             $record->save();
         }
@@ -154,7 +179,7 @@ class PerangkatDesaSeeder extends Seeder
 
             // Kepala Seksi Pemerintahan
 
-              [
+            [
                 "position"  => "Kepala Seksi Pemerintahan",
                 "name" => "Melaksanakan pelayanan administrasi kependudukan",
                 "description" => null,
@@ -224,7 +249,7 @@ class PerangkatDesaSeeder extends Seeder
         ];
 
         foreach ($task as $value) {
-            $position = Jabatan::where('name',$value['position'])->first();
+            $position = Jabatan::where('name', $value['position'])->first();
             $record = Tugas::firstOrNew([
                 "name" => $value['name'],
                 "position_id" => $position->id
@@ -241,7 +266,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Desa",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Angel Lelga",
@@ -250,7 +275,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Perempuan",
                 "position" => "Sekertaris Desa",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Jendri Pitoy",
@@ -259,7 +284,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Negara",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -268,7 +293,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Perencanaan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Atep rizal",
@@ -277,7 +302,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Umum dan Tata Usaha",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Tantan ",
@@ -286,7 +311,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pemerintahan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Shahar Ginanhar",
@@ -295,7 +320,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Kesejahteraan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -304,12 +329,12 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pelayanan",
                 "status" => "Aktif",
-                "photo" => "Falon-1718699470.jpg"
+                "photo" => "Asep Rohmat-1719281373.png"
             ],
         ];
 
         foreach ($perangkat as  $value) {
-            $position = Jabatan::where('name',$value['position'])->first();
+            $position = Jabatan::where('name', $value['position'])->first();
             // $record =  PerangkatDesa::firstOrNew([
             // ]);
             $record = new PerangkatDesa();
@@ -322,7 +347,6 @@ class PerangkatDesaSeeder extends Seeder
             $record->nip = $value['nip'];
             $record->photo = $value['photo'];
             $record->save();
-
         }
     }
 }

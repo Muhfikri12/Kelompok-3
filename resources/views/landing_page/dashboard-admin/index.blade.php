@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('main-content')
+    @include('sweetalert::alert')
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">{{ __('Profil') }}</h1>
 
@@ -19,7 +21,7 @@
         </div>
     @endif
 
-    <form action="{{ route('profile-desa.store') }}" method="post">
+    <form action="{{ route('profile-desa.store') }}" method="post" id="form">
         @csrf
         <div class="row">
 
@@ -29,36 +31,33 @@
                 <!-- Project Card Example -->
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaAboutUs" class="m-0 font-weight-bold text-primary">Tentang Kami</label>
+                        <label for="about_us" class="m-0 font-weight-bold text-primary">Tentang Kami</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaAboutUs">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAboutUs"
-                                style="min-height: 100px;text-align:left;" name="about-us">{{ trim($data->about_us) }}</textarea>
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="about_us"
+                                style="min-height: 100px;text-align:left;" name="about_us">{{ $data->about_us }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaVisi" class="m-0 font-weight-bold text-primary">Visi</label>
+                        <label for="content_visi" class="m-0 font-weight-bold text-primary">Visi</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaVisi">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaVisi"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="content_visi"
                                 style="min-height: 100px;text-align:left;" name="content_visi">{{ $data->content_visi }}</textarea>
                         </div>
                     </div>
                 </div>
                 <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaMisi" class="m-0 font-weight-bold text-primary">Misi</label>
+                        <label for="content_misi" class="m-0 font-weight-bold text-primary">Misi</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaMisi">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaMisi"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="content_misi"
                                 style="min-height: 100px;text-align:left;" name="content_misi">{{ $data->content_misi }}</textarea>
                         </div>
                     </div>
@@ -66,15 +65,24 @@
             </div>
 
             <div class="col-lg-6 mb-3">
-
-                <div class="card shadow mb-4">
+                <div class="card shadow mb-3">
                     <div class="card-header py-3">
-                        <label for="floatingTextareaAlamat" class="m-0 font-weight-bold text-primary">Alamat</label>
+                        <label for="sejarah" class="m-0 font-weight-bold text-primary">Sejarah</label>
                     </div>
                     <div class="card-body">
                         <div class="form-floating">
-                            <label for="floatingTextareaAlamat">Deskripsi</label>
-                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="floatingTextareaAlamat"
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="sejarah"
+                                style="min-height: 100px;text-align:left;" name="sejarah">{{ $data->sejarah }}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <label for="alamat" class="m-0 font-weight-bold text-primary">Alamat</label>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Tambahkan deskripsi disini" id="alamat"
                                 style="min-height: 100px;text-align:left;" name="alamat">{{ $data->alamat }}</textarea>
                         </div>
                     </div>
@@ -97,10 +105,19 @@
                                     placeholder="https://web.facebook.com/username" class="form-control my-2" id="fb-link"
                                     name="fb_link" />
                             </p>
-                            <p style="display: flex; flex-direction: column;gap: 3;">
+                            <p style="display: flex; flex-direction:column;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>
-                                <input type="text" value="{{ $data->wa_link ?: '-' }}" placeholder="Nomor Telepon"
-                                    class="form-control my-2" id="wa-link" name="wa_link" />
+                            <div class="d-flex align-items-center" style="margin-top: -16px;">
+                                <div>
+                                    <span class="form-control d-flex align-items-center ">+62</span>
+                                </div>
+                                <input type="text"
+                                    value="{{ str_replace('https://wa.me/+62', '', $data->wa_link) ?: '-' }}"
+                                    placeholder="Nomor Telepon" class="form-control my-2" id="wa-link"
+                                    name="wa_link" />
+                            </div>
+                            <span class="text-danger" id="error">
+                            </span>
                             </p>
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="ig-link" class="m-0 font-weight-bold">Instagram</label>
@@ -114,8 +131,24 @@
             </div>
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
-            <a href="javascript:history.back()" class="btn btn-default">{{ __('Kembali') }}</a>
+            <button type="button" class="btn btn-primary" id="submit">{{ __('Simpan') }}</button>
+            <a href="{{ route('home') }}" class="btn btn-default">{{ __('Kembali') }}</a>
         </div>
     </form>
 @endsection
+@push('js')
+    <script>
+        const submit = document.getElementById('submit');
+        const form = document.getElementById('form');
+        const waInput = document.getElementById('wa-link');
+        submit.addEventListener('click', function(e) {
+            const regex = /^[1-9]\d{9,14}$/;
+            if (!regex.test(waInput.value)) {
+                document.getElementById('error').textContent =
+                    'Nomor telepon harus dimulai dengan angka selain 0 atau +62';
+            } else {
+                submit.setAttribute('type', 'submit').click();
+            }
+        })
+    </script>
+@endpush

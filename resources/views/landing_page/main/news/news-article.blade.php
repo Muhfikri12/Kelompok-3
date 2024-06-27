@@ -18,7 +18,7 @@
                                 <a href="{{ route('news.article', ['id' => $item->id]) }}"
                                     class="text-decoration-none text-dark">
                                     <strong>
-                                        <h5 class="card-title mb-0 text-light">
+                                        <h5 class="card-title mb-0 text-light" style="font-weight: 500">
                                             {{ ucwords(strtolower($item->title)) }}
                                         </h5>
                                     </strong>
@@ -27,8 +27,6 @@
                                     class="text-decoration-none text-dark">
                                     <p class="card-text text-light">{{ $item->content }}</p>
                                 </a>
-                                <p class="card-text mb-0 text-light"><small><span
-                                            id="updated-at">{{ $item->updated_at }}</span></small></p>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <div class="container-xxl py-6" id="article">
     <div class="container">
         <div class="header-article-event mb-3" data-aos="fade-up">
-            <h4>Event Terbaru</h4>
+            <h4>Acara Terbaru</h4>
         </div>
         <div class="row d-flex justify-content-center">
             @foreach ($article as $item)

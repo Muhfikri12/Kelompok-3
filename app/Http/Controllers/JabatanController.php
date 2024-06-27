@@ -12,7 +12,7 @@ class JabatanController extends Controller
     public function index()
     {
         return view('jabatan.index',[
-            "title" => "Data Jabatan",
+            "title" => "Tabel Jabatan",
             "results" => Jabatan::orderBy('updated_at',"desc")->get(),
         ]);
     }
@@ -23,7 +23,7 @@ class JabatanController extends Controller
     public function create()
     {
         return view('jabatan.create',[
-            "title" => "Data Jabatan Baru",
+            "title" => "Buat Data Jabatan",
         ]);
     }
 
@@ -57,7 +57,7 @@ class JabatanController extends Controller
     public function edit(Jabatan $jabatan)
     {
         return view('jabatan.edit',[
-            "title" => "Edit Jabatan",
+            "title" => "Ubah Data Jabatan",
             'record' => $jabatan
         ]);
     }

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('photo')->nullable();
-            $table->longText('detail_content')->nullable();
+            $table->Text('detail_content')->nullable();
+            $table->Text('content')->nullable();
             $table->time('event_time')->nullable();
             $table->date('event_date')->nullable();
             $table->unsignedInteger('admin_id');

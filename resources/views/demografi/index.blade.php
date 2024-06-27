@@ -2,11 +2,7 @@
 
 @section('main-content')
     <!-- Main Content goes here -->
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
     <div class="row">
         <div class="col">
             <div class="card mb-4 shadow">
@@ -14,7 +10,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+                    <a href="{{ route('demografi.create') }}" class="btn btn-primary mb-3">{{ __('Data Demografi Baru') }}</a>
 
                     <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                         <thead>

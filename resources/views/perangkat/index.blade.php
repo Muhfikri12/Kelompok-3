@@ -3,11 +3,7 @@
 @section('main-content')
     <!-- Main Content goes here -->
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
     <div class="row">
         <div class="col">
@@ -16,7 +12,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('perangkat.create') }}" class="btn btn-primary mb-3">{{ __('Data Baru') }}</a>
+                    <a href="{{ route('perangkat.create') }}" class="btn btn-primary mb-3">{{ __('Data Petugas Baru') }}</a>
                     <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                         <thead>
                             <tr>
@@ -37,7 +33,7 @@
                                     <td>{{ $record->phone ?? '' }}</td>
                                     <td>{{ $record->position->name ?? '' }}</td>
                                     <td>{{ $record->status ?? '' }}</td>
-                                    <td><a href="{{ asset('storage/' . $record->photo) }}" target="_blank">Lihat</a></td>
+                                    <td><a href="{{ asset('storage/petugas/' . $record->photo) }}" target="_blank">Lihat</a></td>
                                     <td>
                                         <div class="d-flex">
                                             <a href="{{ route('perangkat.show', $record->id) }}"

@@ -28,7 +28,7 @@ class DemografiController extends Controller
     public function create()
     {
         return view('demografi.create',[
-            "title" => "Tambah Data",
+            "title" => "Tambah Data Demografi",
             'category' => CategoryDemografi::all(),
         ]);
     }
@@ -58,7 +58,7 @@ class DemografiController extends Controller
     {
         return view('demografi.show',
         [
-            'title' => "Ubah Data",
+            'title' => "Lihat Data Demografi",
             'record' => $demografi,
             'category' => CategoryDemografi::all(),
         ]);
@@ -71,7 +71,7 @@ class DemografiController extends Controller
     {
         return view('demografi.edit',
         [
-            'title' => "Ubah Data",
+            'title' => "Ubah Data Demografi",
             'record' => $demografi,
             'category' => CategoryDemografi::all(),
         ]);

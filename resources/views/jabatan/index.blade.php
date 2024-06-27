@@ -5,11 +5,7 @@
     <!-- Main Content goes here -->
 
 
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
 
     <div class="row">
         <div class="col">
@@ -18,13 +14,14 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Baru')}}</a>
+                    <a href="{{ route('jabatan.create') }}" class="btn btn-primary mb-3">{{__('Data Jabatan Baru')}}</a>
 
                     <table class="table table-bordered table-stripped display nowrap datatable" style="width: 100%">
                         <thead>
                             <tr>
                                 <th>{{__('No')}}</th>
                                 <th>{{__('Nama')}}</th>
+                                <th>{{__('Tipe')}}</th>
                                 <th>{{__('Keterangan')}}</th>
                                 <th>#</th>
                             </tr>
@@ -33,7 +30,8 @@
                             @foreach ($results as $record)
                                 <tr>
                                     <td scope="row">{{ $loop->iteration }}</td>
-                                    <td>{{ $record->name }}</td>
+                                    <td>{{ $record->name ?? '' }}</td>
+                                    <td>{{ $record->type ?? '' }}</td>
                                     <td>{{ $record->description ?? '-' }}</td>
 
                                     <td>

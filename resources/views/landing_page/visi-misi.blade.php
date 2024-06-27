@@ -7,10 +7,7 @@
                     <img src="assets/img/visi.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-                    <h3>Visi</h3>
-                    <p>
-                        {{ $data->content_visi }}
-                    </p>
+                    {!! $data->content_visi !!}
                 </div>
             </div>
             <div class="row content">
@@ -18,10 +15,7 @@
                     <img src="assets/img/misi.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-8 pt-5" data-aos="fade-up">
-                    <h3>Misi</h3>
-                    <p>
-                        {{ $data->content_misi }}
-                    </p>
+                    {!! $data->content_misi !!}
                 </div>
             </div>
         </div>
