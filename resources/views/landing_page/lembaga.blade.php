@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 @foreach ($results as $key => $item)
-                <h5>Daftar Lembaga {{$key}}</h5>
+                <h5 class="my-3">Daftar Lembaga {{$key}}</h5>
                 @foreach ($item as $record)
                 <div class="col-md-4">
                     <div class="card m-2">
@@ -68,7 +68,6 @@
                       </div>
                 </div>
                 @endforeach
-                <hr style="my-auto">
                 @endforeach
             </div>
         </div>
