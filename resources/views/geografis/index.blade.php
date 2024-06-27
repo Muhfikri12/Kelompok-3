@@ -11,42 +11,44 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>{{ __('Nama Desa') }}</th>
-                                <th>{{ __('Luas') }}</th>
-                                <th>{{ __('Koordinat') }}</th>
-                                <th>{{ __('Batas Utara') }}</th>
-                                <th>{{ __('Batas Selatan') }}</th>
-                                <th>{{ __('Batas Timur') }}</th>
-                                <th>{{ __('Batas Barat') }}</th>
-                                <th>#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($results as $record)
+                    <div style="width:100%;overflow:scroll;">
+                        <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td>{{ $record->name }}</td>
-                                    <td>{{ $record->luas ?? '-' }}</td>
-                                    <td>{{ $record->koordinat ?? '-' }}</td>
-                                    <td>{{ $record->utara ?? '' }}</td>
-                                    <td>{{ $record->selatan ?? '-' }}</td>
-                                    <td>{{ $record->timur ?? '-' }}</td>
-                                    <td>{{ $record->barat ?? '-' }}</td>
-
-                                    <td>
-                                        <div class="d-flex">
-                                            <a href="{{ route('geografis.show', $record->id) }}"
-                                                class="btn btn-sm btn-secondary mr-2">{{ __('Lihat') }}</a>
-                                            <a href="{{ route('geografis.edit', $record->id) }}"
-                                                class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
-                                        </div>
-                                    </td>
+                                    <th>{{ __('Nama Desa') }}</th>
+                                    <th>{{ __('Luas') }}</th>
+                                    <th>{{ __('Koordinat') }}</th>
+                                    <th>{{ __('Batas Utara') }}</th>
+                                    <th>{{ __('Batas Selatan') }}</th>
+                                    <th>{{ __('Batas Timur') }}</th>
+                                    <th>{{ __('Batas Barat') }}</th>
+                                    <th>#</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($results as $record)
+                                    <tr>
+                                        <td>{{ $record->name }}</td>
+                                        <td>{{ $record->luas ?? '-' }}</td>
+                                        <td>{{ $record->koordinat ?? '-' }}</td>
+                                        <td>{{ $record->utara ?? '' }}</td>
+                                        <td>{{ $record->selatan ?? '-' }}</td>
+                                        <td>{{ $record->timur ?? '-' }}</td>
+                                        <td>{{ $record->barat ?? '-' }}</td>
+
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('geografis.show', $record->id) }}"
+                                                    class="btn btn-sm btn-secondary mr-2">{{ __('Lihat') }}</a>
+                                                <a href="{{ route('geografis.edit', $record->id) }}"
+                                                    class="btn btn-sm btn-primary mr-2">{{ __('Ubah') }}</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
