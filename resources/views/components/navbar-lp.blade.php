@@ -12,7 +12,7 @@
                         Misi</a></li>
                 <li><a class="{{ request()->is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a>
                 </li>
-                <li><a class="{{ request()->is('demografi') ? 'active' : '' }}"
+                <li><a class="{{ request()->is('data-demografi') ? 'active' : '' }}"
                         href="{{ route('data-demografi') }}">Demografi</a></li>
                 <li><a class="{{ request()->is('data-geografi') ? 'active' : '' }}"
                         href="{{ route('data-geografi') }}">Geografi</a></li>

@@ -9,48 +9,49 @@
                 </div>
                 <div class="card-body">
                     <a href="{{ route('news') }}" class="btn btn-primary mb-3">{{ __('Membuat Berita Baru') }}</a>
-
                     @if (session('message'))
                         <div class="alert alert-success">
                             {{ session('message') }}
                         </div>
                     @endif
-
-                    <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
-                        <thead>
-                            <tr>
-                                <th>{{ __('No') }}</th>
-                                <th>{{ __('Judul') }}</th>
-                                <th>{{ __('Headline') }}</th>
-                                <th>{{ __('Detail Acara') }}</th>
-                                <th>#</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($news as $item)
+                    <div style="width: 100%;overflow:scroll;">
+                        <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
+                            <thead>
                                 <tr>
-                                    <td scope="row">{{ $loop->iteration }}</td>
-                                    <td>{{ $item->title }}</td>
-                                    <td>
-                                        {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
-                                    </td>
-                                    <td>
-                                        {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
-                                    </td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <a href="{{ route('news.show', ['id' => $item->id]) }}"
-                                                class="btn btn-sm btn-primary mr-2">Lihat</a>
-                                            <a href="{{ route('news.edit', ['id' => $item->id]) }}"
-                                                class="btn btn-sm btn-primary mr-2">Edit</a>
-                                            <button class="btn btn-danger btn-sm btn-hapus" data-id="{{ $item->id }}"
-                                                data-toggle="modal" data-target="#DeleteModal">{{ __('Hapus') }}</button>
-                                        </div>
-                                    </td>
+                                    <th>{{ __('No') }}</th>
+                                    <th>{{ __('Judul') }}</th>
+                                    <th>{{ __('Headline') }}</th>
+                                    <th>{{ __('Detail Acara') }}</th>
+                                    <th>#</th>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($news as $item)
+                                    <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
+                                        <td>{{ $item->title }}</td>
+                                        <td>
+                                            {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
+                                        </td>
+                                        <td>
+                                            {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a href="{{ route('news.show', ['id' => $item->id]) }}"
+                                                    class="btn btn-sm btn-primary mr-2">Lihat</a>
+                                                <a href="{{ route('news.edit', ['id' => $item->id]) }}"
+                                                    class="btn btn-sm btn-primary mr-2">Edit</a>
+                                                <button class="btn btn-danger btn-sm btn-hapus"
+                                                    data-id="{{ $item->id }}" data-toggle="modal"
+                                                    data-target="#DeleteModal">{{ __('Hapus') }}</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
