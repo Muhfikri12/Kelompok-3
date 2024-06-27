@@ -17,7 +17,7 @@ class Jabatan extends Model
 
     public function tasks()
     {
-        return $this->hasMany(Tugas::class, 'id');
+        return $this->hasMany(Tugas::class, 'position_id');
     }
 
     public function Staffs()

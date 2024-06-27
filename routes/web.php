@@ -94,6 +94,7 @@ Route::get('/data-geografi', "LandingPageController@geografi")->name('data-geogr
 Route::get('/data-lembaga', "LandingPageController@lembaga")->name('data-lembaga');
 Route::get('/petugas', "LandingPageController@petugas")->name('petugas');
 Route::get('/struktur', "LandingPageController@struktur")->name('struktur');
+Route::get('/data-tugas/{id}', "LandingPageController@tugas")->name('data-tugas');
 
 
 
