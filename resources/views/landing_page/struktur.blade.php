@@ -126,59 +126,74 @@
 @endpush
 <x-root-lp>
     <x-navbar-lp />
-    {{-- Section Deskripsi Demografi --}}
-    <section>
-        <div data-aos="fade-up" style="text-align: center; margin: 4rem 0;">
-            <h2>Struktur Organisasi Desa Hegarmanah Cicantayan</h2>
-        </div>
-        <div style="width: 100%;overflow:scroll;">
-            <div style="width: 1280px;">
-                <div class="tree">
-                    <ul>
-                        <li>
-                            <a href="#">{{ $result->name }}</a>
-                            <ul>
-                                @foreach ($result->childs as $a)
-                                    <li>
-                                        <a href="#">
-                                            {{ $a->name }}
-                                        </a>
-                                        @if ($a->childs->isNotEmpty())
-                                            <ul>
-                                                @foreach ($a->childs as $aa)
-                                                    <li>
-                                                        <a href="#">{{ $aa->name }}</a>
-                                                        @if ($aa->childs->isNotEmpty())
-                                                            <ul>
-                                                                @foreach ($aa->childs as $aaa)
-                                                                    <li>
-                                                                        <a href="#">{{ $aaa->name }}</a>
-                                                                        @if ($aaa->childs->isNotEmpty())
-                                                                            <ul>
-                                                                                @foreach ($aaa->childs as $aaaa)
-                                                                                    <li>
-                                                                                        <a
-                                                                                            href="#">{{ $aaaa->name }}</a>
-                                                                                    </li>
-                                                                                @endforeach
-                                                                            </ul>
-                                                                        @endif
-                                                                    </li>
-                                                                @endforeach
-                                                            </ul>
-                                                        @endif
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        @endif
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    </ul>
+       <!-- breadcrumb-section -->
+       <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <h1>Struktur Organisasi</h1>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+
+    {{-- Section Deskripsi Demografi --}}
+    <section>
+        <div class="container">
+            <div style="width: 100%;overflow:scroll;">
+                <div style="width: 1280px; height:300px">
+                    <div class="tree">
+                        <ul>
+                            <li>
+                                <a href="#">{{ $result->name }}</a>
+                                <ul>
+                                    @foreach ($result->childs as $a)
+                                        <li>
+                                            <a href="#">
+                                                {{ $a->name }}
+                                            </a>
+                                            @if ($a->childs->isNotEmpty())
+                                                <ul>
+                                                    @foreach ($a->childs as $aa)
+                                                        <li>
+                                                            <a href="#">{{ $aa->name }}</a>
+                                                            @if ($aa->childs->isNotEmpty())
+                                                                <ul>
+                                                                    @foreach ($aa->childs as $aaa)
+                                                                        <li>
+                                                                            <a href="#">{{ $aaa->name }}</a>
+                                                                            @if ($aaa->childs->isNotEmpty())
+                                                                                <ul>
+                                                                                    @foreach ($aaa->childs as $aaaa)
+                                                                                        <li>
+                                                                                            <a
+                                                                                                href="#">{{ $aaaa->name }}</a>
+                                                                                        </li>
+                                                                                    @endforeach
+                                                                                </ul>
+                                                                            @endif
+                                                                        </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- End Details Section -->

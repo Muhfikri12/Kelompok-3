@@ -1,5 +1,20 @@
 <x-root-lp>
     <x-navbar-lp />
+     <!-- breadcrumb-section -->
+     <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <h1>Sejarah Desa</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+
     <section id="details" class="details">
         <div class="container" style="margin-bottom: 3rem;">
             <div class="row content">
