@@ -93,7 +93,7 @@ class LandingPageController extends Controller
         $posts = Article::query()
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
-            ->where('article.view_count', '<', $topPosts[0]->view_count)
+            ->where('article.view_count', '<=', $topPosts[0]->view_count)
             ->orderBy('article.created_at', 'desc')
             ->take(3)
             ->get();

@@ -1,14 +1,27 @@
 <x-root-lp>
     <x-navbar-lp />
+           <!-- breadcrumb-section -->
+           <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="breadcrumb-text">
+                            <h1>Tugas dan Fungsi</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end breadcrumb section -->
     {{-- Section Deskripsi Demografi --}}
     <section id="features" class="features mt-5">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Perangkat Desa Hegarmanah Cicantayan</h2>
+                <h2>{{$record->position->name ?? ''}}</h2>
             </div>
 
             <div class="d-flex justify-content-center">
-                <div class="card text-center" style="height: 24rem; width: 18rem;">
+                <div class="card text-center" style="height: 22rem; width: 18rem;">
                     <img src="{{ asset('storage/petugas/' . $record->photo) }}" class="card-img-top p-2"
                         alt="Hollywood Sign on The Hill" style="width: 18rem; height: 15rem" />
                     <div class="card-body">
