@@ -12,7 +12,6 @@
             </div>
         </div>
     </header>
-
     {{-- END IMAGE --}}
 
     {{-- Section Deskripsi Demografi --}}
