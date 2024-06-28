@@ -1,7 +1,7 @@
 <x-root-lp>
     <x-navbar-lp />
-     <!-- breadcrumb-section -->
-     <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
@@ -18,9 +18,6 @@
     <section id="details" class="details">
         <div class="container" style="margin-bottom: 3rem;">
             <div class="row content">
-                <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-                    <img src="assets/img/visi.png" class="img-fluid" alt="">
-                </div>
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     {!! $data->sejarah !!}
                 </div>
