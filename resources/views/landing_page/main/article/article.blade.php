@@ -1,5 +1,5 @@
 
-    <!-- Services Start -->
+    <!-- Informasi Desa -->
     <div class="container-fluid service py-2">
         <div class="container py-2">
             <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
@@ -56,7 +56,38 @@
               </div>
         </div>
     </div>
-    <!-- Services End -->
+    <!-- Informasi Desa End -->
+
+     <!-- Informasi Desa -->
+     <div class="container-fluid service py-2">
+        <div class="container py-2">
+            <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+                <h4>Informasi Pulik</h4>
+            </div>
+            <div class="row">
+                <div class="accordion" id="accordionExample">
+                    @foreach ($informasi as $key => $item)
+                    <div class="card">
+                        <div class="card-header" id="headingOne{{$key}}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne{{$key}}" aria-expanded="true" aria-controls="collapseOne{{$key}}">
+                                    {{Str::upper($item->judul) ?? ''}}
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne{{$key}}" class="collapse" aria-labelledby="headingOne{{$key}}" data-parent="#accordionExample">
+                            <div class="card-body">
+                                {!! $item->description ?? ''!!}
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+              </div>
+        </div>
+    </div>
+    <!-- Informasi Desa End -->
 
 <div class="container-xxl py-6 " id="article">
     <div class="container">

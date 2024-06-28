@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\ProfileDesas;
 use App\Models\Article;
-use App\Models\Jabatan;
-use App\Models\Lembaga;
+use App\Models\Banner;
 use App\Models\Demografi;
 use App\Models\Geografis;
-use App\Models\StructureOrg;
-use Illuminate\Http\Request;
+use App\Models\InformasiPublik;
+use App\Models\Jabatan;
+use App\Models\Lembaga;
 use App\Models\PerangkatDesa;
+use App\Models\StructureOrg;
+use App\ProfileDesas;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 
 class LandingPageController extends Controller
@@ -75,6 +77,8 @@ class LandingPageController extends Controller
 
     public function landing_page()
     {
+        $informasi = InformasiPublik::all();
+        $banner = Banner::all();
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
 
@@ -140,6 +144,6 @@ class LandingPageController extends Controller
         $staffWithPositions = PerangkatDesa::with('position')->orderBy('created_at', 'asc')->get();
         // dd($topPosts);
 
-        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news', 'posts', 'topPosts', 'newsNew'));
+        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news', 'posts', 'topPosts', 'newsNew','banner','informasi'));
     }
 }

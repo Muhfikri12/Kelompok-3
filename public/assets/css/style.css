@@ -589,7 +589,7 @@ h6 {
 
 @media (max-width: 768px) {
     .carousel-item img {
-        height: auto;
+        height: 400;
     }
 
     #carouselExampleSlidesOnly {
@@ -1029,7 +1029,7 @@ h6 {
 --------------------------------------------------------------*/
 .carousel-item img {
     width: 100%;
-    height: auto;
+    height: 100px;
     max-height: 400px;
     object-fit: cover;
   }
@@ -1082,6 +1082,29 @@ section {
 
 .section-title p {
     margin-bottom: 0;
+}
+
+// Accordion
+
+.accordion .card-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: 1px solid #007bff;
+}
+.accordion .btn-link {
+    color: #000;
+    text-decoration: none;
+}
+.accordion .btn-link:hover {
+    text-decoration: underline;
+}
+.accordion .card-body {
+    background-color: #f8f9fa;
+}
+.accordion .card {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
