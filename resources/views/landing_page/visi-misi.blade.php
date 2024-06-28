@@ -35,7 +35,6 @@
                 </div>
             </div>
         </div>
+    </section>
         <x-footer-lp />
-    </section><!-- End Details Section -->
-    <!-- Vendor JS Files -->
 </x-root-lp>

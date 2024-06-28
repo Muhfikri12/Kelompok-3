@@ -104,5 +104,4 @@
     </section>
     <!-- End Details Section -->
     <x-footer-lp />
-    </section>
 </x-root-lp>

@@ -1,11 +1,11 @@
-    <div class="footer-top bg-primary text-light">
-        <div class="container pt-5">
+    <div class="footer-top bg-dark text-light my-0">
+        <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <h3>Desa Hegarmanah</h3>
                     <p>Desa Hegarmanah adalah salah satu desa yang terletak di Kecamatan Cicantayan, Kabupaten Sukabumi, Provinsi Jawa Barat, Indonesia.
                     </p>
-                    <div class="social-links mt-3">
+                    {{-- <div class="social-links mt-3">
                         <a href="{{ $data->yt_link }}" class="{{ $data->yt_link ? 'youtube' : 'd-none' }}">
                             <i class="bx bxl-youtube rounded"></i>
                         </a>
@@ -17,8 +17,7 @@
                         </a>
                         <a href="{{ $data->wa_link }}" class="{{ $data->wa_link ? 'whatsapp' : 'd-none' }}">
                             <i class="bx bxl-whatsapp rounded"></i>
-                        </a>
-                    </div>
+                        </a>                    </div> --}}
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <h3>Halaman Menu</h3>
@@ -49,8 +48,6 @@
                         <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i>Facebook</a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
