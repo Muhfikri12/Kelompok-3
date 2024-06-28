@@ -1,14 +1,34 @@
+@push('css')
+    <style>
+
+    </style>
+@endpush
 <x-root-lp>
     <x-navbar-lp />
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <h1>Demografi</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
     {{-- Section Deskripsi Demografi --}}
     <section id="details" class="details">
         <div class="container">
 
             <div class="row content">
-                <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+                <div class="col-md-4 order-md-2 order-1" data-aos="fade-left">
                     <img src="{{ asset('assets/img/details-2.png') }}" class="img-fluid" alt="">
                 </div>
-                <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+                <div class="col-md-8 order-md-1 order-2 pt-5" data-aos="fade-up">
                     <h3>Demografi Desa Hegarmanah</h3>
                     <p>
                         Gambaran Demografi merupakan gambaran kependudukan dalam arti luas terhadap perkembangan dan
@@ -18,7 +38,6 @@
                     </p>
                 </div>
             </div>
-
 
         </div>
     </section>
@@ -38,7 +57,7 @@
                                     <div class="w-full overflow-x-scroll">
                                         <table
                                             class="table-bordered table-stripped display nowrap datatable table w-full">
-                                            <div class="px-2 bg-secondary overflow-x-scroll">
+                                            <div class="bg-secondary overflow-x-scroll px-2">
                                                 <thead>
                                                     <tr class="table-secondary">
                                                         <th>{{ __('TAHUN') }}</th>

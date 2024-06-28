@@ -1,7 +1,19 @@
 <x-root-lp>
     <x-navbar-lp />
+       <!-- breadcrumb-section -->
+       <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <h1>Lembaga Desa</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
     {{-- Section Deskripsi Demografi --}}
-
     <section id="features" class="features mt-5">
         <div class="container">
             <div class="section-title" data-aos="fade-up">

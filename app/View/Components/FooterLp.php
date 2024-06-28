@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Closure;
+use App\Models\Geografis;
 use App\ProfileDesas;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
@@ -23,6 +24,10 @@ class FooterLp extends Component
     public function render(): View|Closure|string
     {
         $data = ProfileDesas::first();
-        return view('components.footer-lp', compact('data'));
+        $desa = Geografis::first();
+        return view('components.footer-lp', [
+            'data' => $data,
+            'desa' => $desa
+        ]);
     }
 }
