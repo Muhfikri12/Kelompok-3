@@ -16,13 +16,13 @@
 
 
     <section id="details" class="details">
-        <div class="container" style="margin-bottom: 3rem;">
-            <div class="row content">
+        <div class="container" style="display:flex;align-content:center;flex-direction:column;align-items:center;">
+            <div class="row content" style="width:100%;overflow:hidden;">
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     {!! $data->content_visi !!}
                 </div>
             </div>
-            <div class="row content">
+            <div class="row content" style="width:100%;overflow:hidden;margin-bottom:3rem;">
                 <div class="col-md-8 pt-5" data-aos="fade-up">
                     {!! $data->content_misi !!}
                 </div>
