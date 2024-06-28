@@ -50,72 +50,114 @@
 
 <body>
 
-</body>
-@include('components.navbar-lp')
 
-<header id="geografi-header" class="header-image d-none d-md-block text-white">
-    <div class="header-overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 class="display-3">Berita Desa Hegarmanah</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+    @include('components.navbar-lp')
 
-<div class="trending-area fix" style="margin-top: 5rem">
-    <div class="container">
-        <div class="trending-main">
-            <!-- Trending Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="trending-tittle" style="margin-bottom: 1rem">
-                        <strong>Berita Populer</strong>
+    <header id="geografi-header" class="header-image d-none d-md-block text-white">
+        <div class="header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-3">Berita Desa Hegarmanah</h1>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- Trending Top -->
-                    <div class="trending-top mb-30" data-view-count="100">
-                        <div class="trend-top-img">
-                            <img src="{{ asset($topPosts->photo) }}" alt="">
-                            <div class="trend-top-cap">
-                                <span>{{ $topPosts->name }}</span>
-                                <h2><a
-                                        href="{{ route('news.article', ['id' => $topPosts->article_id]) }}">{{ Str::limit($topPosts->content, 70) }}</a>
-                                </h2>
+        </div>
+    </header>
+
+    <div class="trending-area fix" style="margin-top: 5rem">
+        <div class="container">
+            <div class="trending-main">
+                <!-- Trending Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="trending-tittle" style="margin-bottom: 1rem">
+                            <strong>Berita Populer</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Trending Top -->
+                        <div class="trending-top mb-30" data-view-count="100">
+                            <div class="trend-top-img">
+                                <img src="{{ asset($topPosts->photo) }}" alt="">
+                                <div class="trend-top-cap">
+                                    <span>{{ $topPosts->name }}</span>
+                                    <h2><a
+                                            href="{{ route('news.article', ['id' => $topPosts->article_id]) }}">{{ Str::limit($topPosts->content, 70) }}</a>
+                                    </h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Trending Bottom -->
-                    <div class="trending-bottom " style="margin-top: 1.5rem">
-                        <div class="row ">
-                            @foreach ($posts as $item)
-                                <div class="col-lg-4">
-                                    <div class="single-bottom mb-20">
-                                        <div class="trend-bottom-img mb-35">
-                                            <img src="{{ asset($item->photo) }}" alt="">
-                                        </div>
-                                        <div class="trend-bottom-cap">
-                                            <span class="color1 mb-1">{{ $item->name }}</span>
-                                            <p><a
-                                                    href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
-                                            </p>
+                        <!-- Trending Bottom -->
+                        <div class="trending-bottom " style="margin-top: 1.5rem">
+                            <div class="row ">
+                                @foreach ($posts as $item)
+                                    <div class="col-lg-4">
+                                        <div class="single-bottom mb-20">
+                                            <div class="trend-bottom-img mb-35">
+                                                <img src="{{ asset($item->photo) }}" alt="">
+                                            </div>
+                                            <div class="trend-bottom-cap">
+                                                <span class="color1 mb-1">{{ $item->name }}</span>
+                                                <p><a
+                                                        href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <strong>Acara Mendatang</strong>
+                        </div>
+                        @foreach ($article as $item)
+                            <div class="trand-right-single mb-0 d-flex">
+                                <div class="trand-right-img">
+                                    <img src="{{ asset($item->photo) }}" alt="" class="responsive-fixed-image">
+                                </div>
+                                <div class="trand-right-cap">
+                                    <p class="mb-1"><a class="text-dark"
+                                            href="">{{ Str::limit($item->title, 20) }}</a>
+                                    </p>
+                                    <div class="d-flex">
+                                        <i data-feather="calendar" style="width: 1.2rem; height: 1.2rem; "></i>
 
+                                        <p class="mx-2 mb-1" style="font-size: 14px">
+                                            {{ $item->event_date->translatedFormat(' d F Y') }}
+                                        </p>
+
+                                    </div>
+                                    <div class="d-flex">
+                                        <i data-feather="clock" style="width: 1.2rem; height: 1.2rem;"></i>
+
+                                        <p class="mx-2" style="font-size: 14px">{{ $item->event_time }}</p>
+
+                                    </div>
+                                    {{-- <small>
+                                    <p><a
+                                            href="{{ route('news.article', ['id' => $item->id]) }}">{{ Str::limit($item->content, 70) }}</a>
+                                    </p>
+                                </small> --}}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- feather icons -->
+    <script>
+        feather.replace();
+    </script>
+</body>
 
 </html>

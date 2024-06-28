@@ -33,6 +33,7 @@ class NewsArticleController extends Controller
 
     public function draftArticle()
     {
+        $currentDateTime = Carbon::now();
 
         // Step 1: Get the top post based on view_count
         $topPosts = Article::query()
@@ -61,7 +62,19 @@ class NewsArticleController extends Controller
             ->orderBy('article.created_at', 'desc')
             ->get();
 
-        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts'));
+        $article = Article::where('type', 'pengumuman')
+            ->where(function ($query) use ($currentDateTime) {
+                $query->where('event_date', '>', $currentDateTime->toDateString())
+                    ->orWhere(function ($query) use ($currentDateTime) {
+                        $query->where('event_date', '>=', $currentDateTime->toDateString())
+                            ->where('event_time', '>=', $currentDateTime->toTimeString());
+                    });
+            })
+            ->orderBy('event_date', 'asc')
+            ->orderBy('event_time', 'asc')
+            ->get();
+
+        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts', 'article'));
     }
 
     public function detailNews($id)
