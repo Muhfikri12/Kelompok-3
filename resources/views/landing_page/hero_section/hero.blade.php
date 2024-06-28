@@ -4,25 +4,24 @@
       <li data-target="#mySlide" data-slide-to="0" class="active"></li>
       <li data-target="#mySlide" data-slide-to="1"></li>
       <li data-target="#mySlide" data-slide-to="2"></li>
-      <li data-target="#mySlide" data-slide-to="3"></li>
     </ol>
 
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div class="carousel-item active"  id="slide1">
         <img class="d-block w-100" src="{{asset('carousel/car1.jpeg')}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>Menyambut Hari</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item"  id="slide2">
         <img class="d-block w-100" src="{{asset('carousel/car2.jpg')}}">
         <div class="carousel-caption d-none d-md-block">
           <h5>Slide Kedua</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item"  id="slide3">
         <img class="d-block w-100" src="{{asset('carousel/car3.jpeg')}}">
       </div>
     </div>

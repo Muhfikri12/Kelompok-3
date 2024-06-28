@@ -1,67 +1,7 @@
-@push('css')
-    <style>
-        .header-image {
-            background-repeat: no-repeat;
-
-        }
-            .breadcrumb-text h1 {
-                font-size: 50px;
-                font-weight: 900;
-                color: #fff;
-                margin: 0;
-                margin-top: 20px;
-            }
-
-            .breadcrumb-section {
-                padding: 150px 0;
-                background-size: cover;
-                background-position: center center;
-                position: relative;
-                z-index: 1;
-                background-image: url("../img/dp.jpg");
-                background-position-y: -200px;
-                background-attachment: fixed;
-                padding-top: 200px;
-            }
-
-            .header-overlay {
-                background-color: rgba(0, 0, 0, 0.2);
-                width: 100%;
-                height: 400px;
-            }
-
-            .header-image h1 {
-                margin-top: 120px;
-            }
-
-            /* HEADER IMAGE - Gambar untuk setiap halaman  */
-
-            #blog-header {
-                background-image: url("../img/full-image7.jpg");
-                background-position-y: -200px;
-            }
-
-            #article-header {
-                background-image: url("../img/full-image8.jpg");
-                background-position-y: -200px;
-            }
-
-            #demografi-header {
-                background-image: url(/asset-page/demografi.jpg);
-                background-position-y: -400px;
-            }
-
-            #geografi-header {
-                background-image: url(/asset-page/about.jpg);
-                background-position-y: -400px;
-            }
-
-    </style>
-@endpush
 <x-root-lp>
     <x-navbar-lp />
           <!-- HEADER IMAGE -->
-          <header id="geografi-header" class="header-image d-none d-md-block text-white">
+          <header id="geografi-header" class="header-image text-white d-block">
             <div class="header-overlay">
                 <div class="container">
                     <div class="row">
