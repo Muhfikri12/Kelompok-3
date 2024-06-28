@@ -47,5 +47,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GeografisSeeder::class);
         $this->call(StrukturSeeder::class);
         $this->call(LembagaSeeder::class);
+        $this->call(CategoryArticle::class);
+        $this->call(ArticleSeeder::class);
     }
 }

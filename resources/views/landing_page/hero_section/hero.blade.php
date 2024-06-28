@@ -1,19 +1,41 @@
-<div class="container-xxl position-relative p-0 ">
-    <div class="container-xxl hero-header bg-primary">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <h4 class="text-white mb-4 animated zoomIn">"Selamat Datang di Desa Hegarmanah, Tempat Dimana Tradisi
-                        Bertemu Keindahan Alam"</h4>
-                    <p class="text-white pb-3 animated zoomIn">Temukan kehangatan masyarakat, keindahan alam yang
-                        menakjubkan, dan kekayaan budaya kami yang unik</p>
-                    <a href="#article"
-                        class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">Selengkapnya</a>
-                </div>
-                <div class="col-lg-6 text-center text-lg-start">
-                    <img class="img-fluid animated zoomIn" src="{{ asset('assets/img/hero.png') }}" alt="">
-                </div>
-            </div>
+<div id="mySlide" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#mySlide" data-slide-to="0" class="active"></li>
+      <li data-target="#mySlide" data-slide-to="1"></li>
+      <li data-target="#mySlide" data-slide-to="2"></li>
+      <li data-target="#mySlide" data-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{asset('carousel/car1.jpeg')}}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Menyambut Hari</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
         </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{asset('carousel/car2.jpg')}}">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Slide Kedua</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{asset('carousel/car3.jpeg')}}">
+      </div>
     </div>
+
+    <a class="carousel-control-prev" href="#mySlide" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#mySlide" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+
 </div>

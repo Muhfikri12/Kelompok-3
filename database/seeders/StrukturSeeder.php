@@ -66,25 +66,6 @@ class StrukturSeeder extends Seeder
                 "staff_id" => 8,
                 "parent_id" => 1,
             ],
-            // Staff
-            // [
-            //     "name" => "Staf Pemerintahan",
-            //     "type" => "staf",
-            //     "staff_id" => 9,
-            //     "parent_id" => 6,
-            // ],
-            // [
-            //     "name" => "Staf Kesejahteraan",
-            //     "type" => "staf",
-            //     "staff_id" => 7,
-            //     "parent_id" => 7,
-            // ],
-            // [
-            //     "name" => "Staf Pelayanan",
-            //     "type" => "staf",
-            //     "staff_id" => 11,
-            //     "parent_id" => 8,
-            // ],
         ];
 
         foreach ($arr as $value) {
