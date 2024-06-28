@@ -5,10 +5,10 @@
         </div>
         <div class="row">
             @foreach ($article as $item)
-                <div class="col-md-6 col-lg-4  g-2">
-                    <div class="card mx-auto" style="width: 25rem;">
+                <div class="col-sm-12 col-md-6 col-lg-4 g-2">
+                    <div class="card mx-auto" style="max-width: 100%; width: 20rem;">
                         <div class="zoom-effect">
-                            <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
+                            <img src="{{ asset($item->photo) }}" class="card-img-top img-fluid" alt="...">
                         </div>
                         <div class="card-body">
                             <strong>
@@ -16,8 +16,8 @@
                                     {{ ucwords(strtolower($item->title)) }}</h5>
                             </strong>
                             <p class="card-text-article text-dark">{!! $item->content !!}</p>
-                            <p style="margin-bottom: 0.5rem"><i data-feather="calendar"
-                                    style="width: 1.5rem; height:1.5rem"></i>
+                            <p style="margin-bottom: 0.5rem">
+                                <i data-feather="calendar" style="width: 1.5rem; height:1.5rem"></i>
                                 <span>{{ $item->event_date->translatedFormat('l, d F Y') }}</span>
                             </p>
                             <p><i data-feather="clock" style="width: 1.5rem; height:1.5rem"></i>

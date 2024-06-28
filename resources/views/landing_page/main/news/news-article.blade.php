@@ -43,26 +43,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="trending-tittle" style="margin-bottom: 1rem">
-                        <strong>Trending now</strong>
+                        <strong>Berita Populer</strong>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Trending Top -->
-                    @foreach ($topPosts as $item)
-                        <div class="trending-top mb-30" data-view-count="100">
-                            <div class="trend-top-img">
-                                <img src="{{ asset($item->photo) }}" alt="">
-                                <div class="trend-top-cap">
-                                    <span>{{ $item->name }}</span>
-                                    <h2><a
-                                            href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 70) }}</a>
-                                    </h2>
-                                </div>
+                    <div class="trending-top mb-30" data-view-count="100">
+                        <div class="trend-top-img">
+                            <img src="{{ asset($topPosts->photo) }}" alt="">
+                            <div class="trend-top-cap">
+                                <span>{{ $topPosts->name }}</span>
+                                <h2><a
+                                        href="{{ route('news.article', ['id' => $topPosts->article_id]) }}">{{ Str::limit($topPosts->content, 70) }}</a>
+                                </h2>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
 
                     <!-- Trending Bottom -->
                     <div class="trending-bottom " style="margin-top: 1.5rem">
@@ -75,9 +73,9 @@
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color1">{{ $item->name }}</span>
-                                            <h4><a
-                                                    href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 50) }}</a>
-                                            </h4>
+                                            <p><a
+                                                    href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -88,54 +86,22 @@
                 </div>
                 <!-- Riht content -->
                 <div class="col-lg-4">
-                    <div class="">
-                        <h6 class="mb-3 text-primary" style="font-weight: 800">Berita Terbaru</h6>
+                    <div class="mb-3">
+                        <strong class=" text-primary">Berita Terbaru</strong>
                     </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="assets/img/trending/right1.jpg" alt="">
+                    @foreach ($newsNew as $item)
+                        <div class="trand-right-single d-flex">
+                            <div class="trand-right-img">
+                                <img src="{{ asset($item->photo) }}" alt="" class="responsive-fixed-image">
+                            </div>
+                            <div class="trand-right-cap">
+                                <span class="color1">{{ $item->name }}</span>
+                                <p><a
+                                        href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 50) }}</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="trand-right-cap">
-                            <span class="color1">Concert</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="assets/img/trending/right2.jpg" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color3">sea beach</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="assets/img/trending/right3.jpg" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color2">Bike Show</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="assets/img/trending/right4.jpg" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color4">See beach</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="assets/img/trending/right5.jpg" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color1">Skeping</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="trand-right-single d-flex justify-content-center">
                         <a class="btn btn-primary" href=""> Selengkapnya</a>
                     </div>

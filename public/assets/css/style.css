@@ -68,6 +68,27 @@ h6 {
 /*--------------------------------------------------------------
 # Landing News
 --------------------------------------------------------------*/
+.card {
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Image zoom effect */
+.zoom-effect img {
+    transition: transform 0.2s; /* Animation */
+}
+
+.zoom-effect:hover img {
+    transform: scale(1.05);
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 767px) {
+    .card {
+        max-width: 90%;
+    }
+}
+
 .trending-area .trending-main {
     border-bottom: 1px solid #eeeeee;
 }
@@ -216,7 +237,6 @@ h6 {
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 400;
-    padding: 10px 15px;
     line-height: 1;
     margin-bottom: 15px;
     display: inline-block;
@@ -543,6 +563,24 @@ h6 {
     background: rgba(0, 0, 0, 0.4);
     padding: 10px;
 } */
+
+.responsive-fixed-image {
+    max-width: 100%; /* Responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+
+.trand-right-img {
+    width: 100%; /* Container adjusts to full width */
+    max-width: 150px; /* Maximum width for container */
+    overflow: hidden; /* Hide any overflow */
+}
+
+@media (max-width: 600px) {
+    .trand-right-img {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
 
 .card-title,
 .card-text {
@@ -972,7 +1010,7 @@ section {
     background-position: center center;
     position: relative;
     z-index: 1;
-    background-image: url('../img/dp.jpg');
+    background-image: url("../img/dp.jpg");
     background-position-y: -200px;
     background-attachment: fixed;
     padding-top: 200px;
@@ -1246,7 +1284,7 @@ section {
 /*** Footer Start ***/
 .footer {
     /* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(../img/carousel-2.jpg); */
-    background-color : black;
+    background-color: black;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1267,7 +1305,6 @@ section {
 }
 
 /*** Footer End ***/
-
 
 .article_items {
     border-radius: 10px;
