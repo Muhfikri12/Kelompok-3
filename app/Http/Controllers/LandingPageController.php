@@ -77,6 +77,8 @@ class LandingPageController extends Controller
     {
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
+
+        // Trending News
         $topPosts = Article::query()
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
@@ -96,8 +98,7 @@ class LandingPageController extends Controller
             ->take(3)
             ->get();
 
-        // dd($posts);
-
+        // Tranding Category
 
         $slide = Article::all()->take(3);
         $news = Article::where('type', 'Berita')

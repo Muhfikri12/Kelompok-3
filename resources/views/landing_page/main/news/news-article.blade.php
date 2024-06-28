@@ -88,6 +88,9 @@
                 </div>
                 <!-- Riht content -->
                 <div class="col-lg-4">
+                    <div class="">
+                        <h6 class="mb-3 text-primary" style="font-weight: 800">Berita Terbaru</h6>
+                    </div>
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
                             <img src="assets/img/trending/right1.jpg" alt="">
@@ -132,6 +135,9 @@
                             <span class="color1">Skeping</span>
                             <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
                         </div>
+                    </div>
+                    <div class="trand-right-single d-flex justify-content-center">
+                        <a class="btn btn-primary" href=""> Selengkapnya</a>
                     </div>
                 </div>
             </div>
