@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
 
         ProfileDesas::create([
-            'content_misi' => '<h2><img alt="photo-desa" src="https://beritalima.com/wp-content/uploads/2023/11/IMG-20231129-WA0022.jpg" style="height:711px;" /></h2>
+            'content_misi' => '<h2><img alt="photo-desa" src="https://beritalima.com/wp-content/uploads/2023/11/IMG-20231129-WA0022.jpg" style="height:346px;width:700px;" /></h2>
 
 <h2> </h2>
 
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
 </ul>
 
 <p>Dengan menjalankan misi-misi ini, Desa Hegarmanah berupaya mencapai visi besarnya, yaitu menjadi desa yang harmonis, berkelanjutan, dan sejahtera. Melalui kerja sama dan partisipasi aktif seluruh warga, kami yakin dapat mewujudkan lingkungan yang lebih baik untuk semua.</p>',
-            'content_visi' => '<h2><img alt="photo-desa" src="https://jurnalinspirasi.co.id/wp-content/uploads/2023/03/1678694994082-pilkades-desa-sukagalih-jonggol-2023.jpg" style="height:768px;width:1024px;" /></h2>
+            'content_visi' => '<h2><img alt="photo-desa" src="https://jurnalinspirasi.co.id/wp-content/uploads/2023/03/1678694994082-pilkades-desa-sukagalih-jonggol-2023.jpg" style="height:525px;width:700px;" /></h2>
 
 <h2> </h2>
 
@@ -194,9 +194,7 @@ class DatabaseSeeder extends Seeder
 
 <p>Desa Hegarmanah dikelilingi oleh keindahan alam yang memukau. Dari sawah yang hijau membentang, sungai yang mengalir jernih, hingga hutan yang rimbun, desa ini menawarkan pemandangan yang menenangkan jiwa. Lokasi yang strategis ini juga memungkinkan para pengunjung untuk menikmati berbagai kegiatan alam seperti trekking, bersepeda, dan fotografi alam.</p>
 
-<p>Dengan lokasi yang strategis dan keindahan alam yang luar biasa, Desa Hegarmanah adalah tempat yang sempurna untuk menikmati kehidupan pedesaan yang tenang dan damai, jauh dari hiruk pikuk kota besar.</p>
-
-<p> </p>',
+<p>Dengan lokasi yang strategis dan keindahan alam yang luar biasa, Desa Hegarmanah adalah tempat yang sempurna untuk menikmati kehidupan pedesaan yang tenang dan damai, jauh dari hiruk pikuk kota besar.</p>',
             'about_us' => '<h2><img alt="photo-desa" src="https://api2.kemenparekraf.go.id/storage/app/uploads/public/620/b45/43c/620b4543c730c505627514.jpg" style="height:667px;width:1000px;" /></h2>
 
 <h2> </h2>
