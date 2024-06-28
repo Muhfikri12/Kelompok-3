@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Demografi;
+use App\Models\InformasiPublik;
 use App\Models\StructureOrg;
 use App\ProfileDesas;
 use App\User;
@@ -49,5 +50,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LembagaSeeder::class);
         $this->call(CategoryArticle::class);
         $this->call(ArticleSeeder::class);
+
+        $this->call(InformasiSeeder::class);
     }
 }
