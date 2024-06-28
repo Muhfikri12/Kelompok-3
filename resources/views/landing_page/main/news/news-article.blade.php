@@ -1,41 +1,3 @@
-{{-- <div class="container-xxl py-6 news_content">
-    <div class="container">
-        <div class="header-article-event mb-3" data-aos="fade-up">
-            <h4>Berita</h4>
-        </div>
-        <div class="row g-4">
-            @foreach ($news as $item)
-                <div class="col-md-6 col-lg-6 mb-4">
-                    <div class="card text-bg-dark card_news">
-                        <a href="{{ route('news.article', ['id' => $item->id]) }}">
-                            <div class="card-img-container">
-                                <img src="{{ asset($item->photo) }}" class="card-img card-img-zoom img-fluid"
-                                    alt="...">
-                            </div>
-                        </a>
-                        <div class="card-img-overlay d-flex align-items-end">
-                            <div class="text-container">
-                                <a href="{{ route('news.article', ['id' => $item->id]) }}"
-                                    class="text-decoration-none text-dark">
-                                    <strong>
-                                        <h5 class="card-title mb-0 text-light" style="font-weight: 500">
-                                            {{ ucwords(strtolower($item->title)) }}
-                                        </h5>
-                                    </strong>
-                                </a>
-                                <a href="{{ route('news.article', ['id' => $item->id]) }}"
-                                    class="text-decoration-none text-dark">
-                                    <p class="card-text text-light">{{ $item->content }}</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div> --}}
-
 <div class="trending-area fix" style="margin-top: 2rem">
     <div class="container">
         <div class="trending-main">
@@ -67,12 +29,12 @@
                         <div class="row ">
                             @foreach ($posts as $item)
                                 <div class="col-lg-4">
-                                    <div class="single-bottom mb-35">
-                                        <div class="trend-bottom-img mb-30">
+                                    <div class="single-bottom mb-20">
+                                        <div class="trend-bottom-img mb-35">
                                             <img src="{{ asset($item->photo) }}" alt="">
                                         </div>
                                         <div class="trend-bottom-cap">
-                                            <span class="color1">{{ $item->name }}</span>
+                                            <span class="color1 mb-1">{{ $item->name }}</span>
                                             <p><a
                                                     href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
                                             </p>
@@ -96,9 +58,11 @@
                             </div>
                             <div class="trand-right-cap">
                                 <span class="color1">{{ $item->name }}</span>
-                                <p><a
-                                        href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 50) }}</a>
-                                </p>
+                                <small>
+                                    <p><a
+                                            href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 70) }}</a>
+                                    </p>
+                                </small>
                             </div>
                         </div>
                     @endforeach
