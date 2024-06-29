@@ -1,7 +1,7 @@
 <x-root-lp>
     <x-navbar-lp />
-      <!-- HEADER IMAGE -->
-      <header id="geografi-header" class="header-image d-none d-md-block text-white">
+    <!-- HEADER IMAGE -->
+    <header id="geografi-header" class="header-image d-none d-md-block text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">
@@ -18,7 +18,7 @@
     <section id="features" class="features mt-5">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>{{$record->position->name ?? ''}}</h2>
+                <h2>{{ $record->position->name ?? '' }}</h2>
             </div>
 
             <div class="d-flex justify-content-center">
@@ -42,11 +42,11 @@
                     </b>
                 </p>
                 <div class="col">
-                  <ol>
-                    @foreach ($record->position->tasks as $item)
-                        <li>{{$item->name ?? ''}}</li>
-                    @endforeach
-                  </ol>
+                    <ol>
+                        @foreach ($record->position->tasks as $item)
+                            <li>{{ $item->name ?? '' }}</li>
+                        @endforeach
+                    </ol>
                 </div>
             </div>
 
