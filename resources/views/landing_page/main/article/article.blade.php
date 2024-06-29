@@ -66,7 +66,7 @@
         <div class="row">
             <div class="accordion" id="accordionExample">
                 @foreach ($informasi as $key => $item)
-                    <div class="card">
+                    <div class="card text">
                         <div class="card-header" id="headingOne{{ $key }}">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
@@ -79,7 +79,7 @@
 
                         <div id="collapseOne{{ $key }}" class="collapse"
                             aria-labelledby="headingOne{{ $key }}" data-parent="#accordionExample">
-                            <div class="card-body">
+                            <div class="card-body" style="text-align: left;">
                                 {!! $item->description ?? '' !!}
                             </div>
                         </div>

@@ -12,7 +12,7 @@
     <!-- Favicons -->
     <link href={{ asset('assets/img/jabar.png') }} rel="icon">
     <link href="img/favicon.ico" rel="icon">
-    <link href={{ asset('assets/img/apple-touch-icon.png') }} rel="apple-touch-icon">
+    <link href={{ asset('assets/img/jabar.png') }} rel="apple-touch-icon">
 
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -21,7 +21,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +47,37 @@
     <!-- Template Main CSS File -->
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
+    <style>
+        .carousel-item>img {
+            width: 360px;
+            height: 960px;
+            max-height: 960px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .carousel-caption p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -60,7 +90,6 @@
 
     <main id="main">
 
-
         <!-- ======= Details Section ======= -->
         <section id="details" class="details pt-0">
             <div class="container">
@@ -68,7 +97,6 @@
                 @yield('news_article')
             </div>
         </section><!-- End Details Section -->
-
 
     </main><!-- End #main -->
 
@@ -83,9 +111,9 @@
     <script src={{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}></script>
     <script src={{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}></script>
     <script src={{ asset('assets/vendor/php-email-form/validate.js') }}></script>
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     {{-- bootstrap v5 --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
