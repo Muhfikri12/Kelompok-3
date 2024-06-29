@@ -93,12 +93,10 @@
 
 <div class="container-xxl py-6 " id="article">
     <div class="container">
+        <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+            <h4>Acara Terkini</h4>
+        </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="trending-tittle">
-                    <strong>Acara Terbaru</strong>
-                </div>
-            </div>
             @foreach ($article as $item)
                 <div class="col-sm-12 col-md-6 col-lg-4 g-2">
                     <div class="card mx-auto" style="width: 20rem;">

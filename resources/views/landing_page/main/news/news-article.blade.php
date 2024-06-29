@@ -1,14 +1,11 @@
 <div class="trending-area fix" style="margin-top: 2rem">
     <div class="container">
+
         <div class="trending-main">
-            <!-- Trending Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="trending-tittle" style="margin-bottom: 1rem">
-                        <strong>Berita Populer</strong>
-                    </div>
-                </div>
+            <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+                <h4>Acara Terkini</h4>
             </div>
+            <!-- Trending Tittle -->
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Trending Top -->
