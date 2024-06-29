@@ -1,8 +1,8 @@
-<header id="header" class="fixed-top header-transparent">
+<header id="header" class="fixed-top">
     <div class="d-flex align-items-center justify-content-between container">
 
-        <div class="logo">
-            <h4><strong><a href="{{ route('landing_page') }}">Desa Hegarmanah</a></strong></h4>
+    <div class="logo">
+            <h4 "><strong><a class="text-light" href="{{ route('landing_page') }}">Desa Hegarmanah</a></strong></h4>
         </div>
         <nav id="navbar" class="navbar">
             <ul>

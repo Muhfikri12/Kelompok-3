@@ -49,7 +49,7 @@
                 <!-- Riht content -->
                 <div class="col-lg-4">
                     <div class="mb-3">
-                        <strong class=" text-primary">Berita Terbaru</strong>
+                        <strong class="text-primary">Berita Terbaru</strong>
                     </div>
                     @foreach ($newsNew as $item)
                         <div class="trand-right-single d-flex">

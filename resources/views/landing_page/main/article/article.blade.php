@@ -1,3 +1,96 @@
+<!-- Informasi Desa -->
+<div class="container-fluid service py-2">
+    <div class="container py-2">
+        <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+            <h4>Informasi Desa</h4>
+        </div>
+        <div class="row">
+            <!-- Card Sejarah -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-right">
+                <a href="{{ route('sejarah') }}" target="_blank" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-landmark icon text-primary"></i>
+                            <h5 class="card-title">Sejarah Desa</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card Perangkat Desa -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up-right">
+                <a href="{{ route('petugas') }}" target="_blank" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-users icon text-danger"></i>
+                            <h5 class="card-title">Perangkat Desa</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card Demografi -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up-left">
+                <a href="{{ route('data-demografi') }}" target="_blank" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line icon text-success"></i>
+                            <h5 class="card-title">Demografi</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card Geografi -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-left">
+                <a href="{{ route('data-geografi') }}" target="_blank" class="text-decoration-none">
+                    <div class="card">
+                        <div class="card-body">
+                            <i class="fas fa-map icon text-info"></i>
+                            <h5 class="card-title">Geografi</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Informasi Desa End -->
+
+<!-- Informasi Desa -->
+<div class="container-fluid service py-2">
+    <div class="container py-2">
+        <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+            <h4>Informasi Pulik</h4>
+        </div>
+        <div class="row">
+            <div class="accordion" id="accordionExample">
+                @foreach ($informasi as $key => $item)
+                    <div class="card">
+                        <div class="card-header" id="headingOne{{ $key }}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne{{ $key }}" aria-expanded="true"
+                                    aria-controls="collapseOne{{ $key }}">
+                                    {{ Str::upper($item->judul) ?? '' }}
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne{{ $key }}" class="collapse"
+                            aria-labelledby="headingOne{{ $key }}" data-parent="#accordionExample">
+                            <div class="card-body">
+                                {!! $item->description ?? '' !!}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Informasi Desa End -->
+
 <div class="container-xxl py-6 " id="article">
     <div class="container">
         <div class="row">

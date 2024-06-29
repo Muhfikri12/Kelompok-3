@@ -12,7 +12,6 @@
             </div>
         </div>
     </header>
-
     {{-- END IMAGE --}}
 
     {{-- Section Deskripsi Demografi --}}
@@ -72,19 +71,5 @@
         </div>
     </section>
     <!-- End Details Section -->
-
-    <section class="details">
-        <main id="main">
-            <div id="demografi">
-                <div class="demografi-newsletter">
-                    <div class="container">
-
-                    </div>
-                </div>
-
-            </div>
-        </main>
-        <!-- End #main -->
         <x-footer-lp />
-    </section>
 </x-root-lp>

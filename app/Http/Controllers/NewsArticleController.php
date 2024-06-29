@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use App\Models\Article;
 use App\Models\News;
-use App\Models\article;
+// use App\Models\article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -41,6 +42,7 @@ class NewsArticleController extends Controller
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->orderBy('article.view_count', 'desc')
             ->orderBy('article.updated_at', 'desc')
+            ->where('article.type', 'berita')
             ->take(1)
             ->first(); // Using first() to get a single record
 
@@ -59,6 +61,7 @@ class NewsArticleController extends Controller
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->where('article.view_count', '<=', $topPosts->view_count)
+            ->where('article.type', 'berita')
             ->orderBy('article.created_at', 'desc')
             ->get();
 

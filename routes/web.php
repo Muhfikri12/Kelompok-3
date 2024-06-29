@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\CategoryDemografiController;
 use App\Http\Controllers\DemografiController;
 use App\Http\Controllers\GeografisController;
+use App\Http\Controllers\InformasiPublikController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KadesController;
 use App\Http\Controllers\KasiController;
@@ -63,6 +65,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('staf', StaffController::class);
     Route::resource('geografis', GeografisController::class);
     Route::resource('lembaga', LembagaController::class);
+    Route::resource('banner', BannerController::class);
+    Route::resource('informasi', InformasiPublikController::class);
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
     Route::get('/membuat/berita', [NewsArticleController::class, 'newsArticle'])->name('news');

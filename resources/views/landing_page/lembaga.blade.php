@@ -1,12 +1,12 @@
 <x-root-lp>
     <x-navbar-lp />
           <!-- HEADER IMAGE -->
-          <header id="geografi-header" class="header-image d-none d-md-block text-white">
+          <header id="geografi-header" class="header-image text-white d-block">
             <div class="header-overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h1 class="display-3">Geografi Desa Hegarmanah</h1>
+                            <h1 class="display-3">Lembaga Desa Hegarmanah</h1>
                         </div>
                     </div>
                 </div>

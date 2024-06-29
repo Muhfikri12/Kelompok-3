@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\ProfileDesas;
 use App\Models\Article;
-use App\Models\Jabatan;
-use App\Models\Lembaga;
+use App\Models\Banner;
 use App\Models\Demografi;
 use App\Models\Geografis;
-use App\Models\StructureOrg;
-use Illuminate\Http\Request;
+use App\Models\InformasiPublik;
+use App\Models\Jabatan;
+use App\Models\Lembaga;
 use App\Models\PerangkatDesa;
+use App\Models\StructureOrg;
+use App\ProfileDesas;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 
 class LandingPageController extends Controller
@@ -75,6 +77,8 @@ class LandingPageController extends Controller
 
     public function landing_page()
     {
+        $informasi = InformasiPublik::all();
+        $banner = Banner::all();
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
 
@@ -84,6 +88,7 @@ class LandingPageController extends Controller
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->orderBy('article.view_count', 'desc')
             ->orderBy('article.updated_at', 'desc')
+            ->where('article.type', 'berita')
             ->take(1)
             ->first(); // Using first() to get a single record
 
@@ -102,6 +107,7 @@ class LandingPageController extends Controller
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->where('article.view_count', '<=', $topPosts->view_count)
+            ->where('article.type', 'berita')
             ->orderBy('article.created_at', 'desc')
             ->take(3)
             ->get();
@@ -140,6 +146,6 @@ class LandingPageController extends Controller
         $staffWithPositions = PerangkatDesa::with('position')->orderBy('created_at', 'asc')->get();
         // dd($topPosts);
 
-        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news', 'posts', 'topPosts', 'newsNew'));
+        return view('landing_page.index', compact('article', 'staffWithPositions', 'slide', 'data', 'maxTextLength', 'news', 'posts', 'topPosts', 'newsNew', 'banner', 'informasi'));
     }
 }

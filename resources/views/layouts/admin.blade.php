@@ -84,6 +84,18 @@
                     <i class="fas fa-fw fa-user"></i>
                     <span>{{ __('User') }}</span></a>
             </li>
+            <li class="nav-item {{ Nav::isRoute('banner.index') }}">
+                <a class="nav-link" href="{{ route('banner.index') }}">
+                    <i class="fas fa-fw fa-image"></i>
+                    <span>Banner</span>
+                </a>
+            </li>
+            <li class="nav-item {{ Nav::isRoute('informasi.index') }}">
+                <a class="nav-link" href="{{ route('informasi.index') }}">
+                    <i class="fas fa-fw fa-image"></i>
+                    <span>Informasi Publik</span>
+                </a>
+            </li>
             <li class="nav-item {{ Nav::isRoute('profile-desa.index') }}">
                 <a class="nav-link" href="{{ route('profile-desa.index') }}">
                     <i class="fas fa-fw fa-home"></i>
