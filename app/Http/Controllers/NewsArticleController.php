@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use Carbon\Carbon;
 use App\Models\News;
 // use App\Models\article;
-use Carbon\Carbon;
+use App\ProfileDesas;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -34,6 +35,7 @@ class NewsArticleController extends Controller
 
     public function draftArticle()
     {
+        $currentDateTime = Carbon::now();
 
         // Step 1: Get the top post based on view_count
         $topPosts = Article::query()
@@ -41,6 +43,7 @@ class NewsArticleController extends Controller
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->orderBy('article.view_count', 'desc')
             ->orderBy('article.updated_at', 'desc')
+            ->where('article.type', 'berita')
             ->take(1)
             ->first(); // Using first() to get a single record
 
@@ -59,15 +62,29 @@ class NewsArticleController extends Controller
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->where('article.view_count', '<=', $topPosts->view_count)
+            ->where('article.type', 'berita')
             ->orderBy('article.created_at', 'desc')
             ->get();
 
-        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts'));
+        $article = Article::where('type', 'pengumuman')
+            ->where(function ($query) use ($currentDateTime) {
+                $query->where('event_date', '>', $currentDateTime->toDateString())
+                    ->orWhere(function ($query) use ($currentDateTime) {
+                        $query->where('event_date', '>=', $currentDateTime->toDateString())
+                            ->where('event_time', '>=', $currentDateTime->toTimeString());
+                    });
+            })
+            ->orderBy('event_date', 'asc')
+            ->orderBy('event_time', 'asc')
+            ->get();
+
+        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts', 'article',));
     }
 
     public function detailNews($id)
     {
         $news = Article::findOrFail($id);
+        $data = ProfileDesas::first();
         $news->update([
             'view_count' => $news->view_count + 1
         ]);
@@ -92,7 +109,7 @@ class NewsArticleController extends Controller
             ->where('article.type', 'Berita')
             // ->take(3)
             ->get();
-        return view('landing_page.main.news.detail-news', compact('news', 'listArticle', 'listNews'));
+        return view('landing_page.main.news.detail-news', compact('news', 'listArticle', 'listNews', 'data'));
     }
 
 

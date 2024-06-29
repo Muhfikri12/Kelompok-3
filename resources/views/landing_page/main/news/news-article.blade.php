@@ -1,5 +1,8 @@
 <div class="trending-area fix" style="margin-top: 2rem">
     <div class="container">
+        <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
+            <h4>Berita</h4>
+        </div>
         <div class="trending-main">
             <!-- Trending Tittle -->
             <div class="row">
@@ -67,7 +70,7 @@
                         </div>
                     @endforeach
                     <div class="trand-right-single d-flex justify-content-center">
-                        <a class="btn btn-primary" href=""> Selengkapnya</a>
+                        <a class="btn btn-primary" href="{{ route('daftar.article') }}"> Selengkapnya</a>
                     </div>
                 </div>
             </div>

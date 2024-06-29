@@ -45,113 +45,6 @@
 
     @include('components.navbar-lp')
 
-    <section class="bg0">
-        <div class="container">
-            <div class="row row-article m-rl--1">
-                <div class="col-md-6 p-rl-1 p-b-2">
-                    <div class="bg-img1 size-a-3 how1 pos-relative"
-                        style="background-image: {{ asset('images/post-01.jpg') }};">
-                        <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
-
-                        <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                            <a href="#"
-                                class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                Business
-                            </a>
-
-                            <h3 class="how1-child2 m-t-14 m-b-10">
-                                <a href="blog-detail-01.html" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
-                                    Microsoft quisque at ipsum vel orci eleifend ultrices
-                                </a>
-                            </h3>
-
-                            <span class="how1-child2">
-                                <span class="f1-s-4 cl11">
-                                    Jack Sims
-                                </span>
-
-                                <span class="f1-s-3 cl11 m-rl-3">
-                                    -
-                                </span>
-
-                                <span class="f1-s-3 cl11">
-                                    Feb 16
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 p-rl-1">
-                    <div class="row m-rl--1">
-                        <div class="col-12 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-4 how1 pos-relative"
-                                style="background-image: url(images/post-02.jpg);">
-                                <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
-
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
-                                    <a href="#"
-                                        class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                        Culture
-                                    </a>
-
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="blog-detail-01.html"
-                                            class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
-                                            London ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-5 how1 pos-relative"
-                                style="background-image: url(images/post-03.jpg);">
-                                <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
-
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                    <a href="#"
-                                        class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                        Life Style
-                                    </a>
-
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="blog-detail-01.html"
-                                            class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-                                            Pellentesque dui nibh, pellen-tesque ut dapibus ut
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 p-rl-1 p-b-2">
-                            <div class="bg-img1 size-a-5 how1 pos-relative"
-                                style="background-image: url(images/post-04.jpg);">
-                                <a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
-
-                                <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
-                                    <a href="#"
-                                        class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                                        Sport
-                                    </a>
-
-                                    <h3 class="how1-child2 m-t-14">
-                                        <a href="blog-detail-01.html"
-                                            class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-                                            Motobike Vestibulum vene-natis purus nec nibh volutpat
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <div class="trending-area fix" style="margin-top: 5rem">
         <div class="container">
             <div class="trending-main">
@@ -168,28 +61,6 @@
                                 </article>
                             </div>
                         </div>
-
-                        <!-- Trending Bottom -->
-                        <div class="trending-bottom " style="margin-top: 1.5rem">
-                            <div class="row ">
-                                {{-- @foreach ($posts as $item)
-                                    <div class="col-lg-4">
-                                        <div class="single-bottom mb-35">
-                                            <div class="trend-bottom-img mb-30">
-                                                <img src="{{ asset($item->photo) }}" alt="">
-                                            </div>
-                                            <div class="trend-bottom-cap">
-                                                <span class="color1">{{ $item->name }}</span>
-                                                <p><a
-                                                        href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach --}}
-                            </div>
-                        </div>
-
                     </div>
                     <!-- Riht content -->
                     <div class="col-lg-4">
@@ -199,8 +70,7 @@
                         @foreach ($listNews as $item)
                             <div class="trand-right-single d-flex">
                                 <div class="trand-right-img">
-                                    <img src="{{ asset($item->photo) }}" alt=""
-                                        class="responsive-fixed-image">
+                                    <img src="{{ asset($item->photo) }}" alt="" class="responsive-fixed-image">
                                 </div>
                                 <div class="trand-right-cap">
                                     <span class="color1 mb-0">{{ $item->name }}</span>
@@ -213,7 +83,7 @@
                             </div>
                         @endforeach
                         <div class="trand-right-single d-flex justify-content-center">
-                            <a class="btn btn-primary" href=""> Selengkapnya</a>
+                            <a class="btn btn-primary" href="{{ route('daftar.article') }}"> Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +91,7 @@
         </div>
     </div>
 
-    @include('landing_page.footer.footer')
+    @include('components.footer-lp')
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'landing_page'])->name('landing_page');
-Route::get('/daftar/artikel', [NewsArticleController::class, 'draftArticle'])->name('daftar.article');
+Route::get('/daftar/informasi', [NewsArticleController::class, 'draftArticle'])->name('daftar.article');
 
 Route::get('/acara/{id}', [articleController::class, 'article'])->name('article');
 Route::get('/berita/{id}', [NewsArticleController::class, 'detailNews'])->name('news.article');

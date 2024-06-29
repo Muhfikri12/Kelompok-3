@@ -266,7 +266,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Desa",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Angel Lelga",
@@ -275,7 +275,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Perempuan",
                 "position" => "Sekertaris Desa",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Jendri Pitoy",
@@ -284,7 +284,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Negara",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -293,7 +293,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Perencanaan",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Atep rizal",
@@ -302,7 +302,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Urusan Umum dan Tata Usaha",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Tantan ",
@@ -311,7 +311,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pemerintahan",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Shahar Ginanhar",
@@ -320,7 +320,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Kesejahteraan",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => "images/post-01.jpg"
             ],
             [
                 "name" => "Nova Arianto ",
@@ -329,7 +329,7 @@ class PerangkatDesaSeeder extends Seeder
                 "gender" => "Laki-laki",
                 "position" => "Kepala Seksi Pelayanan",
                 "status" => "Aktif",
-                "photo" => "Asep Rohmat-1719281373.png"
+                "photo" => ""
             ],
         ];
 

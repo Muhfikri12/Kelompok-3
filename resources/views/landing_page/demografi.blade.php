@@ -1,7 +1,7 @@
 <x-root-lp>
     <x-navbar-lp />
-     <!-- HEADER IMAGE -->
-     <header id="geografi-header" class="header-image d-none d-md-block text-white">
+    <!-- HEADER IMAGE -->
+    <header id="geografi-header" class="header-image d-none d-md-block text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">
@@ -71,5 +71,5 @@
         </div>
     </section>
     <!-- End Details Section -->
-        <x-footer-lp />
+    <x-footer-lp />
 </x-root-lp>
