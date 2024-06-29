@@ -15,7 +15,6 @@
                             <thead>
                                 <tr>
                                     <th>{{ __('Judul') }}</th>
-                                    <th>{{ __('Deskprisi') }}</th>
                                     <th>{{ __('Photo') }}</th>
                                     <th>#</th>
                                 </tr>
@@ -24,7 +23,6 @@
                                 @foreach ($results as $record)
                                     <tr>
                                         <td>{{ $record->judul ?? '' }}</td>
-                                        <td>{{ $record->description ?? '' }}</td>
                                         <td><a href="{{ asset('storage/banner/' . $record->photo) }}"
                                                 target="_blank">Lihat</a></td>
                                         <td>

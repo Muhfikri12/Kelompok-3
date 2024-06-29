@@ -51,6 +51,7 @@ class InformasiPublikController extends Controller
     {
         return view('informasi.show',[
             'title' => "Lihat Informasi",
+            "record" => $informasi,
         ]);
     }
 
