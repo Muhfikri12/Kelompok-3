@@ -93,7 +93,7 @@ class BannerController extends Controller
             // Simpan Photo su Storage/app/uploads
             $request->photo->storeAs('public/banner/', $namaFile);
         } else {
-            $namaFile = "banner-default.png";
+            $namaFile = $request->photo;
         }
 
         $banner->update([
