@@ -1980,3 +1980,15 @@ section {
 .zoom-effect:hover img {
     transform: scale(1.1);
 }
+
+@media only screen and (min-width: 1280px) {
+    .lg-screen {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 884px) {
+    .lg-screen {
+        width: 100% !important;
+    }
+}

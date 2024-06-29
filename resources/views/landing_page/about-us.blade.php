@@ -17,12 +17,12 @@
 
     <section id="details" class="details">
         <div class="container" style="display:flex;align-content:center;flex-direction:column;align-items:center;">
-            <div class="row content" style="width:100%;overflow:hidden;">
+            <div class="row content lg-screen" style="overflow:hidden;">
                 <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
                     {!! $data->about_us !!}
                 </div>
             </div>
-            <div class="row content">
+            <div class="row content lg-screen">
                 <div class="col-md-8 pt-5" data-aos="fade-up">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43402.70622949173!2d106.78946238414318!3d-6.926033606711491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6830d1c4732cc5%3A0x14e9fd7726ffb468!2sHegarmanah%2C%20Kec.%20Cicantayan%2C%20Kabupaten%20Sukabumi%2C%20Jawa%20Barat!5e1!3m2!1sid!2sid!4v1719209176352!5m2!1sid!2sid"
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="row content">
+            <div class="row content lg-screen">
                 <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
                     <img src="{{ asset('storage/petugas/' . $kades->photo) }}" class="img-fluid" width="300"
                         alt="photo-kades">
