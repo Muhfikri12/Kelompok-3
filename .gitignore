@@ -9,6 +9,7 @@
 /storage/*.key
 /storage/logs/*
 /vendor
+/public/image
 /storage/**/*.log
 .env
 .env.backup

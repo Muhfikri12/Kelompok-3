@@ -22,8 +22,8 @@
                                     <th>#</th>
                                 </tr>
                             </thead>
-                            @foreach ($articles as $item)
-                                <tbody>
+                            <tbody>
+                                @foreach ($articles as $item)
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $item->title }}</td>
@@ -46,8 +46,8 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </tbody>
-                            @endforeach
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
 

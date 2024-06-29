@@ -2,9 +2,9 @@
     <style>
         /*Now the CSS*/
         /* * {
-                                                                                                            margin: 0;
-                                                                                                            padding: 0;
-                                                                                                        } */
+                                                                                                                                    margin: 0;
+                                                                                                                                    padding: 0;
+                                                                                                                                } */
 
         .tree ul {
             padding-top: 20px;
@@ -44,7 +44,7 @@
         }
 
         /*We need to remove left-right connectors from elements without
-                                                                                                                                                                            any siblings*/
+                                                                                                                                                                                                    any siblings*/
         .tree li:only-child::after,
         .tree li:only-child::before {
             display: none;
@@ -56,7 +56,7 @@
         }
 
         /*Remove left connector from first child and
-                                                                                                                                                                            right connector from last child*/
+                                                                                                                                                                                                    right connector from last child*/
         .tree li:first-child::before,
         .tree li:last-child::after {
             border: 0 none;
@@ -121,24 +121,23 @@
         }
 
         /*Thats all. I hope you enjoyed it.
-                                                                                                                                                                            Thanks :)*/
+                                                                                                                                                                                                    Thanks :)*/
     </style>
 @endpush
 <x-root-lp>
     <x-navbar-lp />
-       <!-- breadcrumb-section -->
-       <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <h1>Struktur Organisasi</h1>
+    <!-- HEADER IMAGE -->
+    <header id="geografi-header" class="header-image d-none d-md-block text-white">
+        <div class="header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-3">Struktur Organisasi Desa Hegarmanah</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end breadcrumb section -->
+    </header> {{-- END IMAGE --}}
 
 
     {{-- Section Deskripsi Demografi --}}
@@ -195,6 +194,7 @@
         </div>
 
     </section>
+
 
     <!-- End Details Section -->
     <x-footer-lp />

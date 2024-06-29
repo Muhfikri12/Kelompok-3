@@ -1,19 +1,19 @@
 <x-root-lp>
     <x-navbar-lp />
-    <!-- breadcrumb-section -->
-    <div class="breadcrumb-section breadcrumb-bg mt-5 bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <h1>Tentang Kami</h1>
+    <!-- HEADER IMAGE -->
+    <header id="geografi-header" class="header-image d-none d-sm-block text-white">
+        <div class="header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-3">Geografi Desa Hegarmanah</h1>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end breadcrumb section -->
+    </header>
 
+    {{-- END IMAGE --}}
 
     <section id="details" class="details">
         <div class="container" style="display:flex;align-content:center;flex-direction:column;align-items:center;">
@@ -58,6 +58,6 @@
                 </div>
             </div>
         </div>
-        <x-footer-lp />
-    </section><!-- End Details Section -->
+    </section>
+    <x-footer-lp />
 </x-root-lp>
