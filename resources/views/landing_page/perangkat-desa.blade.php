@@ -23,8 +23,10 @@
                     @foreach ($results as $record)
                         <div class="col" data-aos="zoom-in">
                             <div class="card text-center h-100">
-                                <img src="{{ asset('storage/petugas/' . $record->photo) }}"
-                                    class="card-img-top p-2 img-fluid" alt="{{ $record->name }}" />
+                                <div class="image-container">
+                                    <img src="{{ $record->photo ? asset($record->photo) : asset('images/post-01.jpg') }}"
+                                        class="card-img-top" alt="{{ $record->name }}" />
+                                </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $record->name ?? '' }}</h5>
                                     <p class="card-text">{{ $record->position->name ?? '' }}</p>
