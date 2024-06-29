@@ -61,28 +61,6 @@
                                 </article>
                             </div>
                         </div>
-
-                        <!-- Trending Bottom -->
-                        <div class="trending-bottom " style="margin-top: 1.5rem">
-                            <div class="row ">
-                                {{-- @foreach ($posts as $item)
-                                    <div class="col-lg-4">
-                                        <div class="single-bottom mb-35">
-                                            <div class="trend-bottom-img mb-30">
-                                                <img src="{{ asset($item->photo) }}" alt="">
-                                            </div>
-                                            <div class="trend-bottom-cap">
-                                                <span class="color1">{{ $item->name }}</span>
-                                                <p><a
-                                                        href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 100) }}</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach --}}
-                            </div>
-                        </div>
-
                     </div>
                     <!-- Riht content -->
                     <div class="col-lg-4">
@@ -105,7 +83,7 @@
                             </div>
                         @endforeach
                         <div class="trand-right-single d-flex justify-content-center">
-                            <a class="btn btn-primary" href=""> Selengkapnya</a>
+                            <a class="btn btn-primary" href="{{ route('daftar.article') }}"> Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -113,7 +91,7 @@
         </div>
     </div>
 
-    @include('landing_page.footer.footer')
+    @include('components.footer-lp')
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

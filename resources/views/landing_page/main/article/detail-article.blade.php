@@ -45,80 +45,52 @@
 
     @include('components.navbar-lp')
 
-    <section class="container mt-3">
-        <div class="news" style="display: flex;">
-            <div class="col-lg-6 detail-news" style="text-decoration-style:none" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="detail-content-news">
-                    <img src="{{ asset($articles->photo) }}" class="img-fluid responsive-image" alt="">
-                    <h4><strong>{{ $articles->title }}</strong></h4>
-                    <article>
-                        {!! $articles->detail_content !!}
-                    </article>
-                </div>
-            </div>
-            <div class="col-lg-3 info-news" data-aos="fade-up" data-aos-delay="200">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group">
-                        <div class="header-article-event" data-aos="fade-up">
-                            <h4>Berita</h4>
+    <div class="trending-area fix" style="margin-top: 5rem">
+        <div class="container">
+            <div class="trending-main">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Trending Top -->
+                        <div class="trending-top mb-30" data-view-count="100">
+                            <div class="detail-content-news">
+                                <img src="{{ asset($articles->photo) }}" class="img-fluid responsive-image mb-2"
+                                    style="border-radius: 1rem" alt="">
+                                <h4><strong>{{ $articles->title }}</strong></h4>
+                                <article>
+                                    {!! $articles->detail_content !!}
+                                </article>
+                            </div>
                         </div>
-                    </li>
-                    <li class="list-group-item">
+                    </div>
+                    <!-- Riht content -->
+                    <div class="col-lg-4">
+                        <div class="mb-3">
+                            <strong class=" text-primary">Berita Terbaru</strong>
+                        </div>
                         @foreach ($listNews as $item)
-                            <div class="news-item" style="max-width: 540px;">
-                                <div class="row g-2 my-1 hover-effect" style="padding: 0px 0.5rem 0.5rem 0.5rem">
-                                    <div class=" col-lg-4 fixed-container">
-                                        <img src="{{ asset($item->photo) }}" class="img-fluid rounded-start fixed-img"
-                                            alt="...">
-                                    </div>
-                                    <div class=" col-lg-8">
-                                        <a href="{{ route('news.article', ['id' => $item->id]) }}">
-                                            <div class="card-body my-auto">
-                                                <p class="card-title"><strong>{{ $item->title }}</strong></p>
-                                                <small>
-                                                    <p class="card-text">{{ $item->content }}</p>
-                                                </small>
-                                            </div>
-                                        </a>
-                                    </div>
+                            <div class="trand-right-single d-flex">
+                                <div class="trand-right-img">
+                                    <img src="{{ asset($item->photo) }}" alt="" class="responsive-fixed-image">
+                                </div>
+                                <div class="trand-right-cap">
+                                    <span class="color1 mb-0">{{ $item->name }}</span>
+                                    <small>
+                                        <p><a
+                                                href="{{ route('news.article', ['id' => $item->article_id]) }}">{{ Str::limit($item->content, 80) }}</a>
+                                        </p>
+                                    </small>
                                 </div>
                             </div>
                         @endforeach
-                    </li>
-                </ul>
+                        <div class="trand-right-single d-flex justify-content-center">
+                            <a class="btn btn-primary" href="{{ route('daftar.article') }}"> Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="other_article">
-            <div class="order-2 order-lg-2 info-article" data-aos="fade-up" data-aos-delay="200">
-                <div class="list-info-article">
-                    <div class="header-article-event mb-3" data-aos="fade-up">
-                        <h4>Acara Terbaru</h4>
-                    </div>
-                    <div class="row row-cols-1 row-cols-md-3 g-2 px-4">
-                        @foreach ($listArticle as $item)
-                            <div class="col-sm-12 col-lg-4 col-md-6">
-                                <div class="card mx-auto" style="width: 18rem;">
-                                    <img src="{{ asset($item->photo) }}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $item->title }}</h5>
-                                        <p><strong>{{ Str::limit($item->content, 50) }}</strong></p>
-                                        {{-- <p class="card-text">{!! Str::limit($item->detail_content) !!}</p> --}}
-                                        <p><i data-feather="calendar"></i>
-                                            <span>{{ $item->event_date->translatedFormat('l, d F Y') }}</span>
-                                        </p>
-                                        <p><i data-feather="clock"></i> <span>{{ $item->event_time }}</span></p>
-                                        <a href="{{ route('article', ['id' => $item->id]) }}"
-                                            class="btn btn-primary">Lihat
-                                            Detail</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-    </section>
+    </div>
+
 
     @include('landing_page.footer.footer')
 

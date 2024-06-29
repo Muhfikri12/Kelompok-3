@@ -122,30 +122,27 @@
                                 <div class="trand-right-img">
                                     <img src="{{ asset($item->photo) }}" alt="" class="responsive-fixed-image">
                                 </div>
-                                <div class="trand-right-cap">
-                                    <p class="mb-1"><a class="text-dark"
-                                            href="">{{ Str::limit($item->title, 20) }}</a>
-                                    </p>
-                                    <div class="d-flex">
-                                        <i data-feather="calendar" style="width: 1.2rem; height: 1.2rem; "></i>
-
-                                        <p class="mx-2 mb-1" style="font-size: 14px">
-                                            {{ $item->event_date->translatedFormat(' d F Y') }}
+                                <a href="{{ route('article', ['id' => $item->id]) }}">
+                                    <div class="trand-right-cap">
+                                        <p class="mb-1"><a class="text-dark"
+                                                href="">{{ Str::limit($item->title, 20) }}</a>
                                         </p>
+                                        <div class="d-flex">
+                                            <i data-feather="calendar" style="width: 1.2rem; height: 1.2rem; "></i>
 
+                                            <p class="mx-2 mb-1" style="font-size: 14px">
+                                                {{ $item->event_date->translatedFormat(' d F Y') }}
+                                            </p>
+
+                                        </div>
+                                        <div class="d-flex">
+                                            <i data-feather="clock" style="width: 1.2rem; height: 1.2rem;"></i>
+
+                                            <p class="mx-2" style="font-size: 14px">{{ $item->event_time }}</p>
+
+                                        </div>
                                     </div>
-                                    <div class="d-flex">
-                                        <i data-feather="clock" style="width: 1.2rem; height: 1.2rem;"></i>
-
-                                        <p class="mx-2" style="font-size: 14px">{{ $item->event_time }}</p>
-
-                                    </div>
-                                    {{-- <small>
-                                    <p><a
-                                            href="{{ route('news.article', ['id' => $item->id]) }}">{{ Str::limit($item->content, 70) }}</a>
-                                    </p>
-                                </small> --}}
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>

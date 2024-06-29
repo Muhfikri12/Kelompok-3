@@ -37,11 +37,12 @@ class articleController extends Controller
             ->take(3)
             ->get();
 
-        $listNews = Article::where('id', '!=', $id)
-            ->where('type', 'Berita')
-            ->orderBy('created_at', 'desc')
-            ->offset($offset)
-            ->limit($perPage)
+        $listNews = Article::query()
+            ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
+            ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
+            ->where('article.id', '!=', $id)
+            ->where('article.type', 'Berita')
+            // ->take(3)
             ->get();
         return view('landing_page.main.article.detail-article', compact('listNews', 'articles', 'slide', 'listArticle', 'maxTextLength'));
     }

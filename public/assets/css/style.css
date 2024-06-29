@@ -254,7 +254,7 @@ h6 {
     color: #fc3f00;
 }
 
-.trending-area .trending-main .trand-right-single {
+.trending-area .trending-main  {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
@@ -608,6 +608,9 @@ h6 {
     background: rgba(0, 0, 0, 0.4);
     padding: 10px;
 } */
+.trand-right-single {
+    padding: 0.5rem;
+}
 
 .responsive-fixed-image {
     max-width: 100%;

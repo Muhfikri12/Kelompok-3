@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use Carbon\Carbon;
 use App\Models\News;
 // use App\Models\article;
-use Carbon\Carbon;
+use App\ProfileDesas;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -77,12 +78,13 @@ class NewsArticleController extends Controller
             ->orderBy('event_time', 'asc')
             ->get();
 
-        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts', 'article'));
+        return view('landing_page.main.news.daftar-news', compact('topPosts', 'posts', 'article',));
     }
 
     public function detailNews($id)
     {
         $news = Article::findOrFail($id);
+        $data = ProfileDesas::first();
         $news->update([
             'view_count' => $news->view_count + 1
         ]);
@@ -107,7 +109,7 @@ class NewsArticleController extends Controller
             ->where('article.type', 'Berita')
             // ->take(3)
             ->get();
-        return view('landing_page.main.news.detail-news', compact('news', 'listArticle', 'listNews'));
+        return view('landing_page.main.news.detail-news', compact('news', 'listArticle', 'listNews', 'data'));
     }
 
 
