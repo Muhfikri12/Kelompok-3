@@ -124,13 +124,13 @@
         }
 
         /*Thats all. I hope you enjoyed it.
-                                                                                                                                                                                                                Thanks :)*/
+                                                                                                                                                                                                                    Thanks :)*/
     </style>
 @endpush
 <x-root-lp>
     <x-navbar-lp />
     <!-- HEADER IMAGE -->
-    <header id="geografi-header" class="header-image d-none d-md-block text-white">
+    <header id="geografi-header" class="header-image text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">

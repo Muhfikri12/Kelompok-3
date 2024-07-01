@@ -53,7 +53,7 @@
 
     @include('components.navbar-lp')
 
-    <header id="geografi-header" class="header-image d-none d-md-block text-white">
+    <header id="geografi-header" class="header-image text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">
