@@ -2,11 +2,12 @@
     <style>
         /*Now the CSS*/
         /* * {
-                                                                                                                                    margin: 0;
-                                                                                                                                    padding: 0;
-                                                                                                                                } */
-
+                                                                                                                                                margin: 0;
+                                                                                                                                                padding: 0;
+                                                                                                                                            } */
         .tree ul {
+            display: flex;
+            flex-wrap: nowrap;
             padding-top: 20px;
             position: relative;
             transition: all 0.5s;
@@ -44,7 +45,7 @@
         }
 
         /*We need to remove left-right connectors from elements without
-                                                                                                                                                                                                    any siblings*/
+                                                                                                                                                                                                                any siblings*/
         .tree li:only-child::after,
         .tree li:only-child::before {
             display: none;
@@ -56,7 +57,7 @@
         }
 
         /*Remove left connector from first child and
-                                                                                                                                                                                                    right connector from last child*/
+                                                                                                                                                                                                                right connector from last child*/
         .tree li:first-child::before,
         .tree li:last-child::after {
             border: 0 none;
@@ -90,6 +91,8 @@
         .tree li a {
             border: 1px solid #ccc;
             padding: 5px 10px;
+            width: 200px;
+            /* height : 150px; */
             text-decoration: none;
             color: #666;
             font-family: arial, verdana, tahoma;
@@ -121,7 +124,7 @@
         }
 
         /*Thats all. I hope you enjoyed it.
-                                                                                                                                                                                                    Thanks :)*/
+                                                                                                                                                                                                                Thanks :)*/
     </style>
 @endpush
 <x-root-lp>
@@ -139,42 +142,72 @@
         </div>
     </header> {{-- END IMAGE --}}
 
-
     {{-- Section Deskripsi Demografi --}}
     <section>
         <div class="container">
             <div style="width: 100%;overflow:scroll;">
-                <div style="width: 1666px; height:300px">
+                <div style="width: 1666px; height:600px">
+                    {{-- @dump($aa->parent->childs->whereIn('type',['kadus'])) --}}
                     <div class="tree">
                         <ul>
                             <li>
-                                <a href="#">{{ $result->name }}</a>
+                                <a href="{{ route('data-tugas', $result->petugas->id) }}">
+                                    <div>
+                                        <img style="width: 60px; height:auto"
+                                            src="{{ file_exists(public_path('storage/petugas/' . $result->petugas->photo)) ? asset('storage/petugas/' . $result->petugas->photo) : asset('asset-page/empty.jpg') }}"
+                                            alt="">
+                                            <div>
+                                                <p class="my-0"><u><b>{{ strtoupper($result->name) }}</b></u></p>
+                                                <p class="my-0">{{ strtoupper($result->petugas->name) }}</p>
+                                            </div>
+                                    </div>
+                                </a>
                                 <ul>
                                     @foreach ($result->childs as $a)
                                         <li>
-                                            <a href="#">
-                                                {{ $a->name }}
+                                            <a href="{{ route('data-tugas', $a->petugas->id) }}">
+                                                <div>
+                                                    <img style="width: 60px; height:auto"
+                                                        src="{{ file_exists(public_path('storage/petugas/' . $a->petugas->photo)) ? asset('storage/petugas/' . $a->petugas->photo) : asset('asset-page/empty.jpg') }}"
+                                                        alt="">
+                                                        <div>
+                                                            <p class="my-0"><u><b>{{ strtoupper($a->name) }}</b></u></p>
+                                                            <p class="my-0">{{ strtoupper($a->petugas->name) }}</p>
+                                                        </div>
+                                                </div>
                                             </a>
                                             @if ($a->childs->isNotEmpty())
                                                 <ul>
                                                     @foreach ($a->childs as $aa)
                                                         <li>
-                                                            <a href="#">{{ $aa->name }}</a>
+                                                            <a href="{{ route('data-tugas', $aa->petugas->id) }}">
+                                                                <div>
+                                                                    <img style="width: 60px; height:auto"
+                                                                        src="{{ file_exists(public_path('storage/petugas/' . $aa->petugas->photo)) ? asset('storage/petugas/' . $aa->petugas->photo) : asset('asset-page/empty.jpg') }}"
+                                                                        alt="">
+                                                                        <div>
+                                                                            <p class="my-0"><u><b>{{ strtoupper($aa->name) }}</b></u></p>
+                                                                            <p class="my-0">{{ strtoupper($aa->petugas->name) }}</p>
+                                                                        </div>
+                                                                </div>
+                                                            </a>
                                                             @if ($aa->childs->isNotEmpty())
                                                                 <ul>
                                                                     @foreach ($aa->childs as $aaa)
                                                                         <li>
-                                                                            <a href="#">{{ $aaa->name }}</a>
-                                                                            @if ($aaa->childs->isNotEmpty())
-                                                                                <ul>
-                                                                                    @foreach ($aaa->childs as $aaaa)
-                                                                                        <li>
-                                                                                            <a
-                                                                                                href="#">{{ $aaaa->name }}</a>
-                                                                                        </li>
-                                                                                    @endforeach
-                                                                                </ul>
-                                                                            @endif
+                                                                            <a href="#">
+                                                                                {{ $aaa->name }}
+                                                                            </a>
+                                                                            {{-- @if ($result->childs->isNotEmpty())
+                                                                                    <ul>
+                                                                                        @foreach ($result->childs->whereIn('type', ['sekertaris', 'kasi']) as $kadus)
+                                                                                            <li>
+                                                                                                <a
+                                                                                                    href="#">{{ $kadus->name }}</a>
+                                                                                            </li>
+                                                                                        @endforeach
+                                                                                    </ul>
+                                                                                @endif --}}
                                                                         </li>
                                                                     @endforeach
                                                                 </ul>
@@ -186,15 +219,28 @@
                                         </li>
                                     @endforeach
                                 </ul>
+                                {{-- @if ($result->childs->isNotEmpty())
+                                    <ul class="kadus">
+                                        @foreach ($result->childs->whereIn('type', ['kadus']) as $kadus)
+                                            <li>
+                                                <a href="#">{{ $kadus->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif --}}
+                            </li>
+                            <li>
+                                <a href="">BPD</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            {{-- <img src="" alt=""> --}}
         </div>
 
     </section>
-
 
     <!-- End Details Section -->
     <x-footer-lp />

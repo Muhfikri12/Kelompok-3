@@ -59,7 +59,7 @@ class LandingPageController extends Controller
     public function struktur()
     {
         $results = StructureOrg::where('type', 'kades')->first();
-        // dd($results);
+        // dd($results->whereIn('type',['sekertaris','']));
 
         return view('landing_page.struktur', [
             'result' => $results,

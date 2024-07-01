@@ -17,6 +17,7 @@ class LembagaSeeder extends Seeder
         $faker = Faker::create();
 
 
+
         $type = ['BPD',"LPM","KARTA","PKK"];
         for($i=0; $i<10; $i++) {
             Lembaga::create([

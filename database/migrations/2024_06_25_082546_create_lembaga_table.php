@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('leader');
-            $table->enum('type',['BPD',"LPM","KARTA","PKK","DLL"]);
+            $table->enum('type',['BPD',"LPM","KARTA","PKK","TANI","DLL"]);
             $table->text('address')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();

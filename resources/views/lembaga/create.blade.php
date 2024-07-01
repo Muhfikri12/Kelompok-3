@@ -27,6 +27,7 @@
                                 <option value="" selected>-- Pilih --</option>
                                 <option value="BPD" {{ 'BPD' == old('type') ? 'selected' : '' }}>BPD</option>
                                 <option value="LPM" {{ 'LPM' == old('type') ? 'selected' : '' }}>LPM</option>
+                                <option value="TANI" {{ 'TANI' == old('type') ? 'selected' : '' }}>TANI</option>
                                 <option value="KARTA" {{ 'KARTA' == old('type') ? 'selected' : '' }}>
                                     KARTA</option>
                                 <option value="PKK" {{ 'PKK' == old('type') ? 'selected' : '' }}>PKK</option>

@@ -394,13 +394,13 @@ class PerangkatDesaSeeder extends Seeder
                 "photo" => "aji.png"
             ],
             [
-                "name" => "Hendri Gumawam",
+                "name" => "Hendri Gunawan",
                 "phone" => '0895888888',
                 "nip" => 1234254,
                 "gender" => "Laki-laki",
                 "position" => "Kadus Cilubang",
                 "status" => "Aktif",
-                "photo" => "ujang.png"
+                "photo" => "hendri.png"
             ],
 
 
