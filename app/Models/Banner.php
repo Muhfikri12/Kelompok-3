@@ -12,4 +12,5 @@ class Banner extends Model
     protected $table = 'banner';
 
     protected $guarded = [];
+
 }

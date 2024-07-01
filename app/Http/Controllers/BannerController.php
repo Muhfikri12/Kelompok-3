@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BannerRequest;
+use App\Http\Requests\BannerUpdateRequest;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -83,7 +84,7 @@ class BannerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(BannerRequest $request, Banner $banner)
+    public function update(BannerUpdateRequest $request, Banner $banner)
     {
         if ($request->hasFile('photo') == true) {
             // Ambil extensi file

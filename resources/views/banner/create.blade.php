@@ -22,8 +22,7 @@
 
                     <div class="form-group">
                         <label for="description">{{ __('Keterangan Banner') }}</label>
-                        <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"
-                            id="description" placeholder="Keterangan Kegiatan" autocomplete="off" value="{{ old('description') }}">
+                        <textarea name="description" id="" cols="30" rows="10" class="form-control">{{old('description')}}</textarea>
                         @error('description')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror

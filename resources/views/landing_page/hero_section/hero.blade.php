@@ -8,11 +8,11 @@
     </div>
     <div class="carousel-inner">
         @foreach ($banner as $key => $item)
-        {{-- @dump($item->photo) --}}
+        {{-- @dump(file_exists(public_path('storage/banner/' . $item->photo))) --}}
             <div class="carousel-item @if ($loop->first) active @endif">
                 <img
                 class="d-block w-100"
-                src="{{ file_exists(public_path('storage/banner/' . $item->photo)) ? asset('storage/banner/' . $item->photo)  : asset('asset-page/empty.jpg') }}"
+                src="{{ file_exists(public_path('storage/banner/' . $item->photo)) ? asset('storage/banner/' . $item->photo)  : asset('carousel/' .$item->photo) }}"
                 alt="{{ $item->judul ?? 'Slide ' . $key }}"
               />
                 <button class="carousel-caption d-md-block" data-bs-toggle="modal"

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BannerRequest extends FormRequest
+class BannerUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,6 @@ class BannerRequest extends FormRequest
     {
         return [
             'judul' => 'required',
-            "photo" => 'required|image|mimes:jpg,jpeg,png,gif|max:8192',
             'description' => 'max:400',
         ];
 

@@ -25,8 +25,7 @@
 
                         <div class="form-group">
                             <label for="description">{{ __('Keterangan Banner') }}</label>
-                            <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"
-                                id="description" placeholder="Keterangan Kegiatan" autocomplete="off" value="{{ $record->description ?? old('description') }}">
+                            <textarea name="description" id="" cols="30" rows="10" class="form-control">{{$record->description ??  old('description')}}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -39,12 +38,13 @@
                                     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="text">
+                                    <input type="text" name="photo" value="{{$record->photo}}">
                                     <input type="file" class="custom-file-input @error('photo') is-invalid @enderror" name="photo" id="photo"
                                     aria-describedby="inputGroupFileAddon01">
                                     <label class="custom-file-label" for="photo"> {{ $record->photo }}</label>
                                 </div>
                             </div>
+
                             @error('photo')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
