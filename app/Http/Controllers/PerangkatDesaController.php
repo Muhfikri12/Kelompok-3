@@ -105,9 +105,10 @@ class PerangkatDesaController extends Controller
             // Simpan Photo su Storage/app/uploads
             $request->photo->storeAs('public/petugas/', $namaFile);
         } else {
-            $namaFile = $request->photo;
+            $namaFile = $perangkat->photo;
         }
 
+        // dd($namaFile);
         $perangkat->update([
             "name" => $request->name,
             "gender" => $request->gender,

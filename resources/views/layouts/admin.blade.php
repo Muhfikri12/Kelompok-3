@@ -30,7 +30,8 @@
     <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
 
     {{-- CKEditor --}}
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script> --}}
+    <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
     {{-- Asset JS Datatable --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -25,7 +25,8 @@
                         <div class="card text-center h-100">
                             <div class="image-container">
                                     <img src="{{ file_exists(public_path('storage/petugas/' . $record->photo)) ? asset('storage/petugas/' . $record->photo)  : asset('asset-page/empty.jpg') }}"
-                                        class="card-img-top" alt="{{ $record->name }}" style="width: 18rem; height: 15rem" />
+                                        class="card-img-top" alt="{{ $record->name }}" style="height:500px; object-fit: cover;
+                                        object-position: center;"/>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $record->name ?? '' }}</h5>
