@@ -235,5 +235,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticleSeeder::class);
 
         $this->call(InformasiSeeder::class);
+        $this->call(BannerSeeder::class);
     }
 }

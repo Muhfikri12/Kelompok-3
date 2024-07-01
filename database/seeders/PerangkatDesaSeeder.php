@@ -27,51 +27,51 @@ class PerangkatDesaSeeder extends Seeder
                 "description" => null,
             ],
             [
-                "name" => "Kepala Urusan Negara",
+                "name" => "Kaur Keuangan",
                 "type" => "Kaur",
                 "description" => null,
             ],
             [
-                "name" => "Kepala Urusan Perencanaan",
+                "name" => "Kaur TU & UMUM",
                 "type" => "Kaur",
                 "description" => null,
             ],
             [
-                "name" => "Kepala Urusan Umum dan Tata Usaha",
+                "name" => "Kaur Perencanaan",
                 "type" => "Kaur",
                 "description" => null,
             ],
             [
-                "name" => "Kepala Seksi Pemerintahan",
+                "name" => "Kasi Pemerintahan",
                 "type" => "Kasi",
                 "description" => null,
             ],
             [
-                "name" => "Kepala Seksi Kesejahteraan",
+                "name" => "Kasi Kejahteraan",
                 "type" => "Kasi",
                 "description" => null,
             ],
             [
-                "name" => "Kepala Seksi Pelayanan",
+                "name" => "Kasi Pelayanan",
                 "type" => "Kasi",
                 "description" => null,
             ],
 
-            [
-                "name" => "Staff Pemerintahan",
-                "type" => "Staf",
-                "description" => null,
-            ],
-            [
-                "name" => "Staff Pelayanan",
-                "type" => "Staf",
-                "description" => null,
-            ],
-            [
-                "name" => "Staff Tata Usaha",
-                "type" => "Staf",
-                "description" => null,
-            ],
+            // [
+            //     "name" => "Staff Pemerintahan",
+            //     "type" => "Staf",
+            //     "description" => null,
+            // ],
+            // [
+            //     "name" => "Staff Pelayanan",
+            //     "type" => "Staf",
+            //     "description" => null,
+            // ],
+            // [
+            //     "name" => "Staff Tata Usaha",
+            //     "type" => "Staf",
+            //     "description" => null,
+            // ],
         ];
 
 
@@ -109,140 +109,140 @@ class PerangkatDesaSeeder extends Seeder
 
             // Kepala Urusan Negara
 
-            [
-                "position" => "Kepala Urusan Negara",
-                "name" => "Mengelola administrasi keuangan desa",
-                "description" => null,
-            ],
-            [
-                "position" => "Kepala Urusan Negara",
-                "name" => "Menyusun anggaran pendapatan dan belanja desa",
-                "description" => null,
-            ],
-            [
-                "position" => "Kepala Urusan Negara",
-                "name" => "Melaksanakan penatausahaan keuangan desa",
-                "description" => null,
-            ],
-            [
-                "position" => "Kepala Urusan Negara",
-                "name" => "Menyusun laporan keuangan desa",
-                "description" => null,
-            ],
+            // [
+            //     "position" => "Kepala Urusan Negara",
+            //     "name" => "Mengelola administrasi keuangan desa",
+            //     "description" => null,
+            // ],
+            // [
+            //     "position" => "Kepala Urusan Negara",
+            //     "name" => "Menyusun anggaran pendapatan dan belanja desa",
+            //     "description" => null,
+            // ],
+            // [
+            //     "position" => "Kepala Urusan Negara",
+            //     "name" => "Melaksanakan penatausahaan keuangan desa",
+            //     "description" => null,
+            // ],
+            // [
+            //     "position" => "Kepala Urusan Negara",
+            //     "name" => "Menyusun laporan keuangan desa",
+            //     "description" => null,
+            // ],
 
-            // Kepala Urusan Perencanaan
+            // Kaur Perencanaan
 
             [
-                "position"  => "Kepala Urusan Perencanaan",
+                "position"  => "Kaur Perencanaan",
                 "name" => "Menyusun rencana pembangunan jangka menengah desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Urusan Perencanaan",
+                "position"  => "Kaur Perencanaan",
                 "name" => "Menyusun rencana kerja pemerintah desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Urusan Perencanaan",
+                "position"  => "Kaur Perencanaan",
                 "name" => "Melaksanakan pemantauan dan evaluasi kegiatan pembangunan desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Urusan Perencanaan",
+                "position"  => "Kaur Perencanaan",
                 "name" => "Menyusun laporan pelaksanaan kegiatan pembangunan desa",
                 "description" => null,
             ],
 
 
-            //  Kepala Urusan Umum dan Tata Usaha
+            //  Kaur TU & UMUM
 
             [
-                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "position" => "Kaur TU & UMUM",
                 "name" => "Menyusun rencana pembangunan jangka menengah desa",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "position" => "Kaur TU & UMUM",
                 "name" => "Mengelola administrasi kepegawaian desa",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "position" => "Kaur TU & UMUM",
                 "name" => "Mengelola arsip dan dokumentasi desa",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "position" => "Kaur TU & UMUM",
                 "name" => "Menyusun laporan administrasi umum desa",
                 "description" => null,
             ],
 
-            // Kepala Seksi Pemerintahan
+            // Kasi Pemerintahan
 
             [
-                "position"  => "Kepala Seksi Pemerintahan",
+                "position"  => "Kasi Pemerintahan",
                 "name" => "Melaksanakan pelayanan administrasi kependudukan",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pemerintahan",
+                "position"  => "Kasi Pemerintahan",
                 "name" => "Melaksanakan kegiatan pemeliharaan ketertiban dan keamanan",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pemerintahan",
+                "position"  => "Kasi Pemerintahan",
                 "name" => "Menyusun laporan pelaksanaan kegiatan pemerintahan desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pemerintahan",
+                "position"  => "Kasi Pemerintahan",
                 "name" => "Mengelola administrasi pertanahan desa",
                 "description" => null,
             ],
 
 
-            // Kepala Seksi Kesejahteraan
+            // Kasi Kejahteraan
 
             [
-                "position" => "Kepala Seksi Kesejahteraan",
+                "position" => "Kasi Kejahteraan",
                 "name" => "Melaksanakan pelayanan di bidang kesehatan dan pendidikan",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Seksi Kesejahteraan",
+                "position" => "Kasi Kejahteraan",
                 "name" => "Melaksanakan kegiatan peningkatan kesejahteraan masyarakat",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Seksi Kesejahteraan",
+                "position" => "Kasi Kejahteraan",
                 "name" => "Menyusun laporan pelaksanaan kegiatan kesejahteraan masyarakat",
                 "description" => null,
             ],
             [
-                "position" => "Kepala Seksi Kesejahteraan",
+                "position" => "Kasi Kejahteraan",
                 "name" => "Mengelola administrasi kesejahteraan sosial desa",
                 "description" => null,
             ],
 
-            // Kepala Seksi Pelayanan
+            // Kasi Pelayanan
 
             [
-                "position"  => "Kepala Seksi Pelayanan",
+                "position"  => "Kasi Pelayanan",
                 "name" => "Melaksanakan pelayanan administrasi umum",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pelayanan",
+                "position"  => "Kasi Pelayanan",
                 "name" => "Melaksanakan pelayanan perizinan desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pelayanan",
+                "position"  => "Kasi Pelayanan",
                 "name" => "Menyusun laporan pelaksanaan kegiatan pelayanan desa",
                 "description" => null,
             ],
             [
-                "position"  => "Kepala Seksi Pelayanan",
+                "position"  => "Kasi Pelayanan",
                 "name" => "Mengelola administrasi pelayanan publik desa",
                 "description" => null,
             ],
@@ -260,77 +260,81 @@ class PerangkatDesaSeeder extends Seeder
 
         $perangkat = [
             [
-                "name" => "Markus Horison",
+                "name" => "Ujang Natadiredja,S.Pd.I",
                 "phone" => '0895888888',
                 "nip" => 1234223,
                 "gender" => "Laki-laki",
                 "position" => "Kepala Desa",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "ujang-natadiredja.png"
             ],
             [
-                "name" => "Angel Lelga",
+                "name" => "Herlan Sutisna",
+                "phone" => '0895888888',
+                "nip" => 1234322,
+                "gender" => "Laki-laki",
+                "position" => "Sekertaris Desa",
+                "status" => "Aktif",
+                "photo" => "herlan.png"
+            ],
+            [
+                "name" => "Siti Saiyah,S.IP",
                 "phone" => '0895888888',
                 "nip" => 1234322,
                 "gender" => "Perempuan",
-                "position" => "Sekertaris Desa",
+                "position" => "Kaur Keuangan",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "siti.png"
             ],
             [
-                "name" => "Jendri Pitoy",
+                "name" => "Ade Nurhayati,AM.d",
                 "phone" => '0895888888',
                 "nip" => 1234322,
-                "gender" => "Laki-laki",
-                "position" => "Kepala Urusan Negara",
+                "gender" => "Perempuan",
+                "position" => "Kaur TU & UMUM",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "ade-nurhayati.png"
             ],
             [
-                "name" => "Nova Arianto ",
-                "phone" => '0895888888',
-                "nip" => 1234322,
-                "gender" => "Laki-laki",
-                "position" => "Kepala Urusan Perencanaan",
-                "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
-            ],
-            [
-                "name" => "Atep rizal",
+                "name" => "Nurul Syahida,S.AP",
                 "phone" => '0895888888',
                 "nip" => 1234232,
-                "gender" => "Laki-laki",
-                "position" => "Kepala Urusan Umum dan Tata Usaha",
+                "gender" => "Perempuan",
+                "position" => "Kaur Perencanaan",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "nurul-syahida.png"
             ],
             [
-                "name" => "Tantan ",
+                "name" => "Agung Nugraha,S.I.P",
                 "phone" => '0895888888',
                 "nip" => 1234542,
                 "gender" => "Laki-laki",
-                "position" => "Kepala Seksi Pemerintahan",
+                "position" => "Kasi Pemerintahan ",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "agung.png"
             ],
             [
-                "name" => "Shahar Ginanhar",
+                "name" => "Masdi Mujib,SM",
                 "phone" => '0895888888',
                 "nip" => 1234342,
                 "gender" => "Laki-laki",
-                "position" => "Kepala Seksi Kesejahteraan",
+                "position" => "Kasi Kejahteraan",
                 "status" => "Aktif",
-                "photo" => "images/post-01.jpg"
+                "photo" => "masdi.png"
             ],
             [
-                "name" => "Nova Arianto ",
+                "name" => "Iyus Surahmat, AMd",
                 "phone" => '0895888888',
                 "nip" => 1234254,
                 "gender" => "Laki-laki",
-                "position" => "Kepala Seksi Pelayanan",
+                "position" => "Kasi Pelayanan",
                 "status" => "Aktif",
-                "photo" => ""
+                "photo" => "iyus.png"
             ],
+
+
+            // KADUS
+
         ];
 
         foreach ($perangkat as  $value) {

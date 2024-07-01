@@ -48,11 +48,12 @@
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
     <style>
-        .carousel-item>img {
-            width: 360px;
+        .carousel-item > img {
+            width: 100%;
             height: 960px;
             max-height: 960px;
             object-fit: cover;
+            object-position: center;
         }
 
         .carousel-caption {

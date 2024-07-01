@@ -21,11 +21,11 @@
             <div class="d-flex justify-content-center p-3">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                     @foreach ($results as $record)
-                        <div class="col" data-aos="zoom-in">
-                            <div class="card text-center h-100">
-                                <div class="image-container">
-                                    <img src="{{ $record->photo ? asset($record->photo) : asset('images/post-01.jpg') }}"
-                                        class="card-img-top" alt="{{ $record->name }}" />
+                    <div class="col" data-aos="zoom-in">
+                        <div class="card text-center h-100">
+                            <div class="image-container">
+                                    <img src="{{ file_exists(public_path('storage/petugas/' . $record->photo)) ? asset('storage/petugas/' . $record->photo)  : asset('asset-page/empty.jpg') }}"
+                                        class="card-img-top" alt="{{ $record->name }}" style="width: 18rem; height: 15rem" />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $record->name ?? '' }}</h5>

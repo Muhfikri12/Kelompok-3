@@ -107,6 +107,7 @@ class ArticleSeeder extends Seeder
                 "event_time" => $value['event_time'] ?? null,
                 "event_date" => $value['event_date'] ?? null,
             ]);
+            $record->save();
         }
     }
 }

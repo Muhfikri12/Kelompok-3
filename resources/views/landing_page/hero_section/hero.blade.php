@@ -10,7 +10,7 @@
         <div class="carousel-item {{$key == 0 ? 'active' : ''}}"  id="slide{{$key}}">
             <img
             class="d-block w-100"
-            src="{{ asset('storage/banner/' . $item->photo) }}"
+            src="{{ file_exists(public_path('storage/petugas/' . $item->photo)) ? asset('storage/petugas/' . $item->photo)  : asset('asset-page/empty.jpg') }}"
             alt="{{ $item->judul ?? 'Slide ' . $key }}"
           />
           <div class="carousel-caption d-none d-md-block">
