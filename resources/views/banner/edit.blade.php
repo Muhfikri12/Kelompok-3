@@ -50,6 +50,18 @@
                             @enderror
                         </div>
 
+                        <div class="form-group">
+                            <label for="type">{{ __('Status Bener') }}</label>
+                            <select name="type" id="type" class="form-control">
+                                <option value="" selected>-- Pilih --</option>
+                                <option value="Aktif" {{ old('type') ?? $record->type == "Aktif" ? 'selected' : '' }}>Aktif</option>
+                                <option value="Nonaktif" {{ old('type') ?? $record->type == "Nonaktif" ? 'selected' : '' }}>Nonaktif</option>
+                            </select>
+                            @error('type')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>
                         <a href="{{ route('banner.index') }}" class="btn btn-default">{{ __('Kembali') }}</a>
 

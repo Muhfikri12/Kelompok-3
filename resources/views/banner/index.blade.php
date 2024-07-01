@@ -15,6 +15,7 @@
                             <thead>
                                 <tr>
                                     <th>{{ __('Judul') }}</th>
+                                    <th>{{ __('Status') }}</th>
                                     <th>{{ __('Photo') }}</th>
                                     <th>#</th>
                                 </tr>
@@ -23,6 +24,7 @@
                                 @foreach ($results as $record)
                                     <tr>
                                         <td>{{ $record->judul ?? '' }}</td>
+                                        <td>{{ $record->type ?? '' }}</td>
                                         <td><a href="{{ asset('storage/banner/' . $record->photo) }}"
                                                 target="_blank">Lihat</a></td>
                                         <td>

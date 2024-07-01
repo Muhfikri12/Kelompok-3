@@ -78,7 +78,7 @@ class LandingPageController extends Controller
     public function landing_page()
     {
         $informasi = InformasiPublik::all();
-        $banner = Banner::orderBy('updated_at','desc')->get();
+        $banner = Banner::where('type','Aktif')->orderBy('updated_at','desc')->get();
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
 

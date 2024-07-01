@@ -17,7 +17,7 @@ class BannerController extends Controller
     {
         return view('banner.index',[
             'title' => "Tabel Banner",
-            'results' => Banner::all(),
+            'results' => Banner::orderBy('updated_at','desc')->get(),
         ]);
     }
 
@@ -97,10 +97,16 @@ class BannerController extends Controller
             $namaFile = $request->photo;
         }
 
+        if($request->type == "Aktif" && Banner::where('type',"Aktif")->count() >= 5) {
+            Alert::error('error', 'Banner yang aktif hanya bisa 5 unit, Ubah data yang lain terlebih dahulu');
+            return redirect()->route('banner.index');
+        }
+
         $banner->update([
             "judul" => $request->judul,
             "description" => $request->description,
             "photo" => $namaFile,
+            "type" => $request->type,
         ]);
 
         Alert::success('Success', 'Data Banner Berhasil diubah');

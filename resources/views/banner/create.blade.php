@@ -28,7 +28,6 @@
                         @enderror
                     </div>
 
-
                     <div class="form-group">
                         <label for="photo">{{ __('Poto') }}</label>
                         <div class="input-group">
