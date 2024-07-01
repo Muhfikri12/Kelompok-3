@@ -18,7 +18,7 @@ class PerangkatDesaController extends Controller
     {
         return view('perangkat.index', [
             "title" => "Tabel Petugas Desa",
-            "results" => PerangkatDesa::orderBy('updated_at', 'asc')->get(),
+            "results" => PerangkatDesa::orderBy('updated_at', 'desc')->get(),
         ]);
     }
 
@@ -128,9 +128,15 @@ class PerangkatDesaController extends Controller
      */
     public function destroy(PerangkatDesa $perangkat)
     {
-        $perangkat->delete();
 
-        Alert::success('Success', 'Data Petugas Berhasil dihapus');
-        return redirect()->route('perangkat.index');
+        // dd($perangkat->struktur->exists());
+        if($perangkat->struktur == true) {
+            Alert::error('error', 'Data fagal dihapus, petugas masih aktif di struktur organisasi');
+            return redirect()->route('perangkat.index');
+        } else {
+            $perangkat->delete();
+            Alert::success('Success', 'Data Petugas Berhasil dihapus');
+            return redirect()->route('perangkat.index');
+        }
     }
 }

@@ -54,9 +54,12 @@ class LembagaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Lembaga $lembaga)
     {
-        //
+        return view('lembaga.show',[
+            'title' => 'Ubah Lembaga Desa',
+            'record' => $lembaga
+        ]);
     }
 
     /**
