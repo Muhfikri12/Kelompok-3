@@ -254,7 +254,7 @@ h6 {
     color: #fc3f00;
 }
 
-.trending-area .trending-main  {
+.trending-area .trending-main {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
@@ -1046,14 +1046,14 @@ h6 {
 /*--------------------------------------------------------------
 # Carousel
 --------------------------------------------------------------*/
-.carousel-item > img {
-    width:640px;
+.carousel-item>img {
+    width: 640px;
     height: 360px;
     max-height: 360px;
     object-fit: cover;
-  }
+}
 
-  .carousel-caption {
+.carousel-caption {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
@@ -1994,4 +1994,11 @@ section {
     .lg-screen {
         width: 100% !important;
     }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
