@@ -200,6 +200,10 @@
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kepala Seksi') }}</span>
                         </a>
+                        <a class="collapse-item" href="{{ route('kadus.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Kepala Dusun') }}</span>
+                        </a>
                         <a class="collapse-item" href="{{ route('staf.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Staf') }}</span>

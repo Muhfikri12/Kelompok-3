@@ -57,21 +57,36 @@ class PerangkatDesaSeeder extends Seeder
                 "description" => null,
             ],
 
-            // [
-            //     "name" => "Staff Pemerintahan",
-            //     "type" => "Staf",
-            //     "description" => null,
-            // ],
-            // [
-            //     "name" => "Staff Pelayanan",
-            //     "type" => "Staf",
-            //     "description" => null,
-            // ],
-            // [
-            //     "name" => "Staff Tata Usaha",
-            //     "type" => "Staf",
-            //     "description" => null,
-            // ],
+            [
+                "name" => "Kadus Hegarmanah",
+                "type" => "Kadus",
+                "description" => null,
+            ],
+            [
+                "name" => "Kadus Pangkalan",
+                "type" => "Kadus",
+                "description" => null,
+            ],
+            [
+                "name" => "Kadus Ciparay",
+                "type" => "Kadus",
+                "description" => null,
+            ],
+            [
+                "name" => "Kadus Longkewang",
+                "type" => "Kadus",
+                "description" => null,
+            ],
+            [
+                "name" => "Kadus Nangerang",
+                "type" => "Kadus",
+                "description" => null,
+            ],
+            [
+                "name" => "Kadus Cilubang",
+                "type" => "Kadus",
+                "description" => null,
+            ],
         ];
 
 
@@ -332,8 +347,62 @@ class PerangkatDesaSeeder extends Seeder
                 "photo" => "iyus.png"
             ],
 
-
             // KADUS
+            [
+                "name" => "Ujang Hendar",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Hegarmanah",
+                "status" => "Aktif",
+                "photo" => "ujang.png"
+            ],
+            [
+                "name" => "Wahyu Saputra",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Pangkalan",
+                "status" => "Aktif",
+                "photo" => "wahyu.png"
+            ],
+            [
+                "name" => "Ayi Muslih Sanusi",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Ciparay",
+                "status" => "Aktif",
+                "photo" => "ayi.png"
+            ],
+            [
+                "name" => "Endi Supriadi",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Longkewang",
+                "status" => "Aktif",
+                "photo" => "endi.png"
+            ],
+            [
+                "name" => "Aji Saputra",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Nangerang",
+                "status" => "Aktif",
+                "photo" => "aji.png"
+            ],
+            [
+                "name" => "Hendri Gumawam",
+                "phone" => '0895888888',
+                "nip" => 1234254,
+                "gender" => "Laki-laki",
+                "position" => "Kadus Cilubang",
+                "status" => "Aktif",
+                "photo" => "ujang.png"
+            ],
+
 
         ];
 

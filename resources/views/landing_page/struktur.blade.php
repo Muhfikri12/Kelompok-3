@@ -144,7 +144,7 @@
     <section>
         <div class="container">
             <div style="width: 100%;overflow:scroll;">
-                <div style="width: 1280px; height:300px">
+                <div style="width: 1666px; height:300px">
                     <div class="tree">
                         <ul>
                             <li>
