@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('selatan')->default("-");
             $table->string('timur')->default("-");
             $table->string('barat')->default("-");
-            $table->string('description')->default("-");
+            $table->text('description')->default("-");
             $table->timestamps();
         });
     }

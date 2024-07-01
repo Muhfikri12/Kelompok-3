@@ -18,6 +18,7 @@
     {{-- Section Deskripsi Demografi --}}
     <section id="details" class="details">
         <div class="container pt-5">
+            <h3 data-aos="fade-left"><strong>Kondisi Geografis Desa Hegarmanah</strong></h3>
             <div class="row">
                 <div class="col-md-6 order-md-2 mb-3" data-aos="fade-left">
                     <iframe
@@ -26,7 +27,6 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 order-md-1 order-2 mt-1" data-aos="fade-up">
-                    <h3>Geografi Desa Hegarmanah</h3>
                     <p>
                         {{ $record->description ?? '' }}
                     </p>
@@ -95,6 +95,17 @@
                             </td>
                             <td>
                                 {{ $record->barat ?? '-' }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:150px;">
+                                Batas Timur
+                            </td>
+                            <td style="width: 20px;">
+                                :
+                            </td>
+                            <td>
+                                {{ $record->timur ?? '-' }}
                             </td>
                         </tr>
                     </table>
