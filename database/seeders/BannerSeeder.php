@@ -32,18 +32,18 @@ class BannerSeeder extends Seeder
                 "photo" => 'natal.jpg',
                 "status" => 'Aktif'
             ],
-            [
-                "judul" => "Selamat Hari Paskah!",
-                "description" => "Selamat Hari Paskah! Di hari yang penuh makna ini, mari kita merayakan kebangkitan Kristus dengan penuh sukacita dan harapan. Semoga damai dan berkat-Nya senantiasa menghiasi hidup kita dan keluarga. Mari kita berbagi kasih dan kebaikan kepada sesama, menguatkan iman dan memperkokoh persaudaraan dalam cinta Kristus. Selamat merayakan Hari Paskah dengan sukacita dan kebahagiaan yang tiada tara.",
-                "photo" => 'paskah.jpg',
-                "status" => 'Aktif'
-            ],
-            [
-                "judul" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan!",
-                "description" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan! Semoga bulan yang penuh berkah ini membawa kedamaian, kebahagiaan, dan keberkahan bagi kita semua. Mari kita tingkatkan ibadah dan introspeksi diri, mendekatkan diri kepada Allah SWT, serta meningkatkan kebaikan dan kedermawanan kepada sesama. ",
-                "photo" => 'ramadan.jpg',
-                "status" => 'Aktif'
-            ],
+            // [
+            //     "judul" => "Selamat Hari Paskah!",
+            //     "description" => "Selamat Hari Paskah! Di hari yang penuh makna ini, mari kita merayakan kebangkitan Kristus dengan penuh sukacita dan harapan. Semoga damai dan berkat-Nya senantiasa menghiasi hidup kita dan keluarga. Mari kita berbagi kasih dan kebaikan kepada sesama, menguatkan iman dan memperkokoh persaudaraan dalam cinta Kristus. Selamat merayakan Hari Paskah dengan sukacita dan kebahagiaan yang tiada tara.",
+            //     "photo" => 'paskah.jpg',
+            //     "status" => 'Aktif'
+            // ],
+            // [
+            //     "judul" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan!",
+            //     "description" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan! Semoga bulan yang penuh berkah ini membawa kedamaian, kebahagiaan, dan keberkahan bagi kita semua. Mari kita tingkatkan ibadah dan introspeksi diri, mendekatkan diri kepada Allah SWT, serta meningkatkan kebaikan dan kedermawanan kepada sesama. ",
+            //     "photo" => 'ramadan.jpg',
+            //     "status" => 'Aktif'
+            // ],
             // [
             //     "judul" => "Hari Kemerdekaan Indonesia",
             //     "description" => "Hari Kemerdekaan Indonesia, yang diperingati setiap tanggal 17 Agustus, adalah hari bersejarah bagi bangsa Indonesia yang menandai proklamasi kemerdekaan dari penjajahan pada tahun 1945. Pada tanggal 17 Agustus 2024, Indonesia akan merayakan ulang tahun kemerdekaan yang ke-79 dengan berbagai kegiatan dan upacara di seluruh negeri.",

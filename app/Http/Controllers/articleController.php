@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\ArticleRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class articleController extends Controller

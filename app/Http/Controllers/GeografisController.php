@@ -52,7 +52,7 @@ class GeografisController extends Controller
     public function edit(Geografis $geografi)
     {
         return view('geografis.edit', [
-            'title' => "Ubah Data Geografis",
+            'title' => "Data Geografis",
             'record' => $geografi,
         ]);
     }
@@ -74,7 +74,7 @@ class GeografisController extends Controller
         ]);
 
         Alert::success('success','Data Berhasil dibuah');
-        return redirect()->route('geografis.index');
+        return redirect()->route('geografis.edit',1);
     }
 
     /**

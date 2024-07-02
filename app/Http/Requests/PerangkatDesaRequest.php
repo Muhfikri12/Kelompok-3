@@ -27,7 +27,7 @@ class PerangkatDesaRequest extends FormRequest
             "phone" => 'max:14',
             "nip" => 'required|max:8',
             "position_id" => 'required',
-            "photo" => 'image|mimes:jpg,jpeg,png,gif|max:4096',
+            "photo" => 'required|image|mimes:jpg,jpeg,png,gif|max:4096',
             "status" => 'required',
         ];
     }

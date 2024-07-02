@@ -1,17 +1,19 @@
 <x-root-lp>
     <x-navbar-lp />
     <!-- HEADER IMAGE -->
+    <!-- HEADER IMAGE -->
     <header id="geografi-header" class="header-image text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h1 class="display-3 text-dark">Tugas Dan Fungsi</h1>
+                        <h1 class="display-3">Tugas dan Fungsi</h1>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    {{-- END IMAGE --}}
 
     {{-- END IMAGE --}}
     {{-- Section Deskripsi Demografi --}}

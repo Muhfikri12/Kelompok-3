@@ -152,7 +152,7 @@
                 </div>
             </li>
             <li class="nav-item {{ Nav::isRoute('geografis.index') }}">
-                <a class="nav-link" href="{{ route('geografis.index') }}">
+                <a class="nav-link" href="{{ route('geografis.edit',1) }}">
                     <i class="fas fa-fw fa-building"></i>
                     <span>{{ __('Geografis') }}</span></a>
             </li>

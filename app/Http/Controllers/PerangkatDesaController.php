@@ -56,6 +56,7 @@ class PerangkatDesaController extends Controller
         ]);
         $record->position_id = $request->position_id;
         $record->phone = $request->phone;
+        $record->gender = $request->gender;
         $record->status = $request->status;
         $record->address = $request->address;
         $record->photo = $namaFile;
@@ -96,7 +97,7 @@ class PerangkatDesaController extends Controller
      */
     public function update(PerangkatDesaRequest $request, PerangkatDesa $perangkat)
     {
-
+        // dd($request->all());
         if ($request->hasFile('photo') == true) {
             // Ambil extensi file
             $extfile = $request->photo->getClientOriginalExtension();
