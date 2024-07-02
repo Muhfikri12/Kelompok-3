@@ -94,6 +94,11 @@
                     <div class="card-body">
                         <div class="d-flex gap-1 flex-column">
                             <p style="display: flex; flex-direction: column;gap: 3;">
+                                <label for="email" class="m-0 font-weight-bold">Email</label>
+                                <input type="text" value="{{ $data->email ?: '-' }}" placeholder="email@gmail.com"
+                                    class="form-control my-2" id="email" name="email" />
+                            </p>
+                            <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="yt-link" class="m-0 font-weight-bold">Youtube</label>
                                 <input type="text" value="{{ $data->yt_link ?: '-' }}"
                                     placeholder="https://www.youtube.com/@username" class="form-control my-2" id="yt-link"
@@ -102,8 +107,8 @@
                             <p style="display: flex; flex-direction: column;gap: 3;">
                                 <label for="fb-link" class="m-0 font-weight-bold">Facebook</label>
                                 <input type="text" value="{{ $data->fb_link ?: '-' }}"
-                                    placeholder="https://web.facebook.com/username" class="form-control my-2" id="fb-link"
-                                    name="fb_link" />
+                                    placeholder="https://web.facebook.com/username" class="form-control my-2"
+                                    id="fb-link" name="fb_link" />
                             </p>
                             <p style="display: flex; flex-direction:column;">
                                 <label for="wa-link" class="m-0 font-weight-bold">WhatsApp</label>

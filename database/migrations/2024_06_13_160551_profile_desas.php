@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('fb_link')->nullable();
             $table->string('wa_link')->nullable();
             $table->string('ig_link')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }
