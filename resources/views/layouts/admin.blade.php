@@ -30,6 +30,9 @@
     <link href="{{ asset('assets/img/logo_1.png') }}" rel="icon" type="image/png">
 
     {{-- CKEditor --}}
+    <style>
+        .cke_notification.cke_notification_warning { display: none; }
+    </style>
     {{-- <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script> --}}
     <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
