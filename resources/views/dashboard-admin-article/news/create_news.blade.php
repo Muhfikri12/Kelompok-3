@@ -1,6 +1,6 @@
 <div class="content-dashboard-article">
     <div class="form-content-dasboard-article">
-        <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Membuat Acara') }}</h3>
+        <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Membuat Berita') }}</h3>
         <hr>
         <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

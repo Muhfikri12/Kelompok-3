@@ -1,7 +1,7 @@
 <div class="content-dashboard-article">
 
     <div class="form-content-dasboard-article">
-        <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Edit Berita') }}</h3>
+        <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Ubah Berita') }}</h3>
         <hr>
         <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
