@@ -29,7 +29,7 @@
                                 @foreach ($news as $item)
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
-                                        <td>{{ $item->title }}</td>
+                                        <td>{{ \Illuminate\Support\Str::words($item->title, 4, '...') }}</td>
                                         <td>
                                             {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
                                         </td>
@@ -41,7 +41,7 @@
                                                 <a href="{{ route('news.show', ['id' => $item->id]) }}"
                                                     class="btn btn-sm btn-primary mr-2">Lihat</a>
                                                 <a href="{{ route('news.edit', ['id' => $item->id]) }}"
-                                                    class="btn btn-sm btn-primary mr-2">Edit</a>
+                                                    class="btn btn-sm btn-primary mr-2">Ubah</a>
                                                 <button class="btn btn-danger btn-sm btn-hapus"
                                                     data-id="{{ $item->id }}" data-toggle="modal"
                                                     data-target="#DeleteModal">{{ __('Hapus') }}</button>

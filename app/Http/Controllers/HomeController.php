@@ -29,8 +29,8 @@ class HomeController extends Controller
     {
         $users = User::count();
         $petugas = PerangkatDesa::count();
-        $article = Article::count();
-        $news = News::count();
+        $article = Article::where('type', 'pengumuman')->count();
+        $news = News::where('type', 'berita')->count();
 
 
         $widget = [

@@ -13,8 +13,8 @@ class InformasiPublikController extends Controller
      */
     public function index()
     {
-        return view('informasi.index',[
-            'title' => "Tabel Banner",
+        return view('informasi.index', [
+            'title' => "Tabel Informasi Publik",
             'results' => InformasiPublik::all(),
         ]);
     }
@@ -24,7 +24,7 @@ class InformasiPublikController extends Controller
      */
     public function create()
     {
-        return view('informasi.create',[
+        return view('informasi.create', [
             'title' => "Buat Informasi Baru ",
         ]);
     }
@@ -49,7 +49,7 @@ class InformasiPublikController extends Controller
      */
     public function show(InformasiPublik $informasi)
     {
-        return view('informasi.show',[
+        return view('informasi.show', [
             'title' => "Lihat Informasi",
             "record" => $informasi,
         ]);
@@ -60,7 +60,7 @@ class InformasiPublikController extends Controller
      */
     public function edit(InformasiPublik $informasi)
     {
-        return view('informasi.edit',[
+        return view('informasi.edit', [
             'title' => "Ubah Informasi",
             'record' => $informasi,
         ]);

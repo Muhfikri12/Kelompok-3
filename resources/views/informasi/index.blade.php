@@ -9,7 +9,7 @@
                     <h3 class="font-weight-bold text-primary m-0">{{ $title ?? __('Blank Page') }}</h3>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('informasi.create') }}" class="btn btn-primary mb-3">{{ __('Data Banner Baru') }}</a>
+                    <a href="{{ route('informasi.create') }}" class="btn btn-primary mb-3">{{ __('Data Informasi Baru') }}</a>
                     <div style="width:100%;overflow:scroll;">
                         <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                             <thead>

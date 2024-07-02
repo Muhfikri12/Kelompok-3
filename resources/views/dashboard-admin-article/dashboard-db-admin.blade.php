@@ -36,7 +36,7 @@
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('article.edit', ['id' => $item->id]) }}"
-                                                    class="btn btn-sm btn-primary mr-2">Edit</a>
+                                                    class="btn btn-sm btn-primary mr-2">Ubah</a>
                                                 {{-- <form action="{{ route('demografi.destroy', $record->id) }}" method="post">
                         @csrf
                         @method('delete') --}}

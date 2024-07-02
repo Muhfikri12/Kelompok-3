@@ -7,6 +7,7 @@ use App\Models\News;
 // use App\Models\article;
 use App\ProfileDesas;
 use App\Models\Article;
+use App\Models\CategoriArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,7 +17,7 @@ class NewsArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function dataNews($id)
+    public function dataNews()
     {
         $news = Article::query()
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
@@ -27,10 +28,11 @@ class NewsArticleController extends Controller
 
     public function newsArticle()
     {
+        $category = CategoriArticle::all();
 
         return view('create_article', [
             'article' => 'news.create_news'
-        ]);
+        ], compact('category'));
     }
 
     public function draftArticle()
@@ -136,6 +138,7 @@ class NewsArticleController extends Controller
             $article->photo = 'images/' . $imageName;
             $article->admin_id = Auth::user()->id;
             $article->content = $request->headline_news;
+            $article->kategori_id = $request->event_cat;
             $article->detail_content = $request->detail_news;
             $article->type = $request->type;
             $article->save();

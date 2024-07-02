@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index',[
+        return view('user.index', [
             "title" => "Data Pengguna",
             "results" => User::all(),
         ]);
@@ -28,8 +28,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create',[
-            "title" => "Buat Data User"
+        return view('user.create', [
+            "title" => "Membuat Pengguna"
         ]);
     }
 
@@ -46,7 +46,6 @@ class UserController extends Controller
 
         Alert::success('success', "Data Berhasil dibuat");
         return redirect()->route('users.index');
-
     }
 
     /**
@@ -54,7 +53,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.show',[
+        return view('user.show', [
             'title' => "Ubah Data $user->nama",
             'record' => $user,
         ]);
@@ -65,7 +64,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.edit',[
+        return view('user.edit', [
             'title' => "Ubah Data",
             'record' => $user,
         ]);
@@ -83,8 +82,6 @@ class UserController extends Controller
 
         Alert::success('success', "Data Berhasil diubah");
         return redirect()->route('users.index');
-
-
     }
 
     /**
@@ -93,17 +90,16 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $admin = User::find(1);
-        if(Auth::id() == $user->id) {
+        if (Auth::id() == $user->id) {
             Alert::error('error', "User sedang digunakan tidak bisa dihapus");
             return redirect()->route('users.index');
-        } elseif ($user->id == 1 ) {
+        } elseif ($user->id == 1) {
             Alert::error('error', "Administrator tidak bisa dihapus");
             return redirect()->route('users.index');
         } else {
             $user->delete();
             Alert::success('success', "Data Berhasil dihapus");
             return redirect()->route('users.index');
-
         }
     }
 }

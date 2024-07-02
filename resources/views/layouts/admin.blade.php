@@ -55,7 +55,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center my-4" href="{{ route('home') }}">
                 <div class="sidebar-brand-icon">
-                    <img class="img-fluid" width="100" height="60" src="{{ asset('img/jabar.png') }}"
+                    <img class="img-fluid" width="100" height="60" src="{{ asset('assets/img/logo_1.png') }}"
                         alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">Hegarmanah</div>
@@ -68,7 +68,7 @@
             <li class="nav-item {{ Nav::isRoute('home') }}">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>{{ __('Dashboard') }}</span></a>
+                    <span>{{ __('Laman Utama') }}</span></a>
             </li>
 
             <!-- Divider -->
@@ -82,7 +82,7 @@
             <li class="nav-item {{ Nav::isRoute('users.index') }}">
                 <a class="nav-link" href="{{ route('users.index') }}">
                     <i class="fas fa-fw fa-user"></i>
-                    <span>{{ __('User') }}</span></a>
+                    <span>{{ __('Pengguna') }}</span></a>
             </li>
             <li class="nav-item {{ Nav::isRoute('banner.index') }}">
                 <a class="nav-link" href="{{ route('banner.index') }}">

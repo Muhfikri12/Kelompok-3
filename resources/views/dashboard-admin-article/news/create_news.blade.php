@@ -11,6 +11,16 @@
                     <td><input type="text" id="event_news" name="event_news"></td>
                 </tr>
                 <tr>
+                    <td><label for="event_cat">Kategori Berita</label></td>
+                    <td><select style="padding: 2px 10px; border-radius: 10px; height: 2.1rem; width: 100%;"
+                            id="event_cat" name="event_cat">
+                            @foreach ($category as $item)
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select></td>
+
+                </tr>
+                <tr>
                     <td><label for="headline_news">Headline Berita</label></td>
                     <td><input type="text" id="headline_news" name="headline_news" required> <br></td>
                 </tr>
