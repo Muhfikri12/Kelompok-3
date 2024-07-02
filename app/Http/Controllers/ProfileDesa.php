@@ -61,8 +61,9 @@ class ProfileDesa extends Controller
             'fb_link' => $request->fb_link,
             'wa_link' => 'https://wa.me/+62' . $request->wa_link,
             'ig_link' => $request->ig_link,
+            'email' => $request->email,
         ]);
-        Alert::success('Success', 'Profil Berhasil di Update');
+        Alert::success('Sukses', 'Profil Berhasil di Update');
         return redirect()->route('profile-desa.index');
     }
 }
