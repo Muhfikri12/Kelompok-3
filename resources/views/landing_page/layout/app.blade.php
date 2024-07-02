@@ -22,6 +22,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,11 +51,12 @@
     <link href={{ asset('assets/css/style.css') }} rel="stylesheet">
 
     <style>
-        .carousel-item>img {
-            width: 360px;
+        .carousel-item > img {
+            width: 100%;
             height: 960px;
             max-height: 960px;
             object-fit: cover;
+            object-position: center;
         }
 
         .carousel-caption {

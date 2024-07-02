@@ -38,9 +38,12 @@ class GeografisController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Geografis $geografis)
+    public function show(Geografis $geografi)
     {
-
+        return view('geografis.show',[
+            'title' => 'Data Geografis',
+            'record' => $geografi,
+        ]);
     }
 
     /**

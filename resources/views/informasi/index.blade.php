@@ -14,6 +14,7 @@
                         <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                             <thead>
                                 <tr>
+                                    <th>{{ __('No') }}</th>
                                     <th>{{ __('Judul') }}</th>
                                     <th>#</th>
                                 </tr>
@@ -21,6 +22,7 @@
                             <tbody>
                                 @foreach ($results as $record)
                                     <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $record->judul ?? '' }}</td>
                                         <td>
                                             <div class="d-flex">

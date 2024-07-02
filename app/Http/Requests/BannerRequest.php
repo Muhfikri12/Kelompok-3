@@ -23,7 +23,9 @@ class BannerRequest extends FormRequest
     {
         return [
             'judul' => 'required',
-            "photo" => 'image|mimes:jpg,jpeg,png,gif|max:8192',
+            "photo" => 'required|image|mimes:jpg,jpeg,png,gif|max:8192',
+            'description' => 'max:400',
         ];
+
     }
 }

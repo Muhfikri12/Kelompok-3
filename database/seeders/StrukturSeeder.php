@@ -23,49 +23,91 @@ class StrukturSeeder extends Seeder
             ],
             // Sekertaris
             [
-                "name" => "Sekertaris",
+                "name" => "Sekertaris Desa",
                 "type" => "sekertaris",
                 "staff_id" => 2,
                 "parent_id" => 1,
             ],
             // Kaur
             [
-                "name" => "Kepala Urusan Negara",
+                "name" => "Kaur Keuangan",
                 "type" => "kaur",
                 "staff_id" => 3,
                 "parent_id" => 2,
             ],
             [
-                "name" => "Kepala Urusan Perencanaan",
+                "name" => "Kaur TU & UMUM",
                 "type" => "kaur",
                 "staff_id" => 4,
                 "parent_id" => 2,
             ],
             [
-                "name" => "Kepala Urusan Umum dan Tata Usaha",
+                "name" => "Kaur Perencanaan",
                 "type" => "kaur",
                 "staff_id" => 5,
                 "parent_id" => 2,
             ],
             // Kasi
             [
-                "name" => "Kepala Seksi Pemerintahan",
+                "name" => "Kasi Pemerintahan",
                 "type" => "kasi",
                 "staff_id" => 6,
                 "parent_id" => 1,
             ],
             [
-                "name" => "Kepala Seksi Kesejahteraan",
+                "name" => "Kasi Kejahteraan",
                 "type" => "kasi",
                 "staff_id" => 7,
                 "parent_id" => 1,
             ],
             [
-                "name" => "Kepala Seksi Pelayanan",
+                "name" => "Kasi Pelayanan",
                 "type" => "kasi",
                 "staff_id" => 8,
                 "parent_id" => 1,
             ],
+
+            // Kadus
+
+            [
+                "name" => "Kadus Hegarmanah",
+                "type" => "kadus",
+                "staff_id" => 9,
+                "parent_id" => 1,
+            ],
+            [
+                "name" => "Kadus Pangkalan",
+                "type" => "kadus",
+                "staff_id" => 10,
+                "parent_id" => 1,
+            ],
+            [
+                "name" => "Kadus Ciparay",
+                "type" => "kadus",
+                "staff_id" => 11,
+                "parent_id" => 1,
+            ],
+
+            [
+                "name" => "Kadus Longkewang",
+                "type" => "kadus",
+                "staff_id" => 12,
+                "parent_id" => 1,
+            ],
+            [
+                "name" => "Kadus Nangerang",
+                "type" => "kadus",
+                "staff_id" => 13,
+                "parent_id" => 1,
+            ],
+            [
+                "name" => "Kadus Cilubang",
+                "type" => "kadus",
+                "staff_id" => 14,
+                "parent_id" => 1,
+            ],
+
+            //
         ];
 
         foreach ($arr as $value) {

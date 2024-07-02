@@ -8,6 +8,7 @@ use App\Http\Controllers\GeografisController;
 use App\Http\Controllers\InformasiPublikController;
 use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\KadesController;
+use App\Http\Controllers\KadusController;
 use App\Http\Controllers\KasiController;
 use App\Http\Controllers\KaurController;
 use App\Http\Controllers\LandingPageController;
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('sekertaris', SekertarisController::class);
     Route::resource('kaur', KaurController::class);
     Route::resource('kasi', KasiController::class);
+    Route::resource('kadus', KadusController::class);
     Route::resource('staf', StaffController::class);
     Route::resource('geografis', GeografisController::class);
     Route::resource('lembaga', LembagaController::class);

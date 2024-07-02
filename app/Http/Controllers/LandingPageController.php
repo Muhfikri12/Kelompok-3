@@ -59,7 +59,7 @@ class LandingPageController extends Controller
     public function struktur()
     {
         $results = StructureOrg::where('type', 'kades')->first();
-        // dd($results);
+        // dd($results->whereIn('type',['sekertaris','']));
 
         return view('landing_page.struktur', [
             'result' => $results,
@@ -78,7 +78,7 @@ class LandingPageController extends Controller
     public function landing_page()
     {
         $informasi = InformasiPublik::all();
-        $banner = Banner::all();
+        $banner = Banner::where('type','Aktif')->orderBy('updated_at','desc')->get();
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
 

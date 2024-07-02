@@ -1,7 +1,7 @@
 <x-root-lp>
     <x-navbar-lp />
           <!-- HEADER IMAGE -->
-          <header id="geografi-header" class="header-image text-white d-block">
+          <header id="geografi-header" class="header-image text-white">
             <div class="header-overlay">
                 <div class="container">
                     <div class="row">

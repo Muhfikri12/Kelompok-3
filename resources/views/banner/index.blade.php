@@ -14,7 +14,9 @@
                         <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                             <thead>
                                 <tr>
+                                    <th>{{__('No')}}</th>
                                     <th>{{ __('Judul') }}</th>
+                                    <th>{{ __('Status') }}</th>
                                     <th>{{ __('Photo') }}</th>
                                     <th>#</th>
                                 </tr>
@@ -22,7 +24,9 @@
                             <tbody>
                                 @foreach ($results as $record)
                                     <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $record->judul ?? '' }}</td>
+                                        <td>{{ $record->type ?? '' }}</td>
                                         <td><a href="{{ asset('storage/banner/' . $record->photo) }}"
                                                 target="_blank">Lihat</a></td>
                                         <td>

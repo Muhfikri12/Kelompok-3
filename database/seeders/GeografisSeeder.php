@@ -17,11 +17,22 @@ class GeografisSeeder extends Seeder
                 "name" => "Desa Hegarmanah",
                 "koordinat" => "6.927927, 106.819944",
                 "luas" => "148,37 Km",
-                "utara" => "Desa Tenjojaya",
-                "selatan" => "Desa Cicantayan",
-                "timur" => "Desa Karangtengah",
-                "barat" => "Desa Bojong",
-                "description" => "Hegarmanah merupakan sebuah desa yang terletak dalam (daerah) kecamatan Cicantayan, Kabupaten Sukabumi, Provinsi Jawa Barat, Indonesia.",
+                "utara" => "Desa Batununggal Kec.Cibadak",
+                "selatan" => "Desa Bojong kembar Kec.Cikembar",
+                "timur" => "Desa Cicantayan dan Desa Sukadamai Kec.Cicantayan",
+                "barat" => "Desa Cimanggis
+                Kec.Cicantayan dan Desa
+                Sekarwangi Kec. Cibadak.",
+                "description" => "Desa Hegarmanah berada di
+                Kecamatan CIcantayan, Kabupaten
+                Sukabumi, Jawa Barat. Secara
+                geografis, Desa Hegarmanah terletak
+                diantara …. LS dan ….. BT. Desa
+                Hegarmanah memiliki wilayah seluas
+                1.172 ha. Jarak dari ibukota kecamatan
+                kurang lebih…. km, sedangkan jarak ke
+                ibukota kabupaten sejauh kurang
+                lebih… km.",
             ]);
     }
 }

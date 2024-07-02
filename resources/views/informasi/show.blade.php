@@ -28,7 +28,7 @@
                         @enderror
                     </div>
 
-                            <a href="{{ route('banner.index') }}" class="btn btn-default">{{ __('Kembali') }}</a>
+                            <a href="{{ route('informasi.index') }}" class="btn btn-default">{{ __('Kembali') }}</a>
 
                     </form>
                 </div>

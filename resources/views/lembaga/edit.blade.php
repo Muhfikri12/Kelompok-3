@@ -28,6 +28,7 @@
                                 <option value="" selected>-- Pilih --</option>
                                 <option value="BPD" {{ old('type') ?? $record->type == "BPD" ? 'selected' : '' }}>BPD</option>
                                 <option value="LPM" {{ old('type') ?? $record->type == "LPM" ? 'selected' : '' }}>LPM</option>
+                                <option value="TANI" {{ old('type') ?? $record->type == "TANI" ? 'selected' : '' }}>TANI</option>
                                 <option value="KARTA" {{ old('type') ?? $record->type == "KARTA" ? 'selected' : '' }}>
                                     KARTA</option>
                                 <option value="PKK" {{ old('type') ?? $record->type == "PKK" ? 'selected' : '' }}>PKK</option>

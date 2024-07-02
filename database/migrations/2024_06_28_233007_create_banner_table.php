@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('photo');
+            $table->enum('type',['Aktif',"Nonaktif"])->default("Nonaktif");
             $table->text('description')->nullable();
             $table->timestamps();
         });

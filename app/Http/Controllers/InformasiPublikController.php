@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InformasiRequest;
 use App\Models\InformasiPublik;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -15,7 +17,7 @@ class InformasiPublikController extends Controller
     {
         return view('informasi.index', [
             'title' => "Tabel Informasi Publik",
-            'results' => InformasiPublik::all(),
+            'results' => InformasiPublik::orderBy('updated_at', 'desc')->get(),
         ]);
     }
 
@@ -32,7 +34,7 @@ class InformasiPublikController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(InformasiRequest $request)
     {
         $record = InformasiPublik::firstOrNew([
             "judul" => $request->judul,
@@ -69,7 +71,7 @@ class InformasiPublikController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, InformasiPublik $informasi)
+    public function update(InformasiRequest $request, InformasiPublik $informasi)
     {
         $informasi->update([
             "judul" => $request->judul,

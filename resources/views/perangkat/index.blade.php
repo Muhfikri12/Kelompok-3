@@ -14,6 +14,7 @@
                         <table class="table-bordered table-stripped display nowrap datatable table" style="width: 100%">
                             <thead>
                                 <tr>
+                                    <th>{{ __('No') }}</th>
                                     <th>{{ __('Nama') }}</th>
                                     <th>{{ __('NIP') }}</th>
                                     <th>{{ __('Phone') }}</th>
@@ -26,6 +27,7 @@
                             <tbody>
                                 @foreach ($results as $record)
                                     <tr>
+                                        <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ $record->name ?? '' }}</td>
                                         <td>{{ $record->nip ?? '' }}</td>
                                         <td>{{ $record->phone ?? '' }}</td>

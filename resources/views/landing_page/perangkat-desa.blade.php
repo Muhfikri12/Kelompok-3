@@ -1,7 +1,7 @@
 <x-root-lp>
     <x-navbar-lp />
     <!-- HEADER IMAGE -->
-    <header id="geografi-header" class="header-image d-none d-md-block text-white">
+    <header id="geografi-header" class="header-image text-white">
         <div class="header-overlay">
             <div class="container">
                 <div class="row">
@@ -21,11 +21,12 @@
             <div class="d-flex justify-content-center p-3">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                     @foreach ($results as $record)
-                        <div class="col" data-aos="zoom-in">
-                            <div class="card text-center h-100">
-                                <div class="image-container">
-                                    <img src="{{ $record->photo ? asset($record->photo) : asset('images/post-01.jpg') }}"
-                                        class="card-img-top" alt="{{ $record->name }}" />
+                    <div class="col" data-aos="zoom-in">
+                        <div class="card text-center h-100">
+                            <div class="image-container">
+                                    <img src="{{ file_exists(public_path('storage/petugas/' . $record->photo)) ? asset('storage/petugas/' . $record->photo)  : asset('asset-page/empty.jpg') }}"
+                                        class="card-img-top" alt="{{ $record->name }}" style="height:500px; object-fit: cover;
+                                        object-position: center;"/>
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $record->name ?? '' }}</h5>

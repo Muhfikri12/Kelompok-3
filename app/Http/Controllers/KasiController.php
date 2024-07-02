@@ -60,6 +60,7 @@ class KasiController extends Controller
      */
     public function show(StructureOrg $kasi)
     {
+        // dd($kasi);
         return view('structure.kasi.show', [
             'title' => "Lihat Data Kasi",
             'positions' => Jabatan::all(),
