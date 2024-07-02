@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ArticleRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class articleController extends Controller
@@ -71,8 +72,9 @@ class articleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
+
         if ($request->hasFile('image_content')) {
             $image = $request->file('image_content');
             $imageName = time() . '-' . $image->hashName();
