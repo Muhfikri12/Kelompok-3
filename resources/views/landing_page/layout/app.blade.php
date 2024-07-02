@@ -10,9 +10,9 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href={{ asset('assets/img/jabar.png') }} rel="icon">
+    <link href={{ asset('assets/img/logo_1.png') }} rel="icon">
     <link href="img/favicon.ico" rel="icon">
-    <link href={{ asset('assets/img/jabar.png') }} rel="apple-touch-icon">
+    <link href={{ asset('assets/img/logo_1.png') }} rel="apple-touch-icon">
 
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>

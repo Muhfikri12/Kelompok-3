@@ -38,7 +38,7 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::registerView(function () {
-            return view('auth.register');
+            return redirect()->route('login');
         });
 
         Fortify::requestPasswordResetLinkView(function () {

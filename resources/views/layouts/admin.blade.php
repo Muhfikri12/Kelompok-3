@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap4.css') }}">
 
     <!-- Favicon -->
-    <link href="{{ asset('img/jabar.png') }}" rel="icon" type="image/png">
+    <link href="{{ asset('assets/img/logo_1.png') }}" rel="icon" type="image/png">
 
     {{-- CKEditor --}}
     {{-- <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script> --}}
