@@ -29,11 +29,11 @@ class DatabaseSeeder extends Seeder
 
 
         ProfileDesas::create([
-            'content_misi' => '<h2><img alt="photo-desa" src="https://beritalima.com/wp-content/uploads/2023/11/IMG-20231129-WA0022.jpg" style="height:346px;width:700px;" /></h2>
+            'content_misi' => '<h2><strong>Misi</strong></h2>
 
-<h2> </h2>
+<p> </p>
 
-<h2><strong>Misi</strong></h2>
+<p><strong><img alt="photo-kegiatan" src="https://i.ibb.co.com/gDq2HGn/Screenshot-2024-07-02-at-10-26-54.png" style="height:521px;width:700px;" /></strong></p>
 
 <p>Misi Desa Hegarmanah adalah menciptakan lingkungan yang harmonis, berkelanjutan, dan sejahtera melalui pemberdayaan masyarakat, pelestarian budaya, dan inovasi dalam pembangunan desa.</p>
 
@@ -100,11 +100,11 @@ class DatabaseSeeder extends Seeder
 </ul>
 
 <p>Dengan menjalankan misi-misi ini, Desa Hegarmanah berupaya mencapai visi besarnya, yaitu menjadi desa yang harmonis, berkelanjutan, dan sejahtera. Melalui kerja sama dan partisipasi aktif seluruh warga, kami yakin dapat mewujudkan lingkungan yang lebih baik untuk semua.</p>',
-            'content_visi' => '<h2><img alt="photo-desa" src="https://jurnalinspirasi.co.id/wp-content/uploads/2023/03/1678694994082-pilkades-desa-sukagalih-jonggol-2023.jpg" style="height:525px;width:700px;" /></h2>
+            'content_visi' => '<h2><strong>Visi</strong></h2>
 
-<h2> </h2>
+<p> </p>
 
-<h2><strong>Visi</strong></h2>
+<p><strong><img alt="photo-kegiatan" src="https://i.ibb.co.com/HCcMsBP/Screenshot-2024-07-02-at-10-18-53.png" style="height:411px;width:700px;" /></strong></p>
 
 <p>Visi Desa Hegarmanah adalah membangun komunitas yang sejahtera, mandiri, dan berkelanjutan dengan mengedepankan nilai-nilai kebersamaan, keberlanjutan, dan kearifan lokal.</p>
 
@@ -132,60 +132,34 @@ class DatabaseSeeder extends Seeder
 
 <p>Kami berusaha menyediakan akses yang lebih baik terhadap layanan kesehatan dan meningkatkan kesejahteraan sosial warga desa. Dengan membangun fasilitas kesehatan yang memadai dan mengadakan program-program kesehatan masyarakat, kami ingin menciptakan lingkungan yang sehat dan sejahtera.</p>
 
-<p>Dengan visi yang kuat dan komitmen yang tinggi, Desa Hegarmanah bergerak maju menuju masa depan yang lebih cerah, di mana setiap warganya dapat hidup dengan penuh kebahagiaan, kesejahteraan, dan harmoni.</p>
-',
-            'sejarah' => '<h2><img alt="photo-desa" src="https://www.mkri.id/public/content/berita/header/berita_1638758466_8dcac4b6cdc77ad82460.jpg" style="height:329px;width:796px;" /></h2>
+<p>Dengan visi yang kuat dan komitmen yang tinggi, Desa Hegarmanah bergerak maju menuju masa depan yang lebih cerah, di mana setiap warganya dapat hidup dengan penuh kebahagiaan, kesejahteraan, dan harmoni.</p>',
+            'sejarah' => '<h2><strong>Sejarah</strong></h2>
 
-<h2> </h2>
+<p> </p>
 
-<h2><strong>Sejarah</strong></h2>
+<p><strong><img alt="assets-image" src="https://i.ibb.co.com/4YDDRjJ/Screenshot-2024-07-02-at-09-54-48.png" style="height:522px;width:802px;" /></strong></p>
 
-<p>Desa Hegarmanah memiliki sejarah yang kaya dan panjang, mencerminkan perjalanan waktu dan perkembangan masyarakat yang tinggal di sini. Berikut adalah deskripsi lengkap tentang sejarah Desa Hegarmanah:</p>
+<p>Nama Desa Hegarmanah berasal dari bahasa sunda yang artinya luas dan nyaman letaknya berada di pedalaman pesisir laut pelabuhan ratu.</p>
 
-<p><strong>Asal Usul dan Nama</strong></p>
+<p>Awal mula pada tahun 1980 Desa Hegarmanah merupakan desa pemekaran dari Desa Induk Cantayan kecamatan Cikembar. Desa Hegarmanah merupakan desa yang berbatasan langsung dengan Hutan Pendidikan Gunung Walat.</p>
 
-<p>Nama "Hegarmanah" berasal dari kata "Hegar" yang berarti segar atau subur, dan "Manah" yang berarti hati atau jiwa. Nama ini mencerminkan kondisi alam desa yang subur dan jiwa masyarakatnya yang selalu segar dan penuh semangat. Menurut cerita turun-temurun, desa ini pertama kali didirikan oleh sekelompok petani yang mencari lahan subur untuk bercocok tanam dan akhirnya menetap di lembah yang kini dikenal sebagai Desa Hegarmanah.</p>
-
-<p><strong>Perkembangan Awal</strong></p>
-
-<p>Pada masa awal pendiriannya, Desa Hegarmanah hanya dihuni oleh beberapa keluarga petani. Mereka hidup sederhana, bergantung pada hasil pertanian dan sumber daya alam sekitar. Seiring waktu, jumlah penduduk bertambah seiring dengan kedatangan keluarga-keluarga baru yang tertarik dengan kesuburan tanah dan keindahan alam desa ini.</p>
-
-<p><strong>Era Kolonial</strong></p>
-
-<p>Selama era kolonial, Desa Hegarmanah mengalami perubahan signifikan. Pembangunan infrastruktur seperti jalan dan irigasi mulai diperkenalkan, meskipun masih sederhana. Kehadiran pemerintahan kolonial juga membawa pengaruh dalam sistem pertanian dan perdagangan desa, meskipun tidak selalu positif bagi kesejahteraan penduduk lokal.</p>
-
-<p><strong>Kemerdekaan dan Modernisasi</strong></p>
-
-<p>Setelah Indonesia merdeka, Desa Hegarmanah mulai mengalami perkembangan yang lebih pesat. Program pemerintah untuk pembangunan pedesaan membantu meningkatkan infrastruktur dan layanan dasar seperti pendidikan dan kesehatan. Penduduk desa juga mulai mengadopsi teknologi pertanian yang lebih modern, meningkatkan hasil panen dan kesejahteraan ekonomi.</p>
-
-<p><strong>Masa Kini</strong></p>
-
-<p>Saat ini, Desa Hegarmanah adalah komunitas yang berkembang dengan tetap mempertahankan nilai-nilai tradisional dan kearifan lokal. Meskipun telah mengalami modernisasi, desa ini tetap memegang teguh budaya dan tradisi yang telah diwariskan dari generasi ke generasi. Berbagai kegiatan budaya dan upacara adat masih rutin dilakukan, memperkuat ikatan sosial dan identitas komunitas.</p>
-
-<p><strong>Warisan Budaya dan Sejarah</strong></p>
-
-<p>Desa Hegarmanah memiliki beberapa situs bersejarah dan peninggalan budaya yang menjadi saksi bisu perjalanan panjang desa ini. Beberapa di antaranya adalah candi kecil, situs pemakaman leluhur, dan artefak-artefak yang ditemukan di sekitar desa. Warisan ini tidak hanya menjadi aset budaya, tetapi juga menjadi daya tarik bagi wisatawan yang tertarik dengan sejarah dan budaya lokal.</p>
-
-<p>Dengan sejarah yang kaya dan perjalanan panjang yang penuh makna, Desa Hegarmanah terus melangkah maju sambil tetap menghargai dan melestarikan warisan leluhurnya. Sejarah ini menjadi fondasi kuat bagi masa depan desa yang lebih cerah dan sejahtera.</p>',
+<p><img alt="" src="https://i.ibb.co.com/d5QPnWt/Screenshot-2024-07-02-at-10-02-16.png" style="float:left;height:602px;width:438px;" /></p>',
             'yt_link' => 'https://youtube.com/',
             'fb_link' => 'https://web.facebook.com/',
             'wa_link' => '838101877087',
             'ig_link' => 'https://www.instagram.com/',
+            'email' => 'desahegarmanah18@gmail.com',
             'alamat' => '<h2><strong>Lokasi</strong></h2>
 
-<p>Desa Hegarmanah terletak di sebuah lembah yang indah di wilayah pegunungan, menawarkan pemandangan alam yang spektakuler dan suasana yang tenang. Berikut adalah deskripsi lengkap tentang lokasi Desa Hegarmanah:</p>
+<p>Desa Hegarmanah berada di Kecamatan CIcantayan, Kabupaten Sukabumi, Jawa Barat. Secara geografis, Desa Hegarmanah terletak diantara .... LS dan ..... BT. Desa Hegarmanah memiliki wilayah seluas 1.172 ha. Jarak dari ibukota kecamatan kurang lebih.... km, sedangkan jarak ke ibukota kabupaten sejauh kurang lebih... km.</p>
 
 <p><strong>Geografi</strong></p>
 
-<p>Desa Hegarmanah berada di ketinggian sekitar 700 meter di atas permukaan laut, dikelilingi oleh perbukitan hijau dan hutan tropis yang lebat. Lokasinya yang berada di lembah membuat desa ini memiliki iklim yang sejuk dan segar sepanjang tahun.</p>
+<p>Desa Hegarmanah berada di ketinggian sekitar 600 meter di atas permukaan laut, dikelilingi oleh perbukitan hijau dan hutan tropis yang lebat. Lokasinya yang berada di lembah membuat desa ini memiliki iklim yang sejuk dan segar sepanjang tahun. Suhu rata-rata di Desa Hegarmanah berkisar 17°C - 26°C.</p>
 
 <p><strong>Aksesibilitas</strong></p>
 
 <p>Desa ini dapat dicapai melalui jalan darat dengan akses yang cukup baik. Dari kota terdekat, perjalanan menuju desa membutuhkan waktu sekitar 2 jam dengan kendaraan pribadi atau transportasi umum. Jalan menuju desa menawarkan pemandangan yang menakjubkan, dengan hamparan sawah, kebun teh, dan pegunungan yang menghiasi sepanjang perjalanan.</p>
-
-<p><strong>Kedekatan dengan Kota Besar</strong></p>
-
-<p>Desa Hegarmanah terletak tidak jauh dari beberapa kota besar, seperti Bandung atau Yogyakarta, yang membuatnya menjadi destinasi wisata yang ideal bagi mereka yang ingin melarikan diri dari kesibukan kota. Meskipun berada di daerah pedesaan, akses ke fasilitas dan layanan di kota besar masih relatif mudah.</p>
 
 <p><strong>Fasilitas Transportasi</strong></p>
 
@@ -196,13 +170,13 @@ class DatabaseSeeder extends Seeder
 <p>Desa Hegarmanah dikelilingi oleh keindahan alam yang memukau. Dari sawah yang hijau membentang, sungai yang mengalir jernih, hingga hutan yang rimbun, desa ini menawarkan pemandangan yang menenangkan jiwa. Lokasi yang strategis ini juga memungkinkan para pengunjung untuk menikmati berbagai kegiatan alam seperti trekking, bersepeda, dan fotografi alam.</p>
 
 <p>Dengan lokasi yang strategis dan keindahan alam yang luar biasa, Desa Hegarmanah adalah tempat yang sempurna untuk menikmati kehidupan pedesaan yang tenang dan damai, jauh dari hiruk pikuk kota besar.</p>',
-            'about_us' => '<h2><img alt="photo-desa" src="https://api2.kemenparekraf.go.id/storage/app/uploads/public/620/b45/43c/620b4543c730c505627514.jpg" style="height:667px;width:1000px;" /></h2>
+            'about_us' => '<h2><strong>Siapa Kami</strong></h2>
 
-<h2> </h2>
+<p> </p>
 
-<h2><strong>Siapa Kami</strong></h2>
+<p><strong><img alt="desa-hegarmanah" class="left" src="https://i.ibb.co.com/sV5HkJk/Screenshot-2024-07-02-at-10-42-46.png" style="height:236px;width:750px;" /></strong></p>
 
-<p>Desa Hegarmanah adalah komunitas yang berdiri di atas dasar kekeluargaan, kebersamaan, dan gotong royong. Kami adalah sekumpulan individu yang hidup berdampingan dalam harmoni dengan alam dan sesama. Penduduk kami terdiri dari berbagai lapisan masyarakat, mulai dari petani, pengrajin, pedagang, hingga pendidik yang semuanya memiliki satu tujuan yang sama: membangun desa yang sejahtera dan berkelanjutan.</p>
+<p>Desa Hegarmanah adalah salah satu desa yang terletak di Kecamatan Cicantayan, Kabupaten Sukabumi, Provinsi Jawa Barat, Indonesia. Penduduk kami terdiri dari berbagai lapisan masyarakat, mulai dari petani, pengrajin, pedagang, hingga pendidik yang semuanya memiliki satu tujuan yang sama: membangun desa yang sejahtera dan berkelanjutan.</p>
 
 <p><strong>Nilai-Nilai Kami</strong></p>
 
