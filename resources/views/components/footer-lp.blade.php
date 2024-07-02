@@ -41,7 +41,7 @@
                     <div class="footer-item d-flex flex-column">
                         <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i>Kantor Desa</a>
                         <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i> Telepon</a>
-                        <a href="{{ $data->email }}" class="{{ $data->email ? 'text-light' : 'd-none' }}"><i
+                        <a href="mailto:{{ $data->email }}" class="{{ $data->email ? 'text-light' : 'd-none' }}"><i
                                 class="fas fa-angle-right me-2"></i>
                             Email</a>
                         <a href="{{ $data->yt_link }}" class="{{ $data->yt_link ? 'text-light' : 'd-none' }}">
