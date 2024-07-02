@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsRequest;
 use Carbon\Carbon;
 use App\Models\News;
 // use App\Models\article;
@@ -126,7 +127,7 @@ class NewsArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
         if ($request->hasFile('image_content')) {
             $image = $request->file('image_content');
