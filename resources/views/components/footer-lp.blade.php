@@ -6,6 +6,8 @@
                     <p>Desa Hegarmanah adalah salah satu desa yang terletak di Kecamatan Cicantayan, Kabupaten Sukabumi,
                         Provinsi Jawa Barat, Indonesia.
                     </p>
+                    <p>Alamat: Jalan Hegarmanah No 1 Kp Hegarmanah RT/RW 001/005</p>
+                    <p>Kode Pos: 43155</p>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <h3>Halaman Menu</h3>
@@ -39,7 +41,9 @@
                     <div class="footer-item d-flex flex-column">
                         <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i>Kantor Desa</a>
                         <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i> Telepon</a>
-                        <a href="" class="text-light"><i class="fas fa-angle-right me-2"></i> Email</a>
+                        <a href="mailto:{{ $data->email }}" class="{{ $data->email ? 'text-light' : 'd-none' }}"><i
+                                class="fas fa-angle-right me-2"></i>
+                            Email</a>
                         <a href="{{ $data->yt_link }}" class="{{ $data->yt_link ? 'text-light' : 'd-none' }}">
                             <i class="fas fa-angle-right me-2"></i>Youtube
                         </a>
