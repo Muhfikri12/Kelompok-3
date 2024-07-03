@@ -5,13 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Desar Hegarmanah</title>
+    <title>Desa Hegarmanah</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href={{ asset('assets/img/favicon.png') }} rel="icon">
-    <link href={{ asset('assets/img/apple-touch-icon.png') }} rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/logo_1.png') }}" rel="icon" type="image/png">
 
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>

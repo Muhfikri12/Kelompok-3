@@ -35,6 +35,8 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
+                                                <a href="{{ route('article.show', ['id' => $item->id]) }}"
+                                                    class="btn btn-sm btn-secondary mr-2">Lihat</a>
                                                 <a href="{{ route('article.edit', ['id' => $item->id]) }}"
                                                     class="btn btn-sm btn-primary mr-2">Ubah</a>
                                                 <button class="btn btn-danger btn-sm btn-hapus" data-id=""

@@ -39,7 +39,7 @@ class BannerSeeder extends Seeder
             //     "status" => 'Aktif'
             // ],
             // [
-            //     "judul" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan!",
+            //     "judul" => "/* Selamat menjalankan ibadah puasa di bulan suci Ramadan!", */
             //     "description" => "Selamat menjalankan ibadah puasa di bulan suci Ramadan! Semoga bulan yang penuh berkah ini membawa kedamaian, kebahagiaan, dan keberkahan bagi kita semua. Mari kita tingkatkan ibadah dan introspeksi diri, mendekatkan diri kepada Allah SWT, serta meningkatkan kebaikan dan kedermawanan kepada sesama. ",
             //     "photo" => 'ramadan.jpg',
             //     "status" => 'Aktif'

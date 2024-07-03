@@ -27,6 +27,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($news as $item)
+                                {{-- @dump($item) --}}
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
                                         <td>{{ \Illuminate\Support\Str::words($item->title, 4, '...') }}</td>
@@ -38,9 +39,9 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="{{ route('news.show', ['id' => $item->id]) }}"
-                                                    class="btn btn-sm btn-primary mr-2">Lihat</a>
-                                                <a href="{{ route('news.edit', ['id' => $item->id]) }}"
+                                                <a href="{{ route('news.show',$item->article_id) }}"
+                                                    class="btn btn-sm btn-secondary mr-2">Lihat</a>
+                                                <a href="{{ route('news.edit',$item->article_id) }}"
                                                     class="btn btn-sm btn-primary mr-2">Ubah</a>
                                                 <button class="btn btn-danger btn-sm btn-hapus"
                                                     data-id="{{ $item->id }}" data-toggle="modal"

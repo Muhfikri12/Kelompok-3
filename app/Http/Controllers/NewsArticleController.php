@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
-use Carbon\Carbon;
-use App\Models\News;
-// use App\Models\article;
-use App\ProfileDesas;
 use App\Models\Article;
 use App\Models\CategoriArticle;
+// use App\Models\article;
+use App\Models\News;
+use App\ProfileDesas;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -24,6 +24,7 @@ class NewsArticleController extends Controller
             ->leftJoin('category_article', 'article.kategori_id', '=', 'category_article.id')
             ->select('article.id as article_id', 'article.*', 'category_article.id as category_id', 'category_article.*')
             ->where('type', 'berita')->get();
+            // dd($news);
         return view('dashboard-admin-article.news.data_news', compact('news'));
     }
 
@@ -154,6 +155,7 @@ class NewsArticleController extends Controller
      */
     public function show(string $id)
     {
+        // dd($id);
         $news = Article::findOrFail($id);
         return view('create_article', [
             'article' => 'news.view_news'

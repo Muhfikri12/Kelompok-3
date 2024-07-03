@@ -25,22 +25,6 @@
                       @enderror
                     </div>
 
-                    <div class="form-group">
-                      <label for="password">{{__('Sandi')}}</label>
-                      <input type="password" disabled class="form-control form-control-user" name="password" placeholder="{{ __('Buat Kata sandi') }}" required autofocus>
-                      @error('password')
-                        <span class="text-danger">{{ $message }}</span>
-                      @enderror
-                    </div>
-
-                    <div class="form-group">
-                      <label for="password">{{__('Konfirmasi Sandi')}}</label>
-                      <input type="password" disabled class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Ulangi Kata Sandi') }}" required autofocus>
-                      @error('password')
-                        <span class="text-danger">{{ $message }}</span>
-                      @enderror
-                    </div>
-
                     <a href="{{ route('users.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
         </div>

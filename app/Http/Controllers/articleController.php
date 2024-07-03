@@ -67,8 +67,6 @@ class articleController extends Controller
         ], compact('articles'));
     }
 
-
-
     /**
      * Store a newly created resource in storage.
      */
@@ -125,6 +123,8 @@ class articleController extends Controller
             'article' => 'article.edit_article'
         ], compact('articles'));
     }
+
+
 
     /**
      * Update the specified resource in storage.

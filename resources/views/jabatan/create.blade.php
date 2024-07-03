@@ -48,7 +48,7 @@
 
 
                         <button type="submit" class="btn btn-primary">{{__('Simpan')}}</button>
-                        <a href="{{ route('category-demografi.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
+                        <a href="{{ route('jabatan.index') }}" class="btn btn-default">{{__('Kembali')}}</a>
 
                     </form>
                 </div>
