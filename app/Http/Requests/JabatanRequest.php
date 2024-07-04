@@ -26,4 +26,14 @@ class JabatanRequest extends FormRequest
             'type' => 'required'
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            'name'      => __('Nama'),
+            'type'      => __('Tipe'),
+        ];
+
+        return $attributes;
+    }
 }

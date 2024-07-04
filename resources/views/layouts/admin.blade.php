@@ -165,13 +165,13 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('demografi.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Demografi') }}</span>
-                        </a>
                         <a class="collapse-item" href="{{ route('category-demografi.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kategori Demografi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Demografi') }}</span>
                         </a>
 
                     </div>
@@ -321,7 +321,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Alejandro RH 2020</span>
+                        <span>Copyright &copy; Kelompok 3 JDA FASE 3</span>
                     </div>
                 </div>
             </footer>

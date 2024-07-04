@@ -26,4 +26,14 @@ class InformasiRequest extends FormRequest
             "description" => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            // 'name'      => __('Tugas'),
+            'description'      => __('Keterangan'),
+        ];
+
+        return $attributes;
+    }
 }

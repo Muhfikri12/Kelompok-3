@@ -14,21 +14,18 @@ class LembagaSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
-
-
-
-        $type = ['BPD',"LPM","KARTA","PKK"];
-        for($i=0; $i<10; $i++) {
+    //     $faker = Faker::create();
+    //     $type = ['BPD',"LPM","KARTA","PKK"];
+        // for($i=0; $i<10; $i++) {
             Lembaga::create([
-                "type" => $faker->randomElement($type),
-                "name" => $faker->city,
-                "leader" => $faker->name,
-                "address" => $faker->address,
-                "date" => $faker->date,
-                "email" => $faker->unique()->safeEmail,
-                "phone" => $faker->phoneNumber,
+                "type" => "BPD",
+                "name" => "BPD Hegarmanah",
+                "leader" => "Andre Anggasih",
+                "address" => "BPD Longkewang",
+                "date" => "2000-01-01",
+                "email" => "bpdlongkewang@gmail.com",
+                "phone" => "089681558245",
             ]);
-        }
+        // }
     }
 }

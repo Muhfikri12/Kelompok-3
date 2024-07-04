@@ -27,4 +27,17 @@ class StructureOrgRequest extends FormRequest
             'staff_id' => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            'name'      => __('Nama'),
+            'staff_id'      => __('Petugas'),
+            'parent_id'      => __('Pimpinan'),
+
+        ];
+
+        return $attributes;
+    }
+
 }

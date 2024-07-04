@@ -22,12 +22,18 @@
                                         {{ $item->name }}</option>
                                 @endforeach
                             </select>
+                            @error('staff_id')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
                         <div class="form-group">
                             <label for="name">{{__('Jabatan')}}</label>
                             <input type="text" name="name" class="form-control" id="form-control" @error('name') is-invalid @enderror" name="name"
                             id="name" placeholder="Staff" autocomplete="off" value="{{ $record->name ?? old('name') }}">
+                            @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
 
@@ -39,6 +45,9 @@
                                     <option value="{{$item->id}}" {{$record->parent_id == $item->id ??  old('parent_id') ? 'selected' : ''}}>{{$item->name}}</option>
                                 @endforeach
                             </select>
+                            @error('parent_id')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
 

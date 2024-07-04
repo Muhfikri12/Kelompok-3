@@ -95,7 +95,7 @@ class PerangkatDesaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PerangkatDesaRequest $request, PerangkatDesa $perangkat)
+    public function update(Request $request, PerangkatDesa $perangkat)
     {
         // dd($request->all());
         if ($request->hasFile('photo') == true) {
