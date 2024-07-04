@@ -29,9 +29,9 @@
                                 @foreach ($news as $item)
                                     <tr>
                                         <td scope="row">{{ $loop->iteration }}</td>
-                                        <td>{{ \Illuminate\Support\Str::words($item->title, 4, '...') }}</td>
+                                        <td>{{ \Illuminate\Support\Str::words($item->title, 3, '...') }}</td>
                                         <td>
-                                            {{ \Illuminate\Support\Str::words($item->content, 4, '...') }}
+                                            {{ \Illuminate\Support\Str::words($item->content, 3, '...') }}
                                         </td>
                                         <td>
                                             {!! \Illuminate\Support\Str::words($item->detail_content, 3, '...') !!}
