@@ -43,9 +43,8 @@
                                                     class="btn btn-sm btn-secondary mr-2">Lihat</a>
                                                 <a href="{{ route('news.edit',$item->article_id) }}"
                                                     class="btn btn-sm btn-primary mr-2">Ubah</a>
-                                                <button class="btn btn-danger btn-sm btn-hapus"
-                                                    data-id="{{ $item->id }}" data-toggle="modal"
-                                                    data-target="#DeleteModal">{{ __('Hapus') }}</button>
+                                                    <button class="btn btn-danger btn-sm btn-hapus" data-id="{{$item->article_id}}"
+                                                        data-toggle="modal" data-target="#DeleteModal">Hapus</button>
                                             </div>
                                         </td>
                                     </tr>
