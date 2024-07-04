@@ -15,7 +15,7 @@
                         <div class="form-group">
                             <label for="name">{{ __('Nama Lembaga') }}</label>
                             <input type="text" class="form-control" name="name"
-                            placeholder="{{ __('Nama Lengkap Lembaga') }}" value="{{ old('name') }}" required autofocus>
+                            placeholder="{{ __('Nama Lengkap Lembaga') }}" value="{{ old('name') }}">
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

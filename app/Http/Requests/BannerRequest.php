@@ -26,6 +26,5 @@ class BannerRequest extends FormRequest
             "photo" => 'required|image|mimes:jpg,jpeg,png,gif|max:8192',
             'description' => 'max:400',
         ];
-
     }
 }

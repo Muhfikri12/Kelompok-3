@@ -21,6 +21,9 @@
                                         {{ $item->name }}</option>
                                 @endforeach
                             </select>
+                            @error('staff_id')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
                         <div class="form-group">
@@ -28,6 +31,9 @@
                             <input type="text" name="name" class="form-control" id="form-control"
                                 @error('name') is-invalid @enderror" name="name" id="name" placeholder="Staff"
                                 autocomplete="off" value="{{ old('name') }}">
+                                @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                              @enderror
                         </div>
 
                         <div class="form-group">
@@ -39,6 +45,9 @@
                                         {{ $item->name }}</option>
                                 @endforeach
                             </select>
+                            @error('parent_id')
+                            <span class="text-danger">{{ $message }}</span>
+                          @enderror
                         </div>
 
                         <button type="submit" class="btn btn-primary">{{ __('Simpan') }}</button>

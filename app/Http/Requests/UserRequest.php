@@ -31,4 +31,14 @@ class UserRequest extends FormRequest
             'password' => 'required|confirmed|min:5',
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            'name'      => __('Nama'),
+            'password'      => __('Sandi'),
+        ];
+
+        return $attributes;
+    }
 }

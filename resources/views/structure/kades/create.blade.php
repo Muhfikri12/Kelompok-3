@@ -8,10 +8,8 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('kasi.store') }}" method="post">
+            <form action="{{ route('kades.store') }}" method="post">
                 @csrf
-
-
                 <div class="form-group">
                     <label for="staff_id">{{ __('Petugas') }}</label>
                     <select name="staff_id" id="staff_id" class="form-control" name="staff_id">

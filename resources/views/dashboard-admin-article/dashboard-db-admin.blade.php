@@ -35,11 +35,12 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
+                                                <a href="{{ route('article.show', ['id' => $item->id]) }}"
+                                                    class="btn btn-sm btn-secondary mr-2">Lihat</a>
                                                 <a href="{{ route('article.edit', ['id' => $item->id]) }}"
                                                     class="btn btn-sm btn-primary mr-2">Ubah</a>
-                                                <button class="btn btn-danger btn-sm btn-hapus" data-id=""
-                                                    data-toggle="modal" data-target="#DeleteModal">Delete</button>
-                                                {{-- </form> --}}
+                                                <button class="btn btn-danger btn-sm btn-hapus" data-id="{{$item->id}}"
+                                                    data-toggle="modal" data-target="#DeleteModal">Hapus</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -50,32 +51,6 @@
 
                     <!-- End of Main Content -->
                 @endsection
-
-                @push('notif')
-                    @if (session('success'))
-                        <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
-                            {{ session('success') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
-                    @if (session('warning'))
-                        <div class="alert alert-warning border-left-warning alert-dismissible fade show" role="alert">
-                            {{ session('warning') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
-                    @if (session('status'))
-                        <div class="alert alert-success border-left-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                @endpush
 
                 @push('js')
                     <script>

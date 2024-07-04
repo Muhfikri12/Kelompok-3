@@ -87,6 +87,11 @@ class PerangkatDesaSeeder extends Seeder
                 "type" => "Kadus",
                 "description" => null,
             ],
+            [
+                "name" => "Staf",
+                "type" => "Staf",
+                "description" => null,
+            ],
         ];
 
 
@@ -100,6 +105,33 @@ class PerangkatDesaSeeder extends Seeder
         }
 
         $task = [
+            // Kepalad Desa
+            [
+                "position" => "Kepala Desa",
+                "name" => "Memimpin Pemerintahan Desa",
+                "description" => null,
+            ],
+            [
+                "position" => "Kepala Desa",
+                "name" => "Menyusun Rencana Pembangunan",
+                "description" => null,
+            ],
+            [
+                "position" => "Kepala Desa",
+                "name" => "Mengelola Keuangan Desa",
+                "description" => null,
+            ],
+            [
+                "position" => "Kepala Desa",
+                "name" => "Menyelesaikan Perselisihan di Masyarakat",
+                "description" => null,
+            ],
+            [
+                "position" => "Kepala Desa",
+                "name" => "Melakukan Pelayanan kepada Masyarakat",
+                "description" => null,
+            ],
+
             // Task Sekertaris Desa
             [
                 "position" => "Sekertaris Desa",

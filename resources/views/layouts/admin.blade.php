@@ -136,10 +136,6 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('perangkat.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Petugas') }}</span>
-                        </a>
                         <a class="collapse-item" href="{{ route('jabatan.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Jabatan') }}</span>
@@ -148,11 +144,15 @@
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Tugas') }}</span>
                         </a>
+                        <a class="collapse-item" href="{{ route('perangkat.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Petugas') }}</span>
+                        </a>
                     </div>
                 </div>
             </li>
             <li class="nav-item {{ Nav::isRoute('geografis.index') }}">
-                <a class="nav-link" href="{{ route('geografis.index') }}">
+                <a class="nav-link" href="{{ route('geografis.edit',1) }}">
                     <i class="fas fa-fw fa-building"></i>
                     <span>{{ __('Geografis') }}</span></a>
             </li>
@@ -165,13 +165,13 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar"
                     style="">
                     <div class="collapse-inner rounded bg-white py-2">
-                        <a class="collapse-item" href="{{ route('demografi.index') }}">
-                            <i class="fas fa-fw fa-plus"></i>
-                            <span>{{ __('Demografi') }}</span>
-                        </a>
                         <a class="collapse-item" href="{{ route('category-demografi.index') }}">
                             <i class="fas fa-fw fa-plus"></i>
                             <span>{{ __('Kategori Demografi') }}</span>
+                        </a>
+                        <a class="collapse-item" href="{{ route('demografi.index') }}">
+                            <i class="fas fa-fw fa-plus"></i>
+                            <span>{{ __('Demografi') }}</span>
                         </a>
 
                     </div>
@@ -321,7 +321,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Alejandro RH 2020</span>
+                        <span>Copyright &copy; Kelompok 3 JDA FASE 3</span>
                     </div>
                 </div>
             </footer>

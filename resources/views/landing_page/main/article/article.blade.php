@@ -61,7 +61,7 @@
 <div class="container-fluid service py-2">
     <div class="container py-2">
         <div class="header-article-event my-3" data-aos="fade-up" style="text-color:#000;">
-            <h4>Informasi Pulik</h4>
+            <h4>Informasi Publik</h4>
         </div>
         <div class="row">
             <div class="accordion" id="accordionExample">

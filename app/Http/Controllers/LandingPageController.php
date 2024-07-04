@@ -44,7 +44,7 @@ class LandingPageController extends Controller
 
     public function petugas()
     {
-        $results = PerangkatDesa::all();
+        $results = PerangkatDesa::where('status',"Aktif")->get();
         return view('landing_page.perangkat-desa', [
             'results' => $results,
         ]);
@@ -78,7 +78,8 @@ class LandingPageController extends Controller
     public function landing_page()
     {
         $informasi = InformasiPublik::all();
-        $banner = Banner::where('type','Aktif')->orderBy('updated_at','desc')->get();
+        $banner = Banner::where('type','Aktif')->orderBy('updated_at','asc')->get();
+        // dd($banner);
         $currentDateTime = Carbon::now();
         $data = ProfileDesas::first();
 

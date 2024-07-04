@@ -30,4 +30,14 @@ class DemografiRequest extends FormRequest
              "satuan" => 'required'
          ];
      }
+
+     public function attributes()
+     {
+         $attributes = [
+             // 'name'      => __('Tugas'),
+             'kategori_id'      => __('Kategori'),
+         ];
+
+         return $attributes;
+     }
 }

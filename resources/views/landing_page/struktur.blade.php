@@ -2,9 +2,9 @@
     <style>
         /*Now the CSS*/
         /* * {
-                                                                                                                                                margin: 0;
-                                                                                                                                                padding: 0;
-                                                                                                                                            } */
+            margin: 0;
+            padding: 0;
+        } */
         .tree ul {
             display: flex;
             flex-wrap: nowrap;
@@ -167,7 +167,7 @@
                                         <li>
                                             <a href="{{ route('data-tugas', $a->petugas->id) }}">
                                                 <div>
-                                                    <img style="width: 60px; height:auto"
+                                                    <img style="width: 60px; height:70px"
                                                         src="{{ file_exists(public_path('storage/petugas/' . $a->petugas->photo)) ? asset('storage/petugas/' . $a->petugas->photo) : asset('asset-page/empty.jpg') }}"
                                                         alt="">
                                                         <div>
@@ -195,8 +195,16 @@
                                                                 <ul>
                                                                     @foreach ($aa->childs as $aaa)
                                                                         <li>
-                                                                            <a href="#">
-                                                                                {{ $aaa->name }}
+                                                                            <a href="{{ route('data-tugas', $aaa->petugas->id) }}">
+                                                                                <div>
+                                                                                    <img style="width: 60px; height:auto"
+                                                                                        src="{{ file_exists(public_path('storage/petugas/' . $aaa->petugas->photo)) ? asset('storage/petugas/' . $aaa->petugas->photo) : asset('asset-page/empty.jpg') }}"
+                                                                                        alt="">
+                                                                                        <div>
+                                                                                            <p class="my-0"><u><b>{{ strtoupper($aaa->name) }}</b></u></p>
+                                                                                            <p class="my-0">{{ strtoupper($aaa->petugas->name) }}</p>
+                                                                                        </div>
+                                                                                </div>
                                                                             </a>
                                                                             {{-- @if ($result->childs->isNotEmpty())
                                                                                     <ul>

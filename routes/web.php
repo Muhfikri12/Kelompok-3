@@ -79,6 +79,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/article', [articleController::class, 'store'])->name('article.store');
     Route::get('/data/acara', [articleController::class, 'dataEvent'])->name('data.event');
     Route::get('/acara/{id}/edit', [articleController::class, 'edit'])->name('article.edit');
+    Route::get('/acara/{id}/show', [articleController::class, 'show'])->name('article.show');
     Route::put('/acara/{id}', [articleController::class, 'update'])->name('article.update');
     Route::get('/lihat/acara/{id}', [articleController::class, 'show'])->name('article.show');
     Route::get('/lihat/berita/{id}', [NewsArticleController::class, 'show'])->name('news.show');

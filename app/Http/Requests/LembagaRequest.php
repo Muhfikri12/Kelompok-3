@@ -31,4 +31,19 @@ class LembagaRequest extends FormRequest
             "date" => 'required',
         ];
     }
+
+    public function attributes()
+    {
+        $attributes = [
+            'name'      => __('Nama'),
+            'leader'      => __('Nama Ketua'),
+            'parent_id'      => __('Pimpinan'),
+            'address'      => __('Alamat'),
+            'phone'      => __('Telepon'),
+            'date'      => __('Tanggal'),
+
+        ];
+
+        return $attributes;
+    }
 }
